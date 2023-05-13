@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2AC408402A0F6686009F0D56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4083F2A0F6686009F0D56 /* AppDelegate.swift */; };
+		2AC408422A0F6686009F0D56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408412A0F6686009F0D56 /* SceneDelegate.swift */; };
+		2AC408442A0F6686009F0D56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408432A0F6686009F0D56 /* ViewController.swift */; };
+		2AC408472A0F6686009F0D56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC408452A0F6686009F0D56 /* Main.storyboard */; };
+		2AC408492A0F6687009F0D56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AC408482A0F6687009F0D56 /* Assets.xcassets */; };
+		2AC4084C2A0F6687009F0D56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC4084A2A0F6687009F0D56 /* LaunchScreen.storyboard */; };
+		2AC408572A0F6687009F0D56 /* SOLSOLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408562A0F6687009F0D56 /* SOLSOLTests.swift */; };
+		2AC408612A0F6687009F0D56 /* SOLSOLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408602A0F6687009F0D56 /* SOLSOLUITests.swift */; };
+		2AC408632A0F6687009F0D56 /* SOLSOLUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408622A0F6687009F0D56 /* SOLSOLUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2AC408532A0F6687009F0D56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AC408342A0F6686009F0D56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AC4083B2A0F6686009F0D56;
+			remoteInfo = SOLSOL;
+		};
+		2AC4085D2A0F6687009F0D56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AC408342A0F6686009F0D56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AC4083B2A0F6686009F0D56;
+			remoteInfo = SOLSOL;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2AC4083C2A0F6686009F0D56 /* SOLSOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOLSOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AC4083F2A0F6686009F0D56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2AC408412A0F6686009F0D56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2AC408432A0F6686009F0D56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2AC408462A0F6686009F0D56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2AC408482A0F6687009F0D56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2AC4084B2A0F6687009F0D56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2AC4084D2A0F6687009F0D56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AC408522A0F6687009F0D56 /* SOLSOLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SOLSOLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AC408562A0F6687009F0D56 /* SOLSOLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLSOLTests.swift; sourceTree = "<group>"; };
+		2AC4085C2A0F6687009F0D56 /* SOLSOLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SOLSOLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AC408602A0F6687009F0D56 /* SOLSOLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLSOLUITests.swift; sourceTree = "<group>"; };
+		2AC408622A0F6687009F0D56 /* SOLSOLUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLSOLUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2AC408392A0F6686009F0D56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AC4084F2A0F6687009F0D56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AC408592A0F6687009F0D56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2AC408332A0F6686009F0D56 = {
+			isa = PBXGroup;
+			children = (
+				2AC4083E2A0F6686009F0D56 /* SOLSOL */,
+				2AC408552A0F6687009F0D56 /* SOLSOLTests */,
+				2AC4085F2A0F6687009F0D56 /* SOLSOLUITests */,
+				2AC4083D2A0F6686009F0D56 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2AC4083D2A0F6686009F0D56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2AC4083C2A0F6686009F0D56 /* SOLSOL.app */,
+				2AC408522A0F6687009F0D56 /* SOLSOLTests.xctest */,
+				2AC4085C2A0F6687009F0D56 /* SOLSOLUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2AC4083E2A0F6686009F0D56 /* SOLSOL */ = {
+			isa = PBXGroup;
+			children = (
+				2AC4083F2A0F6686009F0D56 /* AppDelegate.swift */,
+				2AC408412A0F6686009F0D56 /* SceneDelegate.swift */,
+				2AC408432A0F6686009F0D56 /* ViewController.swift */,
+				2AC408452A0F6686009F0D56 /* Main.storyboard */,
+				2AC408482A0F6687009F0D56 /* Assets.xcassets */,
+				2AC4084A2A0F6687009F0D56 /* LaunchScreen.storyboard */,
+				2AC4084D2A0F6687009F0D56 /* Info.plist */,
+			);
+			path = SOLSOL;
+			sourceTree = "<group>";
+		};
+		2AC408552A0F6687009F0D56 /* SOLSOLTests */ = {
+			isa = PBXGroup;
+			children = (
+				2AC408562A0F6687009F0D56 /* SOLSOLTests.swift */,
+			);
+			path = SOLSOLTests;
+			sourceTree = "<group>";
+		};
+		2AC4085F2A0F6687009F0D56 /* SOLSOLUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2AC408602A0F6687009F0D56 /* SOLSOLUITests.swift */,
+				2AC408622A0F6687009F0D56 /* SOLSOLUITestsLaunchTests.swift */,
+			);
+			path = SOLSOLUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2AC4083B2A0F6686009F0D56 /* SOLSOL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AC408662A0F6687009F0D56 /* Build configuration list for PBXNativeTarget "SOLSOL" */;
+			buildPhases = (
+				2AC408382A0F6686009F0D56 /* Sources */,
+				2AC408392A0F6686009F0D56 /* Frameworks */,
+				2AC4083A2A0F6686009F0D56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SOLSOL;
+			productName = SOLSOL;
+			productReference = 2AC4083C2A0F6686009F0D56 /* SOLSOL.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2AC408512A0F6687009F0D56 /* SOLSOLTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AC408692A0F6687009F0D56 /* Build configuration list for PBXNativeTarget "SOLSOLTests" */;
+			buildPhases = (
+				2AC4084E2A0F6687009F0D56 /* Sources */,
+				2AC4084F2A0F6687009F0D56 /* Frameworks */,
+				2AC408502A0F6687009F0D56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2AC408542A0F6687009F0D56 /* PBXTargetDependency */,
+			);
+			name = SOLSOLTests;
+			productName = SOLSOLTests;
+			productReference = 2AC408522A0F6687009F0D56 /* SOLSOLTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2AC4085B2A0F6687009F0D56 /* SOLSOLUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AC4086C2A0F6687009F0D56 /* Build configuration list for PBXNativeTarget "SOLSOLUITests" */;
+			buildPhases = (
+				2AC408582A0F6687009F0D56 /* Sources */,
+				2AC408592A0F6687009F0D56 /* Frameworks */,
+				2AC4085A2A0F6687009F0D56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2AC4085E2A0F6687009F0D56 /* PBXTargetDependency */,
+			);
+			name = SOLSOLUITests;
+			productName = SOLSOLUITests;
+			productReference = 2AC4085C2A0F6687009F0D56 /* SOLSOLUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2AC408342A0F6686009F0D56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					2AC4083B2A0F6686009F0D56 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					2AC408512A0F6687009F0D56 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 2AC4083B2A0F6686009F0D56;
+					};
+					2AC4085B2A0F6687009F0D56 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 2AC4083B2A0F6686009F0D56;
+					};
+				};
+			};
+			buildConfigurationList = 2AC408372A0F6686009F0D56 /* Build configuration list for PBXProject "SOLSOL" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2AC408332A0F6686009F0D56;
+			productRefGroup = 2AC4083D2A0F6686009F0D56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2AC4083B2A0F6686009F0D56 /* SOLSOL */,
+				2AC408512A0F6687009F0D56 /* SOLSOLTests */,
+				2AC4085B2A0F6687009F0D56 /* SOLSOLUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2AC4083A2A0F6686009F0D56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AC4084C2A0F6687009F0D56 /* LaunchScreen.storyboard in Resources */,
+				2AC408492A0F6687009F0D56 /* Assets.xcassets in Resources */,
+				2AC408472A0F6686009F0D56 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AC408502A0F6687009F0D56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AC4085A2A0F6687009F0D56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2AC408382A0F6686009F0D56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AC408442A0F6686009F0D56 /* ViewController.swift in Sources */,
+				2AC408402A0F6686009F0D56 /* AppDelegate.swift in Sources */,
+				2AC408422A0F6686009F0D56 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AC4084E2A0F6687009F0D56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AC408572A0F6687009F0D56 /* SOLSOLTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AC408582A0F6687009F0D56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AC408632A0F6687009F0D56 /* SOLSOLUITestsLaunchTests.swift in Sources */,
+				2AC408612A0F6687009F0D56 /* SOLSOLUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2AC408542A0F6687009F0D56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2AC4083B2A0F6686009F0D56 /* SOLSOL */;
+			targetProxy = 2AC408532A0F6687009F0D56 /* PBXContainerItemProxy */;
+		};
+		2AC4085E2A0F6687009F0D56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2AC4083B2A0F6686009F0D56 /* SOLSOL */;
+			targetProxy = 2AC4085D2A0F6687009F0D56 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2AC408452A0F6686009F0D56 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AC408462A0F6686009F0D56 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2AC4084A2A0F6687009F0D56 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AC4084B2A0F6687009F0D56 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2AC408642A0F6687009F0D56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2AC408652A0F6687009F0D56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2AC408672A0F6687009F0D56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 349HWJV2J8;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SOLSOL/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.naver-heejoo-byun.SOLSOL";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2AC408682A0F6687009F0D56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 349HWJV2J8;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SOLSOL/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.naver-heejoo-byun.SOLSOL";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2AC4086A2A0F6687009F0D56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 349HWJV2J8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.naver-heejoo-byun.SOLSOLTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SOLSOL.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SOLSOL";
+			};
+			name = Debug;
+		};
+		2AC4086B2A0F6687009F0D56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 349HWJV2J8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.naver-heejoo-byun.SOLSOLTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SOLSOL.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SOLSOL";
+			};
+			name = Release;
+		};
+		2AC4086D2A0F6687009F0D56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 349HWJV2J8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.naver-heejoo-byun.SOLSOLUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SOLSOL;
+			};
+			name = Debug;
+		};
+		2AC4086E2A0F6687009F0D56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 349HWJV2J8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.naver-heejoo-byun.SOLSOLUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SOLSOL;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2AC408372A0F6686009F0D56 /* Build configuration list for PBXProject "SOLSOL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AC408642A0F6687009F0D56 /* Debug */,
+				2AC408652A0F6687009F0D56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AC408662A0F6687009F0D56 /* Build configuration list for PBXNativeTarget "SOLSOL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AC408672A0F6687009F0D56 /* Debug */,
+				2AC408682A0F6687009F0D56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AC408692A0F6687009F0D56 /* Build configuration list for PBXNativeTarget "SOLSOLTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AC4086A2A0F6687009F0D56 /* Debug */,
+				2AC4086B2A0F6687009F0D56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AC4086C2A0F6687009F0D56 /* Build configuration list for PBXNativeTarget "SOLSOLUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AC4086D2A0F6687009F0D56 /* Debug */,
+				2AC4086E2A0F6687009F0D56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2AC408342A0F6686009F0D56 /* Project object */;
+}
