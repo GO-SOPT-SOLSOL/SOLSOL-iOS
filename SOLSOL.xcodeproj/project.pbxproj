@@ -33,6 +33,7 @@
 		2AF091EB2A11507800F611C4 /* OneShinhanLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF091E82A11507800F611C4 /* OneShinhanLight.otf */; };
 		2AF091EC2A11507800F611C4 /* OneShinhanMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF091E92A11507800F611C4 /* OneShinhanMedium.otf */; };
 		2AF091EE2A1150F000F611C4 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF091ED2A1150F000F611C4 /* UIFont+.swift */; };
+		2AF091F02A1151A300F611C4 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF091EF2A1151A300F611C4 /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		2AF091E82A11507800F611C4 /* OneShinhanLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OneShinhanLight.otf; sourceTree = "<group>"; };
 		2AF091E92A11507800F611C4 /* OneShinhanMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OneShinhanMedium.otf; sourceTree = "<group>"; };
 		2AF091ED2A1150F000F611C4 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		2AF091EF2A1151A300F611C4 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				2AF091ED2A1150F000F611C4 /* UIFont+.swift */,
+				2AF091EF2A1151A300F611C4 /* UIColor+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				2AC4087F2A112E60009F0D56 /* String.swift in Sources */,
 				2AC408402A0F6686009F0D56 /* AppDelegate.swift in Sources */,
 				2AC408422A0F6686009F0D56 /* SceneDelegate.swift in Sources */,
+				2AF091F02A1151A300F611C4 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
