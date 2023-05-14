@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "size=30, icon=bank_shinhan.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "size=30, icon=bank_shinhan@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "size=30, icon=bank_shinhan@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

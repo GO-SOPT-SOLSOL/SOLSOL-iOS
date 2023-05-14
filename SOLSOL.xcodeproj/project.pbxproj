@@ -18,7 +18,7 @@
 		2AC408712A112B56009F0D56 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2AC408702A112B56009F0D56 /* SnapKit */; };
 		2AC408742A112B61009F0D56 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2AC408732A112B61009F0D56 /* Then */; };
 		2AC408772A112B6C009F0D56 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2AC408762A112B6C009F0D56 /* Alamofire */; };
-		2AC4087D2A112E56009F0D56 /* Literal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4087C2A112E56009F0D56 /* Literal.swift */; };
+		2AC4087D2A112E56009F0D56 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4087C2A112E56009F0D56 /* ImageLiterals.swift */; };
 		2AC4087F2A112E60009F0D56 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4087E2A112E60009F0D56 /* String.swift */; };
 		2AC408872A112F20009F0D56 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408862A112F20009F0D56 /* Font.swift */; };
 		2AC4088E2A113195009F0D56 /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4088D2A113195009F0D56 /* TransferViewController.swift */; };
@@ -63,7 +63,7 @@
 		2AC4085C2A0F6687009F0D56 /* SOLSOLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SOLSOLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC408602A0F6687009F0D56 /* SOLSOLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLSOLUITests.swift; sourceTree = "<group>"; };
 		2AC408622A0F6687009F0D56 /* SOLSOLUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLSOLUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		2AC4087C2A112E56009F0D56 /* Literal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Literal.swift; sourceTree = "<group>"; };
+		2AC4087C2A112E56009F0D56 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
 		2AC4087E2A112E60009F0D56 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		2AC408862A112F20009F0D56 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		2AC4088D2A113195009F0D56 /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 		2AC4087B2A112E17009F0D56 /* Literals */ = {
 			isa = PBXGroup;
 			children = (
-				2AC4087C2A112E56009F0D56 /* Literal.swift */,
+				2AC4087C2A112E56009F0D56 /* ImageLiterals.swift */,
 				2AC4087E2A112E60009F0D56 /* String.swift */,
 			);
 			path = Literals;
@@ -456,7 +456,7 @@
 				2AC408912A1131FA009F0D56 /* TransferDetailViewController.swift in Sources */,
 				2AC408442A0F6686009F0D56 /* HomeViewController.swift in Sources */,
 				2AC4088E2A113195009F0D56 /* TransferViewController.swift in Sources */,
-				2AC4087D2A112E56009F0D56 /* Literal.swift in Sources */,
+				2AC4087D2A112E56009F0D56 /* ImageLiterals.swift in Sources */,
 				2AC4087F2A112E60009F0D56 /* String.swift in Sources */,
 				2AC408872A112F20009F0D56 /* Font.swift in Sources */,
 				2AC408402A0F6686009F0D56 /* AppDelegate.swift in Sources */,
