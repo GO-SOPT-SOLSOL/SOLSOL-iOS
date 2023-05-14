@@ -7,15 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A204ADD2A115BA500805E0A /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 2A204ADC2A115BA500805E0A /* .gitkeep */; };
+		2A204ADF2A115BC500805E0A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204ADE2A115BC500805E0A /* HomeView.swift */; };
+		2A204AE12A115BD400805E0A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AE02A115BD400805E0A /* TableViewCell.swift */; };
+		2A204AE32A115BEA00805E0A /* TransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AE22A115BEA00805E0A /* TransferView.swift */; };
+		2A204AE52A115BF700805E0A /* aaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AE42A115BF700805E0A /* aaTableViewCell.swift */; };
+		2A204AE72A115C0B00805E0A /* TransferDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AE62A115C0B00805E0A /* TransferDetailView.swift */; };
+		2A204AE92A115C6500805E0A /* bbTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AE82A115C6500805E0A /* bbTableViewCell.swift */; };
 		2AC408402A0F6686009F0D56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4083F2A0F6686009F0D56 /* AppDelegate.swift */; };
 		2AC408422A0F6686009F0D56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408412A0F6686009F0D56 /* SceneDelegate.swift */; };
-		2AC408442A0F6686009F0D56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408432A0F6686009F0D56 /* ViewController.swift */; };
-		2AC408472A0F6686009F0D56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC408452A0F6686009F0D56 /* Main.storyboard */; };
+		2AC408442A0F6686009F0D56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408432A0F6686009F0D56 /* HomeViewController.swift */; };
 		2AC408492A0F6687009F0D56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AC408482A0F6687009F0D56 /* Assets.xcassets */; };
 		2AC4084C2A0F6687009F0D56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC4084A2A0F6687009F0D56 /* LaunchScreen.storyboard */; };
 		2AC408572A0F6687009F0D56 /* SOLSOLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408562A0F6687009F0D56 /* SOLSOLTests.swift */; };
 		2AC408612A0F6687009F0D56 /* SOLSOLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408602A0F6687009F0D56 /* SOLSOLUITests.swift */; };
 		2AC408632A0F6687009F0D56 /* SOLSOLUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408622A0F6687009F0D56 /* SOLSOLUITestsLaunchTests.swift */; };
+		2AC408712A112B56009F0D56 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2AC408702A112B56009F0D56 /* SnapKit */; };
+		2AC408742A112B61009F0D56 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 2AC408732A112B61009F0D56 /* Then */; };
+		2AC408772A112B6C009F0D56 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2AC408762A112B6C009F0D56 /* Alamofire */; };
+		2AC4087D2A112E56009F0D56 /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4087C2A112E56009F0D56 /* ImageLiterals.swift */; };
+		2AC4087F2A112E60009F0D56 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4087E2A112E60009F0D56 /* String.swift */; };
+		2AC4088E2A113195009F0D56 /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4088D2A113195009F0D56 /* TransferViewController.swift */; };
+		2AC408912A1131FA009F0D56 /* TransferDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408902A1131FA009F0D56 /* TransferDetailViewController.swift */; };
+		2AF091EA2A11507800F611C4 /* OneShinhanBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF091E72A11507800F611C4 /* OneShinhanBold.otf */; };
+		2AF091EB2A11507800F611C4 /* OneShinhanLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF091E82A11507800F611C4 /* OneShinhanLight.otf */; };
+		2AF091EC2A11507800F611C4 /* OneShinhanMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF091E92A11507800F611C4 /* OneShinhanMedium.otf */; };
+		2AF091EE2A1150F000F611C4 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF091ED2A1150F000F611C4 /* UIFont+.swift */; };
+		2AF091F02A1151A300F611C4 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF091EF2A1151A300F611C4 /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +54,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A204ADC2A115BA500805E0A /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		2A204ADE2A115BC500805E0A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2A204AE02A115BD400805E0A /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		2A204AE22A115BEA00805E0A /* TransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferView.swift; sourceTree = "<group>"; };
+		2A204AE42A115BF700805E0A /* aaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aaTableViewCell.swift; sourceTree = "<group>"; };
+		2A204AE62A115C0B00805E0A /* TransferDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailView.swift; sourceTree = "<group>"; };
+		2A204AE82A115C6500805E0A /* bbTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = bbTableViewCell.swift; path = SOLSOL/Presentation/TransferDetail/bbTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		2AC4083C2A0F6686009F0D56 /* SOLSOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOLSOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC4083F2A0F6686009F0D56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AC408412A0F6686009F0D56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2AC408432A0F6686009F0D56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2AC408462A0F6686009F0D56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2AC408432A0F6686009F0D56 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2AC408482A0F6687009F0D56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AC4084B2A0F6687009F0D56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2AC4084D2A0F6687009F0D56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +73,15 @@
 		2AC4085C2A0F6687009F0D56 /* SOLSOLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SOLSOLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC408602A0F6687009F0D56 /* SOLSOLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLSOLUITests.swift; sourceTree = "<group>"; };
 		2AC408622A0F6687009F0D56 /* SOLSOLUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLSOLUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2AC4087C2A112E56009F0D56 /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
+		2AC4087E2A112E60009F0D56 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		2AC4088D2A113195009F0D56 /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
+		2AC408902A1131FA009F0D56 /* TransferDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailViewController.swift; sourceTree = "<group>"; };
+		2AF091E72A11507800F611C4 /* OneShinhanBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OneShinhanBold.otf; sourceTree = "<group>"; };
+		2AF091E82A11507800F611C4 /* OneShinhanLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OneShinhanLight.otf; sourceTree = "<group>"; };
+		2AF091E92A11507800F611C4 /* OneShinhanMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OneShinhanMedium.otf; sourceTree = "<group>"; };
+		2AF091ED2A1150F000F611C4 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		2AF091EF2A1151A300F611C4 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +89,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AC408772A112B6C009F0D56 /* Alamofire in Frameworks */,
+				2AC408712A112B56009F0D56 /* SnapKit in Frameworks */,
+				2AC408742A112B61009F0D56 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +135,9 @@
 		2AC4083E2A0F6686009F0D56 /* SOLSOL */ = {
 			isa = PBXGroup;
 			children = (
-				2AC4083F2A0F6686009F0D56 /* AppDelegate.swift */,
-				2AC408412A0F6686009F0D56 /* SceneDelegate.swift */,
-				2AC408432A0F6686009F0D56 /* ViewController.swift */,
-				2AC408452A0F6686009F0D56 /* Main.storyboard */,
-				2AC408482A0F6687009F0D56 /* Assets.xcassets */,
-				2AC4084A2A0F6687009F0D56 /* LaunchScreen.storyboard */,
-				2AC4084D2A0F6687009F0D56 /* Info.plist */,
+				2AC408782A112DC1009F0D56 /* Application */,
+				2AC408792A112DE9009F0D56 /* Global */,
+				2AC408892A113006009F0D56 /* Presentation */,
 			);
 			path = SOLSOL;
 			sourceTree = "<group>";
@@ -127,6 +159,169 @@
 			path = SOLSOLUITests;
 			sourceTree = "<group>";
 		};
+		2AC408782A112DC1009F0D56 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				2AC4083F2A0F6686009F0D56 /* AppDelegate.swift */,
+				2AC408412A0F6686009F0D56 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		2AC408792A112DE9009F0D56 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				2AC4087A2A112E03009F0D56 /* Extension */,
+				2AC4087B2A112E17009F0D56 /* Literals */,
+				2AC408822A112EB5009F0D56 /* Protocols */,
+				2AC408852A112EF3009F0D56 /* Resources */,
+				2AC408882A112FD2009F0D56 /* Supporting Files */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		2AC4087A2A112E03009F0D56 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2AF091ED2A1150F000F611C4 /* UIFont+.swift */,
+				2AF091EF2A1151A300F611C4 /* UIColor+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		2AC4087B2A112E17009F0D56 /* Literals */ = {
+			isa = PBXGroup;
+			children = (
+				2AC4087C2A112E56009F0D56 /* ImageLiterals.swift */,
+				2AC4087E2A112E60009F0D56 /* String.swift */,
+			);
+			path = Literals;
+			sourceTree = "<group>";
+		};
+		2AC408822A112EB5009F0D56 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2A204ADC2A115BA500805E0A /* .gitkeep */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2AC408852A112EF3009F0D56 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2AF091E62A11500900F611C4 /* Font */,
+				2AC408482A0F6687009F0D56 /* Assets.xcassets */,
+				2AC4084D2A0F6687009F0D56 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2AC408882A112FD2009F0D56 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2AC4084A2A0F6687009F0D56 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2AC408892A113006009F0D56 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2AC4088A2A113054009F0D56 /* Home */,
+				2AC4088C2A113158009F0D56 /* Transfer */,
+				2AC4088F2A1131AE009F0D56 /* TransferDetail */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2AC4088A2A113054009F0D56 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2AC408952A113250009F0D56 /* Views */,
+				2AC408922A113229009F0D56 /* Cells */,
+				2AC408432A0F6686009F0D56 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2AC4088C2A113158009F0D56 /* Transfer */ = {
+			isa = PBXGroup;
+			children = (
+				2AC408962A11327E009F0D56 /* Views */,
+				2AC408932A11322F009F0D56 /* Cells */,
+				2AC4088D2A113195009F0D56 /* TransferViewController.swift */,
+			);
+			path = Transfer;
+			sourceTree = "<group>";
+		};
+		2AC4088F2A1131AE009F0D56 /* TransferDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2AC408972A113288009F0D56 /* Views */,
+				2AC408942A11323A009F0D56 /* Cells */,
+				2AC408902A1131FA009F0D56 /* TransferDetailViewController.swift */,
+			);
+			path = TransferDetail;
+			sourceTree = "<group>";
+		};
+		2AC408922A113229009F0D56 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2A204AE02A115BD400805E0A /* TableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2AC408932A11322F009F0D56 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2A204AE42A115BF700805E0A /* aaTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2AC408942A11323A009F0D56 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2A204AE82A115C6500805E0A /* bbTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2AC408952A113250009F0D56 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A204ADE2A115BC500805E0A /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2AC408962A11327E009F0D56 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A204AE22A115BEA00805E0A /* TransferView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2AC408972A113288009F0D56 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A204AE62A115C0B00805E0A /* TransferDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2AF091E62A11500900F611C4 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				2AF091E72A11507800F611C4 /* OneShinhanBold.otf */,
+				2AF091E92A11507800F611C4 /* OneShinhanMedium.otf */,
+				2AF091E82A11507800F611C4 /* OneShinhanLight.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +338,11 @@
 			dependencies = (
 			);
 			name = SOLSOL;
+			packageProductDependencies = (
+				2AC408702A112B56009F0D56 /* SnapKit */,
+				2AC408732A112B61009F0D56 /* Then */,
+				2AC408762A112B6C009F0D56 /* Alamofire */,
+			);
 			productName = SOLSOL;
 			productReference = 2AC4083C2A0F6686009F0D56 /* SOLSOL.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +415,11 @@
 				Base,
 			);
 			mainGroup = 2AC408332A0F6686009F0D56;
+			packageReferences = (
+				2AC4086F2A112B55009F0D56 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				2AC408722A112B61009F0D56 /* XCRemoteSwiftPackageReference "Then" */,
+				2AC408752A112B6C009F0D56 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 2AC4083D2A0F6686009F0D56 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,8 +437,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AC4084C2A0F6687009F0D56 /* LaunchScreen.storyboard in Resources */,
+				2AF091EA2A11507800F611C4 /* OneShinhanBold.otf in Resources */,
+				2AF091EC2A11507800F611C4 /* OneShinhanMedium.otf in Resources */,
+				2A204ADD2A115BA500805E0A /* .gitkeep in Resources */,
 				2AC408492A0F6687009F0D56 /* Assets.xcassets in Resources */,
-				2AC408472A0F6686009F0D56 /* Main.storyboard in Resources */,
+				2AF091EB2A11507800F611C4 /* OneShinhanLight.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +466,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AC408442A0F6686009F0D56 /* ViewController.swift in Sources */,
+				2A204AE52A115BF700805E0A /* aaTableViewCell.swift in Sources */,
+				2AF091EE2A1150F000F611C4 /* UIFont+.swift in Sources */,
+				2A204AE32A115BEA00805E0A /* TransferView.swift in Sources */,
+				2AC408912A1131FA009F0D56 /* TransferDetailViewController.swift in Sources */,
+				2AC408442A0F6686009F0D56 /* HomeViewController.swift in Sources */,
+				2A204ADF2A115BC500805E0A /* HomeView.swift in Sources */,
+				2A204AE92A115C6500805E0A /* bbTableViewCell.swift in Sources */,
+				2AC4088E2A113195009F0D56 /* TransferViewController.swift in Sources */,
+				2AC4087D2A112E56009F0D56 /* ImageLiterals.swift in Sources */,
+				2A204AE72A115C0B00805E0A /* TransferDetailView.swift in Sources */,
+				2A204AE12A115BD400805E0A /* TableViewCell.swift in Sources */,
+				2AC4087F2A112E60009F0D56 /* String.swift in Sources */,
 				2AC408402A0F6686009F0D56 /* AppDelegate.swift in Sources */,
 				2AC408422A0F6686009F0D56 /* SceneDelegate.swift in Sources */,
+				2AF091F02A1151A300F611C4 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +517,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2AC408452A0F6686009F0D56 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2AC408462A0F6686009F0D56 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2AC4084A2A0F6687009F0D56 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -439,10 +651,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 349HWJV2J8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SOLSOL/Info.plist;
+				INFOPLIST_FILE = SOLSOL/Global/Resources/info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -467,10 +678,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 349HWJV2J8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SOLSOL/Info.plist;
+				INFOPLIST_FILE = SOLSOL/Global/Resources/info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -602,6 +812,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2AC4086F2A112B55009F0D56 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		2AC408722A112B61009F0D56 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		2AC408752A112B6C009F0D56 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2AC408702A112B56009F0D56 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AC4086F2A112B55009F0D56 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		2AC408732A112B61009F0D56 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AC408722A112B61009F0D56 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		2AC408762A112B6C009F0D56 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2AC408752A112B6C009F0D56 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2AC408342A0F6686009F0D56 /* Project object */;
 }
