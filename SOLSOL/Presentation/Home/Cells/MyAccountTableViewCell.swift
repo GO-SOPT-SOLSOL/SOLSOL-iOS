@@ -12,12 +12,18 @@ final class MyAccountTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-
+        setStyle()
     }
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    func setStyle() {
+        separatorInset.left = 0
+        selectionStyle = .none
+        backgroundColor = .white
     }
 
 }
