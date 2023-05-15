@@ -7,17 +7,13 @@
 
 import UIKit
 
-class TransferViewController: UIViewController {
-    
-    private let originView = TransferView()
+class TransferController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubview(TransferView())
+        
     }
-    
-    override func loadView() {
-        self.view = originView
-    }
-
 
 }
