@@ -50,6 +50,9 @@ extension UIColor {
     static var white: UIColor {
         return UIColor(hex: "#ffffff")
     }
+    static var adColor: UIColor {
+        return UIColor(hex: "FAEFE2")
+    }
 }
 
 extension UIColor {
