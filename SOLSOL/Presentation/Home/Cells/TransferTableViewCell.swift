@@ -69,6 +69,7 @@ final class TransferTableViewCell: UITableViewCell {
         contentView.addSubviews(collectionView,pageControl)
         
         collectionView.snp.makeConstraints {
+            $0.top.equalToSuperview()
             $0.width.equalToSuperview()
             $0.height.equalTo(241)
         }
