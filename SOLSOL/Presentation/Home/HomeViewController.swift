@@ -125,7 +125,7 @@ extension HomeViewController: UITableViewDataSource {
         case 5:
             return 175
         case 6:
-            return 60
+            return 125
         default:
             return 0
         }

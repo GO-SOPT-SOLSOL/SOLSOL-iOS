@@ -16,14 +16,16 @@ final class EightItemsTableViewCell: UITableViewCell {
     private let itemLowStackView = UIStackView()
     private let itemAllStackView = UIStackView()
     
-    private let itemOne = UILabel()
-    private let itemTwo = UILabel()
-    private let itemThree = UILabel()
-    private let itemFour = UILabel()
-    private let itemFive = UILabel()
-    private let itemSix = UILabel()
-    private let itemSeven = UILabel()
-    private let itemEight = UILabel()
+    private lazy var items: [UIButton] = []
+    
+    private let itemOne = UIButton()
+    private let itemTwo = UIButton()
+    private let itemThree = UIButton()
+    private let itemFour = UIButton()
+    private let itemFive = UIButton()
+    private let itemSix = UIButton()
+    private let itemSeven = UIButton()
+    private let itemEight = UIButton()
 
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -39,38 +41,21 @@ final class EightItemsTableViewCell: UITableViewCell {
     }
     
     func setStyle() {
+        items = [
+        itemOne,
+        itemTwo,
+        itemThree,
+        itemFour,
+        itemFive,
+        itemSix,
+        itemSeven,
+        itemEight]
         
-        itemOne.do {
-            $0.backgroundColor = .white
-            $0.makeCornerRound(radius: 13)
-        }
-        itemTwo.do {
-            $0.backgroundColor = .white
-            $0.makeCornerRound(radius: 13)
-        }
-        itemThree.do {
-            $0.backgroundColor = .white
-            $0.makeCornerRound(radius: 13)
-        }
-        itemFour.do {
-            $0.backgroundColor = .white
-            $0.makeCornerRound(radius: 13)
-        }
-        itemFive.do {
-            $0.backgroundColor = .white
-            $0.makeCornerRound(radius: 13)
-        }
-        itemSix.do {
-            $0.backgroundColor = .white
-            $0.makeCornerRound(radius: 13)
-        }
-        itemSeven.do {
-            $0.backgroundColor = .white
-            $0.makeCornerRound(radius: 13)
-        }
-        itemEight.do {
-            $0.backgroundColor = .white
-            $0.makeCornerRound(radius: 13)
+        for item in items {
+            item.do {
+                $0.backgroundColor = .white
+                $0.makeCornerRound(radius: 13)
+            }
         }
         
         itemHighStackView.do {
@@ -111,29 +96,10 @@ final class EightItemsTableViewCell: UITableViewCell {
         [itemFive, itemSix, itemSeven, itemEight]
             .forEach { itemLowStackView.addArrangedSubview($0) }
         
-        itemOne.snp.makeConstraints {
-            $0.size.equalTo(78)
-        }
-        itemTwo.snp.makeConstraints {
-            $0.size.equalTo(78)
-        }
-        itemThree.snp.makeConstraints {
-            $0.size.equalTo(78)
-        }
-        itemFour.snp.makeConstraints {
-            $0.size.equalTo(78)
-        }
-        itemFive.snp.makeConstraints {
-            $0.size.equalTo(78)
-        }
-        itemSix.snp.makeConstraints {
-            $0.size.equalTo(78)
-        }
-        itemSeven.snp.makeConstraints {
-            $0.size.equalTo(78)
-        }
-        itemEight.snp.makeConstraints {
-            $0.size.equalTo(78)
+        for item in items {
+            item.snp.makeConstraints {
+                $0.size.equalTo(78)
+            }
         }
         
         itemHighStackView.snp.makeConstraints {
