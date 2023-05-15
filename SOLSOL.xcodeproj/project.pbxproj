@@ -187,9 +187,9 @@
 		2AC4087A2A112E03009F0D56 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				2AF091ED2A1150F000F611C4 /* UIFont+.swift */,
-				2AF091EF2A1151A300F611C4 /* UIColor+.swift */,
 				2A204AEA2A11F0A700805E0A /* NSObject+.swift */,
+				2AF091EF2A1151A300F611C4 /* UIColor+.swift */,
+				2AF091ED2A1150F000F611C4 /* UIFont+.swift */,
 				2A204AEC2A11F12F00805E0A /* UIView+.swift */,
 			);
 			path = Extension;

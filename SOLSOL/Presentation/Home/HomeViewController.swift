@@ -71,14 +71,40 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+//        switch indexPath.section {
+//        case 0:
+//        case 1:
+//        case 2:
+//        case 3:
+//        case 4:
+//        case 5:
+//        case 6:
+//        default:
+//        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
+        switch indexPath.section {
+        case 0:
+            return 64
+        case 1:
+            return 52
+        case 2:
+            return 290
+        case 3:
+            return 52
+        case 4:
+            return 85
+        case 5:
+            return 175
+        case 6:
+            return 60
+        default:
+            return 0
+        }
     }
 }
