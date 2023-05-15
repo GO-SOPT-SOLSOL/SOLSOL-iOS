@@ -30,13 +30,11 @@ final class HomeViewController: UIViewController {
     }
     
     func setStyle() {
-        view.backgroundColor = .gray100
         
         HomeTableView.do {
             $0.delegate = self
             $0.dataSource = self
             $0.backgroundColor = .gray100
-            $0.contentInsetAdjustmentBehavior = .never
             setRegister()
         }
     }
@@ -45,7 +43,9 @@ final class HomeViewController: UIViewController {
         view.addSubview(HomeTableView)
         
         HomeTableView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.equalTo(view.safeAreaInsets)
+            $0.bottom.equalTo(view.safeAreaInsets)
+            $0.leading.trailing.equalToSuperview()
         }
     }
     
