@@ -41,7 +41,7 @@ final class TransferTableViewCell: UITableViewCell {
         }
         
         flowLayout.do {
-            $0.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.9, height: 241)
+            $0.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.91, height: 241)
             $0.sectionInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
             $0.minimumLineSpacing = 8
             $0.minimumInteritemSpacing = 0
