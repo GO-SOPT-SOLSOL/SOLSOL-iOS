@@ -54,7 +54,13 @@ final class HomeViewController: UIViewController {
     func setDelegate() {}
 
     func setRegister() {
-        
+        HomeTableView.register(AdvertisementTableViewCell.self, forCellReuseIdentifier:  AdvertisementTableViewCell.className)
+        HomeTableView.register(MyAccountTableViewCell.self, forCellReuseIdentifier:  MyAccountTableViewCell.className)
+        HomeTableView.register(TransferTableViewCell.self, forCellReuseIdentifier:  TransferTableViewCell.className)
+        HomeTableView.register(ShinhanPlusTableViewCell.self, forCellReuseIdentifier:  ShinhanPlusTableViewCell.className)
+        HomeTableView.register(DeliveryPackagingTableViewCell.self, forCellReuseIdentifier:  DeliveryPackagingTableViewCell.className)
+        HomeTableView.register(EightItemsTableViewCell.self, forCellReuseIdentifier:  EightItemsTableViewCell.className)
+        HomeTableView.register(FooterButtonTableViewCell.self, forCellReuseIdentifier:  FooterButtonTableViewCell.className)
     }
 }
 
@@ -75,16 +81,31 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        switch indexPath.section {
-//        case 0:
-//        case 1:
-//        case 2:
-//        case 3:
-//        case 4:
-//        case 5:
-//        case 6:
-//        default:
-//        }
+        switch indexPath.section {
+        case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: AdvertisementTableViewCell.className, for: indexPath) as? AdvertisementTableViewCell else { return UITableViewCell() }
+            return cell
+        case 1:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: MyAccountTableViewCell.className, for: indexPath) as? MyAccountTableViewCell else { return UITableViewCell() }
+            return cell
+        case 2:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier:             TransferTableViewCell.className, for: indexPath) as?             TransferTableViewCell else { return UITableViewCell() }
+            return cell
+        case 3:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier:             ShinhanPlusTableViewCell.className, for: indexPath) as?             ShinhanPlusTableViewCell else { return UITableViewCell() }
+            return cell
+        case 4:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier:             DeliveryPackagingTableViewCell.className, for: indexPath) as?             DeliveryPackagingTableViewCell else { return UITableViewCell() }
+            return cell
+        case 5:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier:             EightItemsTableViewCell.className, for: indexPath) as?             EightItemsTableViewCell else { return UITableViewCell() }
+            return cell
+        case 6:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier:             FooterButtonTableViewCell.className, for: indexPath) as?             FooterButtonTableViewCell else { return UITableViewCell() }
+            return cell
+        default:
+            return UITableViewCell()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
