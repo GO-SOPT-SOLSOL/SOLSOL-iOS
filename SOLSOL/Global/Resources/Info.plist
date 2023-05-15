@@ -4,9 +4,9 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>OneShinhanBold.otf</string>
-		<string>OneShinhanMedium.otf</string>
-		<string>OneShinhanLight.otf</string>
+		<string>OneShinhan-Bold.otf</string>
+		<string>OneShinhan-Medium.otf</string>
+		<string>OneShinhan-Light.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

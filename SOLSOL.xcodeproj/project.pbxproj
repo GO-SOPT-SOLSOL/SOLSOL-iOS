@@ -37,9 +37,9 @@
 		2AC4087F2A112E60009F0D56 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4087E2A112E60009F0D56 /* String.swift */; };
 		2AC4088E2A113195009F0D56 /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4088D2A113195009F0D56 /* TransferViewController.swift */; };
 		2AC408912A1131FA009F0D56 /* TransferDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408902A1131FA009F0D56 /* TransferDetailViewController.swift */; };
-		2AF091EA2A11507800F611C4 /* OneShinhanBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF091E72A11507800F611C4 /* OneShinhanBold.otf */; };
-		2AF091EB2A11507800F611C4 /* OneShinhanLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF091E82A11507800F611C4 /* OneShinhanLight.otf */; };
-		2AF091EC2A11507800F611C4 /* OneShinhanMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF091E92A11507800F611C4 /* OneShinhanMedium.otf */; };
+		2AF091EA2A11507800F611C4 /* OneShinhan-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF091E72A11507800F611C4 /* OneShinhan-Bold.otf */; };
+		2AF091EB2A11507800F611C4 /* OneShinhan-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF091E82A11507800F611C4 /* OneShinhan-Light.otf */; };
+		2AF091EC2A11507800F611C4 /* OneShinhan-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF091E92A11507800F611C4 /* OneShinhan-Medium.otf */; };
 		2AF091EE2A1150F000F611C4 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF091ED2A1150F000F611C4 /* UIFont+.swift */; };
 		2AF091F02A1151A300F611C4 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF091EF2A1151A300F611C4 /* UIColor+.swift */; };
 /* End PBXBuildFile section */
@@ -93,9 +93,9 @@
 		2AC4087E2A112E60009F0D56 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		2AC4088D2A113195009F0D56 /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
 		2AC408902A1131FA009F0D56 /* TransferDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailViewController.swift; sourceTree = "<group>"; };
-		2AF091E72A11507800F611C4 /* OneShinhanBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OneShinhanBold.otf; sourceTree = "<group>"; };
-		2AF091E82A11507800F611C4 /* OneShinhanLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OneShinhanLight.otf; sourceTree = "<group>"; };
-		2AF091E92A11507800F611C4 /* OneShinhanMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OneShinhanMedium.otf; sourceTree = "<group>"; };
+		2AF091E72A11507800F611C4 /* OneShinhan-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OneShinhan-Bold.otf"; sourceTree = "<group>"; };
+		2AF091E82A11507800F611C4 /* OneShinhan-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OneShinhan-Light.otf"; sourceTree = "<group>"; };
+		2AF091E92A11507800F611C4 /* OneShinhan-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OneShinhan-Medium.otf"; sourceTree = "<group>"; };
 		2AF091ED2A1150F000F611C4 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		2AF091EF2A1151A300F611C4 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -339,9 +339,9 @@
 		2AF091E62A11500900F611C4 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				2AF091E72A11507800F611C4 /* OneShinhanBold.otf */,
-				2AF091E92A11507800F611C4 /* OneShinhanMedium.otf */,
-				2AF091E82A11507800F611C4 /* OneShinhanLight.otf */,
+				2AF091E72A11507800F611C4 /* OneShinhan-Bold.otf */,
+				2AF091E92A11507800F611C4 /* OneShinhan-Medium.otf */,
+				2AF091E82A11507800F611C4 /* OneShinhan-Light.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -461,11 +461,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AC4084C2A0F6687009F0D56 /* LaunchScreen.storyboard in Resources */,
-				2AF091EA2A11507800F611C4 /* OneShinhanBold.otf in Resources */,
-				2AF091EC2A11507800F611C4 /* OneShinhanMedium.otf in Resources */,
+				2AF091EA2A11507800F611C4 /* OneShinhan-Bold.otf in Resources */,
+				2AF091EC2A11507800F611C4 /* OneShinhan-Medium.otf in Resources */,
 				2A204ADD2A115BA500805E0A /* .gitkeep in Resources */,
 				2AC408492A0F6687009F0D56 /* Assets.xcassets in Resources */,
-				2AF091EB2A11507800F611C4 /* OneShinhanLight.otf in Resources */,
+				2AF091EB2A11507800F611C4 /* OneShinhan-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
