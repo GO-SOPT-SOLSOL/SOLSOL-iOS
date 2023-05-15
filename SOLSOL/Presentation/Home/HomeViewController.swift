@@ -12,6 +12,8 @@ import Then
 
 final class HomeViewController: UIViewController {
     
+    private let HomeTableView = UITableView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,20 +29,42 @@ final class HomeViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    /// Attributes (속성) 설정 메서드
     func setStyle() {
         view.backgroundColor = .gray100
-        
     }
     
-    /// Hierarchy, Constraints (계층 및 제약조건) 설정 메서드
     func setLayout() {}
     
-    /// 타겟 설정 메서드
     func setTarget() {}
-    
     
     func setDelegate() {}
 
+    func setRegister() {
+        
+    }
 }
 
+// MARK: - UITableViewDelegate
+
+extension HomeViewController: UITableViewDelegate {}
+
+// MARK: - UITableViewDataSource
+
+extension HomeViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 7
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+    }
+}
