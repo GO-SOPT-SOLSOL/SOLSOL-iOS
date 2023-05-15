@@ -23,6 +23,6 @@ final class AdvertisementTableViewCell: UITableViewCell {
     func setStyle() {
         separatorInset.left = 0
         selectionStyle = .none
-        backgroundColor = .white
+        backgroundColor = .gray100
     }
 }
