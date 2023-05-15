@@ -21,6 +21,7 @@ final class TransferTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setStyle()
+        setLayout()
     }
     
     @available(*, unavailable)
@@ -36,13 +37,13 @@ final class TransferTableViewCell: UITableViewCell {
             $0.isPagingEnabled = true
             $0.dataSource = self
             $0.delegate = self
-            $0.backgroundColor = .white
+            $0.backgroundColor = .clear
         }
         
         flowLayout.do {
-            $0.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 241)
-            $0.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-            $0.minimumLineSpacing = 0
+            $0.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.9, height: 241)
+            $0.sectionInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
+            $0.minimumLineSpacing = 8
             $0.minimumInteritemSpacing = 0
             $0.scrollDirection = .horizontal
             $0.estimatedItemSize = .zero
@@ -54,7 +55,7 @@ final class TransferTableViewCell: UITableViewCell {
             $0.currentPage = 0
             $0.currentPageIndicatorTintColor = .gray600
             $0.isUserInteractionEnabled = false
-            $0.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+            $0.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
             $0.backgroundStyle = .minimal
             $0.allowsContinuousInteraction = false
         }
@@ -69,11 +70,12 @@ final class TransferTableViewCell: UITableViewCell {
         
         collectionView.snp.makeConstraints {
             $0.width.equalToSuperview()
-            $0.height.equalTo(421)
+            $0.height.equalTo(241)
         }
         
         pageControl.snp.makeConstraints {
             $0.top.equalTo(collectionView.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview()
         }
     }
 }
