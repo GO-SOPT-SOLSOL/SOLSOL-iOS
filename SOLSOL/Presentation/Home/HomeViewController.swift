@@ -31,9 +31,23 @@ final class HomeViewController: UIViewController {
     
     func setStyle() {
         view.backgroundColor = .gray100
+        
+        HomeTableView.do {
+            $0.delegate = self
+            $0.dataSource = self
+            $0.backgroundColor = .gray100
+            $0.contentInsetAdjustmentBehavior = .never
+            setRegister()
+        }
     }
     
-    func setLayout() {}
+    func setLayout() {
+        view.addSubview(HomeTableView)
+        
+        HomeTableView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+    }
     
     func setTarget() {}
     
