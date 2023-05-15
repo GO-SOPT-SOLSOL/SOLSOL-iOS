@@ -10,14 +10,14 @@ import UIKit
 extension UIFont {
     
     static func OneShinhanBold(ofSize size: CGFloat) -> UIFont{
-        return UIFont(name: "OneShinhanBold", size: size)!
+        return UIFont(name: "OneShinhan-Bold", size: size)!
     }
     
     static func OneShinhanMedium(ofSize size: CGFloat) -> UIFont{
-        return UIFont(name: "OneShinhanMedium", size: size)!
+        return UIFont(name: "OneShinhan-Medium", size: size)!
     }
     
     static func OneShinhanLight(ofSize size: CGFloat) -> UIFont{
-        return UIFont(name: "OneShinhanLight", size: size)!
+        return UIFont(name: "OneShinhan-Light", size: size)!
     }
 }
