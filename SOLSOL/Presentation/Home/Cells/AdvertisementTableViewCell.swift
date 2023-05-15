@@ -61,7 +61,7 @@ final class AdvertisementTableViewCell: UITableViewCell {
     }
     
     func setLayout() {
-        contentView.addSubviews(adAllLabel)
+        contentView.addSubview(adAllLabel)
         adAllLabel.addSubviews(adImage,
                                adTitleLabel,
                                adContentLabel,

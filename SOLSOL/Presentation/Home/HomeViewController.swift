@@ -34,9 +34,11 @@ final class HomeViewController: UIViewController {
         HomeTableView.do {
             $0.delegate = self
             $0.dataSource = self
+            $0.separatorStyle = .none
             $0.backgroundColor = .gray100
             setRegister()
         }
+        
     }
     
     func setLayout() {
@@ -113,7 +115,7 @@ extension HomeViewController: UITableViewDataSource {
         case 0:
             return 64
         case 1:
-            return 52
+            return 58
         case 2:
             return 290
         case 3:
