@@ -24,7 +24,7 @@ final class CategoryTableViewCell: UITableViewCell {
                                           image: ImageLiterals.Home.returnCup,
                                           imagePlacement: .top,
                                           imagePadding: 6,
-                                          font: .font(.subhead1),
+                                          font: .font(.body3),
                                           cornerRadius: 13)
     private let itemTips = SOLFilledButton(backgroundColor: .white,
                                            text: Item.tips,
@@ -32,15 +32,15 @@ final class CategoryTableViewCell: UITableViewCell {
                                            image: ImageLiterals.Home.SOLTips,
                                            imagePlacement: .top,
                                            imagePadding: 6,
-                                           font: .font(.subhead1),
+                                           font: .font(.body3),
                                            cornerRadius: 13)
     private let itemBank = SOLFilledButton(backgroundColor: .white,
                                            text: Item.storyBank,
                                            textColor: .gray600,
                                            image: ImageLiterals.Home.storyBank,
                                            imagePlacement: .top,
-                                           imagePadding: 6,
-                                           font: .font(.subhead1),
+                                           imagePadding: 8,
+                                           font: .font(.body3),
                                            cornerRadius: 13)
     private let itemWallet = SOLFilledButton(backgroundColor: .white,
                                              text: Item.wallet,
@@ -48,7 +48,7 @@ final class CategoryTableViewCell: UITableViewCell {
                                              image: ImageLiterals.Home.SOLWallet,
                                              imagePlacement: .top,
                                              imagePadding: 6,
-                                             font: .font(.subhead1),
+                                             font: .font(.body3),
                                              cornerRadius: 13)
     private let itemBaseBall = SOLFilledButton(backgroundColor: .white,
                                                text: Item.baseBall,
@@ -56,7 +56,7 @@ final class CategoryTableViewCell: UITableViewCell {
                                                image: ImageLiterals.Home.SOLBaseball,
                                                imagePlacement: .top,
                                                imagePadding: 6,
-                                               font: .font(.subhead1),
+                                               font: .font(.body3),
                                                cornerRadius: 13)
     private let itemCard = SOLFilledButton(backgroundColor: .white,
                                            text: Item.card,
@@ -64,7 +64,7 @@ final class CategoryTableViewCell: UITableViewCell {
                                            image: ImageLiterals.Home.assignCard,
                                            imagePlacement: .top,
                                            imagePadding: 6,
-                                           font: .font(.subhead1),
+                                           font: .font(.body3),
                                            cornerRadius: 13)
     private let itemStock = SOLFilledButton(backgroundColor: .white,
                                             text: Item.stock,
@@ -72,7 +72,7 @@ final class CategoryTableViewCell: UITableViewCell {
                                             image: ImageLiterals.Home.currentStock,
                                             imagePlacement: .top,
                                             imagePadding: 6,
-                                            font: .font(.subhead1),
+                                            font: .font(.body3),
                                             cornerRadius: 13)
     private let itemCertification = SOLFilledButton(backgroundColor: .white,
                                                     text: Item.certification,
@@ -80,7 +80,7 @@ final class CategoryTableViewCell: UITableViewCell {
                                                     image: ImageLiterals.Home.certification,
                                                     imagePlacement: .top,
                                                     imagePadding: 6,
-                                                    font: .font(.subhead1),
+                                                    font: .font(.body3),
                                                     cornerRadius: 13)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -146,18 +146,18 @@ final class CategoryTableViewCell: UITableViewCell {
         
         for item in items {
             item.snp.makeConstraints {
-                $0.size.equalTo(83)
+                $0.size.equalTo(78)
             }
         }
         
         itemHighStackView.snp.makeConstraints {
-            $0.height.equalTo(83)
+            $0.height.equalTo(78)
             $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
         }
         
         itemLowStackView.snp.makeConstraints {
-            $0.height.equalTo(83)
+            $0.height.equalTo(78)
             $0.top.equalToSuperview().inset(87)
             $0.leading.trailing.equalToSuperview()
         }

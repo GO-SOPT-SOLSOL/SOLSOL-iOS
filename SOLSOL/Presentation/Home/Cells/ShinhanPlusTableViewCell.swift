@@ -86,8 +86,8 @@ final class ShinhanPlusTableViewCell: UITableViewCell {
         
         shinPlusButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.leading.equalToSuperview().inset(18)
-            $0.trailing.equalToSuperview().inset(220)
+            $0.leading.equalToSuperview().inset(13)
+            $0.trailing.equalToSuperview().inset(215)
             $0.height.equalTo(28)
         }
         
