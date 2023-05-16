@@ -50,7 +50,7 @@ extension UIColor {
     static var white: UIColor {
         return UIColor(hex: "#ffffff")
     }
-    static var adColor: UIColor {
+    static var beige: UIColor {
         return UIColor(hex: "FAEFE2")
     }
     static var lightBlue500: UIColor {
