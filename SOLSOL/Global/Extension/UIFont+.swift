@@ -51,6 +51,5 @@ enum FontName: String {
 extension UIFont {
     static func font(_ style: FontName) -> UIFont {
         return UIFont(name: style.rawValue, size: style.size)!
->>>>>>> 743b0deff34ecaf707603e4b4ada7be3523d5e11
     }
 }
