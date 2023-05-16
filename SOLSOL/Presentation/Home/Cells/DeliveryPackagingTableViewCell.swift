@@ -38,13 +38,13 @@ final class DeliveryPackagingTableViewCell: UITableViewCell {
         deliveryPackagingLabel.do {
             $0.text = "배달/포장"
             $0.textColor = .gray600
-            $0.font = .OneShinhanMedium(ofSize: 14)
+            $0.font = .font(.subhead3)
         }
         
         orderLabel.do {
             $0.text = "눈으로 즐기는 미식 주문"
             $0.textColor = .gray600
-            $0.font = .OneShinhanMedium(ofSize: 12)
+            $0.font = .font(.subhead1)
         }
         
         pullingImage.do {

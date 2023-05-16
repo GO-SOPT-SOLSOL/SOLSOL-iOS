@@ -37,22 +37,22 @@ final class ShinhanPlusTableViewCell: UITableViewCell {
         }
         
         shinPlusButton.do {
-            $0.backgroundColor = .shinhanPlusBackgroundColor
+            $0.backgroundColor = .lightBlue100
             $0.makeCornerRound(radius: 14)
         }
         
         cardButton.do {
-            $0.backgroundColor = .cardBackGroundColor
+            $0.backgroundColor = .lightBlue100
             $0.makeCornerRound(radius: 14)
         }
         
         stockButton.do {
-            $0.backgroundColor = .stockBackGroundColor
+            $0.backgroundColor = .indigo100
             $0.makeCornerRound(radius: 14)
         }
         
         insuranceButton.do {
-            $0.backgroundColor = .insuranceBackGroundColor
+            $0.backgroundColor = .violet100
             $0.makeCornerRound(radius: 14)
         }
         
