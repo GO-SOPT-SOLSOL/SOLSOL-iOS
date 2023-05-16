@@ -24,7 +24,7 @@ class TransferView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+                
         setDelegate()
         setStyle()
         hierarchy()
@@ -55,7 +55,7 @@ class TransferView: UIView {
             $0.layer.borderWidth = 1
             $0.layer.borderColor = UIColor.gray150.cgColor
             $0.setLeftPaddingPoints(18)
-            //
+            
         }
         
         SearchButton.do{
@@ -74,6 +74,9 @@ class TransferView: UIView {
                 NSAttributedString.Key.foregroundColor: UIColor.gray600,
                 NSAttributedString.Key.font: UIFont.font(.subhead2)
             ], for: .selected)
+            
+            //default 값을 '맞춤'으로
+            $0.selectedSegmentIndex = 0
             
         }
         
@@ -95,9 +98,9 @@ class TransferView: UIView {
         }
         
         searchTextField.snp.makeConstraints{
-            $0.leading.equalToSuperview().inset(18)
+            $0.leading.equalTo(sendToWhoLabel.snp.leading)
+            $0.trailing.equalToSuperview().inset(18)
             $0.top.equalTo(sendToWhoLabel.snp.bottom).offset(37)
-            $0.width.equalTo(339)
             $0.height.equalTo(48)
         }
         
@@ -108,9 +111,9 @@ class TransferView: UIView {
         }
         
         segmentedControl.snp.makeConstraints{
-            $0.centerX.equalToSuperview()
+            $0.leading.equalTo(searchTextField.snp.leading)
+            $0.trailing.equalTo(searchTextField.snp.trailing)
             $0.top.equalTo(SearchButton.snp.bottom).offset(11)
-            $0.width.equalTo(339)
             $0.height.equalTo(44)
         }
     }
@@ -122,7 +125,7 @@ class TransferView: UIView {
     
     //화면 터치 시 키보드 내리기
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.self.endEditing(true)
+            self.endEditing(true)
         }
     
 }
