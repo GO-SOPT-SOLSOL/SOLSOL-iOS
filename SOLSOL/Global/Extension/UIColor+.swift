@@ -50,6 +50,33 @@ extension UIColor {
     static var white: UIColor {
         return UIColor(hex: "#ffffff")
     }
+    static var adColor: UIColor {
+        return UIColor(hex: "FAEFE2")
+    }
+    static var shinhanPlusTextColor: UIColor {
+        return UIColor(hex: "4192D3")
+    }
+    static var shinhanPlusBackgroundColor: UIColor {
+        return UIColor(hex: "EFF9FE")
+    }
+    static var cardTextColor: UIColor {
+        return UIColor(hex: "3E8CBA")
+    }
+    static var cardBackGroundColor: UIColor {
+        return UIColor(hex: "F1FBFE")
+    }
+    static var stockTextColor: UIColor {
+        return UIColor(hex: "3A60E5")
+    }
+    static var stockBackGroundColor: UIColor {
+        return UIColor(hex: "EFF5FD")
+    }
+    static var insuranceTextColor: UIColor {
+        return UIColor(hex: "5443C2")
+    }
+    static var insuranceBackGroundColor: UIColor {
+        return UIColor(hex: "F4F2FB")
+    }
 }
 
 extension UIColor {
