@@ -33,6 +33,8 @@
 		2AF091EC2A11507800F611C4 /* OneShinhan-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF091E92A11507800F611C4 /* OneShinhan-Medium.otf */; };
 		2AF091EE2A1150F000F611C4 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF091ED2A1150F000F611C4 /* UIFont+.swift */; };
 		2AF091F02A1151A300F611C4 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF091EF2A1151A300F611C4 /* UIColor+.swift */; };
+		F4D6890C2A12ACA70082A9F3 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6890B2A12ACA70082A9F3 /* UIView+.swift */; };
+		F4D6890E2A12B0C90082A9F3 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		2AF091E92A11507800F611C4 /* OneShinhan-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OneShinhan-Medium.otf"; sourceTree = "<group>"; };
 		2AF091ED2A1150F000F611C4 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		2AF091EF2A1151A300F611C4 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		F4D6890B2A12ACA70082A9F3 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,8 @@
 			children = (
 				2AF091ED2A1150F000F611C4 /* UIFont+.swift */,
 				2AF091EF2A1151A300F611C4 /* UIColor+.swift */,
+				F4D6890B2A12ACA70082A9F3 /* UIView+.swift */,
+				F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -464,11 +470,13 @@
 				2AC4088E2A113195009F0D56 /* TransferViewController.swift in Sources */,
 				2AC4087D2A112E56009F0D56 /* ImageLiterals.swift in Sources */,
 				2A204AE72A115C0B00805E0A /* TransferDetailView.swift in Sources */,
+				F4D6890C2A12ACA70082A9F3 /* UIView+.swift in Sources */,
 				2A204AE12A115BD400805E0A /* TableViewCell.swift in Sources */,
 				2AC4087F2A112E60009F0D56 /* String.swift in Sources */,
 				2AC408402A0F6686009F0D56 /* AppDelegate.swift in Sources */,
 				2AC408422A0F6686009F0D56 /* SceneDelegate.swift in Sources */,
 				2AF091F02A1151A300F611C4 /* UIColor+.swift in Sources */,
+				F4D6890E2A12B0C90082A9F3 /* UITextField+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
