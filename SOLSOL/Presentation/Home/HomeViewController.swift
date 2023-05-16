@@ -13,6 +13,7 @@ import Then
 final class HomeViewController: UIViewController {
     
     private let HomeTableView = UITableView()
+    private lazy var navigationBar = SOLNavigationBar(self, leftItem: .home)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ final class HomeViewController: UIViewController {
     }
     
     func setStyle() {
-        
+        view.backgroundColor = .white
         HomeTableView.do {
             $0.delegate = self
             $0.dataSource = self
@@ -42,11 +43,17 @@ final class HomeViewController: UIViewController {
     }
     
     func setLayout() {
-        view.addSubview(HomeTableView)
+        view.addSubviews(navigationBar, HomeTableView)
+        
+        navigationBar.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(44)
+        }
         
         HomeTableView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaInsets)
-            $0.bottom.equalTo(view.safeAreaInsets)
+            $0.top.equalTo(navigationBar.snp.bottom)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
         }
     }
