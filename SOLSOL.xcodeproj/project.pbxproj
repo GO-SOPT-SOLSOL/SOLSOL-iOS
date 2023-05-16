@@ -44,6 +44,15 @@
 		2AF091EC2A11507800F611C4 /* OneShinhan-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF091E92A11507800F611C4 /* OneShinhan-Medium.otf */; };
 		2AF091EE2A1150F000F611C4 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF091ED2A1150F000F611C4 /* UIFont+.swift */; };
 		2AF091F02A1151A300F611C4 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF091EF2A1151A300F611C4 /* UIColor+.swift */; };
+		B51382EC2A13CFA100167728 /* UITabBarController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51382EB2A13CFA100167728 /* UITabBarController+.swift */; };
+		B54F21442A135316000D350C /* SOLNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21432A135316000D350C /* SOLNavigationBar.swift */; };
+		B54F21462A135AE9000D350C /* SOLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21452A135AE9000D350C /* SOLButton.swift */; };
+		B54F21492A1364F0000D350C /* SOLTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21482A1364F0000D350C /* SOLTabBarController.swift */; };
+		B54F214B2A13BF20000D350C /* SOLTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F214A2A13BF20000D350C /* SOLTabBarItem.swift */; };
+		B54F214E2A13BF96000D350C /* MoneyVerseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F214D2A13BF96000D350C /* MoneyVerseViewController.swift */; };
+		B54F21502A13BF9D000D350C /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F214F2A13BF9D000D350C /* ProductViewController.swift */; };
+		B54F21522A13BFA4000D350C /* BenefitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21512A13BFA4000D350C /* BenefitViewController.swift */; };
+		B54F21542A13BFAA000D350C /* AllMenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21532A13BFAA000D350C /* AllMenusViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +111,15 @@
 		2AF091E92A11507800F611C4 /* OneShinhan-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OneShinhan-Medium.otf"; sourceTree = "<group>"; };
 		2AF091ED2A1150F000F611C4 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		2AF091EF2A1151A300F611C4 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		B51382EB2A13CFA100167728 /* UITabBarController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+.swift"; sourceTree = "<group>"; };
+		B54F21432A135316000D350C /* SOLNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLNavigationBar.swift; sourceTree = "<group>"; };
+		B54F21452A135AE9000D350C /* SOLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLButton.swift; sourceTree = "<group>"; };
+		B54F21482A1364F0000D350C /* SOLTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLTabBarController.swift; sourceTree = "<group>"; };
+		B54F214A2A13BF20000D350C /* SOLTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLTabBarItem.swift; sourceTree = "<group>"; };
+		B54F214D2A13BF96000D350C /* MoneyVerseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyVerseViewController.swift; sourceTree = "<group>"; };
+		B54F214F2A13BF9D000D350C /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		B54F21512A13BFA4000D350C /* BenefitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitViewController.swift; sourceTree = "<group>"; };
+		B54F21532A13BFAA000D350C /* AllMenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMenusViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +209,7 @@
 		2AC408792A112DE9009F0D56 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				B54F21422A135301000D350C /* UIComponents */,
 				2AC4087A2A112E03009F0D56 /* Extension */,
 				2AC4087B2A112E17009F0D56 /* Literals */,
 				2AC408822A112EB5009F0D56 /* Protocols */,
@@ -207,6 +226,9 @@
 				2A4761012A13EC1B005BAA9F /* UIView+.swift */,
 				2AF091EF2A1151A300F611C4 /* UIColor+.swift */,
 				2AF091ED2A1150F000F611C4 /* UIFont+.swift */,
+				2AF091EF2A1151A300F611C4 /* UIColor+.swift */,
+				B51382EB2A13CFA100167728 /* UITabBarController+.swift */,
+				2A204AEC2A11F12F00805E0A /* UIView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -249,6 +271,7 @@
 		2AC408892A113006009F0D56 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				B54F21472A1364D8000D350C /* TabBar */,
 				2AC4088A2A113054009F0D56 /* Home */,
 				2AC4088C2A113158009F0D56 /* Transfer */,
 				2AC4088F2A1131AE009F0D56 /* TransferDetail */,
@@ -342,6 +365,36 @@
 				2AF091E82A11507800F611C4 /* OneShinhan-Light.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		B54F21422A135301000D350C /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				B54F21432A135316000D350C /* SOLNavigationBar.swift */,
+				B54F21452A135AE9000D350C /* SOLButton.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		B54F21472A1364D8000D350C /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				B54F214C2A13BF88000D350C /* TabVCs */,
+				B54F21482A1364F0000D350C /* SOLTabBarController.swift */,
+				B54F214A2A13BF20000D350C /* SOLTabBarItem.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		B54F214C2A13BF88000D350C /* TabVCs */ = {
+			isa = PBXGroup;
+			children = (
+				B54F214D2A13BF96000D350C /* MoneyVerseViewController.swift */,
+				B54F214F2A13BF9D000D350C /* ProductViewController.swift */,
+				B54F21512A13BFA4000D350C /* BenefitViewController.swift */,
+				B54F21532A13BFAA000D350C /* AllMenusViewController.swift */,
+			);
+			path = TabVCs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -496,10 +549,18 @@
 				2A4761082A13F0EE005BAA9F /* Item.swift in Sources */,
 				2A4761042A13EC1B005BAA9F /* NSObject+.swift in Sources */,
 				2AC408912A1131FA009F0D56 /* TransferDetailViewController.swift in Sources */,
+				2A204B0C2A128EE200805E0A /* Item.swift in Sources */,
+				2A204B0E2A13DF4600805E0A /* Section.swift in Sources */,
+				2A204B0A2A12701400805E0A /* TransferCollectionViewCell.swift in Sources */,
+				B54F21462A135AE9000D350C /* SOLButton.swift in Sources */,
+				B51382EC2A13CFA100167728 /* UITabBarController+.swift in Sources */,
+				B54F21542A13BFAA000D350C /* AllMenusViewController.swift in Sources */,
 				2AC408442A0F6686009F0D56 /* HomeViewController.swift in Sources */,
+				B54F21442A135316000D350C /* SOLNavigationBar.swift in Sources */,
 				2A204ADF2A115BC500805E0A /* HomeView.swift in Sources */,
 				2A4761032A13EC1B005BAA9F /* UIView+.swift in Sources */,
 				2A4760FD2A13EBF1005BAA9F /* FooterButtonTableViewCell.swift in Sources */,
+				B54F21522A13BFA4000D350C /* BenefitViewController.swift in Sources */,
 				2AC4088E2A113195009F0D56 /* TransferViewController.swift in Sources */,
 				2AC4087D2A112E56009F0D56 /* ImageLiterals.swift in Sources */,
 				2A4760FB2A13EBF1005BAA9F /* ShinhanPlusTableViewCell.swift in Sources */,
@@ -508,10 +569,15 @@
 				2A4760FE2A13EBF1005BAA9F /* TransferTableViewCell.swift in Sources */,
 				2A4760FF2A13EBF1005BAA9F /* CategoryTableViewCell.swift in Sources */,
 				2AC4087F2A112E60009F0D56 /* String.swift in Sources */,
+				B54F214B2A13BF20000D350C /* SOLTabBarItem.swift in Sources */,
+				B54F214E2A13BF96000D350C /* MoneyVerseViewController.swift in Sources */,
+				B54F21492A1364F0000D350C /* SOLTabBarController.swift in Sources */,
 				2AC408402A0F6686009F0D56 /* AppDelegate.swift in Sources */,
 				2AC408422A0F6686009F0D56 /* SceneDelegate.swift in Sources */,
 				2A4761072A13F0EE005BAA9F /* Section.swift in Sources */,
 				2A4761002A13EBF1005BAA9F /* MyAccountTableViewCell.swift in Sources */,
+				2A204AEF2A11F59100805E0A /* AdvertisementTableViewCell.swift in Sources */,
+				B54F21502A13BF9D000D350C /* ProductViewController.swift in Sources */,
 				2AF091F02A1151A300F611C4 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
