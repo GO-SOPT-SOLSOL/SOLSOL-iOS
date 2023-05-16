@@ -38,13 +38,13 @@ final class MyAccountTableViewCell: UITableViewCell {
         myAccountLabel.do {
             $0.text = "내 계좌"
             $0.textColor = .gray600
-            $0.font = .OneShinhanMedium(ofSize: 14)
+            $0.font = .font(.subhead3)
         }
         
         entireLabel.do {
             $0.text = "전체보기"
             $0.textColor = .blue500
-            $0.font = .OneShinhanMedium(ofSize: 13)
+            $0.font = .font(.subhead2)
         }
         
         entireButton.do {

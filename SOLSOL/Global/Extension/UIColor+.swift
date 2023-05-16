@@ -53,28 +53,22 @@ extension UIColor {
     static var adColor: UIColor {
         return UIColor(hex: "FAEFE2")
     }
-    static var shinhanPlusTextColor: UIColor {
+    static var lightBlue500: UIColor {
         return UIColor(hex: "4192D3")
     }
-    static var shinhanPlusBackgroundColor: UIColor {
+    static var lightBlue100: UIColor {
         return UIColor(hex: "EFF9FE")
     }
-    static var cardTextColor: UIColor {
-        return UIColor(hex: "3E8CBA")
-    }
-    static var cardBackGroundColor: UIColor {
-        return UIColor(hex: "F1FBFE")
-    }
-    static var stockTextColor: UIColor {
+    static var indigo500: UIColor {
         return UIColor(hex: "3A60E5")
     }
-    static var stockBackGroundColor: UIColor {
+    static var indigo100: UIColor {
         return UIColor(hex: "EFF5FD")
     }
-    static var insuranceTextColor: UIColor {
+    static var violet500: UIColor {
         return UIColor(hex: "5443C2")
     }
-    static var insuranceBackGroundColor: UIColor {
+    static var violet100: UIColor {
         return UIColor(hex: "F4F2FB")
     }
 }
