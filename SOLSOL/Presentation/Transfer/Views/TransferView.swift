@@ -18,6 +18,8 @@ class TransferView: UIView {
     private let searchTextField = UITextField()
     private let SearchButton = UIButton()
     
+    private let segmentedControl = UISegmentedControl(items: ["맞춤", "친구/그룹", "연락처"])
+    
     //MARK: - View Life Cycle
     
     override init(frame: CGRect) {
@@ -60,11 +62,26 @@ class TransferView: UIView {
             $0.setImage(UIImage(named: "icSearchDefault"), for: .normal)
         }
         
+        segmentedControl.do{
+            //선택안된 segment버튼 폰트
+            $0.setTitleTextAttributes([
+                NSAttributedString.Key.foregroundColor: UIColor.gray400,
+                NSAttributedString.Key.font: UIFont.font(.body5)
+            ], for: .normal)
+            
+            //선택된 segment버튼 폰트
+            $0.setTitleTextAttributes([
+                NSAttributedString.Key.foregroundColor: UIColor.gray600,
+                NSAttributedString.Key.font: UIFont.font(.subhead2)
+            ], for: .selected)
+            
+        }
+        
     }
     
     func hierarchy(){
         
-        self.addSubviews(sendToWhoLabel, searchTextField)
+        self.addSubviews(sendToWhoLabel, searchTextField, segmentedControl)
         
         searchTextField.addSubview(SearchButton)
         
@@ -89,20 +106,29 @@ class TransferView: UIView {
             $0.top.equalToSuperview().inset(6)
             $0.leading.equalToSuperview().inset(295)
         }
+        
+        segmentedControl.snp.makeConstraints{
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(SearchButton.snp.bottom).offset(11)
+            $0.width.equalTo(339)
+            $0.height.equalTo(44)
+        }
     }
     
     func setDelegate(){
         
         searchTextField.delegate = self
     }
-
-}
     
-extension TransferView: UITextFieldDelegate{
+}
 
+//MARK: - Extensions
+
+extension TransferView: UITextFieldDelegate{
+    
     // 입력 시 textField 테두리 색 변경
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.blue500.cgColor
     }
-
+    
 }
