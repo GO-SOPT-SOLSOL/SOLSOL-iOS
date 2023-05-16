@@ -12,19 +12,6 @@
 		2A204AE32A115BEA00805E0A /* TransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AE22A115BEA00805E0A /* TransferView.swift */; };
 		2A204AE52A115BF700805E0A /* aaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AE42A115BF700805E0A /* aaTableViewCell.swift */; };
 		2A204AE72A115C0B00805E0A /* TransferDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AE62A115C0B00805E0A /* TransferDetailView.swift */; };
-		2A204AE92A115C6500805E0A /* bbTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AE82A115C6500805E0A /* bbTableViewCell.swift */; };
-		2A204AEB2A11F0A700805E0A /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AEA2A11F0A700805E0A /* NSObject+.swift */; };
-		2A204AED2A11F12F00805E0A /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AEC2A11F12F00805E0A /* UIView+.swift */; };
-		2A204AEF2A11F59100805E0A /* AdvertisementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AEE2A11F59100805E0A /* AdvertisementTableViewCell.swift */; };
-		2A204AF12A11F61C00805E0A /* MyAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AF02A11F61C00805E0A /* MyAccountTableViewCell.swift */; };
-		2A204AF32A11F6AA00805E0A /* TransferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AF22A11F6AA00805E0A /* TransferTableViewCell.swift */; };
-		2A204AF52A11F6EE00805E0A /* ShinhanPlusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AF42A11F6EE00805E0A /* ShinhanPlusTableViewCell.swift */; };
-		2A204AF72A11F71A00805E0A /* DeliveryPackagingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AF62A11F71A00805E0A /* DeliveryPackagingTableViewCell.swift */; };
-		2A204AF92A11F75100805E0A /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AF82A11F75100805E0A /* CategoryTableViewCell.swift */; };
-		2A204AFB2A11F76900805E0A /* FooterButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AFA2A11F76900805E0A /* FooterButtonTableViewCell.swift */; };
-		2A204B0A2A12701400805E0A /* TransferCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204B092A12701400805E0A /* TransferCollectionViewCell.swift */; };
-		2A204B0C2A128EE200805E0A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204B0B2A128EE200805E0A /* Item.swift */; };
-		2A204B0E2A13DF4600805E0A /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204B0D2A13DF4600805E0A /* Section.swift */; };
 		2AC408402A0F6686009F0D56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4083F2A0F6686009F0D56 /* AppDelegate.swift */; };
 		2AC408422A0F6686009F0D56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408412A0F6686009F0D56 /* SceneDelegate.swift */; };
 		2AC408442A0F6686009F0D56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408432A0F6686009F0D56 /* HomeViewController.swift */; };
@@ -70,19 +57,6 @@
 		2A204AE22A115BEA00805E0A /* TransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferView.swift; sourceTree = "<group>"; };
 		2A204AE42A115BF700805E0A /* aaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aaTableViewCell.swift; sourceTree = "<group>"; };
 		2A204AE62A115C0B00805E0A /* TransferDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailView.swift; sourceTree = "<group>"; };
-		2A204AE82A115C6500805E0A /* bbTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = bbTableViewCell.swift; path = SOLSOL/Presentation/TransferDetail/bbTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		2A204AEA2A11F0A700805E0A /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
-		2A204AEC2A11F12F00805E0A /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
-		2A204AEE2A11F59100805E0A /* AdvertisementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementTableViewCell.swift; sourceTree = "<group>"; };
-		2A204AF02A11F61C00805E0A /* MyAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountTableViewCell.swift; sourceTree = "<group>"; };
-		2A204AF22A11F6AA00805E0A /* TransferTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferTableViewCell.swift; sourceTree = "<group>"; };
-		2A204AF42A11F6EE00805E0A /* ShinhanPlusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShinhanPlusTableViewCell.swift; sourceTree = "<group>"; };
-		2A204AF62A11F71A00805E0A /* DeliveryPackagingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryPackagingTableViewCell.swift; sourceTree = "<group>"; };
-		2A204AF82A11F75100805E0A /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
-		2A204AFA2A11F76900805E0A /* FooterButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterButtonTableViewCell.swift; sourceTree = "<group>"; };
-		2A204B092A12701400805E0A /* TransferCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferCollectionViewCell.swift; sourceTree = "<group>"; };
-		2A204B0B2A128EE200805E0A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		2A204B0D2A13DF4600805E0A /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		2AC4083C2A0F6686009F0D56 /* SOLSOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOLSOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC4083F2A0F6686009F0D56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AC408412A0F6686009F0D56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -284,7 +258,6 @@
 			isa = PBXGroup;
 			children = (
 				2AC408972A113288009F0D56 /* Views */,
-				2AC408942A11323A009F0D56 /* Cells */,
 				2AC408902A1131FA009F0D56 /* TransferDetailViewController.swift */,
 			);
 			path = TransferDetail;
@@ -309,14 +282,6 @@
 			isa = PBXGroup;
 			children = (
 				2A204AE42A115BF700805E0A /* aaTableViewCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		2AC408942A11323A009F0D56 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				2A204AE82A115C6500805E0A /* bbTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -510,9 +475,6 @@
 				2A204B0A2A12701400805E0A /* TransferCollectionViewCell.swift in Sources */,
 				2AC408442A0F6686009F0D56 /* HomeViewController.swift in Sources */,
 				2A204ADF2A115BC500805E0A /* HomeView.swift in Sources */,
-				2A204AE92A115C6500805E0A /* bbTableViewCell.swift in Sources */,
-				2A204AF12A11F61C00805E0A /* MyAccountTableViewCell.swift in Sources */,
-				2A204AF72A11F71A00805E0A /* DeliveryPackagingTableViewCell.swift in Sources */,
 				2AC4088E2A113195009F0D56 /* TransferViewController.swift in Sources */,
 				2AC4087D2A112E56009F0D56 /* ImageLiterals.swift in Sources */,
 				2A204AED2A11F12F00805E0A /* UIView+.swift in Sources */,
