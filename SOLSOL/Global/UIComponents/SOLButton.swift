@@ -13,6 +13,8 @@ final class SOLFilledButton: UIButton {
     enum ImagePlacementType {
         case leading
         case trailing
+        case top
+        case bottom
     }
 
     private let color: UIColor
@@ -65,8 +67,12 @@ extension SOLFilledButton {
         config.image = image
         if imagePlacement == .leading {
             config.imagePlacement = .leading
-        } else {
+        } else if imagePlacement == .trailing {
             config.imagePlacement = .trailing
+        } else if imagePlacement == .top {
+            config.imagePlacement = .top
+        } else {
+            config.imagePlacement = .bottom
         }
         config.imagePadding = 7
         self.configuration = config
