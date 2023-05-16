@@ -7,23 +7,57 @@
 
 import UIKit
 
-class SOLTabBarController: UITabBarController {
+final class SOLTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setStyle()
+        setTabBarControllers()
+        
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension SOLTabBarController {
+    private func setStyle() {
+        tabBar.backgroundColor = .white
+        tabBar.isTranslucent = false
+        tabBar.tintColor = .blue600
+        setUpTabBar()
     }
-    */
+
+    private func setTabBarControllers() {
+        var navigations: [UINavigationController] = []
+        SOLTabBarItem.allCases.forEach {
+            let navigation = makeNavigationController(
+                selectedImage: $0.selectedImage,
+                unselectedImage: $0.unselectedImage,
+                rootViewController: $0.viewController
+            )
+            navigation.tabBarItem.title = $0.name
+            navigations.append(navigation)
+        }
+
+        setViewControllers(navigations, animated: false)
+    }
+
+    private func makeNavigationController(selectedImage: UIImage, unselectedImage: UIImage, rootViewController: UIViewController) -> UINavigationController {
+
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        navigationController.navigationBar.isHidden = true
+
+        let tabBarItem = UITabBarItem(
+            title: nil,
+            image: unselectedImage,
+            selectedImage: selectedImage
+        )
+
+        navigationController.tabBarItem = tabBarItem
+
+
+
+        return navigationController
+    }
+
 
 }
