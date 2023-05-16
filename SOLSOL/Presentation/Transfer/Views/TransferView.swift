@@ -120,6 +120,11 @@ class TransferView: UIView {
         searchTextField.delegate = self
     }
     
+    //화면 터치 시 키보드 내리기
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.self.endEditing(true)
+        }
+    
 }
 
 //MARK: - Extensions
@@ -127,8 +132,13 @@ class TransferView: UIView {
 extension TransferView: UITextFieldDelegate{
     
     // 입력 시 textField 테두리 색 변경
-    public func textFieldDidBeginEditing(_ textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.blue500.cgColor
+    }
+    
+    //입력 끝났을 때, textField 테두리 색 원래대로 돌아오기
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.gray150.cgColor
     }
     
 }
