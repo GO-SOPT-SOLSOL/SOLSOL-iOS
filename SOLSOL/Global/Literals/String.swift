@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum NavigationBar {
+    enum leftItemTitle {
+        static let home = "홈"
+    }
+}
