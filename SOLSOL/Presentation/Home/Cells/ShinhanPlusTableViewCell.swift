@@ -18,22 +18,33 @@ final class ShinhanPlusTableViewCell: UITableViewCell {
                                                  textColor: .lightBlue500,
                                                  image: ImageLiterals.Home.icShinhanPlus,
                                                  imagePlacement: .leading,
+                                                 imagePadding: 7,
                                                  font: .font(.subhead2),
                                                  cornerRadius: 14)
 
     private let cardButton = SOLFilledButton(backgroundColor: .lightBlue100,
                                              text: "카드",
                                              textColor: .lightBlue500,
+                                             image: nil,
+                                             imagePlacement: nil,
+                                             imagePadding: nil,
                                              font: .font(.subhead2),
                                              cornerRadius: 14)
+    
     private let stockButton = SOLFilledButton(backgroundColor: .indigo100,
                                               text: "증권",
                                               textColor: .indigo500,
+                                              image: nil,
+                                              imagePlacement: nil,
+                                              imagePadding: nil,
                                               font: .font(.subhead2),
                                               cornerRadius: 14)
     private let insuranceButton = SOLFilledButton(backgroundColor: .violet100,
                                                   text: "보험",
                                                   textColor: .violet500,
+                                                  image: nil,
+                                                  imagePlacement: nil,
+                                                  imagePadding: nil,
                                                   font: .font(.subhead2),
                                                   cornerRadius: 14)
 

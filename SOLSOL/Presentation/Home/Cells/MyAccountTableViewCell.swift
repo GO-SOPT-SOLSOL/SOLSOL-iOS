@@ -19,6 +19,7 @@ final class MyAccountTableViewCell: UITableViewCell {
                                                         textColor: .blue500,
                                                         image: ImageLiterals.Home.icArrowRightBlue,
                                                         imagePlacement: .trailing,
+                                                        imagePadding: 7,
                                                         font: .font(.subhead2),
                                                         cornerRadius: 0)
     
