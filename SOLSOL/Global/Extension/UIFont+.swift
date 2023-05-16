@@ -8,19 +8,15 @@
 import UIKit
 
 enum FontName: String {
-    case display5
-    case display5Long
+    case display5, display5Long
     case display4
     case display6
     case headline
-    case subhead4
-    case subhead3
-    case subhead2
     case subhead2Long
-    case subhead1
-    case caption2
-    case caption1
+    case subhead1, subhead2, subhead3, subhead4
+    case caption1, caption2
     case display6Light
+    case body1, body2, body3, body4, body5, body6
 
     var rawValue: String {
         switch self {
@@ -28,9 +24,10 @@ enum FontName: String {
         case .display5Long, .display4, .display6,
                 .headline, .subhead1, .subhead2,
                 .subhead3, .subhead4, .subhead2Long,
-                .caption1, .caption2:
+                .caption1, .caption2, .body3, .body5:
             return "OneShinhan-Medium"
-        case .display6Light: return "OneShinhan-Light"
+        case .display6Light, .body1, .body2, .body4, .body6:
+            return "OneShinhan-Light"
         }
     }
 
@@ -41,10 +38,12 @@ enum FontName: String {
         case .display6, .display6Light: return 20
         case .headline: return 18
         case .subhead4: return 16
-        case .subhead3: return 14
-        case .subhead2, .subhead2Long, .caption2: return 13
-        case .subhead1: return 12
+        case .subhead3, .body6: return 14
+        case .subhead2, .subhead2Long, .caption2, .body5: return 13
+        case .subhead1, .body4: return 12
         case .caption1: return 9
+        case .body1: return 10
+        case .body2, .body3: return 11
         }
     }
 }
