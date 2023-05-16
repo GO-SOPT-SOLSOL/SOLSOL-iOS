@@ -9,25 +9,21 @@ import UIKit
 
 final class SOLFilledButton: UIButton {
 
-    @frozen
-    enum ImagePlacementType {
-        case leading
-        case trailing
-    }
-
     private let color: UIColor
     private let text: String
     private let textColor: UIColor
     private let image: UIImage?
-    private let imagePlacement: ImagePlacementType?
+    private let imagePlacement: NSDirectionalRectEdge?
     private let font: UIFont
+    private let imagePadding: CGFloat?
 
-    /// 이미지가 있다면 어디에 위치시킬지 같이 넘겨줍니다.
+    /// 이미지가 있다면 어디에 위치시킬지 padding과 같이 넘겨줍니다.
     init(backgroundColor: UIColor,
          text: String,
          textColor: UIColor,
-         image: UIImage? = nil,
-         imagePlacement: ImagePlacementType? = .none,
+         image: UIImage?,
+         imagePlacement: NSDirectionalRectEdge?,
+         imagePadding: CGFloat?,
          font: UIFont,
          cornerRadius: CGFloat
     ) {
@@ -37,6 +33,7 @@ final class SOLFilledButton: UIButton {
         self.font = font
         self.textColor = textColor
         self.imagePlacement = imagePlacement
+        self.imagePadding = imagePadding
         super.init(frame: .zero)
         self.layer.cornerRadius = cornerRadius
         self.clipsToBounds = true
@@ -58,17 +55,17 @@ extension SOLFilledButton {
         config.baseBackgroundColor = color
         config.baseForegroundColor = textColor
 
-        guard let image = self.image else {
+        guard let image = self.image,
+              let imagePlacement,
+              let imagePadding
+        else {
             self.configuration = config
             return
         }
         config.image = image
-        if imagePlacement == .leading {
-            config.imagePlacement = .leading
-        } else {
-            config.imagePlacement = .trailing
-        }
-        config.imagePadding = 7
+        config.imagePlacement = imagePlacement
+        config.imagePadding = imagePadding
+
         self.configuration = config
     }
 
