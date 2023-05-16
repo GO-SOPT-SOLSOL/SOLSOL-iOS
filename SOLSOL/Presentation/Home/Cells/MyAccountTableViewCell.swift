@@ -12,7 +12,7 @@ import Then
 
 final class MyAccountTableViewCell: UITableViewCell {
     
-    private let myAccountBackGround = UILabel()
+    private let myAccountBackGround = UIView()
     private let myAccountLabel = UILabel()
     private let entireLabel = UILabel()
     private let entireButton = UIButton()

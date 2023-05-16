@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class EightItemsTableViewCell: UITableViewCell {
+final class CategoryTableViewCell: UITableViewCell {
     
     private let itemHighStackView = UIStackView()
     private let itemLowStackView = UIStackView()
@@ -18,15 +18,14 @@ final class EightItemsTableViewCell: UITableViewCell {
     
     private lazy var items: [UIButton] = []
     
-    private let itemOne = UIButton()
-    private let itemTwo = UIButton()
-    private let itemThree = UIButton()
-    private let itemFour = UIButton()
-    private let itemFive = UIButton()
-    private let itemSix = UIButton()
-    private let itemSeven = UIButton()
-    private let itemEight = UIButton()
-
+    private let itemCup = UIButton()
+    private let itemTips = UIButton()
+    private let itemBank = UIButton()
+    private let itemWallet = UIButton()
+    private let itemBaseBall = UIButton()
+    private let itemCard = UIButton()
+    private let itemStock = UIButton()
+    private let itemCertification = UIButton()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -42,14 +41,14 @@ final class EightItemsTableViewCell: UITableViewCell {
     
     func setStyle() {
         items = [
-        itemOne,
-        itemTwo,
-        itemThree,
-        itemFour,
-        itemFive,
-        itemSix,
-        itemSeven,
-        itemEight]
+        itemCup,
+        itemTips,
+        itemBank,
+        itemWallet,
+        itemBaseBall,
+        itemCard,
+        itemStock,
+        itemCertification]
         
         for item in items {
             item.do {
@@ -90,10 +89,10 @@ final class EightItemsTableViewCell: UITableViewCell {
         [itemHighStackView, itemLowStackView]
             .forEach { itemAllStackView.addArrangedSubview($0) }
         
-        [itemOne, itemTwo, itemThree, itemFour]
+        [itemCup, itemTips, itemBank, itemWallet]
             .forEach { itemHighStackView.addArrangedSubview($0) }
         
-        [itemFive, itemSix, itemSeven, itemEight]
+        [itemBaseBall, itemCard, itemStock, itemCertification]
             .forEach { itemLowStackView.addArrangedSubview($0) }
         
         for item in items {

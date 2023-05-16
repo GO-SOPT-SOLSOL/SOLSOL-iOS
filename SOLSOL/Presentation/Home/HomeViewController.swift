@@ -61,7 +61,7 @@ final class HomeViewController: UIViewController {
         HomeTableView.register(TransferTableViewCell.self, forCellReuseIdentifier:  TransferTableViewCell.className)
         HomeTableView.register(ShinhanPlusTableViewCell.self, forCellReuseIdentifier:  ShinhanPlusTableViewCell.className)
         HomeTableView.register(DeliveryPackagingTableViewCell.self, forCellReuseIdentifier:  DeliveryPackagingTableViewCell.className)
-        HomeTableView.register(EightItemsTableViewCell.self, forCellReuseIdentifier:  EightItemsTableViewCell.className)
+        HomeTableView.register(CategoryTableViewCell.self, forCellReuseIdentifier:  CategoryTableViewCell.className)
         HomeTableView.register(FooterButtonTableViewCell.self, forCellReuseIdentifier:  FooterButtonTableViewCell.className)
     }
 }
@@ -75,7 +75,7 @@ extension HomeViewController: UITableViewDelegate {}
 extension HomeViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 7
+        return Section.allCases.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,30 +83,32 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: AdvertisementTableViewCell.className, for: indexPath) as? AdvertisementTableViewCell else { return UITableViewCell() }
-            return cell
-        case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: MyAccountTableViewCell.className, for: indexPath) as? MyAccountTableViewCell else { return UITableViewCell() }
-            return cell
-        case 2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier:             TransferTableViewCell.className, for: indexPath) as?             TransferTableViewCell else { return UITableViewCell() }
-            return cell
-        case 3:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier:             ShinhanPlusTableViewCell.className, for: indexPath) as?             ShinhanPlusTableViewCell else { return UITableViewCell() }
-            return cell
-        case 4:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier:             DeliveryPackagingTableViewCell.className, for: indexPath) as?             DeliveryPackagingTableViewCell else { return UITableViewCell() }
-            return cell
-        case 5:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier:             EightItemsTableViewCell.className, for: indexPath) as?             EightItemsTableViewCell else { return UITableViewCell() }
-            return cell
-        case 6:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier:             FooterButtonTableViewCell.className, for: indexPath) as?             FooterButtonTableViewCell else { return UITableViewCell() }
-            return cell
-        default:
+        guard let sectionType = Section(rawValue: indexPath.section) else {
+            print("Wrong Section !")
             return UITableViewCell()
+        }
+        switch sectionType {
+        case .advertisement:
+            let cell = tableView.dequeueReusableCell(withIdentifier: AdvertisementTableViewCell.className, for: indexPath)
+            return cell
+        case .myAccount:
+            let cell = tableView.dequeueReusableCell(withIdentifier: MyAccountTableViewCell.className, for: indexPath)
+            return cell
+        case .transfer:
+            let cell = tableView.dequeueReusableCell(withIdentifier:             TransferTableViewCell.className, for: indexPath)
+            return cell
+        case .shinhanPlus:
+            let cell = tableView.dequeueReusableCell(withIdentifier:             ShinhanPlusTableViewCell.className, for: indexPath)
+            return cell
+        case .deliveryPackaging:
+            let cell = tableView.dequeueReusableCell(withIdentifier:             DeliveryPackagingTableViewCell.className, for: indexPath)
+            return cell
+        case .category:
+            let cell = tableView.dequeueReusableCell(withIdentifier:             CategoryTableViewCell.className, for: indexPath)
+            return cell
+        case.footerButton:
+            let cell = tableView.dequeueReusableCell(withIdentifier:             FooterButtonTableViewCell.className, for: indexPath)
+            return cell
         }
     }
     
@@ -115,7 +117,7 @@ extension HomeViewController: UITableViewDataSource {
         case 0:
             return 64
         case 1:
-            return 58
+            return 63
         case 2:
             return 290
         case 3:

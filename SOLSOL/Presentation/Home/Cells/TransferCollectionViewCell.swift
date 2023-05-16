@@ -12,7 +12,7 @@ import Then
 
 final class TransferCollectionViewCell: UICollectionViewCell {
     
-    private let transferBackGround = UILabel()
+    private let transferBackGround = UIView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)

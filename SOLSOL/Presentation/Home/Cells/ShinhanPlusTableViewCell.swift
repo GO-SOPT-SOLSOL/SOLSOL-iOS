@@ -12,7 +12,7 @@ import Then
 
 final class ShinhanPlusTableViewCell: UITableViewCell {
 
-    private let backGround = UILabel()
+    private let backGround = UIView()
     private let shinPlusButton = UIButton()
     private let cardButton = UIButton()
     private let stockButton = UIButton()

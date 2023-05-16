@@ -18,4 +18,3 @@ enum Item {
     static let certification = "공동인증서"
 }
 
-

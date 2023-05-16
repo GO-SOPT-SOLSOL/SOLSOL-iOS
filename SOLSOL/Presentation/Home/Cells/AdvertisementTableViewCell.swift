@@ -9,7 +9,7 @@ import UIKit
 
 final class AdvertisementTableViewCell: UITableViewCell {
     
-    private let adAllLabel = UILabel()
+    private let adAllView = UIView()
     private let adImage = UIImageView()
     private let adTitleLabel = UILabel()
     private let adContentLabel = UILabel()
@@ -29,7 +29,7 @@ final class AdvertisementTableViewCell: UITableViewCell {
     
     func setStyle() {
         
-        adAllLabel.do {
+        adAllView.do {
             $0.backgroundColor = .adColor
             $0.makeCornerRound(radius: 13)
         }
@@ -61,13 +61,13 @@ final class AdvertisementTableViewCell: UITableViewCell {
     }
     
     func setLayout() {
-        contentView.addSubview(adAllLabel)
-        adAllLabel.addSubviews(adImage,
+        contentView.addSubview(adAllView)
+        adAllView.addSubviews(adImage,
                                adTitleLabel,
                                adContentLabel,
                                arrowRightButton)
         
-        adAllLabel.snp.makeConstraints {
+        adAllView.snp.makeConstraints {
             $0.height.equalTo(58)
             $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview().inset(18)

@@ -12,7 +12,7 @@ import Then
 
 final class DeliveryPackagingTableViewCell: UITableViewCell {
     
-    private let backGround = UILabel()
+    private let backGround = UIView()
     private let deliveryPackagingLabel = UILabel()
     private let orderLabel = UILabel()
     private let pullingImage = UIImageView()
