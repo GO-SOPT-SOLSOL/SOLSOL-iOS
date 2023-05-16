@@ -59,6 +59,7 @@ final class SOLNavigationBar: UIView {
         super.init(frame: .zero)
         setLeftItem()
         setLayout()
+        self.backgroundColor = .white
     }
 
     required init?(coder: NSCoder) {
