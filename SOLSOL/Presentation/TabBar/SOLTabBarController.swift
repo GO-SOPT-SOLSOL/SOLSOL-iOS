@@ -13,7 +13,6 @@ final class SOLTabBarController: UITabBarController {
         super.viewDidLoad()
         setStyle()
         setTabBarControllers()
-        
     }
 
 }
@@ -44,7 +43,6 @@ extension SOLTabBarController {
     private func makeNavigationController(selectedImage: UIImage, unselectedImage: UIImage, rootViewController: UIViewController) -> UINavigationController {
 
         let navigationController = UINavigationController(rootViewController: rootViewController)
-        navigationController.navigationBar.isHidden = true
 
         let tabBarItem = UITabBarItem(
             title: nil,
@@ -53,9 +51,7 @@ extension SOLTabBarController {
         )
 
         navigationController.tabBarItem = tabBarItem
-
-
-
+        navigationController.navigationBar.isHidden = true
         return navigationController
     }
 
