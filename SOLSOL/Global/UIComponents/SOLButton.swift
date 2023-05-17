@@ -55,11 +55,12 @@ extension SOLFilledButton {
             titleAttr.font = self.font
             config.attributedTitle = titleAttr
             config.baseForegroundColor = textColor
+        }
+
+        guard let image = self.image else {
             self.configuration = config
             return
         }
-
-        guard let image = self.image else { return }
 
         config.image = image
         guard let imagePlacement,
