@@ -26,6 +26,9 @@ final class TransferCollectionViewCell: UICollectionViewCell {
     private let transferButton = UIButton()
     private let moneyBoxButton = UIButton()
     
+    private lazy var collectionView = UICollectionView(frame: .zero,
+                                                       collectionViewLayout: flowLayout)
+    private let flowLayout = UICollectionViewFlowLayout()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -108,6 +111,24 @@ final class TransferCollectionViewCell: UICollectionViewCell {
             $0.titleLabel?.textAlignment = .center
             $0.makeCornerRound(radius: 6)
         }
+        
+        collectionView.do {
+            $0.register(TransferCollectionViewCell.self, forCellWithReuseIdentifier: TransferCollectionViewCell.className)
+            $0.showsVerticalScrollIndicator = false
+            $0.showsHorizontalScrollIndicator = false
+            $0.dataSource = self
+            $0.delegate = self
+            $0.backgroundColor = .clear
+        }
+        
+        flowLayout.do {
+            $0.itemSize = CGSize(width: 81, height: 43)
+            $0.sectionInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
+            $0.minimumLineSpacing = 8
+            $0.minimumInteritemSpacing = 0
+            $0.scrollDirection = .horizontal
+            $0.estimatedItemSize = .zero
+        }
     }
     
     func setLayout() {
@@ -123,7 +144,8 @@ final class TransferCollectionViewCell: UICollectionViewCell {
                                        won,
                                        refreshButton,
                                        transferButton,
-                                       moneyBoxButton)
+                                       moneyBoxButton,
+                                       collectionView)
         
         transferBackGround.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -190,6 +212,23 @@ final class TransferCollectionViewCell: UICollectionViewCell {
             $0.trailing.equalToSuperview().inset(117)
             $0.height.equalTo(34)
         }
+        
+        collectionView.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(180)
+            $0.height.equalTo(43)
+        }
+    }
+}
+
+extension TransferCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:TransferCollectionViewCell.className, for: indexPath) as? TransferCollectionViewCell else { return UICollectionViewCell() }
+        return cell
     }
 }
 
