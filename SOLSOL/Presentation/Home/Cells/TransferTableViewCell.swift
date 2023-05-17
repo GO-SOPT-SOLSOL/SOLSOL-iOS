@@ -41,7 +41,7 @@ final class TransferTableViewCell: UITableViewCell {
         }
         
         flowLayout.do {
-            $0.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.91, height: 250)
+            $0.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.91, height: 241)
             $0.sectionInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
             $0.minimumLineSpacing = 8
             $0.minimumInteritemSpacing = 0
@@ -71,7 +71,7 @@ final class TransferTableViewCell: UITableViewCell {
         collectionView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.width.equalToSuperview()
-            $0.height.equalTo(250)
+            $0.height.equalTo(241)
         }
         
         pageControl.snp.makeConstraints {
