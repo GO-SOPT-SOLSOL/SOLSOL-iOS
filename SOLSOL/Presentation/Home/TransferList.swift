@@ -27,7 +27,7 @@ extension TransferList {
                 TransferList(image: ImageLiterals.Home.icSmallBankHanna,
                                      name: "이호준",
                                      money: "1,000,000"),
-                TransferList(image: ImageLiterals.Home.icSmallBankHanna,
+                TransferList(image: ImageLiterals.Home.icSmallBankWoori,
                                      name: "변희주",
                                      money: "50,000")]}
 }

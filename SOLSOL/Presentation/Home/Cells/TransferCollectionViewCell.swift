@@ -216,7 +216,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         }
     
         collectionView.snp.makeConstraints {
-            $0.top.equalTo(transferButton.snp.bottom).offset(20)
+            $0.bottom.equalToSuperview().inset(18)
             $0.height.equalTo(43)
             $0.width.equalToSuperview()
         }
