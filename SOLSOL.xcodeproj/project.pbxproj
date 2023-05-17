@@ -24,6 +24,7 @@
 		2A4761042A13EC1B005BAA9F /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4761022A13EC1B005BAA9F /* NSObject+.swift */; };
 		2A4761072A13F0EE005BAA9F /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4761052A13F0EE005BAA9F /* Section.swift */; };
 		2A4761082A13F0EE005BAA9F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4761062A13F0EE005BAA9F /* Item.swift */; };
+		2A47610A2A1538B5005BAA9F /* TransferListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4761092A1538B5005BAA9F /* TransferListCollectionViewCell.swift */; };
 		2AC408402A0F6686009F0D56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4083F2A0F6686009F0D56 /* AppDelegate.swift */; };
 		2AC408422A0F6686009F0D56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408412A0F6686009F0D56 /* SceneDelegate.swift */; };
 		2AC408442A0F6686009F0D56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408432A0F6686009F0D56 /* HomeViewController.swift */; };
@@ -90,6 +91,7 @@
 		2A4761022A13EC1B005BAA9F /* NSObject+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		2A4761052A13F0EE005BAA9F /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		2A4761062A13F0EE005BAA9F /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		2A4761092A1538B5005BAA9F /* TransferListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferListCollectionViewCell.swift; sourceTree = "<group>"; };
 		2AC4083C2A0F6686009F0D56 /* SOLSOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOLSOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC4083F2A0F6686009F0D56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AC408412A0F6686009F0D56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -224,11 +226,9 @@
 			children = (
 				2A4761022A13EC1B005BAA9F /* NSObject+.swift */,
 				2A4761012A13EC1B005BAA9F /* UIView+.swift */,
-				2AF091EF2A1151A300F611C4 /* UIColor+.swift */,
 				2AF091ED2A1150F000F611C4 /* UIFont+.swift */,
 				2AF091EF2A1151A300F611C4 /* UIColor+.swift */,
 				B51382EB2A13CFA100167728 /* UITabBarController+.swift */,
-				2A204AEC2A11F12F00805E0A /* UIView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -317,6 +317,7 @@
 				2A4760F82A13EBF1005BAA9F /* MyAccountTableViewCell.swift */,
 				2A4760F62A13EBF1005BAA9F /* TransferTableViewCell.swift */,
 				2A4760F22A13EBF1005BAA9F /* TransferCollectionViewCell.swift */,
+				2A4761092A1538B5005BAA9F /* TransferListCollectionViewCell.swift */,
 				2A4760F32A13EBF1005BAA9F /* ShinhanPlusTableViewCell.swift */,
 				2A4760F12A13EBF1005BAA9F /* DeliveryPackagingTableViewCell.swift */,
 				2A4760F72A13EBF1005BAA9F /* CategoryTableViewCell.swift */,
@@ -549,11 +550,9 @@
 				2A4761082A13F0EE005BAA9F /* Item.swift in Sources */,
 				2A4761042A13EC1B005BAA9F /* NSObject+.swift in Sources */,
 				2AC408912A1131FA009F0D56 /* TransferDetailViewController.swift in Sources */,
-				2A204B0C2A128EE200805E0A /* Item.swift in Sources */,
-				2A204B0E2A13DF4600805E0A /* Section.swift in Sources */,
-				2A204B0A2A12701400805E0A /* TransferCollectionViewCell.swift in Sources */,
 				B54F21462A135AE9000D350C /* SOLButton.swift in Sources */,
 				B51382EC2A13CFA100167728 /* UITabBarController+.swift in Sources */,
+				2A47610A2A1538B5005BAA9F /* TransferListCollectionViewCell.swift in Sources */,
 				B54F21542A13BFAA000D350C /* AllMenusViewController.swift in Sources */,
 				2AC408442A0F6686009F0D56 /* HomeViewController.swift in Sources */,
 				B54F21442A135316000D350C /* SOLNavigationBar.swift in Sources */,
@@ -576,7 +575,6 @@
 				2AC408422A0F6686009F0D56 /* SceneDelegate.swift in Sources */,
 				2A4761072A13F0EE005BAA9F /* Section.swift in Sources */,
 				2A4761002A13EBF1005BAA9F /* MyAccountTableViewCell.swift in Sources */,
-				2A204AEF2A11F59100805E0A /* AdvertisementTableViewCell.swift in Sources */,
 				B54F21502A13BF9D000D350C /* ProductViewController.swift in Sources */,
 				2AF091F02A1151A300F611C4 /* UIColor+.swift in Sources */,
 			);
