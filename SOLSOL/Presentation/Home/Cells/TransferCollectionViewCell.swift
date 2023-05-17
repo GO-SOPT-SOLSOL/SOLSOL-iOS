@@ -15,9 +15,9 @@ final class TransferCollectionViewCell: UICollectionViewCell {
     private let dummy = TransferList.dummy()
 
     private let transferBackGround = UIView()
-    private let shinhanImage = UIImageView()
+    private let bankImage = UIImageView()
     private let depositWithdraw = UILabel()
-    private let solBankBook = UILabel()
+    private let bankBook = UILabel()
     private let accountNum = UILabel()
     private let copyButton = UIButton()
     private let moreButton = UIButton()
@@ -50,24 +50,18 @@ final class TransferCollectionViewCell: UICollectionViewCell {
             $0.makeCornerRound(radius: 13)
         }
         
-        shinhanImage.do {
-            $0.image = ImageLiterals.Home.icBigBankShinhan
-        }
-        
         depositWithdraw.do {
             $0.text = "입출금"
             $0.textColor = .gray600
             $0.font = .font(.subhead1)
         }
         
-        solBankBook.do {
-            $0.text = "쏠편한 입출금통장(저축예금)"
+        bankBook.do {
             $0.textColor = .grayWarm400
             $0.font = .font(.subhead1)
         }
         
         accountNum.do {
-            $0.text = "신한 110-345-961307"
             $0.textColor = .grayWarm400
             $0.font = .font(.body1)
         }
@@ -81,7 +75,6 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         }
         
         myMoney.do {
-            $0.text = "3,964,717"
             $0.textColor = .gray600
             $0.font = .font(.display5)
         }
@@ -136,9 +129,9 @@ final class TransferCollectionViewCell: UICollectionViewCell {
     func setLayout() {
         
         contentView.addSubviews(transferBackGround)
-        transferBackGround.addSubviews(shinhanImage,
+        transferBackGround.addSubviews(bankImage,
                                        depositWithdraw,
-                                       solBankBook,
+                                       bankBook,
                                        accountNum,
                                        copyButton,
                                        moreButton,
@@ -153,7 +146,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
             $0.edges.equalToSuperview()
         }
         
-        shinhanImage.snp.makeConstraints {
+        bankImage.snp.makeConstraints {
             $0.top.leading.equalToSuperview().inset(18)
             $0.trailing.equalToSuperview().inset(285)
             $0.size.equalTo(36)
@@ -161,17 +154,17 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         
         depositWithdraw.snp.makeConstraints {
             $0.top.equalToSuperview().inset(18)
-            $0.leading.equalTo(shinhanImage.snp.trailing).offset(7)
+            $0.leading.equalTo(bankImage.snp.trailing).offset(7)
         }
         
-        solBankBook.snp.makeConstraints {
+        bankBook.snp.makeConstraints {
             $0.centerY.equalTo(depositWithdraw.snp.centerY)
-            $0.trailing.equalToSuperview().inset(90)
+            $0.leading.equalTo(depositWithdraw.snp.trailing).offset(4)
         }
         
         accountNum.snp.makeConstraints {
             $0.top.equalToSuperview().inset(38)
-            $0.leading.equalTo(shinhanImage.snp.trailing).offset(7)
+            $0.leading.equalTo(bankImage.snp.trailing).offset(7)
         }
         
         copyButton.snp.makeConstraints {
@@ -221,6 +214,14 @@ final class TransferCollectionViewCell: UICollectionViewCell {
             $0.width.equalToSuperview()
         }
     }
+    
+    func configureCell(_ transfer: Transfer) {
+        bankImage.image = transfer.image
+        bankBook.text = transfer.bankBook
+        accountNum.text = transfer.account
+        myMoney.text = transfer.money
+    }
+    
 }
 
 extension TransferCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -235,5 +236,3 @@ extension TransferCollectionViewCell: UICollectionViewDelegate, UICollectionView
         return cell
     }
 }
-
-

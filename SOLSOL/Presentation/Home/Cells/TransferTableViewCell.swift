@@ -11,6 +11,8 @@ import SnapKit
 import Then
 
 final class TransferTableViewCell: UITableViewCell {
+    
+    private let dummy = Transfer.dummy()
 
     private lazy var collectionView = UICollectionView(frame: .zero,
                                                        collectionViewLayout: flowLayout)
@@ -83,12 +85,13 @@ final class TransferTableViewCell: UITableViewCell {
 
 extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return dummy.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:TransferCollectionViewCell.className, for: indexPath) as? TransferCollectionViewCell else { return UICollectionViewCell() }
+        cell.configureCell(dummy[indexPath.item])
         return cell
     }
     
