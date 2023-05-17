@@ -12,6 +12,8 @@ import Then
 
 final class TransferCollectionViewCell: UICollectionViewCell {
     
+    private let dummy = TransferList.dummy()
+
     private let transferBackGround = UIView()
     private let shinhanImage = UIImageView()
     private let depositWithdraw = UILabel()
@@ -223,12 +225,13 @@ final class TransferCollectionViewCell: UICollectionViewCell {
 
 extension TransferCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return dummy.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:TransferListCollectionViewCell.className, for: indexPath) as? TransferListCollectionViewCell else { return UICollectionViewCell() }
+        cell.configureCell(dummy[indexPath.item])
         return cell
     }
 }
