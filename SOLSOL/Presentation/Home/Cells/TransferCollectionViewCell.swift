@@ -124,7 +124,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         flowLayout.do {
             $0.itemSize = CGSize(width: 81, height: 43)
             $0.sectionInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
-            $0.minimumLineSpacing = 8
+            $0.minimumLineSpacing = 6
             $0.minimumInteritemSpacing = 0
             $0.scrollDirection = .horizontal
             $0.estimatedItemSize = .zero
@@ -212,10 +212,11 @@ final class TransferCollectionViewCell: UICollectionViewCell {
             $0.trailing.equalToSuperview().inset(117)
             $0.height.equalTo(34)
         }
-        
+    
         collectionView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(180)
+            $0.top.equalTo(transferButton.snp.bottom).offset(20)
             $0.height.equalTo(43)
+            $0.width.equalToSuperview()
         }
     }
 }
