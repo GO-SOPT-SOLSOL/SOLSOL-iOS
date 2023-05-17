@@ -14,8 +14,14 @@ final class MyAccountTableViewCell: UITableViewCell {
     
     private let myAccountBackGround = UIView()
     private let myAccountLabel = UILabel()
-    private let entireLabel = UILabel()
-    private let entireButton = UIButton()
+    private let entireButton = SOLFilledButton(backgroundColor: .clear,
+                                                        text: "전체보기",
+                                                        textColor: .blue500,
+                                                        image: ImageLiterals.Home.icArrowRightBlue,
+                                                        imagePlacement: .trailing,
+                                                        imagePadding: 7,
+                                                        font: .font(.subhead2),
+                                                        cornerRadius: 0)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -41,16 +47,6 @@ final class MyAccountTableViewCell: UITableViewCell {
             $0.font = .font(.subhead3)
         }
         
-        entireLabel.do {
-            $0.text = "전체보기"
-            $0.textColor = .blue500
-            $0.font = .font(.subhead2)
-        }
-        
-        entireButton.do {
-            $0.setImage(ImageLiterals.Home.icArrowRightBlue, for: .normal)
-        }
-        
         separatorInset.left = 0
         selectionStyle = .none
         backgroundColor = .gray100
@@ -59,7 +55,6 @@ final class MyAccountTableViewCell: UITableViewCell {
     func setLayout() {
         contentView.addSubview(myAccountBackGround)
         myAccountBackGround.addSubviews(myAccountLabel,
-                                        entireLabel,
                                         entireButton)
         
         myAccountBackGround.snp.makeConstraints {
@@ -73,14 +68,9 @@ final class MyAccountTableViewCell: UITableViewCell {
             $0.leading.equalToSuperview().inset(18)
         }
         
-        entireLabel.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.trailing.equalToSuperview().inset(40)
-        }
-        
         entireButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.trailing.equalToSuperview().inset(18)
+            $0.trailing.equalToSuperview()
         }
     }
 

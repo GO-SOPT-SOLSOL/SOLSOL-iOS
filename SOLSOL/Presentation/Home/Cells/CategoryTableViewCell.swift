@@ -18,14 +18,70 @@ final class CategoryTableViewCell: UITableViewCell {
     
     private lazy var items: [UIButton] = []
     
-    private let itemCup = UIButton()
-    private let itemTips = UIButton()
-    private let itemBank = UIButton()
-    private let itemWallet = UIButton()
-    private let itemBaseBall = UIButton()
-    private let itemCard = UIButton()
-    private let itemStock = UIButton()
-    private let itemCertification = UIButton()
+    private let itemCup = SOLFilledButton(backgroundColor: .white,
+                                          text: Item.cup,
+                                          textColor: .gray600,
+                                          image: ImageLiterals.Home.returnCup,
+                                          imagePlacement: .top,
+                                          imagePadding: 6,
+                                          font: .font(.body3),
+                                          cornerRadius: 13)
+    private let itemTips = SOLFilledButton(backgroundColor: .white,
+                                           text: Item.tips,
+                                           textColor: .gray600,
+                                           image: ImageLiterals.Home.SOLTips,
+                                           imagePlacement: .top,
+                                           imagePadding: 6,
+                                           font: .font(.body3),
+                                           cornerRadius: 13)
+    private let itemBank = SOLFilledButton(backgroundColor: .white,
+                                           text: Item.storyBank,
+                                           textColor: .gray600,
+                                           image: ImageLiterals.Home.storyBank,
+                                           imagePlacement: .top,
+                                           imagePadding: 8,
+                                           font: .font(.body3),
+                                           cornerRadius: 13)
+    private let itemWallet = SOLFilledButton(backgroundColor: .white,
+                                             text: Item.wallet,
+                                             textColor: .gray600,
+                                             image: ImageLiterals.Home.SOLWallet,
+                                             imagePlacement: .top,
+                                             imagePadding: 6,
+                                             font: .font(.body3),
+                                             cornerRadius: 13)
+    private let itemBaseBall = SOLFilledButton(backgroundColor: .white,
+                                               text: Item.baseBall,
+                                               textColor: .gray600,
+                                               image: ImageLiterals.Home.SOLBaseball,
+                                               imagePlacement: .top,
+                                               imagePadding: 6,
+                                               font: .font(.body3),
+                                               cornerRadius: 13)
+    private let itemCard = SOLFilledButton(backgroundColor: .white,
+                                           text: Item.card,
+                                           textColor: .gray600,
+                                           image: ImageLiterals.Home.assignCard,
+                                           imagePlacement: .top,
+                                           imagePadding: 6,
+                                           font: .font(.body3),
+                                           cornerRadius: 13)
+    private let itemStock = SOLFilledButton(backgroundColor: .white,
+                                            text: Item.stock,
+                                            textColor: .gray600,
+                                            image: ImageLiterals.Home.currentStock,
+                                            imagePlacement: .top,
+                                            imagePadding: 6,
+                                            font: .font(.body3),
+                                            cornerRadius: 13)
+    private let itemCertification = SOLFilledButton(backgroundColor: .white,
+                                                    text: Item.certification,
+                                                    textColor: .gray600,
+                                                    image: ImageLiterals.Home.certification,
+                                                    imagePlacement: .top,
+                                                    imagePadding: 6,
+                                                    font: .font(.body3),
+                                                    cornerRadius: 13)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -49,13 +105,6 @@ final class CategoryTableViewCell: UITableViewCell {
         itemCard,
         itemStock,
         itemCertification]
-        
-        for item in items {
-            item.do {
-                $0.backgroundColor = .white
-                $0.makeCornerRound(radius: 13)
-            }
-        }
         
         itemHighStackView.do {
             $0.axis = .horizontal
@@ -116,7 +165,7 @@ final class CategoryTableViewCell: UITableViewCell {
         itemAllStackView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.trailing.equalToSuperview().inset(18)
-            $0.height.equalTo(165)
+            $0.height.equalTo(170)
         }
         
     }

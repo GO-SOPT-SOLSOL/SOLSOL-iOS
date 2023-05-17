@@ -23,6 +23,7 @@ final class TransferDetailViewController: UIViewController {
                                          textColor: .black,
                                          image: ImageLiterals.NavigationBar.icArrowLeft,
                                          imagePlacement: .trailing,
+                                         imagePadding: 0,
                                          font: .font(.headline),
                                               cornerRadius: 14
 

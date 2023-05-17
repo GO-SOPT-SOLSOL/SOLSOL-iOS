@@ -30,7 +30,7 @@ final class AdvertisementTableViewCell: UITableViewCell {
     func setStyle() {
         
         adAllView.do {
-            $0.backgroundColor = .adColor
+            $0.backgroundColor = .beige
             $0.makeCornerRound(radius: 13)
         }
         
