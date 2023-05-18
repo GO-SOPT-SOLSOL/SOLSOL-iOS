@@ -10,8 +10,10 @@ import UIKit
 import SnapKit
 import Then
 
-final class TransferTableViewCell: UITableViewCell {
+final class TransferTableViewCell: UITableViewCell {    
     
+    weak var cellDelegate: BackButtonAction?
+
     private let dummy = Transfer.dummy()
 
     private lazy var collectionView = UICollectionView(frame: .zero,
@@ -92,6 +94,7 @@ extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:TransferCollectionViewCell.className, for: indexPath) as? TransferCollectionViewCell else { return UICollectionViewCell() }
         cell.configureCell(dummy[indexPath.item])
+        cell.cellDelegate = self
         return cell
     }
     
@@ -105,5 +108,11 @@ extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         }
     }
     
+}
+
+extension TransferTableViewCell: BackButtonAction {
+    func backButtonTapped() {
+        cellDelegate?.backButtonTapped()
+    }
 }
 

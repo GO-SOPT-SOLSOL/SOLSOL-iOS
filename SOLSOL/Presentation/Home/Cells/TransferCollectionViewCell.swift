@@ -10,7 +10,13 @@ import UIKit
 import SnapKit
 import Then
 
+protocol BackButtonAction: AnyObject {
+    func backButtonTapped()
+}
+
 final class TransferCollectionViewCell: UICollectionViewCell {
+    
+    weak var cellDelegate: BackButtonAction?
     
     private let dummy = TransferList.dummy()
 
@@ -96,6 +102,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
             $0.titleLabel?.font = .font(.subhead2)
             $0.titleLabel?.textAlignment = .center
             $0.makeCornerRound(radius: 6)
+            $0.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         }
         
         moneyBoxButton.do {
@@ -222,6 +229,10 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         myMoney.text = transfer.money
     }
     
+    @objc
+    func backButtonTapped() {
+        cellDelegate?.backButtonTapped()
+    }
 }
 
 extension TransferCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
