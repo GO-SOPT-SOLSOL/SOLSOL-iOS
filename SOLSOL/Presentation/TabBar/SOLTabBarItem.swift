@@ -16,7 +16,7 @@ enum SOLTabBarItem: String, CaseIterable {
 
     var viewController: UIViewController {
         switch self {
-        case .home: return TransferDetailViewController()
+        case .home: return HomeViewController()
         case .moneyVerse: return MoneyVerseViewController()
         case .product: return ProductViewController()
         case .benefit: return BenefitViewController()

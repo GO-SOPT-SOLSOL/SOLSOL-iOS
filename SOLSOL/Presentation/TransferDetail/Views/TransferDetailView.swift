@@ -36,7 +36,7 @@ final class TransferInfoView: UIView {
     }
 
     private let moneyLabel = UILabel().then {
-        $0.text = "10,000원"
+        $0.text = "0 원"
         $0.textColor = .gray600
         $0.font = .font(.display5)
     }
@@ -53,13 +53,11 @@ final class TransferInfoView: UIView {
     }
 
     private let myAccountLabel = UILabel().then {
-        $0.text = "신한 110-345-961307"
         $0.textColor = .gray600
         $0.font = .font(.body1)
     }
 
-    private let accountBalance = UILabel().then {
-        $0.text = "3,773,400원"
+    private let accountBalance = UILabel().then { 
         $0.textColor = .gray600
         $0.font = .font(.body3)
     }
@@ -95,6 +93,7 @@ extension TransferInfoView {
                                             arrowImageView
         )
     }
+    
     private func setLayout() {
         receiverLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -143,4 +142,15 @@ extension TransferInfoView {
         }
     }
 
+}
+
+extension TransferInfoView {
+    func configureTransferInfoView(account: MyAccountViewModel) {
+        myAccountLabel.text = "\(account.bank) \(account.myAccount)"
+        accountBalance.text = "\(account.balance)원"
+    }
+
+    func updateMoneyDisplay(text: String) {
+        moneyLabel.text = "\(text) 원"
+    }
 }
