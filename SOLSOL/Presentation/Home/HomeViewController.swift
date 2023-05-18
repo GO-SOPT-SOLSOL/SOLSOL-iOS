@@ -138,8 +138,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension HomeViewController: BackButtonAction {
-    func backButtonTapped() {
+extension HomeViewController: TransferButtonAction {
+    func transferButtonTapped() {
         let nextViewController = TransferViewController()
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }

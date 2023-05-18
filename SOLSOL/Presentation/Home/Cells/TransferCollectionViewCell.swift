@@ -10,10 +10,13 @@ import UIKit
 import SnapKit
 import Then
 
+protocol TransferButtonAction: AnyObject {
+    func transferButtonTapped()
+}
 
 final class TransferCollectionViewCell: UICollectionViewCell {
     
-    weak var cellDelegate: BackButtonAction?
+    weak var cellDelegate: TransferButtonAction?
     
     private let dummy = TransferList.dummy()
 
@@ -228,7 +231,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
     
     @objc
     func backButtonTapped() {
-        cellDelegate?.backButtonTapped()
+        cellDelegate?.transferButtonTapped()
     }
 }
 

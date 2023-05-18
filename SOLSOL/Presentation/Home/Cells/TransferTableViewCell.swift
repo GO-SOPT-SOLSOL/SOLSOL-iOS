@@ -12,7 +12,7 @@ import Then
 
 final class TransferTableViewCell: UITableViewCell {    
     
-    weak var cellDelegate: BackButtonAction?
+    weak var cellDelegate: TransferButtonAction?
 
     private let dummy = Transfer.dummy()
 
@@ -110,9 +110,9 @@ extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
     
 }
 
-extension TransferTableViewCell: BackButtonAction {
-    func backButtonTapped() {
-        cellDelegate?.backButtonTapped()
+extension TransferTableViewCell: TransferButtonAction {
+    func transferButtonTapped() {
+        cellDelegate?.transferButtonTapped()
     }
 }
 
