@@ -9,11 +9,21 @@ import UIKit
 
 final class NumberPadView: UIView {
 
-    private let amount10000 = SOLFilledButton(backgroundColor: .blu50, text: StringLiterals.TransferDetail.amount10000, textColor: .blue500, font: .font(.body3))
-    private let amount50000 = SOLFilledButton(backgroundColor: .blu50, text: StringLiterals.TransferDetail.amount50000, textColor: .blue500, font: .font(.body3))
-    private let amount100000 = SOLFilledButton(backgroundColor: .blu50, text: StringLiterals.TransferDetail.amount100000, textColor: .blue500, font: .font(.body3))
-    private let amount1000000 = SOLFilledButton(backgroundColor: .blu50, text: StringLiterals.TransferDetail.amount1000000, textColor: .blue500, font: .font(.body3))
-    private let amountTotal = SOLFilledButton(backgroundColor: .blu50, text: StringLiterals.TransferDetail.amountTotal, textColor: .blue500, font: .font(.body3))
+    private let amount10000 = SOLFilledButton(backgroundColor: .blu50, text: StringLiterals.TransferDetail.amount10000, textColor: .blue500, font: .font(.body3)).then {
+        $0.tag = 1
+    }
+    private let amount50000 = SOLFilledButton(backgroundColor: .blu50, text: StringLiterals.TransferDetail.amount50000, textColor: .blue500, font: .font(.body3)).then {
+        $0.tag = 2
+    }
+    private let amount100000 = SOLFilledButton(backgroundColor: .blu50, text: StringLiterals.TransferDetail.amount100000, textColor: .blue500, font: .font(.body3)).then {
+        $0.tag = 3
+    }
+    private let amount1000000 = SOLFilledButton(backgroundColor: .blu50, text: StringLiterals.TransferDetail.amount1000000, textColor: .blue500, font: .font(.body3)).then {
+        $0.tag = 4
+    }
+    private let amountTotal = SOLFilledButton(backgroundColor: .blu50, text: StringLiterals.TransferDetail.amountTotal, textColor: .blue500, font: .font(.body3)).then {
+        $0.tag = 5
+    }
     private lazy var addAmountStackView = UIStackView(arrangedSubviews: [
         amount10000,
         amount50000,
@@ -86,6 +96,16 @@ final class NumberPadView: UIView {
         $0.spacing = 25
     }
 
+    
+
+    lazy var numberButtons = [
+        amount10000, amount50000, amount100000, amount1000000, amountTotal,
+        button1, button2, button3,
+        button4, button5, button6,
+        button7, button8, button9,
+        button00, button0, buttonBackspace
+    ]
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         hierarchy()
@@ -95,9 +115,6 @@ final class NumberPadView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-
-
 
 }
 

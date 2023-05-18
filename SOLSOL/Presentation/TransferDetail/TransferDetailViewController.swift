@@ -29,10 +29,27 @@ final class TransferDetailViewController: UIViewController {
         textColor: .white,
         font: .font(.headline), cornerRadius: 12)
 
+    private var viewModel: TransferDetailViewModel
+
+    init(viewModel: TransferDetailViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
         setLayout()
+        bind()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewWillAppear()
     }
     
 }
@@ -74,4 +91,32 @@ private extension TransferDetailViewController {
         }
     }
 
+}
+
+extension TransferDetailViewController {
+    private func bind() {
+        numberPad.numberButtons.forEach {
+            $0.addTarget(self, action: #selector(touchNumberPad), for: .touchUpInside)
+        }
+
+        self.viewModel.fetchedMyAccount = { myAccount in
+            self.transferInfoView.configureTransferInfoView(account: myAccount)
+        }
+
+        viewModel.updatedMoneyDisplay = { text in
+            self.transferInfoView.updateMoneyDisplay(text: text)
+        }
+
+        viewModel.updatedConvenientDisplay = { text in
+            self.transferInfoView.updateConvenientLabel(text: text)
+        }
+    }
+}
+
+extension TransferDetailViewController {
+    @objc
+    func touchNumberPad(sender: UIButton) {
+        guard let type = NumberButtonType(rawValue: sender.tag) else { return }
+        viewModel.didTapNumberPad(text: sender.titleLabel?.text, buttonType: type)
+    }
 }

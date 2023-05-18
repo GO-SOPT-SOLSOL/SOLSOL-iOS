@@ -37,6 +37,8 @@ enum StringLiterals {
         static let next = "다음"
         static let transfer = "이체"
         static let additionalTransfer = "추가이체"
+        static let emptyMoneyLabelText = "0원"
+        static let emptyMoneyUnderLabelText = "0 원"
     }
 }
 
