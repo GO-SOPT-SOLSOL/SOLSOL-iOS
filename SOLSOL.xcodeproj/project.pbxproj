@@ -46,6 +46,7 @@
 		2AF091F02A1151A300F611C4 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF091EF2A1151A300F611C4 /* UIColor+.swift */; };		
 		F4D6890E2A12B0C90082A9F3 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */; };
 		B51382EC2A13CFA100167728 /* UITabBarController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51382EB2A13CFA100167728 /* UITabBarController+.swift */; };
+		B51382FE2A1519FB00167728 /* NumberPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51382FD2A1519FB00167728 /* NumberPadView.swift */; };
 		B54F21442A135316000D350C /* SOLNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21432A135316000D350C /* SOLNavigationBar.swift */; };
 		B54F21462A135AE9000D350C /* SOLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21452A135AE9000D350C /* SOLButton.swift */; };
 		B54F21492A1364F0000D350C /* SOLTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21482A1364F0000D350C /* SOLTabBarController.swift */; };
@@ -114,6 +115,7 @@
 		2AF091EF2A1151A300F611C4 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		B51382EB2A13CFA100167728 /* UITabBarController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+.swift"; sourceTree = "<group>"; };
+		B51382FD2A1519FB00167728 /* NumberPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPadView.swift; sourceTree = "<group>"; };
 		B54F21432A135316000D350C /* SOLNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLNavigationBar.swift; sourceTree = "<group>"; };
 		B54F21452A135AE9000D350C /* SOLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLButton.swift; sourceTree = "<group>"; };
 		B54F21482A1364F0000D350C /* SOLTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLTabBarController.swift; sourceTree = "<group>"; };
@@ -226,12 +228,10 @@
 			children = (
 				2A4761022A13EC1B005BAA9F /* NSObject+.swift */,
 				2A4761012A13EC1B005BAA9F /* UIView+.swift */,
-				2AF091EF2A1151A300F611C4 /* UIColor+.swift */,
 				2AF091ED2A1150F000F611C4 /* UIFont+.swift */,
 				2AF091EF2A1151A300F611C4 /* UIColor+.swift */,
 				F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */,
 				B51382EB2A13CFA100167728 /* UITabBarController+.swift */,
-				2A204AEC2A11F12F00805E0A /* UIView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -356,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				2A204AE62A115C0B00805E0A /* TransferDetailView.swift */,
+				B51382FD2A1519FB00167728 /* NumberPadView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -552,9 +553,6 @@
 				2A4761082A13F0EE005BAA9F /* Item.swift in Sources */,
 				2A4761042A13EC1B005BAA9F /* NSObject+.swift in Sources */,
 				2AC408912A1131FA009F0D56 /* TransferDetailViewController.swift in Sources */,
-				2A204B0C2A128EE200805E0A /* Item.swift in Sources */,
-				2A204B0E2A13DF4600805E0A /* Section.swift in Sources */,
-				2A204B0A2A12701400805E0A /* TransferCollectionViewCell.swift in Sources */,
 				B54F21462A135AE9000D350C /* SOLButton.swift in Sources */,
 				B51382EC2A13CFA100167728 /* UITabBarController+.swift in Sources */,
 				B54F21542A13BFAA000D350C /* AllMenusViewController.swift in Sources */,
@@ -564,6 +562,7 @@
 				2A4761032A13EC1B005BAA9F /* UIView+.swift in Sources */,
 				2A4760FD2A13EBF1005BAA9F /* FooterButtonTableViewCell.swift in Sources */,
 				B54F21522A13BFA4000D350C /* BenefitViewController.swift in Sources */,
+				B51382FE2A1519FB00167728 /* NumberPadView.swift in Sources */,
 				2AC4088E2A113195009F0D56 /* TransferViewController.swift in Sources */,
 				2AC4087D2A112E56009F0D56 /* ImageLiterals.swift in Sources */,
 				2A4760FB2A13EBF1005BAA9F /* ShinhanPlusTableViewCell.swift in Sources */,
@@ -580,7 +579,6 @@
 				2AC408422A0F6686009F0D56 /* SceneDelegate.swift in Sources */,
 				2A4761072A13F0EE005BAA9F /* Section.swift in Sources */,
 				2A4761002A13EBF1005BAA9F /* MyAccountTableViewCell.swift in Sources */,
-				2A204AEF2A11F59100805E0A /* AdvertisementTableViewCell.swift in Sources */,
 				B54F21502A13BF9D000D350C /* ProductViewController.swift in Sources */,
 				2AF091F02A1151A300F611C4 /* UIColor+.swift in Sources */,
 				F4D6890E2A12B0C90082A9F3 /* UITextField+.swift in Sources */,

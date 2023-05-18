@@ -77,7 +77,7 @@ private extension SOLNavigationBar {
         case .home:
             leftItem.setTitleColor(.gray600, for: .normal)
             leftItem.titleLabel?.font = .font(.headline)
-            leftItem.setTitle(NavigationBar.leftItemTitle.home, for: .normal)
+            leftItem.setTitle(StringLiterals.NavigationBar.leftItemTitle.home, for: .normal)
         case .back:
             leftItem.setImage(ImageLiterals.NavigationBar.icArrowLeft, for: .normal)
         }
