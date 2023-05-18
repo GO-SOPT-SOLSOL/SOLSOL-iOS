@@ -43,8 +43,7 @@
 		2AF091EB2A11507800F611C4 /* OneShinhan-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF091E82A11507800F611C4 /* OneShinhan-Light.otf */; };
 		2AF091EC2A11507800F611C4 /* OneShinhan-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF091E92A11507800F611C4 /* OneShinhan-Medium.otf */; };
 		2AF091EE2A1150F000F611C4 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF091ED2A1150F000F611C4 /* UIFont+.swift */; };
-		2AF091F02A1151A300F611C4 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF091EF2A1151A300F611C4 /* UIColor+.swift */; };		
-		F4D6890E2A12B0C90082A9F3 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */; };
+		2AF091F02A1151A300F611C4 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF091EF2A1151A300F611C4 /* UIColor+.swift */; };
 		B51382EC2A13CFA100167728 /* UITabBarController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51382EB2A13CFA100167728 /* UITabBarController+.swift */; };
 		B51382FE2A1519FB00167728 /* NumberPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51382FD2A1519FB00167728 /* NumberPadView.swift */; };
 		B51383012A157A1900167728 /* MyAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51383002A157A1900167728 /* MyAccount.swift */; };
@@ -60,6 +59,11 @@
 		B54F21502A13BF9D000D350C /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F214F2A13BF9D000D350C /* ProductViewController.swift */; };
 		B54F21522A13BFA4000D350C /* BenefitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21512A13BFA4000D350C /* BenefitViewController.swift */; };
 		B54F21542A13BFAA000D350C /* AllMenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21532A13BFAA000D350C /* AllMenusViewController.swift */; };
+		B5D06E142A16929A00048C72 /* TransferConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E132A16929A00048C72 /* TransferConfirmViewController.swift */; };
+		B5D06E172A1695C700048C72 /* MemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E162A1695C700048C72 /* MemoView.swift */; };
+		B5D06E192A169DDD00048C72 /* SizeLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E182A169DDD00048C72 /* SizeLiterals.swift */; };
+		B5D06E1C2A16B6EB00048C72 /* ScreenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E1B2A16B6EB00048C72 /* ScreenUtils.swift */; };
+		F4D6890E2A12B0C90082A9F3 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,7 +122,6 @@
 		2AF091E92A11507800F611C4 /* OneShinhan-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OneShinhan-Medium.otf"; sourceTree = "<group>"; };
 		2AF091ED2A1150F000F611C4 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		2AF091EF2A1151A300F611C4 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
-		F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		B51382EB2A13CFA100167728 /* UITabBarController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+.swift"; sourceTree = "<group>"; };
 		B51382FD2A1519FB00167728 /* NumberPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPadView.swift; sourceTree = "<group>"; };
 		B51383002A157A1900167728 /* MyAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccount.swift; sourceTree = "<group>"; };
@@ -134,6 +137,11 @@
 		B54F214F2A13BF9D000D350C /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		B54F21512A13BFA4000D350C /* BenefitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitViewController.swift; sourceTree = "<group>"; };
 		B54F21532A13BFAA000D350C /* AllMenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMenusViewController.swift; sourceTree = "<group>"; };
+		B5D06E132A16929A00048C72 /* TransferConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferConfirmViewController.swift; sourceTree = "<group>"; };
+		B5D06E162A1695C700048C72 /* MemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoView.swift; sourceTree = "<group>"; };
+		B5D06E182A169DDD00048C72 /* SizeLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeLiterals.swift; sourceTree = "<group>"; };
+		B5D06E1B2A16B6EB00048C72 /* ScreenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtils.swift; sourceTree = "<group>"; };
+		F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +231,7 @@
 		2AC408792A112DE9009F0D56 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				B5D06E1A2A16B6E100048C72 /* Utils */,
 				B54F21422A135301000D350C /* UIComponents */,
 				2AC4087A2A112E03009F0D56 /* Extension */,
 				2AC4087B2A112E17009F0D56 /* Literals */,
@@ -252,6 +261,7 @@
 			children = (
 				2AC4087C2A112E56009F0D56 /* ImageLiterals.swift */,
 				2AC4087E2A112E60009F0D56 /* StringLiterals.swift */,
+				B5D06E182A169DDD00048C72 /* SizeLiterals.swift */,
 			);
 			path = Literals;
 			sourceTree = "<group>";
@@ -289,6 +299,7 @@
 				2AC4088A2A113054009F0D56 /* Home */,
 				2AC4088C2A113158009F0D56 /* Transfer */,
 				2AC4088F2A1131AE009F0D56 /* TransferDetail */,
+				B5D06E122A16906F00048C72 /* TransferConfirm */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -448,6 +459,31 @@
 			path = TabVCs;
 			sourceTree = "<group>";
 		};
+		B5D06E122A16906F00048C72 /* TransferConfirm */ = {
+			isa = PBXGroup;
+			children = (
+				B5D06E152A16951A00048C72 /* Views */,
+				B5D06E132A16929A00048C72 /* TransferConfirmViewController.swift */,
+			);
+			path = TransferConfirm;
+			sourceTree = "<group>";
+		};
+		B5D06E152A16951A00048C72 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5D06E162A1695C700048C72 /* MemoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B5D06E1A2A16B6E100048C72 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B5D06E1B2A16B6EB00048C72 /* ScreenUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -598,8 +634,10 @@
 				2AF091EE2A1150F000F611C4 /* UIFont+.swift in Sources */,
 				2A204AE32A115BEA00805E0A /* TransferView.swift in Sources */,
 				2A4760FA2A13EBF1005BAA9F /* TransferCollectionViewCell.swift in Sources */,
+				B5D06E142A16929A00048C72 /* TransferConfirmViewController.swift in Sources */,
 				B51383042A157B6700167728 /* TransferDetailViewModel.swift in Sources */,
 				2A4761082A13F0EE005BAA9F /* Item.swift in Sources */,
+				B5D06E172A1695C700048C72 /* MemoView.swift in Sources */,
 				2A4761042A13EC1B005BAA9F /* NSObject+.swift in Sources */,
 				2AC408912A1131FA009F0D56 /* TransferDetailViewController.swift in Sources */,
 				B54F21462A135AE9000D350C /* SOLButton.swift in Sources */,
@@ -617,16 +655,17 @@
 				2AC4087D2A112E56009F0D56 /* ImageLiterals.swift in Sources */,
 				2A4760FB2A13EBF1005BAA9F /* ShinhanPlusTableViewCell.swift in Sources */,
 				2A204AE72A115C0B00805E0A /* TransferDetailView.swift in Sources */,
-				2A204AE12A115BD400805E0A /* TableViewCell.swift in Sources */,
 				2A4760F92A13EBF1005BAA9F /* DeliveryPackagingTableViewCell.swift in Sources */,
 				2A4760FE2A13EBF1005BAA9F /* TransferTableViewCell.swift in Sources */,
 				2A4760FF2A13EBF1005BAA9F /* CategoryTableViewCell.swift in Sources */,
+				B5D06E1C2A16B6EB00048C72 /* ScreenUtils.swift in Sources */,
 				B51383112A15AE0400167728 /* NumberButtonType.swift in Sources */,
 				2AC4087F2A112E60009F0D56 /* StringLiterals.swift in Sources */,
 				B54F214B2A13BF20000D350C /* SOLTabBarItem.swift in Sources */,
 				B51383072A157E3800167728 /* Int+.swift in Sources */,
 				B54F214E2A13BF96000D350C /* MoneyVerseViewController.swift in Sources */,
 				B54F21492A1364F0000D350C /* SOLTabBarController.swift in Sources */,
+				B5D06E192A169DDD00048C72 /* SizeLiterals.swift in Sources */,
 				2AC408402A0F6686009F0D56 /* AppDelegate.swift in Sources */,
 				2AC408422A0F6686009F0D56 /* SceneDelegate.swift in Sources */,
 				2A4761072A13F0EE005BAA9F /* Section.swift in Sources */,
