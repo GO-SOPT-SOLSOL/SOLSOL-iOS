@@ -46,6 +46,11 @@
 		2AF091F02A1151A300F611C4 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF091EF2A1151A300F611C4 /* UIColor+.swift */; };
 		B51382EC2A13CFA100167728 /* UITabBarController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51382EB2A13CFA100167728 /* UITabBarController+.swift */; };
 		B51382FE2A1519FB00167728 /* NumberPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51382FD2A1519FB00167728 /* NumberPadView.swift */; };
+		B51383012A157A1900167728 /* MyAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51383002A157A1900167728 /* MyAccount.swift */; };
+		B51383042A157B6700167728 /* TransferDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51383032A157B6700167728 /* TransferDetailViewModel.swift */; };
+		B51383072A157E3800167728 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51383062A157E3800167728 /* Int+.swift */; };
+		B513830E2A15968000167728 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B513830D2A15968000167728 /* String+.swift */; };
+		B51383112A15AE0400167728 /* NumberButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51383102A15AE0400167728 /* NumberButtonType.swift */; };
 		B54F21442A135316000D350C /* SOLNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21432A135316000D350C /* SOLNavigationBar.swift */; };
 		B54F21462A135AE9000D350C /* SOLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21452A135AE9000D350C /* SOLButton.swift */; };
 		B54F21492A1364F0000D350C /* SOLTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21482A1364F0000D350C /* SOLTabBarController.swift */; };
@@ -114,6 +119,11 @@
 		2AF091EF2A1151A300F611C4 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		B51382EB2A13CFA100167728 /* UITabBarController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+.swift"; sourceTree = "<group>"; };
 		B51382FD2A1519FB00167728 /* NumberPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPadView.swift; sourceTree = "<group>"; };
+		B51383002A157A1900167728 /* MyAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccount.swift; sourceTree = "<group>"; };
+		B51383032A157B6700167728 /* TransferDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailViewModel.swift; sourceTree = "<group>"; };
+		B51383062A157E3800167728 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		B513830D2A15968000167728 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		B51383102A15AE0400167728 /* NumberButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberButtonType.swift; sourceTree = "<group>"; };
 		B54F21432A135316000D350C /* SOLNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLNavigationBar.swift; sourceTree = "<group>"; };
 		B54F21452A135AE9000D350C /* SOLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLButton.swift; sourceTree = "<group>"; };
 		B54F21482A1364F0000D350C /* SOLTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLTabBarController.swift; sourceTree = "<group>"; };
@@ -224,6 +234,7 @@
 		2AC4087A2A112E03009F0D56 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				B51383052A157E2E00167728 /* Foundation+ */,
 				2A4761022A13EC1B005BAA9F /* NSObject+.swift */,
 				2A4761012A13EC1B005BAA9F /* UIView+.swift */,
 				2AF091ED2A1150F000F611C4 /* UIFont+.swift */,
@@ -304,6 +315,9 @@
 		2AC4088F2A1131AE009F0D56 /* TransferDetail */ = {
 			isa = PBXGroup;
 			children = (
+				B513830F2A15ADF900167728 /* Enum */,
+				B51383022A157B5B00167728 /* ViewModel */,
+				B51382FF2A1579EC00167728 /* Model */,
 				2AC408972A113288009F0D56 /* Views */,
 				2AC408902A1131FA009F0D56 /* TransferDetailViewController.swift */,
 			);
@@ -366,6 +380,39 @@
 				2AF091E82A11507800F611C4 /* OneShinhan-Light.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		B51382FF2A1579EC00167728 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B51383002A157A1900167728 /* MyAccount.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B51383022A157B5B00167728 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B51383032A157B6700167728 /* TransferDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B51383052A157E2E00167728 /* Foundation+ */ = {
+			isa = PBXGroup;
+			children = (
+				B51383062A157E3800167728 /* Int+.swift */,
+				B513830D2A15968000167728 /* String+.swift */,
+			);
+			path = "Foundation+";
+			sourceTree = "<group>";
+		};
+		B513830F2A15ADF900167728 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				B51383102A15AE0400167728 /* NumberButtonType.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		B54F21422A135301000D350C /* UIComponents */ = {
@@ -544,13 +591,16 @@
 			files = (
 				2A4760FC2A13EBF1005BAA9F /* AdvertisementTableViewCell.swift in Sources */,
 				2A204AE52A115BF700805E0A /* aaTableViewCell.swift in Sources */,
+				B513830E2A15968000167728 /* String+.swift in Sources */,
 				2AF091EE2A1150F000F611C4 /* UIFont+.swift in Sources */,
 				2A204AE32A115BEA00805E0A /* TransferView.swift in Sources */,
 				2A4760FA2A13EBF1005BAA9F /* TransferCollectionViewCell.swift in Sources */,
+				B51383042A157B6700167728 /* TransferDetailViewModel.swift in Sources */,
 				2A4761082A13F0EE005BAA9F /* Item.swift in Sources */,
 				2A4761042A13EC1B005BAA9F /* NSObject+.swift in Sources */,
 				2AC408912A1131FA009F0D56 /* TransferDetailViewController.swift in Sources */,
 				B54F21462A135AE9000D350C /* SOLButton.swift in Sources */,
+				B51383012A157A1900167728 /* MyAccount.swift in Sources */,
 				B51382EC2A13CFA100167728 /* UITabBarController+.swift in Sources */,
 				B54F21542A13BFAA000D350C /* AllMenusViewController.swift in Sources */,
 				2AC408442A0F6686009F0D56 /* HomeViewController.swift in Sources */,
@@ -567,8 +617,10 @@
 				2A4760F92A13EBF1005BAA9F /* DeliveryPackagingTableViewCell.swift in Sources */,
 				2A4760FE2A13EBF1005BAA9F /* TransferTableViewCell.swift in Sources */,
 				2A4760FF2A13EBF1005BAA9F /* CategoryTableViewCell.swift in Sources */,
+				B51383112A15AE0400167728 /* NumberButtonType.swift in Sources */,
 				2AC4087F2A112E60009F0D56 /* String.swift in Sources */,
 				B54F214B2A13BF20000D350C /* SOLTabBarItem.swift in Sources */,
+				B51383072A157E3800167728 /* Int+.swift in Sources */,
 				B54F214E2A13BF96000D350C /* MoneyVerseViewController.swift in Sources */,
 				B54F21492A1364F0000D350C /* SOLTabBarController.swift in Sources */,
 				2AC408402A0F6686009F0D56 /* AppDelegate.swift in Sources */,
