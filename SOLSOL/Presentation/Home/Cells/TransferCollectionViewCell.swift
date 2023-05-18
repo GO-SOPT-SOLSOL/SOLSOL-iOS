@@ -189,7 +189,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         }
         
         refreshButton.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(150)
+            $0.leading.equalTo(won.snp.trailing).offset(2)
             $0.centerY.equalTo(myMoney.snp.centerY)
         }
         
