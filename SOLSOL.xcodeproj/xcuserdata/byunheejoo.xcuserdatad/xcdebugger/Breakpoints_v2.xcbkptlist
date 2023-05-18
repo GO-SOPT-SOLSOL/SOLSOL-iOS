@@ -23,17 +23,113 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "02D90FBE-8B85-4296-BBEE-30ABF152F85E"
+            uuid = "B24DE024-8282-4143-9B3A-8B1DED5770F4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SOLSOL/Presentation/Home/HomeViewController.swift"
+            filePath = "SOLSOL/Presentation/Home/Cells/ShinhanPlusTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "tableView(_:heightForRowAt:)"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "setLayout()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D1B4F66C-D68E-4293-BC59-9E5DF29A817B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SOLSOL/Presentation/Home/Cells/CategoryTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "setStyle()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D1B4F66C-D68E-4293-BC59-9E5DF29A817B - f475a5052efcea61"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SOLSOL.CategoryTableViewCell.setStyle() -&gt; ()"
+                  moduleName = "SOLSOL"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/byunheejoo/Desktop/32th-iOS-Seminar/SOLSOL/SOLSOL/Presentation/Home/Cells/CategoryTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "376">
+               </Location>
+               <Location
+                  uuid = "D1B4F66C-D68E-4293-BC59-9E5DF29A817B - cc10adc83209b1df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIStackView) -&gt; () in SOLSOL.CategoryTableViewCell.setStyle() -&gt; ()"
+                  moduleName = "SOLSOL"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/byunheejoo/Desktop/32th-iOS-Seminar/SOLSOL/SOLSOL/Presentation/Home/Cells/CategoryTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "80CE3A2D-48A3-4130-AC89-8EB3D7C04B2B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SOLSOL/Presentation/Home/Cells/CategoryTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "setStyle()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "80CE3A2D-48A3-4130-AC89-8EB3D7C04B2B - f475a5052efcea61"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SOLSOL.CategoryTableViewCell.setStyle() -&gt; ()"
+                  moduleName = "SOLSOL"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/byunheejoo/Desktop/32th-iOS-Seminar/SOLSOL/SOLSOL/Presentation/Home/Cells/CategoryTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "376">
+               </Location>
+               <Location
+                  uuid = "80CE3A2D-48A3-4130-AC89-8EB3D7C04B2B - cc10adc83209b1df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIStackView) -&gt; () in SOLSOL.CategoryTableViewCell.setStyle() -&gt; ()"
+                  moduleName = "SOLSOL"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/byunheejoo/Desktop/32th-iOS-Seminar/SOLSOL/SOLSOL/Presentation/Home/Cells/CategoryTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

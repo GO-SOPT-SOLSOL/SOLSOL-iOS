@@ -13,10 +13,40 @@ import Then
 final class ShinhanPlusTableViewCell: UITableViewCell {
 
     private let backGround = UIView()
-    private let shinPlusButton = UIButton()
-    private let cardButton = UIButton()
-    private let stockButton = UIButton()
-    private let insuranceButton = UIButton()
+    private let shinPlusButton = SOLFilledButton(backgroundColor: .lightBlue100,
+                                                 text: "신한플러스",
+                                                 textColor: .lightBlue500,
+                                                 image: ImageLiterals.Home.icShinhanPlus,
+                                                 imagePlacement: .leading,
+                                                 imagePadding: 7,
+                                                 font: .font(.subhead2),
+                                                 cornerRadius: 14)
+
+    private let cardButton = SOLFilledButton(backgroundColor: .lightBlue100,
+                                             text: "카드",
+                                             textColor: .lightBlue500,
+                                             image: nil,
+                                             imagePlacement: nil,
+                                             imagePadding: nil,
+                                             font: .font(.subhead2),
+                                             cornerRadius: 14)
+    
+    private let stockButton = SOLFilledButton(backgroundColor: .indigo100,
+                                              text: "증권",
+                                              textColor: .indigo500,
+                                              image: nil,
+                                              imagePlacement: nil,
+                                              imagePadding: nil,
+                                              font: .font(.subhead2),
+                                              cornerRadius: 14)
+    private let insuranceButton = SOLFilledButton(backgroundColor: .violet100,
+                                                  text: "보험",
+                                                  textColor: .violet500,
+                                                  image: nil,
+                                                  imagePlacement: nil,
+                                                  imagePadding: nil,
+                                                  font: .font(.subhead2),
+                                                  cornerRadius: 14)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -34,26 +64,6 @@ final class ShinhanPlusTableViewCell: UITableViewCell {
         backGround.do {
             $0.backgroundColor = .white
             $0.makeCornerRound(radius: 13)
-        }
-        
-        shinPlusButton.do {
-            $0.backgroundColor = .lightBlue100
-            $0.makeCornerRound(radius: 14)
-        }
-        
-        cardButton.do {
-            $0.backgroundColor = .lightBlue100
-            $0.makeCornerRound(radius: 14)
-        }
-        
-        stockButton.do {
-            $0.backgroundColor = .indigo100
-            $0.makeCornerRound(radius: 14)
-        }
-        
-        insuranceButton.do {
-            $0.backgroundColor = .violet100
-            $0.makeCornerRound(radius: 14)
         }
         
         separatorInset.left = 0
@@ -76,7 +86,7 @@ final class ShinhanPlusTableViewCell: UITableViewCell {
         
         shinPlusButton.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.leading.equalToSuperview().inset(18)
+            $0.leading.equalToSuperview().inset(13)
             $0.trailing.equalToSuperview().inset(215)
             $0.height.equalTo(28)
         }
