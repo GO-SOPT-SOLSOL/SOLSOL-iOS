@@ -29,7 +29,7 @@ struct MyAccountViewModel {
 
 extension MyAccount {
     static func dummy() -> MyAccount {
-        return MyAccount(name: "김민재", bank: .kakao, accountNumber: "110-345-961307", balance: 403033434)
+        return MyAccount(name: "김민재", bank: .kakao, accountNumber: "110-345-961307", balance: 5003333)
     }
 
     func toViewModel() -> MyAccountViewModel {

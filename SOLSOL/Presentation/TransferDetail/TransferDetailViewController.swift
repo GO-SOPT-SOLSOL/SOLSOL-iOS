@@ -106,6 +106,10 @@ extension TransferDetailViewController {
         viewModel.updatedMoneyDisplay = { text in
             self.transferInfoView.updateMoneyDisplay(text: text)
         }
+
+        viewModel.updatedConvenientDisplay = { text in
+            self.transferInfoView.updateConvenientLabel(text: text)
+        }
     }
 }
 

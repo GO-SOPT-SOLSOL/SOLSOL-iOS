@@ -16,6 +16,7 @@ protocol TransferDetailViewModelInput {
 protocol TransferDetailViewModelOuput {
     var fetchedMyAccount: ((MyAccountViewModel) -> Void)? { get set }
     var updatedMoneyDisplay: ((String) -> Void)? { get set }
+    var updatedConvenientDisplay: ((String) -> Void)? { get set }
 
 }
 
@@ -27,6 +28,8 @@ final class DefaultTransferDetailViewModel: TransferDetailViewModel {
 
     var updatedMoneyDisplay: ((String) -> Void)?
 
+    var updatedConvenientDisplay: ((String) -> Void)?
+
     var myAccount: MyAccountViewModel? {
         didSet {
             guard let myAccount else { return }
@@ -37,6 +40,13 @@ final class DefaultTransferDetailViewModel: TransferDetailViewModel {
     var moneyDisplay: String = "0" {
         didSet {
             updatedMoneyDisplay?(moneyDisplay)
+            updateConvenientText()
+        }
+    }
+
+    var convenientDisplay: String = "0 원" {
+        didSet {
+            updatedConvenientDisplay?(convenientDisplay)
         }
     }
 
@@ -76,5 +86,26 @@ extension DefaultTransferDetailViewModel {
             guard let balance = self.myAccount?.balance else { return "0" }
             return balance.replacingOccurrences(of: ",", with: "")
         }
+    }
+
+    private func updateConvenientText() {
+        let tenThousand = 10000
+        let current = self.moneyDisplay.replacingOccurrences(of: ",", with: "")
+        let currNum = Int(current) ?? 0
+        let forward = currNum / tenThousand
+        let thousand = currNum % tenThousand
+
+        let displayText = makeDisplayText(forward: forward, back: thousand)
+        self.convenientDisplay = displayText
+    }
+
+    private func makeDisplayText(forward: Int, back: Int) -> String {
+        if forward == 0 {
+            return "\(back)원"
+        }
+        if back == 0 {
+            return "\(forward)만원"
+        }
+        return "\(forward)만 \(back)원"
     }
 }

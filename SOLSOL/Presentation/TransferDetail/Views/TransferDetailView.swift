@@ -19,6 +19,7 @@ final class TransferInfoView: UIView {
     private let receiverLabel = UILabel().then {
         $0.textColor = .gray600
         $0.font = .font(.subhead1)
+        // TODO: Transfer에서 데이터 전달 받기
         $0.text = "조정연님께"
 
     }
@@ -26,6 +27,7 @@ final class TransferInfoView: UIView {
     private let receiverAccountLabel = UILabel().then {
         $0.textColor = .gray400
         $0.font = .font(.body4)
+        // TODO: Transfer에서 데이터 전달 받기
         $0.text = "카카오뱅크 3333153453969"
     }
 
@@ -36,13 +38,13 @@ final class TransferInfoView: UIView {
     }
 
     private let moneyLabel = UILabel().then {
-        $0.text = "0 원"
+        $0.text = StringLiterals.TransferDetail.emptyMoneyLabelText
         $0.textColor = .gray600
         $0.font = .font(.display5)
     }
 
     private let convenientMoneyLabel = UILabel().then {
-        $0.text = "1만원"
+        $0.text = StringLiterals.TransferDetail.emptyMoneyUnderLabelText
         $0.textColor = .gray400
         $0.font = .font(.body5)
     }
@@ -152,5 +154,9 @@ extension TransferInfoView {
 
     func updateMoneyDisplay(text: String) {
         moneyLabel.text = "\(text) 원"
+    }
+
+    func updateConvenientLabel(text: String) {
+        convenientMoneyLabel.text = text
     }
 }
