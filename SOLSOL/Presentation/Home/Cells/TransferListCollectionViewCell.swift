@@ -10,6 +10,10 @@ import UIKit
 import SnapKit
 import Then
 
+protocol BackButtonAction: AnyObject {
+    func backButtonTapped()
+}
+
 final class TransferListCollectionViewCell: UICollectionViewCell {
     
     private let transferListBackGround = UIView()
