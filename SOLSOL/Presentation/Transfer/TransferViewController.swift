@@ -2,28 +2,22 @@
 //  TransferViewController.swift
 //  SOLSOL
 //
-//  Created by 변희주 on 2023/05/15.
+//  Created by 곽성준 on 2023/05/16.
 //
 
 import UIKit
 
 class TransferViewController: UIViewController {
+    
+    private let originView = TransferView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func loadView() {
+        self.view = originView
     }
-    */
+
 
 }

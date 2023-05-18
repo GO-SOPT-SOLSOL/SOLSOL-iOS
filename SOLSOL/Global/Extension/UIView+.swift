@@ -9,13 +9,6 @@ import UIKit
 
 extension UIView {
     
-    func addSubviews(_ views: UIView...) {
-        views.forEach { self.addSubview($0) }
-    }
-}
-
-extension UIView {
-    
     func makeShadow(radius : CGFloat, offset : CGSize, opacity : Float){
         layer.shadowColor = UIColor.darkGray.cgColor
         layer.shadowOffset = offset
@@ -32,6 +25,10 @@ extension UIView {
     func makeBorder(width : CGFloat, color : UIColor) {
         layer.borderWidth = width
         layer.borderColor = color.cgColor
+    }
+  
+    func addSubviews(_ views: UIView...) {
+        views.forEach { self.addSubview($0) }
     }
     
 }
