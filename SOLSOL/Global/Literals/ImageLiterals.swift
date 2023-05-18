@@ -26,7 +26,7 @@ enum ImageLiterals {
         static var icHomeOff: UIImage { .load(named: "icHomeOff") }
         static var icMoneybusOn: UIImage { .load(named: "icMoneybusOn") }
         static var icMoneybusOff: UIImage { .load(named: "icMoneybusOff") }
-        static var icProductOn: UIImage { .load(named: "icHomeOutline") }
+        static var icProductOn: UIImage { .load(named: "icProductOn") }
         static var icProductOff: UIImage { .load(named: "icProductOff") }
         static var icBenefitOn: UIImage { .load(named: "icBenefitOn") }
         static var icBenefitOff: UIImage { .load(named: "icBenefitOff") }

@@ -50,6 +50,27 @@ extension UIColor {
     static var white: UIColor {
         return UIColor(hex: "#ffffff")
     }
+    static var beige: UIColor {
+        return UIColor(hex: "FAEFE2")
+    }
+    static var lightBlue500: UIColor {
+        return UIColor(hex: "4192D3")
+    }
+    static var lightBlue100: UIColor {
+        return UIColor(hex: "EFF9FE")
+    }
+    static var indigo500: UIColor {
+        return UIColor(hex: "3A60E5")
+    }
+    static var indigo100: UIColor {
+        return UIColor(hex: "EFF5FD")
+    }
+    static var violet500: UIColor {
+        return UIColor(hex: "5443C2")
+    }
+    static var violet100: UIColor {
+        return UIColor(hex: "F4F2FB")
+    }
 }
 
 extension UIColor {
