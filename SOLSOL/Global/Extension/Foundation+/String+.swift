@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+extension String {
+    func containsKoreanCharacters() -> Bool {
+        let koreanRange = self.range(of: "\\p{Script=Hangul}", options: .regularExpression)
+        return koreanRange != nil
+    }
+}

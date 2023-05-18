@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+
+extension Int {
+    func currencyAmountToString() -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        return numberFormatter.string(for: self) ?? "0"
+    }
+}
