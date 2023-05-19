@@ -14,7 +14,10 @@ class TransferView: UIView {
     
     //MARK: - UIComponents
 
-    private let TranferTableView = UITableView(frame: .zero, style: .grouped)
+    let TranferTableView = UITableView(frame: .zero, style: .grouped)
+    
+    private let Firstdummy = AccountInfo.dummy()
+    private let Secondummy = AccountInfoWithDate.dummy()
     
     private let sendToWhoLabel = UILabel()
     private let searchTextField = UITextField()
@@ -26,7 +29,7 @@ class TransferView: UIView {
     private let secondHeaderView = UIView()
     private let firstHeaderLabel = UILabel()
     private let secondHeaderLabel = UILabel()
-    private let sectionDivider = UIView()
+    private let sectionDivider = UIView(frame: .zero)
     
     //MARK: - View Life Cycle
     
@@ -46,6 +49,16 @@ class TransferView: UIView {
     }
     
     // MARK: - Methods
+    
+    func hierarchy(){
+        
+        self.addSubviews(sendToWhoLabel, searchTextField, segmentedControl,TranferTableView)
+        
+        searchTextField.addSubview(SearchButton)
+        firstHeaderView.addSubview(firstHeaderLabel)
+        secondHeaderView.addSubview(secondHeaderLabel)
+        
+    }
     
     func setStyle(){
         
@@ -88,6 +101,14 @@ class TransferView: UIView {
             
         }
         
+        TranferTableView.do{
+            $0.register(TransferTableViewCell.self, forCellReuseIdentifier: TransferTableViewCell.identifier)
+            $0.register(TransferTableViewCell.self, forCellReuseIdentifier: TransferTableViewCell.Secondidentifier)
+            $0.separatorStyle = .none
+            $0.tableFooterView = sectionDivider
+            $0.sectionFooterHeight = 7
+        }
+        
         firstHeaderView.do{
             $0.backgroundColor = .white
         }
@@ -112,16 +133,7 @@ class TransferView: UIView {
             $0.backgroundColor = .gray100
         }
         
-    }
-    
-    func hierarchy(){
-        
-        self.addSubviews(sendToWhoLabel, searchTextField, segmentedControl,TranferTableView)
-        
-        searchTextField.addSubview(SearchButton)
-        firstHeaderView.addSubview(firstHeaderLabel)
-        secondHeaderView.addSubview(secondHeaderLabel)
-        
+
     }
     
     func setLayout(){
@@ -155,6 +167,7 @@ class TransferView: UIView {
             $0.top.equalTo(segmentedControl.snp.bottom)
             $0.trailing.leading.bottom.equalToSuperview()
         }
+    
         
         firstHeaderLabel.snp.makeConstraints{
             $0.leading.equalToSuperview().inset(18)
@@ -180,12 +193,6 @@ class TransferView: UIView {
         TranferTableView.dataSource = self
         
     }
-    
-    //화면 터치 시 키보드 내리기
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.endEditing(true)
-        }
-    
 }
 
 //MARK: - Extensions
@@ -204,14 +211,19 @@ extension TransferView: UITextFieldDelegate{
     
 }
 
-extension TransferView: UITableViewDelegate{
-    
-}
+extension TransferView: UITableViewDelegate{ }
 
 extension TransferView: UITableViewDataSource{
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        74
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        
+        if section == 0{
+            return Firstdummy.count
+        }else {return Secondummy.count}
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -220,7 +232,21 @@ extension TransferView: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return UITableViewCell()
+        if indexPath.section == 0{
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TransferTableViewCell.identifier, for: indexPath) as? TransferTableViewCell else
+            {return UITableViewCell()}
+            
+            cell.configureCell(Firstdummy[indexPath.row])
+            
+            return cell}
+        
+        else {guard let cell = tableView.dequeueReusableCell(withIdentifier: TransferTableViewCell.Secondidentifier, for: indexPath) as? TransferTableViewCell else
+            {return UITableViewCell()}
+            
+            cell.configureSecondCell(Secondummy[indexPath.row])
+            
+            return cell}
+        
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -238,7 +264,4 @@ extension TransferView: UITableViewDataSource{
         
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return sectionDivider
-    }
 }
