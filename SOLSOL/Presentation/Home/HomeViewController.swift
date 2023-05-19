@@ -11,7 +11,7 @@ import SnapKit
 import Then
 
 final class HomeViewController: UIViewController {
-    
+        
     private let HomeTableView = UITableView()
     private lazy var navigationBar = SOLNavigationBar(self, leftItem: .home)
 
@@ -73,13 +73,9 @@ final class HomeViewController: UIViewController {
     }
 }
 
-// MARK: - UITableViewDelegate
+// MARK: - UITableViewDelegate, UITableViewDataSource
 
-extension HomeViewController: UITableViewDelegate {}
-
-// MARK: - UITableViewDataSource
-
-extension HomeViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return Section.allCases.count
@@ -102,7 +98,8 @@ extension HomeViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: MyAccountTableViewCell.className, for: indexPath)
             return cell
         case .transfer:
-            let cell = tableView.dequeueReusableCell(withIdentifier:             TransferTableViewCell.className, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier:             TransferTableViewCell.className, for: indexPath) as! TransferTableViewCell
+//            cell.cellDelegate = self
             return cell
         case .shinhanPlus:
             let cell = tableView.dequeueReusableCell(withIdentifier:             ShinhanPlusTableViewCell.className, for: indexPath)
@@ -138,5 +135,12 @@ extension HomeViewController: UITableViewDataSource {
         default:
             return 0
         }
+    }
+}
+
+extension HomeViewController: TransferButtonAction {
+    func transferButtonTapped() {
+        let nextViewController = TransferViewController()
+        self.navigationController?.pushViewController(nextViewController, animated: true)
     }
 }
