@@ -18,6 +18,12 @@ final class HomeViewController: UIViewController {
         }
     }
     
+    private var secondNetworkResult: [TransferList] = [] {
+        didSet {
+            self.homeTableView.reloadData()
+        }
+    }
+    
     private let homeTableView = UITableView()
     private lazy var navigationBar = SOLNavigationBar(self, leftItem: .home)
     
@@ -105,6 +111,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .transfer:
             let cell = tableView.dequeueReusableCell(withIdentifier:             TransferTableViewCell.className, for: indexPath) as! TransferTableViewCell
             cell.networkResult = networkResult
+            cell.secondNetworkResult = secondNetworkResult
             cell.cellDelegate = self
             return cell
         case .shinhanPlus:
@@ -158,6 +165,12 @@ extension HomeViewController {
         for i in 0...(dummy.count - 1) {
             let appendData = Transfer(image: dummy[i].image, bankBook: dummy[i].bankBook, account: dummy[i].account, money: dummy[i].money)
             self.networkResult.append(appendData)
+        }
+        
+        let secondDummy = TransferList.dummy()
+        for i in 0...(secondDummy.count - 1) {
+            let appendData = TransferList(image: secondDummy[i].image, name: secondDummy[i].name, money: secondDummy[i].money)
+            self.secondNetworkResult.append(appendData)
         }
     }
 }

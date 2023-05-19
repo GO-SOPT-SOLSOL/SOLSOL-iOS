@@ -19,6 +19,12 @@ final class TransferTableViewCell: UITableViewCell {
               self.collectionView.reloadData()
           }
     }
+    
+    var secondNetworkResult: [TransferList] = [] {
+           didSet {
+              self.collectionView.reloadData()
+          }
+    }
 
     private lazy var collectionView = UICollectionView(frame: .zero,
                                                        collectionViewLayout: flowLayout)
@@ -100,6 +106,8 @@ extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         
         let transfer = networkResult[indexPath.item]
         cell.configureCell(transfer: transfer)
+        
+        cell.secondNetworkResult = secondNetworkResult
         
         cell.cellDelegate = self
         return cell
