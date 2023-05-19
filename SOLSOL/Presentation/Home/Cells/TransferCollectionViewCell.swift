@@ -222,7 +222,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configureCell(_ transfer: Transfer) {
+    func configureCell(transfer: Transfer) {
         bankImage.image = transfer.image
         bankBook.text = transfer.bankBook
         accountNum.text = transfer.account

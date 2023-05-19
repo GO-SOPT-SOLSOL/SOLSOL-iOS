@@ -12,6 +12,12 @@ import Then
 
 final class HomeViewController: UIViewController {
     
+    private var networkResult: [Transfer] = [] {
+        didSet {
+            self.homeTableView.reloadData()
+        }
+    }
+    
     private let homeTableView = UITableView()
     private lazy var navigationBar = SOLNavigationBar(self, leftItem: .home)
     
@@ -21,6 +27,7 @@ final class HomeViewController: UIViewController {
         setStyle()
         setLayout()
         setDelegate()
+        getTransfer()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,6 +104,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case .transfer:
             let cell = tableView.dequeueReusableCell(withIdentifier:             TransferTableViewCell.className, for: indexPath) as! TransferTableViewCell
+            cell.networkResult = networkResult
             cell.cellDelegate = self
             return cell
         case .shinhanPlus:
@@ -142,3 +150,18 @@ extension HomeViewController: TransferButtonAction {
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
 }
+
+extension HomeViewController {
+    func getTransfer() {
+        let dummy = Transfer.dummy()
+        
+        for i in 0...(dummy.count - 1) {
+            let appendData = Transfer(image: dummy[i].image, bankBook: dummy[i].bankBook, account: dummy[i].account, money: dummy[i].money)
+            self.networkResult.append(appendData)
+        }
+    }
+}
+
+
+
+

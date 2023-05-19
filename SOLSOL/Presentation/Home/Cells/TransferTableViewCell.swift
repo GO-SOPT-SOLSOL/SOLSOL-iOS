@@ -14,7 +14,11 @@ final class TransferTableViewCell: UITableViewCell {
     
     weak var cellDelegate: TransferButtonAction?
 
-    private let dummy = Transfer.dummy()
+    var networkResult: [Transfer] = [] {
+           didSet {
+              self.collectionView.reloadData()
+          }
+    }
 
     private lazy var collectionView = UICollectionView(frame: .zero,
                                                        collectionViewLayout: flowLayout)
@@ -87,13 +91,16 @@ final class TransferTableViewCell: UITableViewCell {
 
 extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dummy.count
+        return networkResult.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:TransferCollectionViewCell.className, for: indexPath) as? TransferCollectionViewCell else { return UICollectionViewCell() }
-        cell.configureCell(dummy[indexPath.item])
+        
+        let transfer = networkResult[indexPath.item]
+        cell.configureCell(transfer: transfer)
+        
         cell.cellDelegate = self
         return cell
     }
