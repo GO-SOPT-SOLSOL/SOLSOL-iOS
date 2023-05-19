@@ -1,13 +1,18 @@
 //
-//  TableViewCell.swift
+//  TransferTableViewCell.swift
 //  SOLSOL
 //
-//  Created by 변희주 on 2023/05/15.
+//  Created by 곽성준 on 2023/05/19.
 //
 
 import UIKit
 
-class aa: UITableViewCell {
+class TransferTableViewCell: UITableViewCell {
+    
+    private let bankImage = UIImageView()
+    private let bankLabel = UILabel()
+    private let bankAccountLable = UILabel()
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

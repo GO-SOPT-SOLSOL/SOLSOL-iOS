@@ -13,12 +13,20 @@ import Then
 class TransferView: UIView {
     
     //MARK: - UIComponents
+
+    private let TranferTableView = UITableView(frame: .zero, style: .grouped)
     
     private let sendToWhoLabel = UILabel()
     private let searchTextField = UITextField()
     private let SearchButton = UIButton()
     
     private let segmentedControl = UISegmentedControl(items: ["맞춤", "친구/그룹", "연락처"])
+    
+    private let firstHeaderView = UIView()
+    private let secondHeaderView = UIView()
+    private let firstHeaderLabel = UILabel()
+    private let secondHeaderLabel = UILabel()
+    private let sectionDivider = UIView()
     
     //MARK: - View Life Cycle
     
@@ -80,13 +88,39 @@ class TransferView: UIView {
             
         }
         
+        firstHeaderView.do{
+            $0.backgroundColor = .white
+        }
+        
+        secondHeaderView.do{
+            $0.backgroundColor = .white
+        }
+        
+        firstHeaderLabel.do{
+            $0.text = "내계좌"
+            $0.textColor = .gray600
+            $0.font = .font(.subhead4)
+        }
+        
+        secondHeaderLabel.do{
+            $0.text = "최근보낸 사람"
+            $0.textColor = .gray600
+            $0.font = .font(.subhead4)
+        }
+        
+        sectionDivider.do{
+            $0.backgroundColor = .gray100
+        }
+        
     }
     
     func hierarchy(){
         
-        self.addSubviews(sendToWhoLabel, searchTextField, segmentedControl)
+        self.addSubviews(sendToWhoLabel, searchTextField, segmentedControl,TranferTableView)
         
         searchTextField.addSubview(SearchButton)
+        firstHeaderView.addSubview(firstHeaderLabel)
+        secondHeaderView.addSubview(secondHeaderLabel)
         
     }
     
@@ -116,11 +150,35 @@ class TransferView: UIView {
             $0.top.equalTo(SearchButton.snp.bottom).offset(11)
             $0.height.equalTo(44)
         }
+        
+        TranferTableView.snp.makeConstraints{
+            $0.top.equalTo(segmentedControl.snp.bottom)
+            $0.trailing.leading.bottom.equalToSuperview()
+        }
+        
+        firstHeaderLabel.snp.makeConstraints{
+            $0.leading.equalToSuperview().inset(18)
+            $0.centerY.equalToSuperview()
+        }
+        
+        secondHeaderLabel.snp.makeConstraints{
+            $0.leading.equalToSuperview().inset(18)
+            $0.centerY.equalToSuperview()
+        }
+        
+        sectionDivider.snp.makeConstraints{
+            $0.width.equalTo(375)
+            $0.height.equalTo(7)
+        }
     }
     
     func setDelegate(){
         
         searchTextField.delegate = self
+        
+        TranferTableView.delegate = self
+        TranferTableView.dataSource = self
+        
     }
     
     //화면 터치 시 키보드 내리기
@@ -144,4 +202,43 @@ extension TransferView: UITextFieldDelegate{
         textField.layer.borderColor = UIColor.gray150.cgColor
     }
     
+}
+
+extension TransferView: UITableViewDelegate{
+    
+}
+
+extension TransferView: UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        3
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 55
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0{
+            return firstHeaderView
+        }
+        else if section == 1{
+            return secondHeaderView
+        }
+        else {return UIView()}
+        
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return sectionDivider
+    }
 }
