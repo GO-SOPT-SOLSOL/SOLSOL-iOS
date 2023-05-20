@@ -103,7 +103,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier:             TransferTableViewCell.className, for: indexPath) as! TransferTableViewCell
             cell.dummy = networkResult
             cell.apiDelegate = self
-            cell.cellDelegate = self
+            cell.pushDelegate = self
             return cell
         case .shinhanPlus:
             let cell = tableView.dequeueReusableCell(withIdentifier:             ShinhanPlusTableViewCell.className, for: indexPath)

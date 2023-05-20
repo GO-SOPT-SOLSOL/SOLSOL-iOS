@@ -16,7 +16,7 @@ protocol TransferTableViewCellProtocol: AnyObject {
 
 final class TransferTableViewCell: UITableViewCell {    
     
-    weak var cellDelegate: TransferButtonAction?
+    weak var pushDelegate: TransferButtonAction?
     
     weak var apiDelegate: TransferTableViewCellProtocol?
 
@@ -104,7 +104,7 @@ extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         self.recentHistory = apiDelegate?.getRecentHistory() ?? []
         cell.configureCell(dummy[indexPath.item])
         cell.dummy1 = self.recentHistory
-        cell.cellDelegate = self
+        cell.pushDelegate = self
         return cell
     }
     
@@ -122,7 +122,7 @@ extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
 
 extension TransferTableViewCell: TransferButtonAction {
     func transferButtonTapped() {
-        cellDelegate?.transferButtonTapped()
+        pushDelegate?.transferButtonTapped()
     }
 }
 

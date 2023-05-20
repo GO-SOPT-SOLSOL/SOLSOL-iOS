@@ -16,7 +16,7 @@ protocol TransferButtonAction: AnyObject {
 
 final class TransferCollectionViewCell: UICollectionViewCell {
     
-    weak var cellDelegate: TransferButtonAction?
+    weak var pushDelegate: TransferButtonAction?
         
     var dummy1: [TransferList] = [] {
         didSet {
@@ -235,7 +235,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
     
     @objc
     func backButtonTapped() {
-        cellDelegate?.transferButtonTapped()
+        pushDelegate?.transferButtonTapped()
     }
 }
 
