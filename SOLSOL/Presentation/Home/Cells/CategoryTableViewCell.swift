@@ -106,6 +106,10 @@ final class CategoryTableViewCell: UITableViewCell {
         itemStock,
         itemCertification]
         
+        itemStock.do {
+            $0.titleLabel?.numberOfLines = 1
+        }
+        
         itemHighStackView.do {
             $0.axis = .horizontal
             $0.distribution = .equalSpacing
@@ -151,13 +155,11 @@ final class CategoryTableViewCell: UITableViewCell {
         }
         
         itemHighStackView.snp.makeConstraints {
-            $0.height.equalTo(78)
             $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
         }
         
         itemLowStackView.snp.makeConstraints {
-            $0.height.equalTo(78)
             $0.top.equalToSuperview().inset(87)
             $0.leading.trailing.equalToSuperview()
         }
@@ -165,7 +167,6 @@ final class CategoryTableViewCell: UITableViewCell {
         itemAllStackView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.trailing.equalToSuperview().inset(18)
-            $0.height.equalTo(170)
         }
         
     }
