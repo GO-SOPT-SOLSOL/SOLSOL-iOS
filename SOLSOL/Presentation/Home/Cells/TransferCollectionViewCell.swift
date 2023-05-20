@@ -159,7 +159,6 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         
         bankImage.snp.makeConstraints {
             $0.top.leading.equalToSuperview().inset(18)
-            $0.trailing.equalToSuperview().inset(285)
             $0.size.equalTo(36)
         }
         
@@ -207,16 +206,16 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         transferButton.snp.makeConstraints {
             $0.top.equalTo(myMoney.snp.bottom).offset(7)
             $0.leading.equalToSuperview().inset(18)
-            $0.trailing.equalToSuperview().inset(239)
             $0.height.equalTo(34)
+            $0.width.equalTo(82)
 
         }
         
         moneyBoxButton.snp.makeConstraints {
-            $0.top.equalTo(myMoney.snp.bottom).offset(7)
-            $0.leading.equalToSuperview().inset(107)
-            $0.trailing.equalToSuperview().inset(117)
+            $0.top.equalTo(transferButton)
+            $0.leading.equalTo(transferButton.snp.trailing).offset(7)
             $0.height.equalTo(34)
+            $0.width.equalTo(115)
         }
     
         collectionView.snp.makeConstraints {
