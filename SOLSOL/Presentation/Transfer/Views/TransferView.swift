@@ -13,7 +13,7 @@ import Then
 class TransferView: UIView {
     
     //MARK: - UIComponents
-
+    
     let TranferTableView = UITableView(frame: .zero, style: .grouped)
     
     private let Firstdummy = AccountInfo.dummy()
@@ -23,7 +23,7 @@ class TransferView: UIView {
     private let searchTextField = UITextField()
     private let SearchButton = UIButton()
     
-    private let segmentedControl = UISegmentedControl(items: ["맞춤", "친구/그룹", "연락처"])
+    private lazy var segmentedControl = SOLSegmentedControl(items: ["맞춤", "친구/그룹", "연락처"])
     
     private let firstHeaderView = UIView()
     private let secondHeaderView = UIView()
@@ -31,11 +31,14 @@ class TransferView: UIView {
     private let secondHeaderLabel = UILabel()
     private let sectionDivider = UIView()
     
+    private var selectedIndex: Int = 0
+    
+    
     //MARK: - View Life Cycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-                
+        
         setDelegate()
         setStyle()
         hierarchy()
@@ -84,6 +87,7 @@ class TransferView: UIView {
         }
         
         segmentedControl.do{
+
             //선택안된 segment버튼 폰트
             $0.setTitleTextAttributes([
                 NSAttributedString.Key.foregroundColor: UIColor.gray400,
@@ -96,15 +100,26 @@ class TransferView: UIView {
                 NSAttributedString.Key.font: UIFont.font(.subhead2)
             ], for: .selected)
             
+            
+            $0.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
+            
+            
             //default 값을 '맞춤'으로
             $0.selectedSegmentIndex = 0
             
         }
         
         TranferTableView.do{
+            
+            
             $0.register(TransferAccountsTableViewCell.self, forCellReuseIdentifier: TransferAccountsTableViewCell.identifier)
+            
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapView(_:)))
+
+            $0.backgroundView = UIView()
+            $0.backgroundView?.addGestureRecognizer(tapGestureRecognizer)
+            
             $0.separatorStyle = .none
-//            $0.sectionFooterHeight = 7
             
         }
         
@@ -132,7 +147,6 @@ class TransferView: UIView {
             $0.backgroundColor = .gray100
         }
         
-
     }
     
     func setLayout(){
@@ -160,13 +174,14 @@ class TransferView: UIView {
             $0.trailing.equalTo(searchTextField.snp.trailing)
             $0.top.equalTo(SearchButton.snp.bottom).offset(11)
             $0.height.equalTo(44)
+            
         }
         
         TranferTableView.snp.makeConstraints{
             $0.top.equalTo(segmentedControl.snp.bottom)
             $0.trailing.leading.bottom.equalToSuperview()
         }
-    
+        
         
         firstHeaderLabel.snp.makeConstraints{
             $0.leading.equalToSuperview().inset(18)
@@ -178,7 +193,7 @@ class TransferView: UIView {
             $0.centerY.equalToSuperview()
         }
         
-
+        
     }
     
     func setDelegate(){
@@ -189,11 +204,23 @@ class TransferView: UIView {
         TranferTableView.dataSource = self
         
     }
+    
+    @objc func didTapView(_ sender: UITapGestureRecognizer) {
+        searchTextField.endEditing(true)
+    }
+    
+    
+    @objc
+    func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        searchTextField.endEditing(true)
+    }
+
 }
 
 //MARK: - Extensions
 
 extension TransferView: UITextFieldDelegate{
+    
     
     // 입력 시 textField 테두리 색 변경
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -204,10 +231,14 @@ extension TransferView: UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.gray150.cgColor
     }
-    
 }
 
-extension TransferView: UITableViewDelegate{ }
+extension TransferView: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.endEditing(true)
+    }
+    
+}
 
 extension TransferView: UITableViewDataSource{
     
@@ -217,10 +248,10 @@ extension TransferView: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if section == 0{
-            return Firstdummy.count
-        }else {return Secondummy.count}
-    }
+                if section == 0{
+                    return Firstdummy.count
+                }else {return Secondummy.count}
+            }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -272,6 +303,7 @@ extension TransferView: UITableViewDataSource{
             return 7
             
         }
-       return 0
+        return 0
     }
+    
 }

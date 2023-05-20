@@ -64,6 +64,7 @@
 		F45A98262A17764100C10142 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45A98252A17764100C10142 /* Data.swift */; };
 		F4D6890E2A12B0C90082A9F3 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */; };
 		F4D6D00A2A168F7C00B4A125 /* TransferAccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6D0092A168F7C00B4A125 /* TransferAccountsTableViewCell.swift */; };
+		F4FCEBED2A18DE5500004E70 /* SOLSegementedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCEBEC2A18DE5500004E70 /* SOLSegementedControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,7 @@
 		F45A98252A17764100C10142 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		F4D6D0092A168F7C00B4A125 /* TransferAccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferAccountsTableViewCell.swift; sourceTree = "<group>"; };
+		F4FCEBEC2A18DE5500004E70 /* SOLSegementedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLSegementedControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -435,6 +437,7 @@
 			children = (
 				B54F21432A135316000D350C /* SOLNavigationBar.swift */,
 				B54F21452A135AE9000D350C /* SOLButton.swift */,
+				F4FCEBEC2A18DE5500004E70 /* SOLSegementedControl.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				B51383042A157B6700167728 /* TransferDetailViewModel.swift in Sources */,
 				2A4761082A13F0EE005BAA9F /* Item.swift in Sources */,
 				F4D6D00A2A168F7C00B4A125 /* TransferAccountsTableViewCell.swift in Sources */,
+				F4FCEBED2A18DE5500004E70 /* SOLSegementedControl.swift in Sources */,
 				2A4761042A13EC1B005BAA9F /* NSObject+.swift in Sources */,
 				2AC408912A1131FA009F0D56 /* TransferDetailViewController.swift in Sources */,
 				B54F21462A135AE9000D350C /* SOLButton.swift in Sources */,
