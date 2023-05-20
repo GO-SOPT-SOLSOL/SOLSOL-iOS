@@ -103,7 +103,7 @@ extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         
         self.recentHistory = apiDelegate?.getRecentHistory() ?? []
         cell.configureCell(dummy[indexPath.item])
-        cell.dummy1 = self.recentHistory
+        cell.listDummy = self.recentHistory
         cell.pushDelegate = self
         return cell
     }

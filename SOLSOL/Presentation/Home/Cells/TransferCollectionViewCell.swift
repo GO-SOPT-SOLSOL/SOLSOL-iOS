@@ -18,7 +18,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
     
     weak var pushDelegate: TransferButtonAction?
         
-    var dummy1: [TransferList] = [] {
+    var listDummy: [TransferList] = [] {
         didSet {
             collectionView.reloadData()
         }
@@ -242,14 +242,14 @@ final class TransferCollectionViewCell: UICollectionViewCell {
 extension TransferCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dummy1.count
+        return listDummy.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:TransferListCollectionViewCell.className, for: indexPath) as? TransferListCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.configureCell(dummy1[indexPath.item])
+        cell.configureCell(listDummy[indexPath.item])
         
         return cell
     }
