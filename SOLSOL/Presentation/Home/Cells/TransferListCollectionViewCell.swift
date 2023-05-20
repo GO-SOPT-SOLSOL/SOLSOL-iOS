@@ -79,10 +79,9 @@ final class TransferListCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configureCell(_ transfer: TransferList) {
-        bankImage.image = transfer.image
-        name.text = transfer.name
-        amount.text = transfer.money
+    func configureCell(_ transferList: TransferList) {
+        bankImage.image = transferList.image
+        name.text = transferList.name
+        amount.text = transferList.money
     }
-    
 }

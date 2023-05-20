@@ -11,17 +11,20 @@ import SnapKit
 import Then
 
 final class HomeViewController: UIViewController {
-        
-    private let HomeTableView = UITableView()
+    
+    private var networkResult: [Transfer] = []
+    
+    private let homeTableView = UITableView()
     private lazy var navigationBar = SOLNavigationBar(self, leftItem: .home)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setStyle()
         setLayout()
-        setTarget()
         setDelegate()
+        getAccountsWithAPI()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,9 +35,7 @@ final class HomeViewController: UIViewController {
     
     func setStyle() {
         view.backgroundColor = .white
-        HomeTableView.do {
-            $0.delegate = self
-            $0.dataSource = self
+        homeTableView.do {
             $0.separatorStyle = .none
             $0.backgroundColor = .gray100
             setRegister()
@@ -43,7 +44,7 @@ final class HomeViewController: UIViewController {
     }
     
     func setLayout() {
-        view.addSubviews(navigationBar, HomeTableView)
+        view.addSubviews(navigationBar, homeTableView)
         
         navigationBar.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
@@ -51,25 +52,26 @@ final class HomeViewController: UIViewController {
             $0.height.equalTo(44)
         }
         
-        HomeTableView.snp.makeConstraints {
+        homeTableView.snp.makeConstraints {
             $0.top.equalTo(navigationBar.snp.bottom)
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
         }
     }
     
-    func setTarget() {}
+    func setDelegate() {
+        homeTableView.delegate = self
+        homeTableView.dataSource = self
+    }
     
-    func setDelegate() {}
-
     func setRegister() {
-        HomeTableView.register(AdvertisementTableViewCell.self, forCellReuseIdentifier:  AdvertisementTableViewCell.className)
-        HomeTableView.register(MyAccountTableViewCell.self, forCellReuseIdentifier:  MyAccountTableViewCell.className)
-        HomeTableView.register(TransferTableViewCell.self, forCellReuseIdentifier:  TransferTableViewCell.className)
-        HomeTableView.register(ShinhanPlusTableViewCell.self, forCellReuseIdentifier:  ShinhanPlusTableViewCell.className)
-        HomeTableView.register(DeliveryPackagingTableViewCell.self, forCellReuseIdentifier:  DeliveryPackagingTableViewCell.className)
-        HomeTableView.register(CategoryTableViewCell.self, forCellReuseIdentifier:  CategoryTableViewCell.className)
-        HomeTableView.register(FooterButtonTableViewCell.self, forCellReuseIdentifier:  FooterButtonTableViewCell.className)
+        homeTableView.register(AdvertisementTableViewCell.self, forCellReuseIdentifier:  AdvertisementTableViewCell.className)
+        homeTableView.register(MyAccountTableViewCell.self, forCellReuseIdentifier:  MyAccountTableViewCell.className)
+        homeTableView.register(TransferTableViewCell.self, forCellReuseIdentifier:  TransferTableViewCell.className)
+        homeTableView.register(ShinhanPlusTableViewCell.self, forCellReuseIdentifier:  ShinhanPlusTableViewCell.className)
+        homeTableView.register(DeliveryPackagingTableViewCell.self, forCellReuseIdentifier:  DeliveryPackagingTableViewCell.className)
+        homeTableView.register(CategoryTableViewCell.self, forCellReuseIdentifier:  CategoryTableViewCell.className)
+        homeTableView.register(FooterButtonTableViewCell.self, forCellReuseIdentifier:  FooterButtonTableViewCell.className)
     }
 }
 
@@ -99,7 +101,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case .transfer:
             let cell = tableView.dequeueReusableCell(withIdentifier:             TransferTableViewCell.className, for: indexPath) as! TransferTableViewCell
-//            cell.cellDelegate = self
+            cell.dummy = networkResult
+            cell.apiDelegate = self
+            cell.pushDelegate = self
             return cell
         case .shinhanPlus:
             let cell = tableView.dequeueReusableCell(withIdentifier:             ShinhanPlusTableViewCell.className, for: indexPath)
@@ -144,3 +148,21 @@ extension HomeViewController: TransferButtonAction {
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
 }
+
+extension HomeViewController {
+    func getAccountsWithAPI() {
+        self.networkResult = Transfer.dummy()
+    }
+}
+
+extension HomeViewController: TransferTableViewCellProtocol {
+    func getRecentHistory() -> [TransferList] {
+        let dummy = TransferList.dummy()
+        return dummy
+    }
+}
+
+
+
+
+

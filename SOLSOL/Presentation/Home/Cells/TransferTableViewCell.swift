@@ -10,11 +10,18 @@ import UIKit
 import SnapKit
 import Then
 
+protocol TransferTableViewCellProtocol: AnyObject {
+    func getRecentHistory() -> [TransferList]
+}
+
 final class TransferTableViewCell: UITableViewCell {    
     
-    weak var cellDelegate: TransferButtonAction?
+    weak var pushDelegate: TransferButtonAction?
+    
+    weak var apiDelegate: TransferTableViewCellProtocol?
 
-    private let dummy = Transfer.dummy()
+    var dummy: [Transfer] = []
+    var recentHistory: [TransferList] = []
 
     private lazy var collectionView = UICollectionView(frame: .zero,
                                                        collectionViewLayout: flowLayout)
@@ -93,8 +100,11 @@ extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:TransferCollectionViewCell.className, for: indexPath) as? TransferCollectionViewCell else { return UICollectionViewCell() }
+        
+        self.recentHistory = apiDelegate?.getRecentHistory() ?? []
         cell.configureCell(dummy[indexPath.item])
-        cell.cellDelegate = self
+        cell.listDummy = self.recentHistory
+        cell.pushDelegate = self
         return cell
     }
     
@@ -112,7 +122,7 @@ extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
 
 extension TransferTableViewCell: TransferButtonAction {
     func transferButtonTapped() {
-        cellDelegate?.transferButtonTapped()
+        pushDelegate?.transferButtonTapped()
     }
 }
 

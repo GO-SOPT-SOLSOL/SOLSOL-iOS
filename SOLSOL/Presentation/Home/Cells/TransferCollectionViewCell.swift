@@ -16,9 +16,13 @@ protocol TransferButtonAction: AnyObject {
 
 final class TransferCollectionViewCell: UICollectionViewCell {
     
-    weak var cellDelegate: TransferButtonAction?
-    
-    private let dummy = TransferList.dummy()
+    weak var pushDelegate: TransferButtonAction?
+        
+    var listDummy: [TransferList] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
 
     private let transferBackGround = UIView()
     private let bankImage = UIImageView()
@@ -231,20 +235,22 @@ final class TransferCollectionViewCell: UICollectionViewCell {
     
     @objc
     func backButtonTapped() {
-        cellDelegate?.transferButtonTapped()
+        pushDelegate?.transferButtonTapped()
     }
 }
 
 extension TransferCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dummy.count
+        return listDummy.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:TransferListCollectionViewCell.className, for: indexPath) as? TransferListCollectionViewCell else { return UICollectionViewCell() }
-        cell.configureCell(dummy[indexPath.item])
+        
+        cell.configureCell(listDummy[indexPath.item])
+        
         return cell
     }
 }
