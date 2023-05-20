@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+
+enum SizeLiterals {
+    static let navigationBarHeight = 44
+}
