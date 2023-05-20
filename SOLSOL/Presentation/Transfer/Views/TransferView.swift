@@ -29,7 +29,7 @@ class TransferView: UIView {
     private let secondHeaderView = UIView()
     private let firstHeaderLabel = UILabel()
     private let secondHeaderLabel = UILabel()
-    private let sectionDivider = UIView(frame: .zero)
+    private let sectionDivider = UIView()
     
     //MARK: - View Life Cycle
     
@@ -105,8 +105,8 @@ class TransferView: UIView {
             $0.register(TransferTableViewCell.self, forCellReuseIdentifier: TransferTableViewCell.identifier)
             $0.register(TransferTableViewCell.self, forCellReuseIdentifier: TransferTableViewCell.Secondidentifier)
             $0.separatorStyle = .none
-            $0.tableFooterView = sectionDivider
-            $0.sectionFooterHeight = 7
+//            $0.sectionFooterHeight = 7
+            
         }
         
         firstHeaderView.do{
@@ -179,10 +179,7 @@ class TransferView: UIView {
             $0.centerY.equalToSuperview()
         }
         
-        sectionDivider.snp.makeConstraints{
-            $0.width.equalTo(375)
-            $0.height.equalTo(7)
-        }
+
     }
     
     func setDelegate(){
@@ -264,4 +261,18 @@ extension TransferView: UITableViewDataSource{
         
     }
     
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if section == 0{
+            return sectionDivider
+        }
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 0{
+            return 7
+            
+        }
+       return 0
+    }
 }
