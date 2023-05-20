@@ -79,7 +79,7 @@ final class TransferListCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configureCell(transferList: TransferList) {
+    func configureCell(_ transferList: TransferList) {
         bankImage.image = transferList.image
         name.text = transferList.name
         amount.text = transferList.money

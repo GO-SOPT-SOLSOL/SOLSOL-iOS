@@ -12,17 +12,7 @@ import Then
 
 final class HomeViewController: UIViewController {
     
-    private var networkResult: [Transfer] = [] {
-        didSet {
-            self.homeTableView.reloadData()
-        }
-    }
-    
-    private var secondNetworkResult: [TransferList] = [] {
-        didSet {
-            self.homeTableView.reloadData()
-        }
-    }
+    private var networkResult: [Transfer] = []
     
     private let homeTableView = UITableView()
     private lazy var navigationBar = SOLNavigationBar(self, leftItem: .home)
@@ -33,7 +23,8 @@ final class HomeViewController: UIViewController {
         setStyle()
         setLayout()
         setDelegate()
-        getTransfer()
+        getAccountsWithAPI()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -110,8 +101,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case .transfer:
             let cell = tableView.dequeueReusableCell(withIdentifier:             TransferTableViewCell.className, for: indexPath) as! TransferTableViewCell
-            cell.networkResult = networkResult
-            cell.secondNetworkResult = secondNetworkResult
+            cell.dummy = networkResult
+            cell.apiDelegate = self
             cell.cellDelegate = self
             return cell
         case .shinhanPlus:
@@ -159,21 +150,18 @@ extension HomeViewController: TransferButtonAction {
 }
 
 extension HomeViewController {
-    func getTransfer() {
-        let dummy = Transfer.dummy()
-        
-        for i in 0...(dummy.count - 1) {
-            let appendData = Transfer(image: dummy[i].image, bankBook: dummy[i].bankBook, account: dummy[i].account, money: dummy[i].money)
-            self.networkResult.append(appendData)
-        }
-        
-        let secondDummy = TransferList.dummy()
-        for i in 0...(secondDummy.count - 1) {
-            let appendData = TransferList(image: secondDummy[i].image, name: secondDummy[i].name, money: secondDummy[i].money)
-            self.secondNetworkResult.append(appendData)
-        }
+    func getAccountsWithAPI() {
+        self.networkResult = Transfer.dummy()
     }
 }
+
+extension HomeViewController: TransferTableViewCellProtocol {
+    func getRecentHistory() -> [TransferList] {
+        let dummy = TransferList.dummy()
+        return dummy
+    }
+}
+
 
 
 

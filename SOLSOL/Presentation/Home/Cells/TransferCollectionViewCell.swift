@@ -18,10 +18,10 @@ final class TransferCollectionViewCell: UICollectionViewCell {
     
     weak var cellDelegate: TransferButtonAction?
         
-    var secondNetworkResult: [TransferList] = [] {
-           didSet {
-              self.collectionView.reloadData()
-          }
+    var dummy1: [TransferList] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
     }
 
     private let transferBackGround = UIView()
@@ -226,7 +226,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configureCell(transfer: Transfer) {
+    func configureCell(_ transfer: Transfer) {
         bankImage.image = transfer.image
         bankBook.text = transfer.bankBook
         accountNum.text = transfer.account
@@ -242,15 +242,14 @@ final class TransferCollectionViewCell: UICollectionViewCell {
 extension TransferCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return secondNetworkResult.count
+        return dummy1.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:TransferListCollectionViewCell.className, for: indexPath) as? TransferListCollectionViewCell else { return UICollectionViewCell() }
         
-        let transferList = secondNetworkResult[indexPath.item]
-        cell.configureCell(transferList: transferList)
+        cell.configureCell(dummy1[indexPath.item])
         
         return cell
     }

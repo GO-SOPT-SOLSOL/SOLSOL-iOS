@@ -10,21 +10,18 @@ import UIKit
 import SnapKit
 import Then
 
+protocol TransferTableViewCellProtocol: AnyObject {
+    func getRecentHistory() -> [TransferList]
+}
+
 final class TransferTableViewCell: UITableViewCell {    
     
     weak var cellDelegate: TransferButtonAction?
-
-    var networkResult: [Transfer] = [] {
-           didSet {
-              self.collectionView.reloadData()
-          }
-    }
     
-    var secondNetworkResult: [TransferList] = [] {
-           didSet {
-              self.collectionView.reloadData()
-          }
-    }
+    weak var apiDelegate: TransferTableViewCellProtocol?
+
+    var dummy: [Transfer] = []
+    var recentHistory: [TransferList] = []
 
     private lazy var collectionView = UICollectionView(frame: .zero,
                                                        collectionViewLayout: flowLayout)
@@ -97,18 +94,16 @@ final class TransferTableViewCell: UITableViewCell {
 
 extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return networkResult.count
+        return dummy.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:TransferCollectionViewCell.className, for: indexPath) as? TransferCollectionViewCell else { return UICollectionViewCell() }
         
-        let transfer = networkResult[indexPath.item]
-        cell.configureCell(transfer: transfer)
-        
-        cell.secondNetworkResult = secondNetworkResult
-        
+        self.recentHistory = apiDelegate?.getRecentHistory() ?? []
+        cell.configureCell(dummy[indexPath.item])
+        cell.dummy1 = self.recentHistory
         cell.cellDelegate = self
         return cell
     }
