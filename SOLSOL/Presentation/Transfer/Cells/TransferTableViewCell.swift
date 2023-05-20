@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TransferTableViewCell: UITableViewCell {
+final class TransferTableViewCell: UITableViewCell {
     
     static let identifier = "TranferTableViewCell"
     static let Secondidentifier = "SecondTranferTableViewCell"
