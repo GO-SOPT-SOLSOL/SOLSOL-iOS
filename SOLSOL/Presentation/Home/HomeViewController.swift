@@ -99,7 +99,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case .transfer:
             let cell = tableView.dequeueReusableCell(withIdentifier:             TransferTableViewCell.className, for: indexPath) as! TransferTableViewCell
-            cell.cellDelegate = self
+//            cell.cellDelegate = self
             return cell
         case .shinhanPlus:
             let cell = tableView.dequeueReusableCell(withIdentifier:             ShinhanPlusTableViewCell.className, for: indexPath)
