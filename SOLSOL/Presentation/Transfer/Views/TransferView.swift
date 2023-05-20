@@ -102,8 +102,7 @@ class TransferView: UIView {
         }
         
         TranferTableView.do{
-            $0.register(TransferTableViewCell.self, forCellReuseIdentifier: TransferTableViewCell.identifier)
-            $0.register(TransferTableViewCell.self, forCellReuseIdentifier: TransferTableViewCell.Secondidentifier)
+            $0.register(TransferAccountsTableViewCell.self, forCellReuseIdentifier: TransferAccountsTableViewCell.identifier)
             $0.separatorStyle = .none
 //            $0.sectionFooterHeight = 7
             
@@ -230,14 +229,14 @@ extension TransferView: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0{
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: TransferTableViewCell.identifier, for: indexPath) as? TransferTableViewCell else
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TransferAccountsTableViewCell.identifier, for: indexPath) as? TransferAccountsTableViewCell else
             {return UITableViewCell()}
             
             cell.configureCell(Firstdummy[indexPath.row])
             
             return cell}
         
-        else {guard let cell = tableView.dequeueReusableCell(withIdentifier: TransferTableViewCell.Secondidentifier, for: indexPath) as? TransferTableViewCell else
+        else {guard let cell = tableView.dequeueReusableCell(withIdentifier: TransferAccountsTableViewCell.identifier, for: indexPath) as? TransferAccountsTableViewCell else
             {return UITableViewCell()}
             
             cell.configureSecondCell(Secondummy[indexPath.row])

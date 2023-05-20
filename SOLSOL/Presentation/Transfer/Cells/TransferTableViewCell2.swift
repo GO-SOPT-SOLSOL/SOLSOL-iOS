@@ -7,10 +7,9 @@
 
 import UIKit
 
-final class TransferTableViewCell: UITableViewCell {
+final class TransferAccountsTableViewCell: UITableViewCell {
     
-    static let identifier = "TranferTableViewCell"
-    static let Secondidentifier = "SecondTranferTableViewCell"
+    static let identifier = "TransferAccountsTableViewCell"
     
     private let bankImage = UIImageView()
     private let bankNameLabel = UILabel()
