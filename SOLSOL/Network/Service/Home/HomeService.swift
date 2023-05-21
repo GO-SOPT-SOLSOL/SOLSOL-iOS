@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+protocol HomeServiceProtocol {
+    func getAccountsList(queryDTO: AccountsListRequestDTO, completion: @escaping (NetworkResult<BaseResponse<[AccountsListResponseDTO]>>) -> Void)
+}
+
+
+final class HomeService: APIRequestLoader<HomeTarget>, HomeServiceProtocol {
+    func getAccountsList(queryDTO: AccountsListRequestDTO, completion: @escaping (NetworkResult<BaseResponse<[AccountsListResponseDTO]>>) -> Void) {
+
+        fetchData(
+            target: .getAccountsList(queryDTO),
+            responseData: BaseResponse<[AccountsListResponseDTO]>.self, completion: completion)
+    }
+}
+
