@@ -62,6 +62,7 @@
 		B54F21522A13BFA4000D350C /* BenefitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21512A13BFA4000D350C /* BenefitViewController.swift */; };
 		B54F21542A13BFAA000D350C /* AllMenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21532A13BFAA000D350C /* AllMenusViewController.swift */; };
 		F45A98262A17764100C10142 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45A98252A17764100C10142 /* Data.swift */; };
+		F4CA67D12A1B41C200047753 /* UserCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA67D02A1B41C200047753 /* UserCustomViewController.swift */; };
 		F4D6890E2A12B0C90082A9F3 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */; };
 		F4D6D00A2A168F7C00B4A125 /* TransferAccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6D0092A168F7C00B4A125 /* TransferAccountsTableViewCell.swift */; };
 		F4FCEBED2A18DE5500004E70 /* SOLSegementedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCEBEC2A18DE5500004E70 /* SOLSegementedControl.swift */; };
@@ -141,6 +142,7 @@
 		B54F21512A13BFA4000D350C /* BenefitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitViewController.swift; sourceTree = "<group>"; };
 		B54F21532A13BFAA000D350C /* AllMenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMenusViewController.swift; sourceTree = "<group>"; };
 		F45A98252A17764100C10142 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		F4CA67D02A1B41C200047753 /* UserCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomViewController.swift; sourceTree = "<group>"; };
 		F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		F4D6D0092A168F7C00B4A125 /* TransferAccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferAccountsTableViewCell.swift; sourceTree = "<group>"; };
 		F4FCEBEC2A18DE5500004E70 /* SOLSegementedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLSegementedControl.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				2A204AE22A115BEA00805E0A /* TransferView.swift */,
+				F4CA67D02A1B41C200047753 /* UserCustomViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				2A204AE32A115BEA00805E0A /* TransferView.swift in Sources */,
 				2A4760FA2A13EBF1005BAA9F /* TransferCollectionViewCell.swift in Sources */,
 				2A47610F2A189A74005BAA9F /* TransferTableViewCell.swift in Sources */,
+				F4CA67D12A1B41C200047753 /* UserCustomViewController.swift in Sources */,
 				B51383042A157B6700167728 /* TransferDetailViewModel.swift in Sources */,
 				2A4761082A13F0EE005BAA9F /* Item.swift in Sources */,
 				F4D6D00A2A168F7C00B4A125 /* TransferAccountsTableViewCell.swift in Sources */,
