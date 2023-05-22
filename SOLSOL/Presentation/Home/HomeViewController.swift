@@ -23,7 +23,6 @@ final class HomeViewController: UIViewController {
         setStyle()
         setLayout()
         setDelegate()
-        getAccountsWithAPI()
 
     }
     
@@ -32,6 +31,7 @@ final class HomeViewController: UIViewController {
         
         navigationController?.setNavigationBarHidden(true, animated: true)
         getAccountsListWithAPI()
+        getAdvertisementWithAPI()
     }
     
     func setStyle() {
@@ -187,6 +187,22 @@ extension HomeViewController {
             }
         }
 
+    }
+    
+    func getAdvertisementWithAPI() {
+        NetworkService.shared.homeService.getADs { result in
+            switch result {
+            case .success(let data):
+                guard let data = data.data else {
+                    print("no data")
+                    return
+                }
+                dump(data)
+            default:
+                print("network failure")
+                return
+            }
+        }
     }
 
 

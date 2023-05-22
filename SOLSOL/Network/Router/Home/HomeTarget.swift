@@ -11,6 +11,7 @@ import Alamofire
 
 enum HomeTarget {
     case getAccountsList(_ dto: AccountsListRequestDTO)
+    case getADs
 }
 
 extension HomeTarget: TargetType {
@@ -19,6 +20,8 @@ extension HomeTarget: TargetType {
         switch self {
         case .getAccountsList(_):
             return .get
+        case .getADs:
+            return .get
         }
     }
 
@@ -26,13 +29,18 @@ extension HomeTarget: TargetType {
         switch self {
         case .getAccountsList(_):
             return "/accounts/"
+        case .getADs:
+            return "/ads"
         }
+        
     }
 
     var parameters: RequestParams {
         switch self {
         case .getAccountsList(let dto):
             return .requestQuery(dto)
+        case .getADs:
+            return .requestPlain
         }
     }
 

@@ -9,6 +9,7 @@ import Foundation
 
 protocol HomeServiceProtocol {
     func getAccountsList(queryDTO: AccountsListRequestDTO, completion: @escaping (NetworkResult<BaseResponse<[AccountsListResponseDTO]>>) -> Void)
+    func getADs(completion: @escaping (NetworkResult<BaseResponse<[AdvertisementListDTO]>>) -> Void)
 }
 
 
@@ -18,6 +19,13 @@ final class HomeService: APIRequestLoader<HomeTarget>, HomeServiceProtocol {
         fetchData(
             target: .getAccountsList(queryDTO),
             responseData: BaseResponse<[AccountsListResponseDTO]>.self, completion: completion)
+    }
+    
+    func getADs(completion: @escaping (NetworkResult<BaseResponse<[AdvertisementListDTO]>>) -> Void) {
+        
+        fetchData(
+            target: .getADs,
+            responseData: BaseResponse<[AdvertisementListDTO]>.self, completion: completion)
     }
 }
 
