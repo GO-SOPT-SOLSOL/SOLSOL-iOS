@@ -206,7 +206,7 @@ extension HomeViewController {
                 
                 dump(data)
                 for i in 0...(data.count - 1) {
-                    let transferData = Transfer(id: data[i].id, bankBook: data[i].name, bankName: data[i].bank, account: data[i].accountNumber, money: data[i].balance)
+                    let transferData = Transfer(id: data[i].id, bank: data[i].bank, name: data[i].name, money: data[i].balance, accountNumber: data[i].accountNumber)
                     self.accountList.append(transferData)
                 }
             default:

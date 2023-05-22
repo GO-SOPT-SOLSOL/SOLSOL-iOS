@@ -9,8 +9,8 @@ import UIKit
 
 struct Transfer {
     let id: Int
-    let bankBook: String
-    let bankName: String
-    let account: String
+    let bank: String
+    let name: String
     let money: Int
+    let accountNumber: String
 }

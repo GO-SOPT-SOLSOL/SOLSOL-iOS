@@ -178,7 +178,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         }
         
         copyButton.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(37)
+            $0.top.equalTo(accountNum)
             $0.leading.equalTo(accountNum.snp.trailing).offset(2)
             $0.size.equalTo(14)
         }
@@ -241,21 +241,20 @@ final class TransferCollectionViewCell: UICollectionViewCell {
             bankImage.image = ImageLiterals.Home.icBigBankShinhan
         }
         
-        bankBook.text = accountList.bankBook
+        bankBook.text = accountList.name
         
-        if accountList.account == "SHINHAN" {
-            accountNum.text = "신한" + " " + accountList.account
-        } else if accountList.bankBook == "KOOKMIN" {
-            accountNum.text = "국민" + " " + accountList.account
-        } else if accountList.bankBook == "HANNA" {
-            accountNum.text = "하나" + " " + accountList.account
-        } else if accountList.bankBook == "KAKAO" {
-            accountNum.text = "카카오" + " " + accountList.account
+        if accountList.bank == "SHINHAN" {
+            accountNum.text = "신한" + " " + accountList.accountNumber
+        } else if accountList.bank == "KOOKMIN" {
+            accountNum.text = "국민" + " " + accountList.accountNumber
+        } else if accountList.bank == "HANNA" {
+            accountNum.text = "하나" + " " + accountList.accountNumber
+        } else if accountList.bank == "KAKAO" {
+            accountNum.text = "카카오" + " " + accountList.accountNumber
         } else {
-            accountNum.text = "우리" + " " + accountList.account
+            accountNum.text = "우리" + " " + accountList.accountNumber
         }
-        
-        
+                
         let numberFormatter: NumberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
 
