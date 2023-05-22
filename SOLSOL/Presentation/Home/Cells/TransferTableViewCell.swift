@@ -20,7 +20,12 @@ final class TransferTableViewCell: UITableViewCell {
     
     weak var apiDelegate: TransferTableViewCellProtocol?
 
-    var dummy: [Transfer] = []
+    var accountList: [Transfer] = [] {
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
+    
     var recentHistory: [TransferList] = []
 
     private lazy var collectionView = UICollectionView(frame: .zero,
@@ -90,11 +95,12 @@ final class TransferTableViewCell: UITableViewCell {
             $0.leading.trailing.equalToSuperview()
         }
     }
+
 }
 
 extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dummy.count
+        return accountList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -102,7 +108,8 @@ extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:TransferCollectionViewCell.className, for: indexPath) as? TransferCollectionViewCell else { return UICollectionViewCell() }
         
         self.recentHistory = apiDelegate?.getRecentHistory() ?? []
-        cell.configureCell(dummy[indexPath.item])
+        let accountList = accountList[indexPath.row]
+        cell.configureCell(accountList: accountList)
         cell.listDummy = self.recentHistory
         cell.pushDelegate = self
         return cell

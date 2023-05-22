@@ -12,7 +12,11 @@ import Then
 
 final class HomeViewController: UIViewController {
     
-    private var networkResult: [Transfer] = []
+    private var accountList: [Transfer] = [] {
+        didSet {
+            self.homeTableView.reloadData()
+        }
+    }
     
     private var adBannerHit: [Advertisement] = [] {
         didSet {
@@ -114,7 +118,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case .transfer:
             let cell = tableView.dequeueReusableCell(withIdentifier:             TransferTableViewCell.className, for: indexPath) as! TransferTableViewCell
-            cell.dummy = networkResult
+            cell.accountList = accountList
             cell.apiDelegate = self
             cell.pushDelegate = self
             return cell
@@ -162,12 +166,6 @@ extension HomeViewController: TransferButtonAction {
     }
 }
 
-extension HomeViewController {
-    func getAccountsWithAPI() {
-        self.networkResult = Transfer.dummy()
-    }
-}
-
 extension HomeViewController: TransferTableViewCellProtocol {
     func getRecentHistory() -> [TransferList] {
         let dummy = TransferList.dummy()
@@ -183,16 +181,18 @@ extension HomeViewController: TransferTableViewCellProtocol {
 extension HomeViewController {
 
     func getAccountsListWithAPI() {
-        let queryDTO = AccountsListRequestDTO(memberId: 1)
+        let queryDTO = AccountsListRequestDTO(memberId: 2)
         NetworkService.shared.homeService.getAccountsList(queryDTO: queryDTO) { result in
             
             switch result {
             case .success(let data):
-                guard let data = data.data else {
-                    print("no data")
-                    return
-                }
+                guard let data = data.data else { return }
+                
                 dump(data)
+                for i in 0...(data.count - 1) {
+                    let TransferData = Transfer(id: data[i].id, bankBook: data[i].name, bankName: data[i].bank, account: data[i].accountNumber, money: data[i].balance)
+                    self.accountList.append(TransferData)
+                }
             default:
                 print("network failure")
                 return
@@ -207,11 +207,10 @@ extension HomeViewController {
             case .success(let data):
                 guard let data = data.data else { return }
                 
-                let appendData = Advertisement(title: data[1].title, content: data[1].content)
-                    self.adBannerHit.append(appendData)
+                let advertisementData = Advertisement(title: data[1].title, content: data[1].content)
+                    self.adBannerHit.append(advertisementData)
                 
                 dump(data)
-                print(data)
             default:
                 print("network failure")
                 return

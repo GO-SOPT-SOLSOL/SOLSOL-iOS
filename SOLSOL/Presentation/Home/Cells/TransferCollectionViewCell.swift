@@ -17,13 +17,13 @@ protocol TransferButtonAction: AnyObject {
 final class TransferCollectionViewCell: UICollectionViewCell {
     
     weak var pushDelegate: TransferButtonAction?
-        
+    
     var listDummy: [TransferList] = [] {
         didSet {
             collectionView.reloadData()
         }
     }
-
+    
     private let transferBackGround = UIView()
     private let bankImage = UIImageView()
     private let depositWithdraw = UILabel()
@@ -208,7 +208,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
             $0.leading.equalToSuperview().inset(18)
             $0.height.equalTo(34)
             $0.width.equalTo(82)
-
+            
         }
         
         moneyBoxButton.snp.makeConstraints {
@@ -217,7 +217,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
             $0.height.equalTo(34)
             $0.width.equalTo(115)
         }
-    
+        
         collectionView.snp.makeConstraints {
             $0.bottom.equalToSuperview().inset(18)
             $0.height.equalTo(43)
@@ -225,11 +225,45 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configureCell(_ transfer: Transfer) {
-        bankImage.image = transfer.image
-        bankBook.text = transfer.bankBook
-        accountNum.text = transfer.account
-        myMoney.text = transfer.money
+    func configureCell(accountList: Transfer) {
+        switch accountList.id {
+        case 1:
+            bankImage.image = ImageLiterals.Home.icSmallBankKakao
+        case 2:
+            bankImage.image = ImageLiterals.Home.icBigBankShinhan
+        case 3:
+            bankImage.image = ImageLiterals.Home.icSmallBankKakao
+        case 4:
+            bankImage.image = ImageLiterals.Home.icSmallBankHanna
+        case 5:
+            bankImage.image = ImageLiterals.Home.icSmallBankKB
+        default:
+            bankImage.image = ImageLiterals.Home.icBigBankShinhan
+        }
+        
+        bankBook.text = accountList.bankBook
+        
+        if accountList.account == "SHINHAN" {
+            accountNum.text = "신한" + " " + accountList.account
+        } else if accountList.bankBook == "KOOKMIN" {
+            accountNum.text = "국민" + " " + accountList.account
+        } else if accountList.bankBook == "HANNA" {
+            accountNum.text = "하나" + " " + accountList.account
+        } else if accountList.bankBook == "KAKAO" {
+            accountNum.text = "카카오" + " " + accountList.account
+        } else {
+            accountNum.text = "우리" + " " + accountList.account
+        }
+        
+        
+        let numberFormatter: NumberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+
+        let result: String = numberFormatter.string(for: accountList.money)!
+        
+        myMoney.text = String(result)
+
+        
     }
     
     @objc
@@ -239,7 +273,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
 }
 
 extension TransferCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listDummy.count
     }
