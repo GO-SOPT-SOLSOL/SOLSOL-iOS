@@ -50,7 +50,6 @@ extension SOLFilledButton {
     private func setConfig() {
         var config = UIButton.Configuration.filled()
         config.baseBackgroundColor = color
-        config.contentInsets = .zero
         if let text {
             var titleAttr = AttributedString(text)
             titleAttr.font = self.font

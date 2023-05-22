@@ -13,6 +13,7 @@ import Then
 final class TransferDetailViewController: UIViewController {
 
     private enum Size {
+        static let navigationBarheight = 44
         static let nextButtonHeight = 52
     }
 
@@ -22,17 +23,13 @@ final class TransferDetailViewController: UIViewController {
 
     private let numberPad = NumberPadView()
 
-    private lazy var nextButton = SOLFilledButton(
+    private let nextButton = SOLFilledButton(
         backgroundColor: .blue500,
         text: StringLiterals.TransferDetail.next,
         textColor: .white,
-        font: .font(.headline), cornerRadius: 12).then {
-            $0.addTarget(self, action: #selector(handleTapNextButton), for: .touchUpInside)
-        }
+        font: .font(.headline), cornerRadius: 12)
 
     private var viewModel: TransferDetailViewModel
-
-    private var myAccount: MyAccountViewModel?
 
     init(viewModel: TransferDetailViewModel) {
         self.viewModel = viewModel
@@ -52,7 +49,6 @@ final class TransferDetailViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
         viewModel.viewWillAppear()
     }
     
@@ -74,7 +70,7 @@ private extension TransferDetailViewController {
         navigationBar.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(SizeLiterals.navigationBarHeight)
+            make.height.equalTo(Size.navigationBarheight)
         }
 
         transferInfoView.snp.makeConstraints { make in
@@ -83,7 +79,7 @@ private extension TransferDetailViewController {
         }
 
         numberPad.snp.makeConstraints { make in
-            make.top.equalTo(transferInfoView.snp.bottom).offset(10)
+            make.top.equalTo(transferInfoView.snp.bottom).offset(15)
             make.leading.trailing.equalToSuperview().inset(18)
         }
 
@@ -93,7 +89,6 @@ private extension TransferDetailViewController {
             make.height.equalTo(Size.nextButtonHeight)
             make.bottom.equalTo(view.safeAreaLayoutGuide)
         }
-
     }
 
 }
@@ -105,8 +100,7 @@ extension TransferDetailViewController {
         }
 
         self.viewModel.fetchedMyAccount = { myAccount in
-            self.myAccount = myAccount
-            self.transferInfoView.configureMyAccount(account: myAccount)
+            self.transferInfoView.configureTransferInfoView(account: myAccount)
         }
 
         viewModel.updatedMoneyDisplay = { text in
@@ -125,23 +119,4 @@ extension TransferDetailViewController {
         guard let type = NumberButtonType(rawValue: sender.tag) else { return }
         viewModel.didTapNumberPad(text: sender.titleLabel?.text, buttonType: type)
     }
-
-    @objc
-    func handleTapNextButton(sender: UIButton) {
-        guard let myAccount = self.myAccount,
-              let receiverText = transferInfoView.receiverLabel.text,
-              let receiverAccountText = transferInfoView.receiverAccountLabel.text,
-              let moneyText = transferInfoView.moneyLabel.text
-        else {
-            return
-        }
-        let viewController = TransferConfirmViewController()
-        viewController.setInitialData(
-            receiverName: receiverText,
-            receiverAccount: receiverAccountText,
-            transferMoney: moneyText.replacingOccurrences(of: "원", with: ""),
-            myAccount: myAccount)
-        self.navigationController?.pushViewController(viewController, animated: false)
-    }
-
 }

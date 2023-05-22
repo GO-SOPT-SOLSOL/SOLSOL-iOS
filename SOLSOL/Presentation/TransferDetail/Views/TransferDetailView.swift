@@ -16,7 +16,7 @@ final class TransferInfoView: UIView {
         static let myAccountBackgroundViewHeight = 36
     }
 
-    let receiverLabel = UILabel().then {
+    private let receiverLabel = UILabel().then {
         $0.textColor = .gray600
         $0.font = .font(.subhead1)
         // TODO: Transfer에서 데이터 전달 받기
@@ -24,7 +24,7 @@ final class TransferInfoView: UIView {
 
     }
 
-    let receiverAccountLabel = UILabel().then {
+    private let receiverAccountLabel = UILabel().then {
         $0.textColor = .gray400
         $0.font = .font(.body4)
         // TODO: Transfer에서 데이터 전달 받기
@@ -37,7 +37,7 @@ final class TransferInfoView: UIView {
         $0.font = .font(.display6)
     }
 
-    let moneyLabel = UILabel().then {
+    private let moneyLabel = UILabel().then {
         $0.text = StringLiterals.TransferDetail.emptyMoneyLabelText
         $0.textColor = .gray600
         $0.font = .font(.display5)
@@ -123,10 +123,9 @@ extension TransferInfoView {
         }
 
         myAccountBackgroundView.snp.makeConstraints { make in
-            make.top.equalTo(convenientMoneyLabel.snp.bottom).offset(40).priority(.low)
+            make.top.equalTo(convenientMoneyLabel.snp.bottom).offset(40)
             make.leading.trailing.equalToSuperview().inset(18)
             make.height.equalTo(Size.myAccountBackgroundViewHeight)
-            make.bottom.equalToSuperview()
         }
 
         myAccountLabel.snp.makeConstraints { make in
@@ -148,7 +147,7 @@ extension TransferInfoView {
 }
 
 extension TransferInfoView {
-    func configureMyAccount(account: MyAccountViewModel) {
+    func configureTransferInfoView(account: MyAccountViewModel) {
         myAccountLabel.text = "\(account.bank) \(account.myAccount)"
         accountBalance.text = "\(account.balance)원"
     }
@@ -160,20 +159,4 @@ extension TransferInfoView {
     func updateConvenientLabel(text: String) {
         convenientMoneyLabel.text = text
     }
-
-    func setTransferConfirmView() {
-        convenientMoneyLabel.text = "보낼까요?"
-    }
-
-    func setReceiverLabel(name: String, myAccount: String) {
-        receiverLabel.text = "\(name)님께"
-        receiverAccountLabel.text = "\(myAccount)"
-        howMuchLabel.isHidden = true
-
-        moneyLabel.snp.remakeConstraints { make in
-            make.top.equalTo(receiverAccountLabel.snp.bottom).offset(57)
-            make.centerX.equalToSuperview()
-        }
-    }
-
 }
