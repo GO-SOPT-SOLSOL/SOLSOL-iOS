@@ -13,12 +13,23 @@ import Then
 class TransferView: UIView {
     
     //MARK: - UIComponents
+
+    let TranferTableView = UITableView(frame: .zero, style: .grouped)
+    
+    private let Firstdummy = AccountInfo.dummy()
+    private let Secondummy = AccountInfoWithDate.dummy()
     
     private let sendToWhoLabel = UILabel()
     private let searchTextField = UITextField()
     private let SearchButton = UIButton()
     
     private let segmentedControl = UISegmentedControl(items: ["맞춤", "친구/그룹", "연락처"])
+    
+    private let firstHeaderView = UIView()
+    private let secondHeaderView = UIView()
+    private let firstHeaderLabel = UILabel()
+    private let secondHeaderLabel = UILabel()
+    private let sectionDivider = UIView()
     
     //MARK: - View Life Cycle
     
@@ -38,6 +49,16 @@ class TransferView: UIView {
     }
     
     // MARK: - Methods
+    
+    func hierarchy(){
+        
+        self.addSubviews(sendToWhoLabel, searchTextField, segmentedControl,TranferTableView)
+        
+        searchTextField.addSubview(SearchButton)
+        firstHeaderView.addSubview(firstHeaderLabel)
+        secondHeaderView.addSubview(secondHeaderLabel)
+        
+    }
     
     func setStyle(){
         
@@ -80,14 +101,38 @@ class TransferView: UIView {
             
         }
         
-    }
-    
-    func hierarchy(){
+        TranferTableView.do{
+            $0.register(TransferAccountsTableViewCell.self, forCellReuseIdentifier: TransferAccountsTableViewCell.identifier)
+            $0.separatorStyle = .none
+//            $0.sectionFooterHeight = 7
+            
+        }
         
-        self.addSubviews(sendToWhoLabel, searchTextField, segmentedControl)
+        firstHeaderView.do{
+            $0.backgroundColor = .white
+        }
         
-        searchTextField.addSubview(SearchButton)
+        secondHeaderView.do{
+            $0.backgroundColor = .white
+        }
         
+        firstHeaderLabel.do{
+            $0.text = "내계좌"
+            $0.textColor = .gray600
+            $0.font = .font(.subhead4)
+        }
+        
+        secondHeaderLabel.do{
+            $0.text = "최근보낸 사람"
+            $0.textColor = .gray600
+            $0.font = .font(.subhead4)
+        }
+        
+        sectionDivider.do{
+            $0.backgroundColor = .gray100
+        }
+        
+
     }
     
     func setLayout(){
@@ -116,18 +161,34 @@ class TransferView: UIView {
             $0.top.equalTo(SearchButton.snp.bottom).offset(11)
             $0.height.equalTo(44)
         }
+        
+        TranferTableView.snp.makeConstraints{
+            $0.top.equalTo(segmentedControl.snp.bottom)
+            $0.trailing.leading.bottom.equalToSuperview()
+        }
+    
+        
+        firstHeaderLabel.snp.makeConstraints{
+            $0.leading.equalToSuperview().inset(18)
+            $0.centerY.equalToSuperview()
+        }
+        
+        secondHeaderLabel.snp.makeConstraints{
+            $0.leading.equalToSuperview().inset(18)
+            $0.centerY.equalToSuperview()
+        }
+        
+
     }
     
     func setDelegate(){
         
         searchTextField.delegate = self
+        
+        TranferTableView.delegate = self
+        TranferTableView.dataSource = self
+        
     }
-    
-    //화면 터치 시 키보드 내리기
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.endEditing(true)
-        }
-    
 }
 
 //MARK: - Extensions
@@ -144,4 +205,73 @@ extension TransferView: UITextFieldDelegate{
         textField.layer.borderColor = UIColor.gray150.cgColor
     }
     
+}
+
+extension TransferView: UITableViewDelegate{ }
+
+extension TransferView: UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        74
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if section == 0{
+            return Firstdummy.count
+        }else {return Secondummy.count}
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.section == 0{
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TransferAccountsTableViewCell.identifier, for: indexPath) as? TransferAccountsTableViewCell else
+            {return UITableViewCell()}
+            
+            cell.configureCell(Firstdummy[indexPath.row])
+            
+            return cell}
+        
+        else {guard let cell = tableView.dequeueReusableCell(withIdentifier: TransferAccountsTableViewCell.identifier, for: indexPath) as? TransferAccountsTableViewCell else
+            {return UITableViewCell()}
+            
+            cell.configureSecondCell(Secondummy[indexPath.row])
+            
+            return cell}
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 55
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0{
+            return firstHeaderView
+        }
+        else if section == 1{
+            return secondHeaderView
+        }
+        else {return UIView()}
+        
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if section == 0{
+            return sectionDivider
+        }
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 0{
+            return 7
+            
+        }
+       return 0
+    }
 }
