@@ -79,9 +79,23 @@ final class TransferListCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configureCell(_ transferList: TransferList) {
-        bankImage.image = transferList.image
-        name.text = transferList.name
-        amount.text = transferList.money
+    func configureCell(currentAccountList: TransferList) {
+        name.text = currentAccountList.name
+        if currentAccountList.bank == "KAKAO" {
+            bankImage.image = ImageLiterals.Home.icSmallBankKakao
+        } else {
+            bankImage.image = ImageLiterals.Home.icSmallBankKB
+        }
+        
+        switch currentAccountList.id {
+        case 7:
+            amount.text = "30,000"
+        case 5:
+            amount.text = "10,000"
+        case 2:
+            amount.text = "50,000"
+        default:
+            amount.text = "33,333"
+        }
     }
 }

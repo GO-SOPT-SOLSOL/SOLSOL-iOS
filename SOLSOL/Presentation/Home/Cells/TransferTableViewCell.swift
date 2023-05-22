@@ -26,8 +26,12 @@ final class TransferTableViewCell: UITableViewCell {
         }
     }
     
-    var recentHistory: [TransferList] = []
-
+    var currentAccountList: [TransferList] = [] {
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
+    
     private lazy var collectionView = UICollectionView(frame: .zero,
                                                        collectionViewLayout: flowLayout)
     private let flowLayout = UICollectionViewFlowLayout()
@@ -107,10 +111,10 @@ extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:TransferCollectionViewCell.className, for: indexPath) as? TransferCollectionViewCell else { return UICollectionViewCell() }
         
-        self.recentHistory = apiDelegate?.getRecentHistory() ?? []
+
         let accountList = accountList[indexPath.row]
         cell.configureCell(accountList: accountList)
-        cell.listDummy = self.recentHistory
+        cell.currentAccountList = currentAccountList
         cell.pushDelegate = self
         return cell
     }

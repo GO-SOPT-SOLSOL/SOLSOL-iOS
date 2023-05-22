@@ -13,6 +13,8 @@
 		2A204AE72A115C0B00805E0A /* TransferDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AE62A115C0B00805E0A /* TransferDetailView.swift */; };
 		2A287D242A1BC7FE0037B94B /* AdvertisementListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A287D232A1BC7FE0037B94B /* AdvertisementListDTO.swift */; };
 		2A287D262A1BCC1D0037B94B /* Advertisement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A287D252A1BCC1D0037B94B /* Advertisement.swift */; };
+		2A287D282A1BE25B0037B94B /* CurrentAccountListRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A287D272A1BE25B0037B94B /* CurrentAccountListRequestDTO.swift */; };
+		2A287D2A2A1BE27F0037B94B /* CurrentAccountListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A287D292A1BE27F0037B94B /* CurrentAccountListResponseDTO.swift */; };
 		2A4760F92A13EBF1005BAA9F /* DeliveryPackagingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4760F12A13EBF1005BAA9F /* DeliveryPackagingTableViewCell.swift */; };
 		2A4760FA2A13EBF1005BAA9F /* TransferCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4760F22A13EBF1005BAA9F /* TransferCollectionViewCell.swift */; };
 		2A4760FB2A13EBF1005BAA9F /* ShinhanPlusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4760F32A13EBF1005BAA9F /* ShinhanPlusTableViewCell.swift */; };
@@ -104,6 +106,8 @@
 		2A204AE62A115C0B00805E0A /* TransferDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailView.swift; sourceTree = "<group>"; };
 		2A287D232A1BC7FE0037B94B /* AdvertisementListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementListDTO.swift; sourceTree = "<group>"; };
 		2A287D252A1BCC1D0037B94B /* Advertisement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertisement.swift; sourceTree = "<group>"; };
+		2A287D272A1BE25B0037B94B /* CurrentAccountListRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAccountListRequestDTO.swift; sourceTree = "<group>"; };
+		2A287D292A1BE27F0037B94B /* CurrentAccountListResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAccountListResponseDTO.swift; sourceTree = "<group>"; };
 		2A4760F12A13EBF1005BAA9F /* DeliveryPackagingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryPackagingTableViewCell.swift; sourceTree = "<group>"; };
 		2A4760F22A13EBF1005BAA9F /* TransferCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferCollectionViewCell.swift; sourceTree = "<group>"; };
 		2A4760F32A13EBF1005BAA9F /* ShinhanPlusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShinhanPlusTableViewCell.swift; sourceTree = "<group>"; };
@@ -553,6 +557,7 @@
 			isa = PBXGroup;
 			children = (
 				B5D06E352A198DB900048C72 /* AccountsListRequestDTO.swift */,
+				2A287D272A1BE25B0037B94B /* CurrentAccountListRequestDTO.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -562,6 +567,7 @@
 			children = (
 				B5D06E3A2A198F7900048C72 /* AccountsListResponseDTO.swift */,
 				2A287D232A1BC7FE0037B94B /* AdvertisementListDTO.swift */,
+				2A287D292A1BE27F0037B94B /* CurrentAccountListResponseDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -740,11 +746,13 @@
 				2AC408912A1131FA009F0D56 /* TransferDetailViewController.swift in Sources */,
 				B54F21462A135AE9000D350C /* SOLButton.swift in Sources */,
 				B51383012A157A1900167728 /* MyAccount.swift in Sources */,
+				2A287D2A2A1BE27F0037B94B /* CurrentAccountListResponseDTO.swift in Sources */,
 				B51382EC2A13CFA100167728 /* UITabBarController+.swift in Sources */,
 				B5D06E362A198DB900048C72 /* AccountsListRequestDTO.swift in Sources */,
 				2A47610A2A1538B5005BAA9F /* TransferListCollectionViewCell.swift in Sources */,
 				B54F21542A13BFAA000D350C /* AllMenusViewController.swift in Sources */,
 				F45A98262A17764100C10142 /* Data.swift in Sources */,
+				2A287D282A1BE25B0037B94B /* CurrentAccountListRequestDTO.swift in Sources */,
 				B5D06E412A1992B300048C72 /* APIRequestLoader.swift in Sources */,
 				B5D06E3F2A19918700048C72 /* HomeService.swift in Sources */,
 				2AC408442A0F6686009F0D56 /* HomeViewController.swift in Sources */,

@@ -12,17 +12,25 @@ import Then
 
 final class HomeViewController: UIViewController {
     
+    private var adBannerHit: [Advertisement] = [] {
+        didSet {
+            self.homeTableView.reloadData()
+        }
+    }
+    
     private var accountList: [Transfer] = [] {
         didSet {
             self.homeTableView.reloadData()
         }
     }
     
-    private var adBannerHit: [Advertisement] = [] {
+    private var currentAccountList: [TransferList] = [] {
         didSet {
             self.homeTableView.reloadData()
         }
     }
+    
+    
     
     private let homeTableView = UITableView()
     private lazy var navigationBar = SOLNavigationBar(self, leftItem: .home)
@@ -42,6 +50,7 @@ final class HomeViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
         getAccountsListWithAPI()
         getAdvertisementWithAPI()
+        getCurrentAccountsListWithAPI()
     }
     
     func setStyle() {
@@ -119,7 +128,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .transfer:
             let cell = tableView.dequeueReusableCell(withIdentifier:             TransferTableViewCell.className, for: indexPath) as! TransferTableViewCell
             cell.accountList = accountList
-            cell.apiDelegate = self
+            cell.currentAccountList = currentAccountList
             cell.pushDelegate = self
             return cell
         case .shinhanPlus:
@@ -166,41 +175,10 @@ extension HomeViewController: TransferButtonAction {
     }
 }
 
-extension HomeViewController: TransferTableViewCellProtocol {
-    func getRecentHistory() -> [TransferList] {
-        let dummy = TransferList.dummy()
-        return dummy
-    }
-}
-
-
-
-
-// MARK: Network Example
+// MARK: Network Result
 
 extension HomeViewController {
 
-    func getAccountsListWithAPI() {
-        let queryDTO = AccountsListRequestDTO(memberId: 2)
-        NetworkService.shared.homeService.getAccountsList(queryDTO: queryDTO) { result in
-            
-            switch result {
-            case .success(let data):
-                guard let data = data.data else { return }
-                
-                dump(data)
-                for i in 0...(data.count - 1) {
-                    let TransferData = Transfer(id: data[i].id, bankBook: data[i].name, bankName: data[i].bank, account: data[i].accountNumber, money: data[i].balance)
-                    self.accountList.append(TransferData)
-                }
-            default:
-                print("network failure")
-                return
-            }
-        }
-
-    }
-    
     func getAdvertisementWithAPI() {
         NetworkService.shared.homeService.getADs { result in
             switch result {
@@ -218,5 +196,45 @@ extension HomeViewController {
         }
     }
 
+    func getAccountsListWithAPI() {
+        let queryDTO = AccountsListRequestDTO(memberId: 2)
+        NetworkService.shared.homeService.getAccountsList(queryDTO: queryDTO) { result in
+            
+            switch result {
+            case .success(let data):
+                guard let data = data.data else { return }
+                
+                dump(data)
+                for i in 0...(data.count - 1) {
+                    let transferData = Transfer(id: data[i].id, bankBook: data[i].name, bankName: data[i].bank, account: data[i].accountNumber, money: data[i].balance)
+                    self.accountList.append(transferData)
+                }
+            default:
+                print("network failure")
+                return
+            }
+        }
+
+    }
+    
+    func getCurrentAccountsListWithAPI() {
+        let queryDTO = CurrentAccountListRequestDTO(memberId: 2)
+        NetworkService.shared.homeService.getCurrentAccoutsList(queryDTO: queryDTO) { result in
+            
+            switch result {
+            case .success(let data):
+                guard let data = data.data else { return }
+                
+                dump(data)
+                for i in 0...(data.transfers.count - 1) {
+                    let currentTransferData = TransferList(id: data.transfers[i].id, name: data.transfers[i].name, bank: data.transfers[i].bank)
+                    self.currentAccountList.append(currentTransferData)
+                }
+            default:
+                print("network failure")
+                return
+            }
+        }
+    }
 
 }
