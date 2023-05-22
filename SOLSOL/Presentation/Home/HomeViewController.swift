@@ -14,6 +14,12 @@ final class HomeViewController: UIViewController {
     
     private var networkResult: [Transfer] = []
     
+    private var adBannerHit: [Advertisement] = [] {
+        didSet {
+            self.homeTableView.reloadData()
+        }
+    }
+    
     private let homeTableView = UITableView()
     private lazy var navigationBar = SOLNavigationBar(self, leftItem: .home)
     
@@ -85,7 +91,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section == 0 {
+            return adBannerHit.count
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -95,7 +105,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         switch sectionType {
         case .advertisement:
-            let cell = tableView.dequeueReusableCell(withIdentifier: AdvertisementTableViewCell.className, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: AdvertisementTableViewCell.className, for: indexPath) as! AdvertisementTableViewCell
+            let advertisement = adBannerHit[indexPath.row]
+            cell.configureCell(advertisement: advertisement)
             return cell
         case .myAccount:
             let cell = tableView.dequeueReusableCell(withIdentifier: MyAccountTableViewCell.className, for: indexPath)
@@ -193,11 +205,13 @@ extension HomeViewController {
         NetworkService.shared.homeService.getADs { result in
             switch result {
             case .success(let data):
-                guard let data = data.data else {
-                    print("no data")
-                    return
-                }
+                guard let data = data.data else { return }
+                
+                let appendData = Advertisement(title: data[1].title, content: data[1].content)
+                    self.adBannerHit.append(appendData)
+                
                 dump(data)
+                print(data)
             default:
                 print("network failure")
                 return

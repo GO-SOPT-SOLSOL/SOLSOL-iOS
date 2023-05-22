@@ -39,13 +39,11 @@ final class AdvertisementTableViewCell: UITableViewCell {
         }
         
         adTitleLabel.do {
-            $0.text = "평소 입는 옷으로 꾸꾸 하객룩 완성?"
             $0.textColor = .gray400
             $0.font = .font(.body2)
         }
         
         adContentLabel.do {
-            $0.text = "결혼식에 입기 좋은 남녀 코디법"
             $0.textColor = .gray600
             $0.font = .font(.subhead2)
         }
@@ -94,5 +92,10 @@ final class AdvertisementTableViewCell: UITableViewCell {
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(12)
         }
+    }
+
+    func configureCell(advertisement: Advertisement) {
+        adTitleLabel.text = advertisement.title
+        adContentLabel.text = advertisement.content
     }
 }
