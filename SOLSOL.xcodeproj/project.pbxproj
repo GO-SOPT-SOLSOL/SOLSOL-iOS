@@ -61,6 +61,18 @@
 		B54F21502A13BF9D000D350C /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F214F2A13BF9D000D350C /* ProductViewController.swift */; };
 		B54F21522A13BFA4000D350C /* BenefitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21512A13BFA4000D350C /* BenefitViewController.swift */; };
 		B54F21542A13BFAA000D350C /* AllMenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21532A13BFAA000D350C /* AllMenusViewController.swift */; };
+		B5D06E252A18F89B00048C72 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E242A18F89B00048C72 /* Config.swift */; };
+		B5D06E272A18F8DD00048C72 /* HTTPHeaderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E262A18F8DD00048C72 /* HTTPHeaderField.swift */; };
+		B5D06E292A18F91700048C72 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E282A18F91700048C72 /* NetworkResult.swift */; };
+		B5D06E2B2A18F93400048C72 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E2A2A18F93400048C72 /* TargetType.swift */; };
+		B5D06E2D2A18F95000048C72 /* APIEventLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E2C2A18F95000048C72 /* APIEventLogger.swift */; };
+		B5D06E312A198BEF00048C72 /* HomeTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E302A198BEF00048C72 /* HomeTarget.swift */; };
+		B5D06E342A198CC500048C72 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E332A198CC500048C72 /* BaseResponse.swift */; };
+		B5D06E362A198DB900048C72 /* AccountsListRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E352A198DB900048C72 /* AccountsListRequestDTO.swift */; };
+		B5D06E3B2A198F7900048C72 /* AccountsListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E3A2A198F7900048C72 /* AccountsListResponseDTO.swift */; };
+		B5D06E3F2A19918700048C72 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E3E2A19918700048C72 /* HomeService.swift */; };
+		B5D06E412A1992B300048C72 /* APIRequestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E402A1992B300048C72 /* APIRequestLoader.swift */; };
+		B5D06E432A19A1EE00048C72 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E422A19A1EE00048C72 /* NetworkService.swift */; };
 		F45A98262A17764100C10142 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45A98252A17764100C10142 /* Data.swift */; };
 		F4D6890E2A12B0C90082A9F3 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */; };
 		F4D6D00A2A168F7C00B4A125 /* TransferAccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6D0092A168F7C00B4A125 /* TransferAccountsTableViewCell.swift */; };
@@ -139,6 +151,18 @@
 		B54F214F2A13BF9D000D350C /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		B54F21512A13BFA4000D350C /* BenefitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitViewController.swift; sourceTree = "<group>"; };
 		B54F21532A13BFAA000D350C /* AllMenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMenusViewController.swift; sourceTree = "<group>"; };
+		B5D06E242A18F89B00048C72 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		B5D06E262A18F8DD00048C72 /* HTTPHeaderField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaderField.swift; sourceTree = "<group>"; };
+		B5D06E282A18F91700048C72 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		B5D06E2A2A18F93400048C72 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		B5D06E2C2A18F95000048C72 /* APIEventLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEventLogger.swift; sourceTree = "<group>"; };
+		B5D06E302A198BEF00048C72 /* HomeTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTarget.swift; sourceTree = "<group>"; };
+		B5D06E332A198CC500048C72 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		B5D06E352A198DB900048C72 /* AccountsListRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsListRequestDTO.swift; sourceTree = "<group>"; };
+		B5D06E3A2A198F7900048C72 /* AccountsListResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsListResponseDTO.swift; sourceTree = "<group>"; };
+		B5D06E3E2A19918700048C72 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		B5D06E402A1992B300048C72 /* APIRequestLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestLoader.swift; sourceTree = "<group>"; };
+		B5D06E422A19A1EE00048C72 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F45A98252A17764100C10142 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		F4D6D0092A168F7C00B4A125 /* TransferAccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferAccountsTableViewCell.swift; sourceTree = "<group>"; };
@@ -195,6 +219,7 @@
 		2AC4083E2A0F6686009F0D56 /* SOLSOL */ = {
 			isa = PBXGroup;
 			children = (
+				B5D06E222A18EA4700048C72 /* Network */,
 				2AC408782A112DC1009F0D56 /* Application */,
 				2AC408792A112DE9009F0D56 /* Global */,
 				2AC408892A113006009F0D56 /* Presentation */,
@@ -460,6 +485,97 @@
 			path = TabVCs;
 			sourceTree = "<group>";
 		};
+		B5D06E222A18EA4700048C72 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B5D06E322A198C0C00048C72 /* DTO */,
+				B5D06E2E2A198B8D00048C72 /* Router */,
+				B5D06E3C2A19917000048C72 /* Service */,
+				B5D06E232A18EA8B00048C72 /* Base */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B5D06E232A18EA8B00048C72 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B5D06E242A18F89B00048C72 /* Config.swift */,
+				B5D06E262A18F8DD00048C72 /* HTTPHeaderField.swift */,
+				B5D06E282A18F91700048C72 /* NetworkResult.swift */,
+				B5D06E2A2A18F93400048C72 /* TargetType.swift */,
+				B5D06E2C2A18F95000048C72 /* APIEventLogger.swift */,
+				B5D06E332A198CC500048C72 /* BaseResponse.swift */,
+				B5D06E402A1992B300048C72 /* APIRequestLoader.swift */,
+				B5D06E422A19A1EE00048C72 /* NetworkService.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		B5D06E2E2A198B8D00048C72 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B5D06E2F2A198BE200048C72 /* Home */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B5D06E2F2A198BE200048C72 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B5D06E302A198BEF00048C72 /* HomeTarget.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B5D06E322A198C0C00048C72 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				B5D06E372A198E3D00048C72 /* Home */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		B5D06E372A198E3D00048C72 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B5D06E382A198E6F00048C72 /* Request */,
+				B5D06E392A198E7400048C72 /* Response */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B5D06E382A198E6F00048C72 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				B5D06E352A198DB900048C72 /* AccountsListRequestDTO.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		B5D06E392A198E7400048C72 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				B5D06E3A2A198F7900048C72 /* AccountsListResponseDTO.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		B5D06E3C2A19917000048C72 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B5D06E3D2A19917900048C72 /* Home */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B5D06E3D2A19917900048C72 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B5D06E3E2A19918700048C72 /* HomeService.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -613,24 +729,32 @@
 				B51383042A157B6700167728 /* TransferDetailViewModel.swift in Sources */,
 				2A4761082A13F0EE005BAA9F /* Item.swift in Sources */,
 				F4D6D00A2A168F7C00B4A125 /* TransferAccountsTableViewCell.swift in Sources */,
+				B5D06E2D2A18F95000048C72 /* APIEventLogger.swift in Sources */,
 				2A4761042A13EC1B005BAA9F /* NSObject+.swift in Sources */,
 				2AC408912A1131FA009F0D56 /* TransferDetailViewController.swift in Sources */,
 				B54F21462A135AE9000D350C /* SOLButton.swift in Sources */,
 				B51383012A157A1900167728 /* MyAccount.swift in Sources */,
 				B51382EC2A13CFA100167728 /* UITabBarController+.swift in Sources */,
+				B5D06E362A198DB900048C72 /* AccountsListRequestDTO.swift in Sources */,
 				2A47610A2A1538B5005BAA9F /* TransferListCollectionViewCell.swift in Sources */,
 				B54F21542A13BFAA000D350C /* AllMenusViewController.swift in Sources */,
 				F45A98262A17764100C10142 /* Data.swift in Sources */,
+				B5D06E412A1992B300048C72 /* APIRequestLoader.swift in Sources */,
+				B5D06E3F2A19918700048C72 /* HomeService.swift in Sources */,
 				2AC408442A0F6686009F0D56 /* HomeViewController.swift in Sources */,
 				B54F21442A135316000D350C /* SOLNavigationBar.swift in Sources */,
 				2A204ADF2A115BC500805E0A /* HomeView.swift in Sources */,
 				2A4761032A13EC1B005BAA9F /* UIView+.swift in Sources */,
 				2A4760FD2A13EBF1005BAA9F /* FooterButtonTableViewCell.swift in Sources */,
+				B5D06E272A18F8DD00048C72 /* HTTPHeaderField.swift in Sources */,
 				B54F21522A13BFA4000D350C /* BenefitViewController.swift in Sources */,
+				B5D06E312A198BEF00048C72 /* HomeTarget.swift in Sources */,
 				2A47610E2A154B72005BAA9F /* Transfer.swift in Sources */,
 				B51382FE2A1519FB00167728 /* NumberPadView.swift in Sources */,
 				2AC4088E2A113195009F0D56 /* TransferViewController.swift in Sources */,
+				B5D06E3B2A198F7900048C72 /* AccountsListResponseDTO.swift in Sources */,
 				2AC4087D2A112E56009F0D56 /* ImageLiterals.swift in Sources */,
+				B5D06E432A19A1EE00048C72 /* NetworkService.swift in Sources */,
 				2A4760FB2A13EBF1005BAA9F /* ShinhanPlusTableViewCell.swift in Sources */,
 				2A204AE72A115C0B00805E0A /* TransferDetailView.swift in Sources */,
 				2A4760F92A13EBF1005BAA9F /* DeliveryPackagingTableViewCell.swift in Sources */,
@@ -642,13 +766,17 @@
 				B54F214E2A13BF96000D350C /* MoneyVerseViewController.swift in Sources */,
 				B54F21492A1364F0000D350C /* SOLTabBarController.swift in Sources */,
 				2AC408402A0F6686009F0D56 /* AppDelegate.swift in Sources */,
+				B5D06E292A18F91700048C72 /* NetworkResult.swift in Sources */,
 				2A47610C2A153D82005BAA9F /* TransferList.swift in Sources */,
+				B5D06E2B2A18F93400048C72 /* TargetType.swift in Sources */,
 				2AC408422A0F6686009F0D56 /* SceneDelegate.swift in Sources */,
 				2A4761072A13F0EE005BAA9F /* Section.swift in Sources */,
+				B5D06E252A18F89B00048C72 /* Config.swift in Sources */,
 				2A4761002A13EBF1005BAA9F /* MyAccountTableViewCell.swift in Sources */,
 				B54F21502A13BF9D000D350C /* ProductViewController.swift in Sources */,
 				2AF091F02A1151A300F611C4 /* UIColor+.swift in Sources */,
 				F4D6890E2A12B0C90082A9F3 /* UITextField+.swift in Sources */,
+				B5D06E342A198CC500048C72 /* BaseResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,6 +828,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BASE_URL = "http://3.38.1.206/api";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -760,6 +889,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BASE_URL = "http://3.38.1.206/api";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
