@@ -258,10 +258,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         let numberFormatter: NumberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
 
-        let result: String = numberFormatter.string(for: accountList.money)!
-        
-        myMoney.text = String(result)
-
+        myMoney.text = accountList.money.currencyAmountToString()
         
     }
     

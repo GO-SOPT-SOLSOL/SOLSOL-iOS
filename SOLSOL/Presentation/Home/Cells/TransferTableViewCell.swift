@@ -10,16 +10,10 @@ import UIKit
 import SnapKit
 import Then
 
-protocol TransferTableViewCellProtocol: AnyObject {
-    func getRecentHistory() -> [TransferList]
-}
-
 final class TransferTableViewCell: UITableViewCell {    
     
     weak var pushDelegate: TransferButtonAction?
     
-    weak var apiDelegate: TransferTableViewCellProtocol?
-
     var accountList: [Transfer] = [] {
         didSet {
             self.collectionView.reloadData()
@@ -33,8 +27,8 @@ final class TransferTableViewCell: UITableViewCell {
     }
     
     private lazy var collectionView = UICollectionView(frame: .zero,
-                                                       collectionViewLayout: flowLayout)
-    private let flowLayout = UICollectionViewFlowLayout()
+                                                       collectionViewLayout: layout)
+    private let layout = LeftAlignedCollectionViewFlowLayout()
     private let pageControl = UIPageControl()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -60,7 +54,7 @@ final class TransferTableViewCell: UITableViewCell {
             $0.backgroundColor = .clear
         }
         
-        flowLayout.do {
+        layout.do {
             $0.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.91, height: 241)
             $0.sectionInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
             $0.minimumLineSpacing = 8
@@ -69,7 +63,7 @@ final class TransferTableViewCell: UITableViewCell {
         }
         
         pageControl.do {
-            $0.numberOfPages = 2
+            $0.numberOfPages = accountList.count
             $0.pageIndicatorTintColor = .gray200
             $0.currentPage = 0
             $0.currentPageIndicatorTintColor = .gray600
