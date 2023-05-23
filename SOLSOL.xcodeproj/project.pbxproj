@@ -78,8 +78,10 @@
 		B5D06E412A1992B300048C72 /* APIRequestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E402A1992B300048C72 /* APIRequestLoader.swift */; };
 		B5D06E432A19A1EE00048C72 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E422A19A1EE00048C72 /* NetworkService.swift */; };
 		F45A98262A17764100C10142 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45A98252A17764100C10142 /* Data.swift */; };
+		F4CA67D12A1B41C200047753 /* UserCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA67D02A1B41C200047753 /* UserCustomViewController.swift */; };
 		F4D6890E2A12B0C90082A9F3 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */; };
 		F4D6D00A2A168F7C00B4A125 /* TransferAccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6D0092A168F7C00B4A125 /* TransferAccountsTableViewCell.swift */; };
+		F4FCEBED2A18DE5500004E70 /* SOLSegementedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCEBEC2A18DE5500004E70 /* SOLSegementedControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,8 +174,10 @@
 		B5D06E402A1992B300048C72 /* APIRequestLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestLoader.swift; sourceTree = "<group>"; };
 		B5D06E422A19A1EE00048C72 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F45A98252A17764100C10142 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		F4CA67D02A1B41C200047753 /* UserCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomViewController.swift; sourceTree = "<group>"; };
 		F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		F4D6D0092A168F7C00B4A125 /* TransferAccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferAccountsTableViewCell.swift; sourceTree = "<group>"; };
+		F4FCEBEC2A18DE5500004E70 /* SOLSegementedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLSegementedControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -410,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				2A204AE22A115BEA00805E0A /* TransferView.swift */,
+				F4CA67D02A1B41C200047753 /* UserCustomViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -471,6 +476,7 @@
 			children = (
 				B54F21432A135316000D350C /* SOLNavigationBar.swift */,
 				B54F21452A135AE9000D350C /* SOLButton.swift */,
+				F4FCEBEC2A18DE5500004E70 /* SOLSegementedControl.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -760,12 +766,15 @@
 				2AF091EE2A1150F000F611C4 /* UIFont+.swift in Sources */,
 				2A204AE32A115BEA00805E0A /* TransferView.swift in Sources */,
 				2A4760FA2A13EBF1005BAA9F /* TransferCollectionViewCell.swift in Sources */,
+				2A47610F2A189A74005BAA9F /* TransferTableViewCell.swift in Sources */,
+				F4CA67D12A1B41C200047753 /* UserCustomViewController.swift in Sources */,
 				B5D06E142A16929A00048C72 /* TransferConfirmViewController.swift in Sources */,
 				B51383042A157B6700167728 /* TransferDetailViewModel.swift in Sources */,
 				2A4761082A13F0EE005BAA9F /* Item.swift in Sources */,
 				B5D06E172A1695C700048C72 /* MemoView.swift in Sources */,
 				2A47610F2A189A74005BAA9F /* TransferTableViewCell.swift in Sources */,
 				F4D6D00A2A168F7C00B4A125 /* TransferAccountsTableViewCell.swift in Sources */,
+				F4FCEBED2A18DE5500004E70 /* SOLSegementedControl.swift in Sources */,
 				B5D06E2D2A18F95000048C72 /* APIEventLogger.swift in Sources */,
 				2A4761042A13EC1B005BAA9F /* NSObject+.swift in Sources */,
 				2AC408912A1131FA009F0D56 /* TransferDetailViewController.swift in Sources */,
