@@ -12,8 +12,12 @@ import Then
 
 final class HomeView: UIView {
     
+    // MARK: - UITableView 생성
+    
     let homeTableView = UITableView()
 
+    // MARK: - Life Cycle
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setStyle()
@@ -24,6 +28,8 @@ final class HomeView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - UI Components
     
     func setStyle() {
         homeTableView.do {
@@ -46,6 +52,8 @@ final class HomeView: UIView {
         homeTableView.delegate = self
     }
     
+    // MARK: - setRegister()
+    
     func setRegister() {
         homeTableView.register(AdvertisementTableViewCell.self, forCellReuseIdentifier:  AdvertisementTableViewCell.className)
         homeTableView.register(MyAccountTableViewCell.self, forCellReuseIdentifier:  MyAccountTableViewCell.className)
@@ -56,6 +64,8 @@ final class HomeView: UIView {
         homeTableView.register(FooterButtonTableViewCell.self, forCellReuseIdentifier:  FooterButtonTableViewCell.className)
     }
 }
+
+// MARK: - 각 section의 높이 설정
 
 extension HomeView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

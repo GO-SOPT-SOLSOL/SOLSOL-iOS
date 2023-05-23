@@ -18,6 +18,8 @@ final class TransferListCollectionViewCell: UICollectionViewCell {
     private let name = UILabel()
     private let amount = UILabel()
 
+    // MARK: - Life Cycle
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -29,6 +31,8 @@ final class TransferListCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - UI Components
     
     func setStyle() {
         transferListBackGround.do {
@@ -78,6 +82,8 @@ final class TransferListCollectionViewCell: UICollectionViewCell {
             $0.bottom.equalToSuperview().inset(8)
         }
     }
+    
+    // MARK: - TransferListCollectionViewCell에 Data 뿌리기
     
     func configureCell(currentAccountList: TransferList) {
         name.text = currentAccountList.name

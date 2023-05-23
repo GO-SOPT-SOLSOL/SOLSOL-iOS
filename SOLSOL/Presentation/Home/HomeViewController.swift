@@ -12,7 +12,15 @@ import Then
 
 final class HomeViewController: UIViewController {
     
+    // MARK: - View와 ViewController 분리
+    
     private let originView = HomeView()
+    
+    override func loadView() {
+        self.view = originView
+    }
+
+    // MARK: - Advertisement 구조체로부터 받아올 정보를 담는 배열
     
     private var adBannerHit: [Advertisement] = [] {
         didSet {
@@ -20,29 +28,34 @@ final class HomeViewController: UIViewController {
         }
     }
     
+    // MARK: - Transfer 구조체로부터 받아올 정보를 담는 배열
+
     private var accountList: [Transfer] = [] {
         didSet {
             self.originView.homeTableView.reloadData()
         }
     }
     
+    // MARK: - TransferList 구조체로부터 받아올 정보를 담는 배열
+
     private var currentAccountList: [TransferList] = [] {
         didSet {
             self.originView.homeTableView.reloadData()
         }
     }
     
+    // MARK: - custom navigationBar
+    
     lazy var navigationBar = SOLNavigationBar(self, leftItem: .home)
     
+    // MARK: - Life Cycle
+
     override func viewDidLoad() {
         setStyle()
         setLayout()
         setDelegate()
     }
     
-    override func loadView() {
-        self.view = originView
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -53,6 +66,8 @@ final class HomeViewController: UIViewController {
         getAccountsListWithAPI()
         getCurrentAccountsListWithAPI()
     }
+    
+    // MARK: - UI Components
     
     func setStyle() {
         view.backgroundColor = .white
@@ -128,6 +143,7 @@ extension HomeViewController: UITableViewDataSource {
 }
 
 
+// MARK: - Delegate Protocol
 
 extension HomeViewController: TransferButtonAction {
     func transferButtonTapped() {
@@ -136,7 +152,7 @@ extension HomeViewController: TransferButtonAction {
     }
 }
 
-// MARK: Network Result
+// MARK: - Network Result
 
 extension HomeViewController {
     

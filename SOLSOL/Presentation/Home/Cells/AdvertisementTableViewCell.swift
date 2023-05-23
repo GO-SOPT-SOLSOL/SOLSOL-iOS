@@ -15,6 +15,8 @@ final class AdvertisementTableViewCell: UITableViewCell {
     private let adContentLabel = UILabel()
     private let arrowRightButton = UIButton()
     
+    // MARK: - Life Cycle
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
@@ -26,6 +28,8 @@ final class AdvertisementTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
+    // MARK: - UI Components
     
     func setStyle() {
         
@@ -94,6 +98,8 @@ final class AdvertisementTableViewCell: UITableViewCell {
         }
     }
 
+    // MARK: - AdvertisementTableViewCell에 Data 뿌리기
+    
     func configureCell(advertisement: Advertisement) {
         adTitleLabel.text = advertisement.title
         adContentLabel.text = advertisement.content

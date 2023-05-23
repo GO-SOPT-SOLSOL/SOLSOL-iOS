@@ -23,6 +23,8 @@ final class MyAccountTableViewCell: UITableViewCell {
                                                         font: .font(.subhead2),
                                                         cornerRadius: 0)
     
+    // MARK: - Life Cycle
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -34,6 +36,8 @@ final class MyAccountTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
+    // MARK: - UI Components
     
     func setStyle() {
         myAccountBackGround.do {

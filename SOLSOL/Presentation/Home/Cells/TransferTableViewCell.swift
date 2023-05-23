@@ -31,6 +31,8 @@ final class TransferTableViewCell: UITableViewCell {
     private let flowLayout = UICollectionViewFlowLayout()
     private let pageControl = UIPageControl()
     
+    // MARK: - Life Cycle
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -43,7 +45,12 @@ final class TransferTableViewCell: UITableViewCell {
         super.init(coder: coder)
     }
     
+    // MARK: - UI Components
+    
     func setStyle() {
+        
+        // MARK: - collectionView의 모든 Cell이 가운데 정렬 되도록 설정
+        
         collectionView.do {
             $0.register(TransferCollectionViewCell.self, forCellWithReuseIdentifier: TransferCollectionViewCell.className)
             $0.showsVerticalScrollIndicator = false
@@ -124,6 +131,8 @@ extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         }
     }
     
+    // MARK: - collectionView의 모든 Cell이 가운데 정렬 되도록 설정
+
     func scrollViewWillEndDragging(
         _ scrollView: UIScrollView,
         withVelocity velocity: CGPoint,

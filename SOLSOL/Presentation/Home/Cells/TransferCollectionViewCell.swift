@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 import Then
 
+// MARK: - [이체] 버튼 클릭헀을 때 push 동작 Delegate 시켜 줄 Protocol 선언
+
 protocol TransferButtonAction: AnyObject {
     func transferButtonTapped()
 }
@@ -42,6 +44,8 @@ final class TransferCollectionViewCell: UICollectionViewCell {
                                                        collectionViewLayout: flowLayout)
     private let flowLayout = UICollectionViewFlowLayout()
     
+    // MARK: - Life Cycle
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -53,6 +57,8 @@ final class TransferCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - UI Components
     
     func setStyle() {
         transferBackGround.do {
@@ -224,6 +230,8 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    // MARK: - TransferCollectionViewCell에 Data 뿌리기
+    
     func configureCell(accountList: Transfer) {
         switch accountList.id {
         case 1:
@@ -259,13 +267,12 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         } else {
             accountNum.text = "우리" + " " + accountList.accountNumber
         }
-                
-        let numberFormatter: NumberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
 
         myMoney.text = accountList.money.currencyAmountToString()
         
     }
+    
+    // MARK: - Delegate Protocol
     
     @objc
     func backButtonTapped() {
