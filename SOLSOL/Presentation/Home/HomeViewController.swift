@@ -30,8 +30,6 @@ final class HomeViewController: UIViewController {
         }
     }
     
-    
-    
     private let homeTableView = UITableView()
     private lazy var navigationBar = SOLNavigationBar(self, leftItem: .home)
     
@@ -41,6 +39,9 @@ final class HomeViewController: UIViewController {
         setStyle()
         setLayout()
         setDelegate()
+        getAdvertisementWithAPI()
+        getAccountsListWithAPI()
+        getCurrentAccountsListWithAPI()
 
     }
     
@@ -48,9 +49,6 @@ final class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: true)
-        getAccountsListWithAPI()
-        getAdvertisementWithAPI()
-        getCurrentAccountsListWithAPI()
     }
     
     func setStyle() {
