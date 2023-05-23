@@ -64,9 +64,8 @@ final class TransferTableViewCell: UITableViewCell {
             $0.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.91, height: 241)
             $0.sectionInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
             $0.minimumLineSpacing = 8
-            $0.minimumInteritemSpacing = 0
+            $0.minimumInteritemSpacing = 8
             $0.scrollDirection = .horizontal
-            $0.estimatedItemSize = .zero
         }
         
         pageControl.do {

@@ -198,13 +198,15 @@ extension HomeViewController {
 
     func getAccountsListWithAPI() {
         let queryDTO = AccountsListRequestDTO(memberId: 2)
-        NetworkService.shared.homeService.getAccountsList(queryDTO: queryDTO) { result in
+        NetworkService.shared.homeService.getAccountsList(queryDTO: queryDTO) {
+            result in
             
             switch result {
             case .success(let data):
                 guard let data = data.data else { return }
                 
                 dump(data)
+                print(data)
                 for i in 0...(data.count - 1) {
                     let transferData = Transfer(id: data[i].id, bank: data[i].bank, name: data[i].name, money: data[i].balance, accountNumber: data[i].accountNumber)
                     self.accountList.append(transferData)
