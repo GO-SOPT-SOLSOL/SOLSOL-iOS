@@ -27,8 +27,8 @@ final class TransferTableViewCell: UITableViewCell {
     }
     
     private lazy var collectionView = UICollectionView(frame: .zero,
-                                                       collectionViewLayout: layout)
-    private let layout = LeftAlignedCollectionViewFlowLayout()
+                                                       collectionViewLayout: flowLayout)
+    private let flowLayout = UICollectionViewFlowLayout()
     private let pageControl = UIPageControl()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -48,13 +48,16 @@ final class TransferTableViewCell: UITableViewCell {
             $0.register(TransferCollectionViewCell.self, forCellWithReuseIdentifier: TransferCollectionViewCell.className)
             $0.showsVerticalScrollIndicator = false
             $0.showsHorizontalScrollIndicator = false
-            $0.isPagingEnabled = true
+            $0.isPagingEnabled = false
             $0.dataSource = self
             $0.delegate = self
             $0.backgroundColor = .clear
+            $0.isScrollEnabled = true
+            $0.contentInsetAdjustmentBehavior = .never // <- 내부적으로 safe area에 의해 가려지는 것을 방지하기 위해서 자동으로 inset조정해 주는 것을 비활성화
+            $0.decelerationRate = .fast // <- 스크롤이 빠르게 되도록 (페이징 애니메이션같이 보이게하기 위함)
         }
         
-        layout.do {
+        flowLayout.do {
             $0.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.91, height: 241)
             $0.sectionInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
             $0.minimumLineSpacing = 8
@@ -91,7 +94,7 @@ final class TransferTableViewCell: UITableViewCell {
             $0.leading.trailing.equalToSuperview()
         }
     }
-
+    
 }
 
 extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -120,6 +123,17 @@ extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
             pageControl.currentPage = newPage
         }
     }
+    
+    func scrollViewWillEndDragging(
+        _ scrollView: UIScrollView,
+        withVelocity velocity: CGPoint,
+        targetContentOffset: UnsafeMutablePointer<CGPoint>
+      ) {
+        let scrolledOffsetX = targetContentOffset.pointee.x + scrollView.contentInset.left
+        let cellWidth = UIScreen.main.bounds.width * 0.91 + 8
+        let index = round(scrolledOffsetX / cellWidth)
+        targetContentOffset.pointee = CGPoint(x: index * cellWidth - scrollView.contentInset.left, y: scrollView.contentInset.top)
+      }
     
 }
 

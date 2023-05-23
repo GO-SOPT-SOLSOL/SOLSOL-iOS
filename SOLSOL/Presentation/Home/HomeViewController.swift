@@ -158,7 +158,7 @@ extension HomeViewController {
     }
     
     func getAccountsListWithAPI() {
-        let queryDTO = AccountsListRequestDTO(memberId: 1)
+        let queryDTO = AccountsListRequestDTO(memberId: 2)
         NetworkService.shared.homeService.getAccountsList(queryDTO: queryDTO) {
             result in
             
@@ -167,7 +167,7 @@ extension HomeViewController {
                 guard let data = data.data else { return }
                 
                 dump(data)
-                self.accountList = [Transfer(id: data[0].id, kind: data[0].kind, bank: data[0].bank, name: data[0].name, money: data[0].balance, accountNumber: data[0].accountNumber), Transfer(id: data[1].id, kind: data[1].kind, bank: data[1].bank, name: data[1].name, money: data[1].balance, accountNumber: data[1].accountNumber) ]
+                self.accountList = [Transfer(id: data[0].id, kind: data[0].kind, bank: data[0].bank, name: data[0].name, money: data[0].balance, accountNumber: data[0].accountNumber), Transfer(id: data[1].id, kind: data[1].kind, bank: data[1].bank, name: data[1].name, money: data[1].balance, accountNumber: data[1].accountNumber), Transfer(id: data[2].id, kind: data[2].kind, bank: data[2].bank, name: data[2].name, money: data[2].balance, accountNumber: data[2].accountNumber) ]
                 
             default:
                 print("network failure")
