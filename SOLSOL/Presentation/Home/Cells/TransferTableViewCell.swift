@@ -27,8 +27,8 @@ final class TransferTableViewCell: UITableViewCell {
     }
     
     private lazy var collectionView = UICollectionView(frame: .zero,
-                                                       collectionViewLayout: flowlayout)
-    private let flowlayout = UICollectionViewFlowLayout()
+                                                       collectionViewLayout: layout)
+    private let layout = LeftAlignedCollectionViewFlowLayout()
     private let pageControl = UIPageControl()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -54,7 +54,7 @@ final class TransferTableViewCell: UITableViewCell {
             $0.backgroundColor = .clear
         }
         
-        flowlayout.do {
+        layout.do {
             $0.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.91, height: 241)
             $0.sectionInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
             $0.minimumLineSpacing = 8
@@ -63,7 +63,6 @@ final class TransferTableViewCell: UITableViewCell {
         }
         
         pageControl.do {
-            $0.numberOfPages = accountList.count
             $0.pageIndicatorTintColor = .gray200
             $0.currentPage = 0
             $0.currentPageIndicatorTintColor = .gray600
@@ -97,6 +96,7 @@ final class TransferTableViewCell: UITableViewCell {
 
 extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        pageControl.numberOfPages = accountList.count
         return accountList.count
     }
     
