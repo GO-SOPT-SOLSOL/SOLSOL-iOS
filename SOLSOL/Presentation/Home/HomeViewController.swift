@@ -39,16 +39,17 @@ final class HomeViewController: UIViewController {
         setStyle()
         setLayout()
         setDelegate()
-        getAdvertisementWithAPI()
-        getAccountsListWithAPI()
-        getCurrentAccountsListWithAPI()
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        getAdvertisementWithAPI()
+        getAccountsListWithAPI()
+        getCurrentAccountsListWithAPI()
     }
     
     func setStyle() {
@@ -176,7 +177,7 @@ extension HomeViewController: TransferButtonAction {
 // MARK: Network Result
 
 extension HomeViewController {
-
+    
     func getAdvertisementWithAPI() {
         NetworkService.shared.homeService.getADs { result in
             switch result {
@@ -184,7 +185,7 @@ extension HomeViewController {
                 guard let data = data.data else { return }
                 
                 let advertisementData = Advertisement(title: data[1].title, content: data[1].content)
-                    self.adBannerHit.append(advertisementData)
+                self.adBannerHit = [advertisementData]
                 
                 dump(data)
             default:
@@ -193,7 +194,7 @@ extension HomeViewController {
             }
         }
     }
-
+    
     func getAccountsListWithAPI() {
         let queryDTO = AccountsListRequestDTO(memberId: 1)
         NetworkService.shared.homeService.getAccountsList(queryDTO: queryDTO) {
@@ -204,17 +205,14 @@ extension HomeViewController {
                 guard let data = data.data else { return }
                 
                 dump(data)
-                print(data)
-                for i in 0...(data.count - 1) {
-                    let transferData = Transfer(id: data[i].id, kind: data[i].kind, bank: data[i].bank, name: data[i].name, money: data[i].balance, accountNumber: data[i].accountNumber)
-                    self.accountList.append(transferData)
-                }
+                self.accountList = [Transfer(id: data[0].id, kind: data[0].kind, bank: data[0].bank, name: data[0].name, money: data[0].balance, accountNumber: data[0].accountNumber), Transfer(id: data[1].id, kind: data[1].kind, bank: data[1].bank, name: data[1].name, money: data[1].balance, accountNumber: data[1].accountNumber) ]
+                
             default:
                 print("network failure")
                 return
             }
         }
-
+        
     }
     
     func getCurrentAccountsListWithAPI() {
@@ -226,15 +224,13 @@ extension HomeViewController {
                 guard let data = data.data else { return }
                 
                 dump(data)
-                for i in 0...(data.transfers.count - 1) {
-                    let currentTransferData = TransferList(id: data.transfers[i].id, name: data.transfers[i].name, bank: data.transfers[i].bank)
-                    self.currentAccountList.append(currentTransferData)
-                }
+                self.currentAccountList = [TransferList(id: data.transfers[0].id, name: data.transfers[0].name , bank: data.transfers[0].bank), TransferList(id: data.transfers[1].id, name: data.transfers[1].name , bank: data.transfers[1].bank), TransferList(id: data.transfers[2].id, name: data.transfers[2].name , bank: data.transfers[2].bank) ]
+                
             default:
                 print("network failure")
                 return
             }
         }
     }
-
+    
 }
