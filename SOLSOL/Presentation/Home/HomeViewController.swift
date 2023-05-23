@@ -31,6 +31,7 @@ final class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: true)
+        getAccountsListWithAPI()
     }
     
     func setStyle() {
@@ -165,4 +166,28 @@ extension HomeViewController: TransferTableViewCellProtocol {
 
 
 
+// MARK: Network Example
 
+extension HomeViewController {
+
+    func getAccountsListWithAPI() {
+        let queryDTO = AccountsListRequestDTO(memberId: 1)
+        NetworkService.shared.homeService.getAccountsList(queryDTO: queryDTO) { result in
+            
+            switch result {
+            case .success(let data):
+                guard let data = data.data else {
+                    print("no data")
+                    return
+                }
+                dump(data)
+            default:
+                print("network failure")
+                return
+            }
+        }
+
+    }
+
+
+}

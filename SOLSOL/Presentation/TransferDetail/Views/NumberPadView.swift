@@ -128,11 +128,18 @@ extension NumberPadView {
         addAmountStackView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview()
+            make.height.equalTo(36)
         }
 
         numberPadTotalStackView.snp.makeConstraints { make in
             make.top.equalTo(addAmountStackView.snp.bottom).offset(10)
             make.leading.trailing.bottom.equalToSuperview()
+        }
+
+        numberPadTotalStackView.subviews.forEach {
+            $0.snp.makeConstraints { make in
+                make.height.equalTo(45)
+            }
         }
     }
 }
