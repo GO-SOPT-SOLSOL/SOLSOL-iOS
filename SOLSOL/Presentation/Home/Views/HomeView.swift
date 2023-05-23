@@ -7,14 +7,75 @@
 
 import UIKit
 
-class HomeView: UIView {
+import SnapKit
+import Then
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+final class HomeView: UIView {
+    
+    let homeTableView = UITableView()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setStyle()
+        setLayout()
+        setDelegate()
     }
-    */
 
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setStyle() {
+        homeTableView.do {
+            $0.separatorStyle = .none
+            $0.backgroundColor = .gray100
+            setRegister()
+        }
+    }
+    
+    func setLayout() {
+        self.addSubview(homeTableView)
+        homeTableView.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(94)
+            $0.bottom.equalTo(self.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
+        }
+    }
+    
+    func setDelegate() {
+        homeTableView.delegate = self
+    }
+    
+    func setRegister() {
+        homeTableView.register(AdvertisementTableViewCell.self, forCellReuseIdentifier:  AdvertisementTableViewCell.className)
+        homeTableView.register(MyAccountTableViewCell.self, forCellReuseIdentifier:  MyAccountTableViewCell.className)
+        homeTableView.register(TransferTableViewCell.self, forCellReuseIdentifier:  TransferTableViewCell.className)
+        homeTableView.register(ShinhanPlusTableViewCell.self, forCellReuseIdentifier:  ShinhanPlusTableViewCell.className)
+        homeTableView.register(DeliveryPackagingTableViewCell.self, forCellReuseIdentifier:  DeliveryPackagingTableViewCell.className)
+        homeTableView.register(CategoryTableViewCell.self, forCellReuseIdentifier:  CategoryTableViewCell.className)
+        homeTableView.register(FooterButtonTableViewCell.self, forCellReuseIdentifier:  FooterButtonTableViewCell.className)
+    }
+}
+
+extension HomeView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return 64
+        case 1:
+            return 63
+        case 2:
+            return 290
+        case 3:
+            return 52
+        case 4:
+            return 100
+        case 5:
+            return 175
+        case 6:
+            return 125
+        default:
+            return 0
+        }
+    }
 }

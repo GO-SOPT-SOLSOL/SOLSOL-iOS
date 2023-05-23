@@ -12,34 +12,36 @@ import Then
 
 final class HomeViewController: UIViewController {
     
+    private let originView = HomeView()
+    
     private var adBannerHit: [Advertisement] = [] {
         didSet {
-            self.homeTableView.reloadData()
+            self.originView.homeTableView.reloadData()
         }
     }
     
     private var accountList: [Transfer] = [] {
         didSet {
-            self.homeTableView.reloadData()
+            self.originView.homeTableView.reloadData()
         }
     }
     
     private var currentAccountList: [TransferList] = [] {
         didSet {
-            self.homeTableView.reloadData()
+            self.originView.homeTableView.reloadData()
         }
     }
     
-    private let homeTableView = UITableView()
-    private lazy var navigationBar = SOLNavigationBar(self, leftItem: .home)
+    lazy var navigationBar = SOLNavigationBar(self, leftItem: .home)
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
         setStyle()
         setLayout()
         setDelegate()
-        
+    }
+    
+    override func loadView() {
+        self.view = originView
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,16 +56,10 @@ final class HomeViewController: UIViewController {
     
     func setStyle() {
         view.backgroundColor = .white
-        homeTableView.do {
-            $0.separatorStyle = .none
-            $0.backgroundColor = .gray100
-            setRegister()
-        }
-        
     }
     
     func setLayout() {
-        view.addSubviews(navigationBar, homeTableView)
+        view.addSubviews(navigationBar)
         
         navigationBar.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
@@ -71,32 +67,17 @@ final class HomeViewController: UIViewController {
             $0.height.equalTo(44)
         }
         
-        homeTableView.snp.makeConstraints {
-            $0.top.equalTo(navigationBar.snp.bottom)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide)
-            $0.leading.trailing.equalToSuperview()
-        }
     }
     
     func setDelegate() {
-        homeTableView.delegate = self
-        homeTableView.dataSource = self
+        originView.homeTableView.dataSource = self
     }
     
-    func setRegister() {
-        homeTableView.register(AdvertisementTableViewCell.self, forCellReuseIdentifier:  AdvertisementTableViewCell.className)
-        homeTableView.register(MyAccountTableViewCell.self, forCellReuseIdentifier:  MyAccountTableViewCell.className)
-        homeTableView.register(TransferTableViewCell.self, forCellReuseIdentifier:  TransferTableViewCell.className)
-        homeTableView.register(ShinhanPlusTableViewCell.self, forCellReuseIdentifier:  ShinhanPlusTableViewCell.className)
-        homeTableView.register(DeliveryPackagingTableViewCell.self, forCellReuseIdentifier:  DeliveryPackagingTableViewCell.className)
-        homeTableView.register(CategoryTableViewCell.self, forCellReuseIdentifier:  CategoryTableViewCell.className)
-        homeTableView.register(FooterButtonTableViewCell.self, forCellReuseIdentifier:  FooterButtonTableViewCell.className)
-    }
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return Section.allCases.count
@@ -144,28 +125,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0:
-            return 64
-        case 1:
-            return 63
-        case 2:
-            return 290
-        case 3:
-            return 52
-        case 4:
-            return 100
-        case 5:
-            return 175
-        case 6:
-            return 125
-        default:
-            return 0
-        }
-    }
 }
+
+
 
 extension HomeViewController: TransferButtonAction {
     func transferButtonTapped() {
