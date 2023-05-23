@@ -61,7 +61,6 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         }
         
         depositWithdraw.do {
-            $0.text = "입출금"
             $0.textColor = .gray600
             $0.font = .font(.subhead1)
         }
@@ -239,6 +238,12 @@ final class TransferCollectionViewCell: UICollectionViewCell {
             bankImage.image = ImageLiterals.Home.icSmallBankKB
         default:
             bankImage.image = ImageLiterals.Home.icBigBankShinhan
+        }
+        
+        if accountList.kind == "DEPOSIT" {
+            depositWithdraw.text = "예적금"
+        } else {
+            depositWithdraw.text = "입출금"
         }
         
         bankBook.text = accountList.name

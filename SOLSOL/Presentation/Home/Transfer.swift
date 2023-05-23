@@ -9,6 +9,7 @@ import UIKit
 
 struct Transfer {
     let id: Int
+    let kind: String
     let bank: String
     let name: String
     let money: Int
