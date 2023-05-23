@@ -61,10 +61,12 @@
 		B54F21502A13BF9D000D350C /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F214F2A13BF9D000D350C /* ProductViewController.swift */; };
 		B54F21522A13BFA4000D350C /* BenefitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21512A13BFA4000D350C /* BenefitViewController.swift */; };
 		B54F21542A13BFAA000D350C /* AllMenusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F21532A13BFAA000D350C /* AllMenusViewController.swift */; };
+		B5AB47892A1C8BFF00904919 /* TransferToResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB47882A1C8BFF00904919 /* TransferToResponseDTO.swift */; };
+		B5AB478C2A1C8C4A00904919 /* TransferConfirmTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB478B2A1C8C4A00904919 /* TransferConfirmTarget.swift */; };
+		B5AB478F2A1C8D7300904919 /* TransferConfirmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB478E2A1C8D7300904919 /* TransferConfirmService.swift */; };
 		B5D06E142A16929A00048C72 /* TransferConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E132A16929A00048C72 /* TransferConfirmViewController.swift */; };
 		B5D06E172A1695C700048C72 /* MemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E162A1695C700048C72 /* MemoView.swift */; };
 		B5D06E192A169DDD00048C72 /* SizeLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E182A169DDD00048C72 /* SizeLiterals.swift */; };
-		B5D06E1C2A16B6EB00048C72 /* ScreenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E1B2A16B6EB00048C72 /* ScreenUtils.swift */; };
 		B5D06E252A18F89B00048C72 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E242A18F89B00048C72 /* Config.swift */; };
 		B5D06E272A18F8DD00048C72 /* HTTPHeaderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E262A18F8DD00048C72 /* HTTPHeaderField.swift */; };
 		B5D06E292A18F91700048C72 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E282A18F91700048C72 /* NetworkResult.swift */; };
@@ -77,6 +79,8 @@
 		B5D06E3F2A19918700048C72 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E3E2A19918700048C72 /* HomeService.swift */; };
 		B5D06E412A1992B300048C72 /* APIRequestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E402A1992B300048C72 /* APIRequestLoader.swift */; };
 		B5D06E432A19A1EE00048C72 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E422A19A1EE00048C72 /* NetworkService.swift */; };
+		B5FE03182A1C8783006C6180 /* ScreenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FE03172A1C8783006C6180 /* ScreenUtils.swift */; };
+		B5FE031D2A1C880F006C6180 /* TransferToDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FE031C2A1C880F006C6180 /* TransferToDTO.swift */; };
 		F45A98262A17764100C10142 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45A98252A17764100C10142 /* Data.swift */; };
 		F4D6890E2A12B0C90082A9F3 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */; };
 		F4D6D00A2A168F7C00B4A125 /* TransferAccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6D0092A168F7C00B4A125 /* TransferAccountsTableViewCell.swift */; };
@@ -155,10 +159,12 @@
 		B54F214F2A13BF9D000D350C /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		B54F21512A13BFA4000D350C /* BenefitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitViewController.swift; sourceTree = "<group>"; };
 		B54F21532A13BFAA000D350C /* AllMenusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMenusViewController.swift; sourceTree = "<group>"; };
+		B5AB47882A1C8BFF00904919 /* TransferToResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferToResponseDTO.swift; sourceTree = "<group>"; };
+		B5AB478B2A1C8C4A00904919 /* TransferConfirmTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferConfirmTarget.swift; sourceTree = "<group>"; };
+		B5AB478E2A1C8D7300904919 /* TransferConfirmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferConfirmService.swift; sourceTree = "<group>"; };
 		B5D06E132A16929A00048C72 /* TransferConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferConfirmViewController.swift; sourceTree = "<group>"; };
 		B5D06E162A1695C700048C72 /* MemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoView.swift; sourceTree = "<group>"; };
 		B5D06E182A169DDD00048C72 /* SizeLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeLiterals.swift; sourceTree = "<group>"; };
-		B5D06E1B2A16B6EB00048C72 /* ScreenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtils.swift; sourceTree = "<group>"; };
 		B5D06E242A18F89B00048C72 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		B5D06E262A18F8DD00048C72 /* HTTPHeaderField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaderField.swift; sourceTree = "<group>"; };
 		B5D06E282A18F91700048C72 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
@@ -171,6 +177,8 @@
 		B5D06E3E2A19918700048C72 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		B5D06E402A1992B300048C72 /* APIRequestLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestLoader.swift; sourceTree = "<group>"; };
 		B5D06E422A19A1EE00048C72 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		B5FE03172A1C8783006C6180 /* ScreenUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenUtils.swift; sourceTree = "<group>"; };
+		B5FE031C2A1C880F006C6180 /* TransferToDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferToDTO.swift; sourceTree = "<group>"; };
 		F45A98252A17764100C10142 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		F4D6D0092A168F7C00B4A125 /* TransferAccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferAccountsTableViewCell.swift; sourceTree = "<group>"; };
@@ -264,7 +272,7 @@
 		2AC408792A112DE9009F0D56 /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				B5D06E1A2A16B6E100048C72 /* Utils */,
+				B5FE03162A1C8783006C6180 /* Utils */,
 				B54F21422A135301000D350C /* UIComponents */,
 				2AC4087A2A112E03009F0D56 /* Extension */,
 				2AC4087B2A112E17009F0D56 /* Literals */,
@@ -496,6 +504,22 @@
 			path = TabVCs;
 			sourceTree = "<group>";
 		};
+		B5AB478A2A1C8C3900904919 /* TransferConfirm */ = {
+			isa = PBXGroup;
+			children = (
+				B5AB478B2A1C8C4A00904919 /* TransferConfirmTarget.swift */,
+			);
+			path = TransferConfirm;
+			sourceTree = "<group>";
+		};
+		B5AB478D2A1C8D6600904919 /* TransferConfirm */ = {
+			isa = PBXGroup;
+			children = (
+				B5AB478E2A1C8D7300904919 /* TransferConfirmService.swift */,
+			);
+			path = TransferConfirm;
+			sourceTree = "<group>";
+		};
 		B5D06E122A16906F00048C72 /* TransferConfirm */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,13 +536,6 @@
 			);
 			path = Views;
 			sourceTree = "<group>";
-		};
-		B5D06E1A2A16B6E100048C72 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				B5D06E1B2A16B6EB00048C72 /* ScreenUtils.swift */,
-			);
-			path = Utils;
 		};
 		B5D06E222A18EA4700048C72 /* Network */ = {
 			isa = PBXGroup;
@@ -549,6 +566,7 @@
 		B5D06E2E2A198B8D00048C72 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				B5AB478A2A1C8C3900904919 /* TransferConfirm */,
 				B5D06E2F2A198BE200048C72 /* Home */,
 			);
 			path = Router;
@@ -565,6 +583,7 @@
 		B5D06E322A198C0C00048C72 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				B5FE03192A1C879E006C6180 /* TransferConfirm */,
 				B5D06E372A198E3D00048C72 /* Home */,
 			);
 			path = DTO;
@@ -598,6 +617,7 @@
 		B5D06E3C2A19917000048C72 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				B5AB478D2A1C8D6600904919 /* TransferConfirm */,
 				B5D06E3D2A19917900048C72 /* Home */,
 			);
 			path = Service;
@@ -609,6 +629,39 @@
 				B5D06E3E2A19918700048C72 /* HomeService.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		B5FE03162A1C8783006C6180 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B5FE03172A1C8783006C6180 /* ScreenUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B5FE03192A1C879E006C6180 /* TransferConfirm */ = {
+			isa = PBXGroup;
+			children = (
+				B5FE031B2A1C87B4006C6180 /* Response */,
+				B5FE031A2A1C87AC006C6180 /* Request */,
+			);
+			path = TransferConfirm;
+			sourceTree = "<group>";
+		};
+		B5FE031A2A1C87AC006C6180 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				B5FE031C2A1C880F006C6180 /* TransferToDTO.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		B5FE031B2A1C87B4006C6180 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				B5AB47882A1C8BFF00904919 /* TransferToResponseDTO.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -758,8 +811,10 @@
 				2A4760FC2A13EBF1005BAA9F /* AdvertisementTableViewCell.swift in Sources */,
 				B513830E2A15968000167728 /* String+.swift in Sources */,
 				2AF091EE2A1150F000F611C4 /* UIFont+.swift in Sources */,
+				B5FE03182A1C8783006C6180 /* ScreenUtils.swift in Sources */,
 				2A204AE32A115BEA00805E0A /* TransferView.swift in Sources */,
 				2A4760FA2A13EBF1005BAA9F /* TransferCollectionViewCell.swift in Sources */,
+				B5AB47892A1C8BFF00904919 /* TransferToResponseDTO.swift in Sources */,
 				B5D06E142A16929A00048C72 /* TransferConfirmViewController.swift in Sources */,
 				B51383042A157B6700167728 /* TransferDetailViewModel.swift in Sources */,
 				2A4761082A13F0EE005BAA9F /* Item.swift in Sources */,
@@ -773,6 +828,7 @@
 				B51383012A157A1900167728 /* MyAccount.swift in Sources */,
 				B51382EC2A13CFA100167728 /* UITabBarController+.swift in Sources */,
 				B5D06E362A198DB900048C72 /* AccountsListRequestDTO.swift in Sources */,
+				B5AB478F2A1C8D7300904919 /* TransferConfirmService.swift in Sources */,
 				2A47610A2A1538B5005BAA9F /* TransferListCollectionViewCell.swift in Sources */,
 				B54F21542A13BFAA000D350C /* AllMenusViewController.swift in Sources */,
 				F45A98262A17764100C10142 /* Data.swift in Sources */,
@@ -796,11 +852,12 @@
 				2A204AE72A115C0B00805E0A /* TransferDetailView.swift in Sources */,
 				2A4760F92A13EBF1005BAA9F /* DeliveryPackagingTableViewCell.swift in Sources */,
 				2A4760FF2A13EBF1005BAA9F /* CategoryTableViewCell.swift in Sources */,
-				B5D06E1C2A16B6EB00048C72 /* ScreenUtils.swift in Sources */,
 				B51383112A15AE0400167728 /* NumberButtonType.swift in Sources */,
 				2AC4087F2A112E60009F0D56 /* StringLiterals.swift in Sources */,
+				B5FE031D2A1C880F006C6180 /* TransferToDTO.swift in Sources */,
 				B54F214B2A13BF20000D350C /* SOLTabBarItem.swift in Sources */,
 				B51383072A157E3800167728 /* Int+.swift in Sources */,
+				B5AB478C2A1C8C4A00904919 /* TransferConfirmTarget.swift in Sources */,
 				B54F214E2A13BF96000D350C /* MoneyVerseViewController.swift in Sources */,
 				B54F21492A1364F0000D350C /* SOLTabBarController.swift in Sources */,
 				B5D06E192A169DDD00048C72 /* SizeLiterals.swift in Sources */,
