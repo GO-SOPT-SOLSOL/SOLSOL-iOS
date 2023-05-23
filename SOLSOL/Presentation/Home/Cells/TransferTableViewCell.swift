@@ -27,8 +27,8 @@ final class TransferTableViewCell: UITableViewCell {
     }
     
     private lazy var collectionView = UICollectionView(frame: .zero,
-                                                       collectionViewLayout: layout)
-    private let layout = LeftAlignedCollectionViewFlowLayout()
+                                                       collectionViewLayout: flowlayout)
+    private let flowlayout = UICollectionViewFlowLayout()
     private let pageControl = UIPageControl()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -54,7 +54,7 @@ final class TransferTableViewCell: UITableViewCell {
             $0.backgroundColor = .clear
         }
         
-        layout.do {
+        flowlayout.do {
             $0.itemSize = CGSize(width: UIScreen.main.bounds.width * 0.91, height: 241)
             $0.sectionInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
             $0.minimumLineSpacing = 8

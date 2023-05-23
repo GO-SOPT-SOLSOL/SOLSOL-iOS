@@ -197,7 +197,7 @@ extension HomeViewController {
     }
 
     func getAccountsListWithAPI() {
-        let queryDTO = AccountsListRequestDTO(memberId: 2)
+        let queryDTO = AccountsListRequestDTO(memberId: 1)
         NetworkService.shared.homeService.getAccountsList(queryDTO: queryDTO) {
             result in
             
