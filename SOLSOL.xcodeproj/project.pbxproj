@@ -64,6 +64,7 @@
 		B5AB47892A1C8BFF00904919 /* TransferToResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB47882A1C8BFF00904919 /* TransferToResponseDTO.swift */; };
 		B5AB478C2A1C8C4A00904919 /* TransferConfirmTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB478B2A1C8C4A00904919 /* TransferConfirmTarget.swift */; };
 		B5AB478F2A1C8D7300904919 /* TransferConfirmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB478E2A1C8D7300904919 /* TransferConfirmService.swift */; };
+		B5AB47942A1D951700904919 /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB47932A1D951700904919 /* Bank.swift */; };
 		B5D06E142A16929A00048C72 /* TransferConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E132A16929A00048C72 /* TransferConfirmViewController.swift */; };
 		B5D06E172A1695C700048C72 /* MemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E162A1695C700048C72 /* MemoView.swift */; };
 		B5D06E192A169DDD00048C72 /* SizeLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E182A169DDD00048C72 /* SizeLiterals.swift */; };
@@ -162,6 +163,7 @@
 		B5AB47882A1C8BFF00904919 /* TransferToResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferToResponseDTO.swift; sourceTree = "<group>"; };
 		B5AB478B2A1C8C4A00904919 /* TransferConfirmTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferConfirmTarget.swift; sourceTree = "<group>"; };
 		B5AB478E2A1C8D7300904919 /* TransferConfirmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferConfirmService.swift; sourceTree = "<group>"; };
+		B5AB47932A1D951700904919 /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 		B5D06E132A16929A00048C72 /* TransferConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferConfirmViewController.swift; sourceTree = "<group>"; };
 		B5D06E162A1695C700048C72 /* MemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoView.swift; sourceTree = "<group>"; };
 		B5D06E182A169DDD00048C72 /* SizeLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeLiterals.swift; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 			isa = PBXGroup;
 			children = (
 				B51383102A15AE0400167728 /* NumberButtonType.swift */,
+				B5AB47932A1D951700904919 /* Bank.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -817,6 +820,7 @@
 				B5AB47892A1C8BFF00904919 /* TransferToResponseDTO.swift in Sources */,
 				B5D06E142A16929A00048C72 /* TransferConfirmViewController.swift in Sources */,
 				B51383042A157B6700167728 /* TransferDetailViewModel.swift in Sources */,
+				B5AB47942A1D951700904919 /* Bank.swift in Sources */,
 				2A4761082A13F0EE005BAA9F /* Item.swift in Sources */,
 				B5D06E172A1695C700048C72 /* MemoView.swift in Sources */,
 				2A47610F2A189A74005BAA9F /* TransferTableViewCell.swift in Sources */,
