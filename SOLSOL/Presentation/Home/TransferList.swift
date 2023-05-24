@@ -10,7 +10,7 @@
 import UIKit
 
 struct TransferList {
-    let id: Int
+    let price: Int
     let name: String
     let bank: String
 }

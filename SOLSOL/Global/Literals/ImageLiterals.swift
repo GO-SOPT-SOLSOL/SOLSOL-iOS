@@ -38,6 +38,7 @@ enum ImageLiterals {
         static var adImage: UIImage { .load(named: "adImage") }
         static var icArrowRightBlue: UIImage { .load(named: "icArrowRightBlue") }
         static var icBigBankShinhan: UIImage { .load(named: "icBigBankShinhan") }
+        static var icBankShinhan: UIImage { .load(named: "icBankShinhan") }
         static var icCopy: UIImage { .load(named: "icCopy") }
         static var icMore: UIImage { .load(named: "icMore") }
         static var icRefresh: UIImage { .load(named: "icRefresh") }

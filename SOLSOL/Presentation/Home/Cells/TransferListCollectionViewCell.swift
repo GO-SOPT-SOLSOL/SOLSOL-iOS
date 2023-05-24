@@ -66,6 +66,7 @@ final class TransferListCollectionViewCell: UICollectionViewCell {
         bankImage.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().inset(8)
+            $0.size.equalTo(22)
         }
         
         name.snp.makeConstraints {
@@ -87,21 +88,20 @@ final class TransferListCollectionViewCell: UICollectionViewCell {
     
     func configureCell(currentAccountList: TransferList) {
         name.text = currentAccountList.name
-        if currentAccountList.bank == "KAKAO" {
+        
+        if currentAccountList.bank == "SHINHAN" {
+            bankImage.image = ImageLiterals.Home.icBankShinhan
+        } else if currentAccountList.bank == "KOOKMIN" {
+            bankImage.image = ImageLiterals.Home.icSmallBankKB
+        } else if currentAccountList.bank == "HANA" {
+            bankImage.image = ImageLiterals.Home.icSmallBankHanna
+        } else if currentAccountList.bank == "KAKAO" {
             bankImage.image = ImageLiterals.Home.icSmallBankKakao
         } else {
-            bankImage.image = ImageLiterals.Home.icSmallBankKB
+            bankImage.image = ImageLiterals.Home.icSmallBankWoori
         }
         
-        switch currentAccountList.id {
-        case 7:
-            amount.text = "30,000"
-        case 5:
-            amount.text = "10,000"
-        case 2:
-            amount.text = "50,000"
-        default:
-            amount.text = "33,333"
-        }
+        amount.text = currentAccountList.price.currencyAmountToString()
+        
     }
 }

@@ -183,7 +183,9 @@ extension HomeViewController {
                 guard let data = data.data else { return }
                 
                 dump(data)
-                self.accountList = [Transfer(id: data[0].id, kind: data[0].kind, bank: data[0].bank, name: data[0].name, money: data[0].balance, accountNumber: data[0].accountNumber), Transfer(id: data[1].id, kind: data[1].kind, bank: data[1].bank, name: data[1].name, money: data[1].balance, accountNumber: data[1].accountNumber), Transfer(id: data[2].id, kind: data[2].kind, bank: data[2].bank, name: data[2].name, money: data[2].balance, accountNumber: data[2].accountNumber) ]
+                let transferList = data.map
+                { Transfer(kind: $0.kind, bank: $0.bank, name: $0.name, money: $0.balance, accountNumber: $0.accountNumber) }
+                self.accountList = transferList
                 
             default:
                 print("network failure")
@@ -202,7 +204,10 @@ extension HomeViewController {
                 guard let data = data.data else { return }
                 
                 dump(data)
-                self.currentAccountList = [TransferList(id: data.transfers[0].id, name: data.transfers[0].name , bank: data.transfers[0].bank), TransferList(id: data.transfers[1].id, name: data.transfers[1].name , bank: data.transfers[1].bank), TransferList(id: data.transfers[2].id, name: data.transfers[2].name , bank: data.transfers[2].bank) ]
+                let currentTransferList = data.transfers.map {
+                    TransferList(price: $0.price, name: $0.name, bank: $0.bank)
+                }
+                self.currentAccountList = currentTransferList
                 
             default:
                 print("network failure")

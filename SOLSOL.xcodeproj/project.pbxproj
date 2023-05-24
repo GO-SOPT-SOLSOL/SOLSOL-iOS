@@ -15,6 +15,7 @@
 		2A287D262A1BCC1D0037B94B /* Advertisement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A287D252A1BCC1D0037B94B /* Advertisement.swift */; };
 		2A287D282A1BE25B0037B94B /* CurrentAccountListRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A287D272A1BE25B0037B94B /* CurrentAccountListRequestDTO.swift */; };
 		2A287D2A2A1BE27F0037B94B /* CurrentAccountListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A287D292A1BE27F0037B94B /* CurrentAccountListResponseDTO.swift */; };
+		2A287D312A1DEEE50037B94B /* ScreenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A287D302A1DEEE50037B94B /* ScreenUtils.swift */; };
 		2A4760F92A13EBF1005BAA9F /* DeliveryPackagingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4760F12A13EBF1005BAA9F /* DeliveryPackagingTableViewCell.swift */; };
 		2A4760FA2A13EBF1005BAA9F /* TransferCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4760F22A13EBF1005BAA9F /* TransferCollectionViewCell.swift */; };
 		2A4760FB2A13EBF1005BAA9F /* ShinhanPlusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4760F32A13EBF1005BAA9F /* ShinhanPlusTableViewCell.swift */; };
@@ -68,7 +69,6 @@
 		B5D06E142A16929A00048C72 /* TransferConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E132A16929A00048C72 /* TransferConfirmViewController.swift */; };
 		B5D06E172A1695C700048C72 /* MemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E162A1695C700048C72 /* MemoView.swift */; };
 		B5D06E192A169DDD00048C72 /* SizeLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E182A169DDD00048C72 /* SizeLiterals.swift */; };
-		B5D06E1C2A16B6EB00048C72 /* ScreenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E1B2A16B6EB00048C72 /* ScreenUtils.swift */; };
 		B5D06E252A18F89B00048C72 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E242A18F89B00048C72 /* Config.swift */; };
 		B5D06E272A18F8DD00048C72 /* HTTPHeaderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E262A18F8DD00048C72 /* HTTPHeaderField.swift */; };
 		B5D06E292A18F91700048C72 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E282A18F91700048C72 /* NetworkResult.swift */; };
@@ -114,6 +114,7 @@
 		2A287D252A1BCC1D0037B94B /* Advertisement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertisement.swift; sourceTree = "<group>"; };
 		2A287D272A1BE25B0037B94B /* CurrentAccountListRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAccountListRequestDTO.swift; sourceTree = "<group>"; };
 		2A287D292A1BE27F0037B94B /* CurrentAccountListResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAccountListResponseDTO.swift; sourceTree = "<group>"; };
+		2A287D302A1DEEE50037B94B /* ScreenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtils.swift; sourceTree = "<group>"; };
 		2A4760F12A13EBF1005BAA9F /* DeliveryPackagingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryPackagingTableViewCell.swift; sourceTree = "<group>"; };
 		2A4760F22A13EBF1005BAA9F /* TransferCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferCollectionViewCell.swift; sourceTree = "<group>"; };
 		2A4760F32A13EBF1005BAA9F /* ShinhanPlusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShinhanPlusTableViewCell.swift; sourceTree = "<group>"; };
@@ -168,7 +169,6 @@
 		B5D06E132A16929A00048C72 /* TransferConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferConfirmViewController.swift; sourceTree = "<group>"; };
 		B5D06E162A1695C700048C72 /* MemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoView.swift; sourceTree = "<group>"; };
 		B5D06E182A169DDD00048C72 /* SizeLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeLiterals.swift; sourceTree = "<group>"; };
-		B5D06E1B2A16B6EB00048C72 /* ScreenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtils.swift; sourceTree = "<group>"; };
 		B5D06E242A18F89B00048C72 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		B5D06E262A18F8DD00048C72 /* HTTPHeaderField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaderField.swift; sourceTree = "<group>"; };
 		B5D06E282A18F91700048C72 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
@@ -216,6 +216,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A287D2F2A1DEE9E0037B94B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2A287D302A1DEEE50037B94B /* ScreenUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		2AC408332A0F6686009F0D56 = {
 			isa = PBXGroup;
 			children = (
@@ -276,7 +284,7 @@
 		2AC408792A112DE9009F0D56 /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				B5D06E1A2A16B6E100048C72 /* Utils */,
+				2A287D2F2A1DEE9E0037B94B /* Utils */,
 				B54F21422A135301000D350C /* UIComponents */,
 				2AC4087A2A112E03009F0D56 /* Extension */,
 				2AC4087B2A112E17009F0D56 /* Literals */,
@@ -527,13 +535,6 @@
 			);
 			path = Views;
 			sourceTree = "<group>";
-		};
-		B5D06E1A2A16B6E100048C72 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				B5D06E1B2A16B6EB00048C72 /* ScreenUtils.swift */,
-			);
-			path = Utils;
 		};
 		B5D06E222A18EA4700048C72 /* Network */ = {
 			isa = PBXGroup;
@@ -810,6 +811,7 @@
 				B5D06E272A18F8DD00048C72 /* HTTPHeaderField.swift in Sources */,
 				B54F21522A13BFA4000D350C /* BenefitViewController.swift in Sources */,
 				B5D06E312A198BEF00048C72 /* HomeTarget.swift in Sources */,
+				2A287D312A1DEEE50037B94B /* ScreenUtils.swift in Sources */,
 				2A47610E2A154B72005BAA9F /* Transfer.swift in Sources */,
 				B51382FE2A1519FB00167728 /* NumberPadView.swift in Sources */,
 				2AC4088E2A113195009F0D56 /* TransferViewController.swift in Sources */,
@@ -820,7 +822,6 @@
 				2A204AE72A115C0B00805E0A /* TransferDetailView.swift in Sources */,
 				2A4760F92A13EBF1005BAA9F /* DeliveryPackagingTableViewCell.swift in Sources */,
 				2A4760FF2A13EBF1005BAA9F /* CategoryTableViewCell.swift in Sources */,
-				B5D06E1C2A16B6EB00048C72 /* ScreenUtils.swift in Sources */,
 				B51383112A15AE0400167728 /* NumberButtonType.swift in Sources */,
 				2AC4087F2A112E60009F0D56 /* StringLiterals.swift in Sources */,
 				B54F214B2A13BF20000D350C /* SOLTabBarItem.swift in Sources */,

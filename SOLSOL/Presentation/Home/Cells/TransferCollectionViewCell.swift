@@ -233,20 +233,6 @@ final class TransferCollectionViewCell: UICollectionViewCell {
     // MARK: - TransferCollectionViewCell에 Data 뿌리기
     
     func configureCell(accountList: Transfer) {
-        switch accountList.id {
-        case 1:
-            bankImage.image = ImageLiterals.Home.icSmallBankKakao
-        case 2:
-            bankImage.image = ImageLiterals.Home.icBigBankShinhan
-        case 3:
-            bankImage.image = ImageLiterals.Home.icSmallBankKakao
-        case 4:
-            bankImage.image = ImageLiterals.Home.icSmallBankHanna
-        case 5:
-            bankImage.image = ImageLiterals.Home.icSmallBankKB
-        default:
-            bankImage.image = ImageLiterals.Home.icBigBankShinhan
-        }
         
         if accountList.kind == "DEPOSIT" {
             depositWithdraw.text = "예적금"
@@ -257,14 +243,19 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         bankBook.text = accountList.name
         
         if accountList.bank == "SHINHAN" {
+            bankImage.image = ImageLiterals.Home.icBigBankShinhan
             accountNum.text = "신한" + " " + accountList.accountNumber
         } else if accountList.bank == "KOOKMIN" {
+            bankImage.image = ImageLiterals.Home.icSmallBankKB
             accountNum.text = "국민" + " " + accountList.accountNumber
-        } else if accountList.bank == "HANNA" {
+        } else if accountList.bank == "HANA" {
+            bankImage.image = ImageLiterals.Home.icSmallBankHanna
             accountNum.text = "하나" + " " + accountList.accountNumber
         } else if accountList.bank == "KAKAO" {
+            bankImage.image = ImageLiterals.Home.icSmallBankKakao
             accountNum.text = "카카오" + " " + accountList.accountNumber
         } else {
+            bankImage.image = ImageLiterals.Home.icSmallBankWoori
             accountNum.text = "우리" + " " + accountList.accountNumber
         }
 

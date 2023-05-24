@@ -10,7 +10,7 @@ struct CurrentAccountListResponseDTO: Decodable {
 }
 
 struct currentAccountListData: Decodable {
-    let id: Int
+    let price: Int
     let name: String
     let bank: String
     let accountNumber: String
