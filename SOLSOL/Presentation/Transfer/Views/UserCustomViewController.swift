@@ -7,15 +7,20 @@
 
 import UIKit
 
+protocol CellAction: AnyObject {
+    func cellTapped()
+}
+
 class UserCustomViewController: UIViewController {
     
     //MARK: - UIComponents
+    
+    weak var cellDelegate: CellAction?
     
     let TranferTableView = UITableView(frame: .zero, style: .grouped)
     
     private let Firstdummy = AccountInfo.dummy()
     private let Secondummy = AccountInfoWithDate.dummy()
-    
     
     
     private let firstHeaderView = UIView()
@@ -47,8 +52,6 @@ class UserCustomViewController: UIViewController {
             
             
             $0.register(TransferAccountsTableViewCell.self, forCellReuseIdentifier: TransferAccountsTableViewCell.identifier)
-            
-            
             
             $0.separatorStyle = .none
             
@@ -137,15 +140,16 @@ extension UserCustomViewController: UITableViewDataSource{
             {return UITableViewCell()}
             
             cell.configureCell(Firstdummy[indexPath.row])
-            
+
             return cell}
         
         else {guard let cell = tableView.dequeueReusableCell(withIdentifier: TransferAccountsTableViewCell.identifier, for: indexPath) as? TransferAccountsTableViewCell else
             {return UITableViewCell()}
             
             cell.configureSecondCell(Secondummy[indexPath.row])
-            
+
             return cell}
+        
         
     }
     
@@ -178,6 +182,16 @@ extension UserCustomViewController: UITableViewDataSource{
         }
         return 0
     }
+    
+    
 }
 
-extension UserCustomViewController: UITableViewDelegate{ }
+extension UserCustomViewController: UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        cellDelegate?.cellTapped()
+//        let nextViewController = TransferDetailViewController(viewModel: DefaultTransferDetailViewModel())
+//        navigationController?.pushViewController(nextViewController, animated: true)
+        
+    }
+}
