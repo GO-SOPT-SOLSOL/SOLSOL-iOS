@@ -23,6 +23,13 @@ final class SOLNavigationBar: UIView {
             case .home: return 18
             }
         }
+
+        var rightItem: UIImage {
+            switch self {
+            case .back: return ImageLiterals.NavigationBar.icHomeOutline
+            case .home: return ImageLiterals.NavigationBar.icMypage
+            }
+        }
     }
 
     private lazy var leftItem = UIButton().then {
@@ -37,9 +44,7 @@ final class SOLNavigationBar: UIView {
         $0.setImage(ImageLiterals.NavigationBar.icVoice, for: .normal)
     }
 
-    private let homeButton = UIButton().then {
-        $0.setImage(ImageLiterals.NavigationBar.icHomeOutline, for: .normal)
-    }
+    private let homeButton = UIButton()
 
     private lazy var rightItemStackView = UIStackView(arrangedSubviews: [
         chatButton,
@@ -59,6 +64,7 @@ final class SOLNavigationBar: UIView {
         super.init(frame: .zero)
         setLeftItem()
         setLayout()
+        setRightItem()
         self.backgroundColor = .white
     }
 
@@ -81,6 +87,10 @@ private extension SOLNavigationBar {
         case .back:
             leftItem.setImage(ImageLiterals.NavigationBar.icArrowLeft, for: .normal)
         }
+    }
+
+    func setRightItem() {
+        homeButton.setImage(type.rightItem, for: .normal)
     }
 
     func setLayout() {
