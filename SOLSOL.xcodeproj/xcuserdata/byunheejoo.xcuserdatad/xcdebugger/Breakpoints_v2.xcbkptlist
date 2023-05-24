@@ -30,8 +30,8 @@
             filePath = "SOLSOL/Presentation/Home/Cells/ShinhanPlusTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "setLayout()"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "SOLSOL/Presentation/Home/Cells/CategoryTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "setStyle()"
             landmarkType = "7">
             <Locations>
@@ -94,8 +94,8 @@
             filePath = "SOLSOL/Presentation/Home/Cells/CategoryTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "setStyle()"
             landmarkType = "7">
             <Locations>
@@ -158,8 +158,8 @@
             filePath = "SOLSOL/Presentation/Home/Cells/TransferCollectionViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "setLayout()"
             landmarkType = "7">
          </BreakpointContent>

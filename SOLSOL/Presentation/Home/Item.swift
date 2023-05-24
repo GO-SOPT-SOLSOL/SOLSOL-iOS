@@ -5,6 +5,8 @@
 //  Created by 변희주 on 2023/05/16.
 //
 
+// MARK: - 희주 stackView에서 쓸 Enum 데이터 (추후 StringLiterals로)
+
 import UIKit
 
 enum Item {

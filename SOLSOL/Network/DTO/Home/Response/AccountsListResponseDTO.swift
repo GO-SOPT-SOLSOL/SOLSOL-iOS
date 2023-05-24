@@ -12,6 +12,7 @@ import Foundation
 struct AccountsListResponseDTO: Decodable {
     let memberId: Int
     let id: Int
+    let kind: String
     let bank: String
     let name: String
     let balance: Int
