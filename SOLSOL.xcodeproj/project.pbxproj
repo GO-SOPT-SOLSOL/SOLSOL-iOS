@@ -68,6 +68,8 @@
 		B5AB47982A1DA33E00904919 /* SingleAccountResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB47972A1DA33E00904919 /* SingleAccountResponseDTO.swift */; };
 		B5AB479B2A1DA3AF00904919 /* TransferDetailTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB479A2A1DA3AF00904919 /* TransferDetailTarget.swift */; };
 		B5AB479E2A1DA45800904919 /* TransferDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB479D2A1DA45800904919 /* TransferDetailService.swift */; };
+		B5AB47A02A1E097700904919 /* TransferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB479F2A1E097700904919 /* TransferModel.swift */; };
+		B5AB47A22A1E188500904919 /* BankBookType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB47A12A1E188500904919 /* BankBookType.swift */; };
 		B5D06E142A16929A00048C72 /* TransferConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E132A16929A00048C72 /* TransferConfirmViewController.swift */; };
 		B5D06E172A1695C700048C72 /* MemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E162A1695C700048C72 /* MemoView.swift */; };
 		B5D06E192A169DDD00048C72 /* SizeLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E182A169DDD00048C72 /* SizeLiterals.swift */; };
@@ -170,6 +172,8 @@
 		B5AB47972A1DA33E00904919 /* SingleAccountResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAccountResponseDTO.swift; sourceTree = "<group>"; };
 		B5AB479A2A1DA3AF00904919 /* TransferDetailTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailTarget.swift; sourceTree = "<group>"; };
 		B5AB479D2A1DA45800904919 /* TransferDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailService.swift; sourceTree = "<group>"; };
+		B5AB479F2A1E097700904919 /* TransferModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferModel.swift; sourceTree = "<group>"; };
+		B5AB47A12A1E188500904919 /* BankBookType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankBookType.swift; sourceTree = "<group>"; };
 		B5D06E132A16929A00048C72 /* TransferConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferConfirmViewController.swift; sourceTree = "<group>"; };
 		B5D06E162A1695C700048C72 /* MemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoView.swift; sourceTree = "<group>"; };
 		B5D06E182A169DDD00048C72 /* SizeLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeLiterals.swift; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 		2AC408792A112DE9009F0D56 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				B5AB47A32A1E1AAA00904919 /* Enum */,
 				B5FE03162A1C8783006C6180 /* Utils */,
 				B54F21422A135301000D350C /* UIComponents */,
 				2AC4087A2A112E03009F0D56 /* Extension */,
@@ -478,7 +483,6 @@
 			isa = PBXGroup;
 			children = (
 				B51383102A15AE0400167728 /* NumberButtonType.swift */,
-				B5AB47932A1D951700904919 /* Bank.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -561,11 +565,21 @@
 			path = TransferDetail;
 			sourceTree = "<group>";
 		};
+		B5AB47A32A1E1AAA00904919 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				B5AB47932A1D951700904919 /* Bank.swift */,
+				B5AB47A12A1E188500904919 /* BankBookType.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		B5D06E122A16906F00048C72 /* TransferConfirm */ = {
 			isa = PBXGroup;
 			children = (
 				B5D06E152A16951A00048C72 /* Views */,
 				B5D06E132A16929A00048C72 /* TransferConfirmViewController.swift */,
+				B5AB479F2A1E097700904919 /* TransferModel.swift */,
 			);
 			path = TransferConfirm;
 			sourceTree = "<group>";
@@ -855,6 +869,7 @@
 				2A4760FC2A13EBF1005BAA9F /* AdvertisementTableViewCell.swift in Sources */,
 				B513830E2A15968000167728 /* String+.swift in Sources */,
 				2AF091EE2A1150F000F611C4 /* UIFont+.swift in Sources */,
+				B5AB47A22A1E188500904919 /* BankBookType.swift in Sources */,
 				B5FE03182A1C8783006C6180 /* ScreenUtils.swift in Sources */,
 				2A204AE32A115BEA00805E0A /* TransferView.swift in Sources */,
 				2A4760FA2A13EBF1005BAA9F /* TransferCollectionViewCell.swift in Sources */,
@@ -906,6 +921,7 @@
 				B51383072A157E3800167728 /* Int+.swift in Sources */,
 				B5AB478C2A1C8C4A00904919 /* TransferConfirmTarget.swift in Sources */,
 				B54F214E2A13BF96000D350C /* MoneyVerseViewController.swift in Sources */,
+				B5AB47A02A1E097700904919 /* TransferModel.swift in Sources */,
 				B54F21492A1364F0000D350C /* SOLTabBarController.swift in Sources */,
 				B5D06E192A169DDD00048C72 /* SizeLiterals.swift in Sources */,
 				2AC408402A0F6686009F0D56 /* AppDelegate.swift in Sources */,
