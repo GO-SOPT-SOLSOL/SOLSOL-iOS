@@ -14,13 +14,13 @@ final class TransferTableViewCell: UITableViewCell {
     
     weak var pushDelegate: TransferButtonAction?
     
-    var accountList: [Transfer] = [] {
+    var accountList: [MyBankAccount?] = [] {
         didSet {
             self.collectionView.reloadData()
         }
     }
     
-    var currentAccountList: [TransferList] = [] {
+    var currentAccountList: [Receiver?] = [] {
         didSet {
             self.collectionView.reloadData()
         }
@@ -115,7 +115,7 @@ extension TransferTableViewCell: UICollectionViewDelegate, UICollectionViewDataS
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:TransferCollectionViewCell.className, for: indexPath) as? TransferCollectionViewCell else { return UICollectionViewCell() }
         
         let accountList = accountList[indexPath.row]
-        cell.configureCell(accountList: accountList)
+        cell.configureCell(accountList: accountList!)
         cell.currentAccountList = currentAccountList
         cell.pushDelegate = self
         return cell
