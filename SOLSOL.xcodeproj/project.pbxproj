@@ -65,6 +65,9 @@
 		B5AB478C2A1C8C4A00904919 /* TransferConfirmTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB478B2A1C8C4A00904919 /* TransferConfirmTarget.swift */; };
 		B5AB478F2A1C8D7300904919 /* TransferConfirmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB478E2A1C8D7300904919 /* TransferConfirmService.swift */; };
 		B5AB47942A1D951700904919 /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB47932A1D951700904919 /* Bank.swift */; };
+		B5AB47982A1DA33E00904919 /* SingleAccountResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB47972A1DA33E00904919 /* SingleAccountResponseDTO.swift */; };
+		B5AB479B2A1DA3AF00904919 /* TransferDetailTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB479A2A1DA3AF00904919 /* TransferDetailTarget.swift */; };
+		B5AB479E2A1DA45800904919 /* TransferDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB479D2A1DA45800904919 /* TransferDetailService.swift */; };
 		B5D06E142A16929A00048C72 /* TransferConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E132A16929A00048C72 /* TransferConfirmViewController.swift */; };
 		B5D06E172A1695C700048C72 /* MemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E162A1695C700048C72 /* MemoView.swift */; };
 		B5D06E192A169DDD00048C72 /* SizeLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E182A169DDD00048C72 /* SizeLiterals.swift */; };
@@ -164,6 +167,9 @@
 		B5AB478B2A1C8C4A00904919 /* TransferConfirmTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferConfirmTarget.swift; sourceTree = "<group>"; };
 		B5AB478E2A1C8D7300904919 /* TransferConfirmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferConfirmService.swift; sourceTree = "<group>"; };
 		B5AB47932A1D951700904919 /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
+		B5AB47972A1DA33E00904919 /* SingleAccountResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAccountResponseDTO.swift; sourceTree = "<group>"; };
+		B5AB479A2A1DA3AF00904919 /* TransferDetailTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailTarget.swift; sourceTree = "<group>"; };
+		B5AB479D2A1DA45800904919 /* TransferDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailService.swift; sourceTree = "<group>"; };
 		B5D06E132A16929A00048C72 /* TransferConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferConfirmViewController.swift; sourceTree = "<group>"; };
 		B5D06E162A1695C700048C72 /* MemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoView.swift; sourceTree = "<group>"; };
 		B5D06E182A169DDD00048C72 /* SizeLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeLiterals.swift; sourceTree = "<group>"; };
@@ -523,6 +529,38 @@
 			path = TransferConfirm;
 			sourceTree = "<group>";
 		};
+		B5AB47952A1DA31B00904919 /* TransferDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B5AB47962A1DA32300904919 /* Response */,
+			);
+			path = TransferDetail;
+			sourceTree = "<group>";
+		};
+		B5AB47962A1DA32300904919 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				B5AB47972A1DA33E00904919 /* SingleAccountResponseDTO.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		B5AB47992A1DA3A300904919 /* TransferDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B5AB479A2A1DA3AF00904919 /* TransferDetailTarget.swift */,
+			);
+			path = TransferDetail;
+			sourceTree = "<group>";
+		};
+		B5AB479C2A1DA44400904919 /* TransferDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B5AB479D2A1DA45800904919 /* TransferDetailService.swift */,
+			);
+			path = TransferDetail;
+			sourceTree = "<group>";
+		};
 		B5D06E122A16906F00048C72 /* TransferConfirm */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,6 +607,7 @@
 		B5D06E2E2A198B8D00048C72 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				B5AB47992A1DA3A300904919 /* TransferDetail */,
 				B5AB478A2A1C8C3900904919 /* TransferConfirm */,
 				B5D06E2F2A198BE200048C72 /* Home */,
 			);
@@ -586,6 +625,7 @@
 		B5D06E322A198C0C00048C72 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				B5AB47952A1DA31B00904919 /* TransferDetail */,
 				B5FE03192A1C879E006C6180 /* TransferConfirm */,
 				B5D06E372A198E3D00048C72 /* Home */,
 			);
@@ -620,6 +660,7 @@
 		B5D06E3C2A19917000048C72 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				B5AB479C2A1DA44400904919 /* TransferDetail */,
 				B5AB478D2A1C8D6600904919 /* TransferConfirm */,
 				B5D06E3D2A19917900048C72 /* Home */,
 			);
@@ -818,6 +859,7 @@
 				2A204AE32A115BEA00805E0A /* TransferView.swift in Sources */,
 				2A4760FA2A13EBF1005BAA9F /* TransferCollectionViewCell.swift in Sources */,
 				B5AB47892A1C8BFF00904919 /* TransferToResponseDTO.swift in Sources */,
+				B5AB479E2A1DA45800904919 /* TransferDetailService.swift in Sources */,
 				B5D06E142A16929A00048C72 /* TransferConfirmViewController.swift in Sources */,
 				B51383042A157B6700167728 /* TransferDetailViewModel.swift in Sources */,
 				B5AB47942A1D951700904919 /* Bank.swift in Sources */,
@@ -847,6 +889,7 @@
 				B54F21522A13BFA4000D350C /* BenefitViewController.swift in Sources */,
 				B5D06E312A198BEF00048C72 /* HomeTarget.swift in Sources */,
 				2A47610E2A154B72005BAA9F /* Transfer.swift in Sources */,
+				B5AB47982A1DA33E00904919 /* SingleAccountResponseDTO.swift in Sources */,
 				B51382FE2A1519FB00167728 /* NumberPadView.swift in Sources */,
 				2AC4088E2A113195009F0D56 /* TransferViewController.swift in Sources */,
 				B5D06E3B2A198F7900048C72 /* AccountsListResponseDTO.swift in Sources */,
@@ -870,6 +913,7 @@
 				2A47610C2A153D82005BAA9F /* TransferList.swift in Sources */,
 				B5D06E2B2A18F93400048C72 /* TargetType.swift in Sources */,
 				2AC408422A0F6686009F0D56 /* SceneDelegate.swift in Sources */,
+				B5AB479B2A1DA3AF00904919 /* TransferDetailTarget.swift in Sources */,
 				2A4761072A13F0EE005BAA9F /* Section.swift in Sources */,
 				B5D06E252A18F89B00048C72 /* Config.swift in Sources */,
 				2A4761002A13EBF1005BAA9F /* MyAccountTableViewCell.swift in Sources */,

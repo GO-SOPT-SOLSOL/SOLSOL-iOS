@@ -136,6 +136,11 @@ extension TransferDetailViewController {
             return
         }
         let viewController = TransferConfirmViewController()
+
+        // memberId, senderAccountsId, bank, accountNumber
+        // accountsId랑 memberId -> api
+        // 이것들 받으면 price만 포함해서 넘기기
+        
         viewController.setInitialData(
             receiverName: receiverText,
             receiverAccount: receiverAccountText,
@@ -144,4 +149,22 @@ extension TransferDetailViewController {
         self.navigationController?.pushViewController(viewController, animated: false)
     }
 
+}
+
+
+extension TransferDetailViewController {
+    func getSingleAccountWithAPI() {
+        let queryDTO = AccountsListRequestDTO(memberId: 1)
+        NetworkService.shared.transferDefailServcie.getSingleAccountInfo(accountNum: 1, queryDTO: queryDTO) { response in
+            switch response {
+            case .success(let data):
+                guard let data = data.data else { return }
+                dump(data)
+            default:
+                print("network failure")
+                return
+            }
+        }
+    }
+    
 }

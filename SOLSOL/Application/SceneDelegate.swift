@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
       guard let windowScene = (scene as? UIWindowScene) else { return }
       self.window = UIWindow(windowScene: windowScene)
-      let navigationController = SOLTabBarController()
+      let navigationController = UINavigationController(rootViewController: TransferDetailViewController(viewModel: DefaultTransferDetailViewModel()))
       self.window?.rootViewController = navigationController
       self.window?.makeKeyAndVisible()
   }
