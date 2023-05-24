@@ -47,6 +47,11 @@ final class TransferAccountsTableViewCell: UITableViewCell {
             $0.textColor = .gray400
         }
         
+        dateLable.do{
+            $0.font = .font(.body2)
+            $0.textColor = .gray300
+        }
+        
 //        deleteButton.do{
 //            $0.setImage(ImageLiterals.Transfer.icDelete, for: .normal)
 //        }
@@ -55,7 +60,7 @@ final class TransferAccountsTableViewCell: UITableViewCell {
     
     func hierarchy(){
         
-        contentView.addSubviews(bankImage, bankNameLabel, bankAccountLable, deleteButton)
+        contentView.addSubviews(bankImage, bankNameLabel, bankAccountLable, deleteButton, dateLable)
         
     }
     
@@ -81,6 +86,11 @@ final class TransferAccountsTableViewCell: UITableViewCell {
         deleteButton.snp.makeConstraints{
             $0.centerY.equalToSuperview()
             $0.trailing.equalToSuperview().inset(30)
+        }
+        
+        dateLable.snp.makeConstraints{
+            $0.leading.equalTo(bankNameLabel.snp.trailing).offset(4)
+            $0.centerY.equalTo(bankNameLabel)
         }
         
     }

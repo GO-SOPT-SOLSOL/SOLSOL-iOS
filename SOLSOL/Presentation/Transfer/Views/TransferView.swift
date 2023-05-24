@@ -12,33 +12,51 @@ import Then
 
 class TransferView: UIView {
     
-    //MARK: - UIComponents
-
-    let TranferTableView = UITableView(frame: .zero, style: .grouped)
     
-    private let Firstdummy = AccountInfo.dummy()
-    private let Secondummy = AccountInfoWithDate.dummy()
+    
+    //MARK: - UIComponents
     
     private let sendToWhoLabel = UILabel()
-    private let searchTextField = UITextField()
+    public let searchTextField = UITextField()
     private let SearchButton = UIButton()
     
-    private let segmentedControl = UISegmentedControl(items: ["맞춤", "친구/그룹", "연락처"])
+    private lazy var segmentedControl = SOLSegmentedControl(items: ["맞춤", "친구/그룹", "연락처"])
     
-    private let firstHeaderView = UIView()
-    private let secondHeaderView = UIView()
-    private let firstHeaderLabel = UILabel()
-    private let secondHeaderLabel = UILabel()
-    private let sectionDivider = UIView()
+   
+    private var selectedIndex: Int = 0
+    
+    private let userCustomView = UserCustomViewController()
+    private let friendGroupView = UIViewController()
+    private let contactsView = UIViewController()
+    private lazy var pageViewController =  UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+    
+    var dataViewControllers: [UIViewController] {
+        [self.userCustomView, self.friendGroupView, self.contactsView]
+    }
+    
+    var currentPage: Int = 0 {
+        didSet {
+            // from segmentedControl -> pageViewController 업데이트
+            print(oldValue, self.currentPage)
+            let direction: UIPageViewController.NavigationDirection = oldValue <= self.currentPage ? .forward : .reverse
+            self.pageViewController.setViewControllers(
+                [dataViewControllers[self.currentPage]],
+                direction: direction,
+                animated: true,
+                completion: nil
+            )
+        }
+    }
+    
     
     //MARK: - View Life Cycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-                
+        
+        hierarchy()
         setDelegate()
         setStyle()
-        hierarchy()
         setLayout()
         
     }
@@ -52,11 +70,10 @@ class TransferView: UIView {
     
     func hierarchy(){
         
-        self.addSubviews(sendToWhoLabel, searchTextField, segmentedControl,TranferTableView)
+        self.addSubviews(sendToWhoLabel, searchTextField, segmentedControl, pageViewController.view)
         
         searchTextField.addSubview(SearchButton)
-        firstHeaderView.addSubview(firstHeaderLabel)
-        secondHeaderView.addSubview(secondHeaderLabel)
+        
         
     }
     
@@ -84,6 +101,7 @@ class TransferView: UIView {
         }
         
         segmentedControl.do{
+            
             //선택안된 segment버튼 폰트
             $0.setTitleTextAttributes([
                 NSAttributedString.Key.foregroundColor: UIColor.gray400,
@@ -96,43 +114,41 @@ class TransferView: UIView {
                 NSAttributedString.Key.font: UIFont.font(.subhead2)
             ], for: .selected)
             
+            
+            $0.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
+            
+            $0.addTarget(self, action: #selector(changeValue(control:)), for: .valueChanged)
+            
+            
             //default 값을 '맞춤'으로
             $0.selectedSegmentIndex = 0
             
         }
         
-        TranferTableView.do{
-            $0.register(TransferAccountsTableViewCell.self, forCellReuseIdentifier: TransferAccountsTableViewCell.identifier)
-            $0.separatorStyle = .none
-//            $0.sectionFooterHeight = 7
+        
+        userCustomView.do{
+            
+            $0.view.backgroundColor = .black
+            hiddenKeyboard(viewcontroller: userCustomView)
+        }
+        
+        friendGroupView.do{
+            $0.view.backgroundColor = .red
+            hiddenKeyboard(viewcontroller: friendGroupView)
+
+        }
+        
+        contactsView.do{
+            $0.view.backgroundColor = .blue
+            hiddenKeyboard(viewcontroller: contactsView)
+
+        }
+        
+        pageViewController.do{
+            $0.setViewControllers([self.dataViewControllers[0]], direction: .forward, animated: true)
             
         }
         
-        firstHeaderView.do{
-            $0.backgroundColor = .white
-        }
-        
-        secondHeaderView.do{
-            $0.backgroundColor = .white
-        }
-        
-        firstHeaderLabel.do{
-            $0.text = "내계좌"
-            $0.textColor = .gray600
-            $0.font = .font(.subhead4)
-        }
-        
-        secondHeaderLabel.do{
-            $0.text = "최근보낸 사람"
-            $0.textColor = .gray600
-            $0.font = .font(.subhead4)
-        }
-        
-        sectionDivider.do{
-            $0.backgroundColor = .gray100
-        }
-        
-
     }
     
     func setLayout(){
@@ -160,40 +176,55 @@ class TransferView: UIView {
             $0.trailing.equalTo(searchTextField.snp.trailing)
             $0.top.equalTo(SearchButton.snp.bottom).offset(11)
             $0.height.equalTo(44)
+            
         }
         
-        TranferTableView.snp.makeConstraints{
+        pageViewController.view.snp.makeConstraints{
             $0.top.equalTo(segmentedControl.snp.bottom)
-            $0.trailing.leading.bottom.equalToSuperview()
-        }
-    
-        
-        firstHeaderLabel.snp.makeConstraints{
-            $0.leading.equalToSuperview().inset(18)
-            $0.centerY.equalToSuperview()
+            $0.trailing.bottom.leading.equalToSuperview()
         }
         
-        secondHeaderLabel.snp.makeConstraints{
-            $0.leading.equalToSuperview().inset(18)
-            $0.centerY.equalToSuperview()
-        }
         
-
     }
     
     func setDelegate(){
         
         searchTextField.delegate = self
-        
-        TranferTableView.delegate = self
-        TranferTableView.dataSource = self
+        pageViewController.delegate = self
+        pageViewController.dataSource = self
         
     }
+    
+    func hiddenKeyboard(viewcontroller: UIViewController){
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapView(_:)))
+        
+        viewcontroller.view.addGestureRecognizer(tapGestureRecognizer)
+        
+    }
+    
+    
+    @objc func didTapView(_ sender: UITapGestureRecognizer) {
+        searchTextField.endEditing(true)
+    }
+    
+    @objc
+    func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        searchTextField.endEditing(true)
+    }
+    
+    @objc
+    private func changeValue(control: UISegmentedControl) {
+        // 코드로 값을 변경하면 해당 메소드 호출 x
+        self.currentPage = control.selectedSegmentIndex
+    }
 }
+
 
 //MARK: - Extensions
 
 extension TransferView: UITextFieldDelegate{
+    
     
     // 입력 시 textField 테두리 색 변경
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -204,74 +235,44 @@ extension TransferView: UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.gray150.cgColor
     }
-    
 }
 
-extension TransferView: UITableViewDelegate{ }
 
-extension TransferView: UITableViewDataSource{
+
+
+extension TransferView: UIPageViewControllerDataSource{
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        74
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard
+            let index = self.dataViewControllers.firstIndex(of: viewController),
+            index - 1 >= 0
+        else { return nil }
+        return self.dataViewControllers[index - 1]
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard
+            let index = self.dataViewControllers.firstIndex(of: viewController),
+            index + 1 < self.dataViewControllers.count
+        else { return nil }
+        return self.dataViewControllers[index + 1]
+    }
+}
+
+extension TransferView: UIPageViewControllerDelegate{
+    func pageViewController(
+        _ pageViewController: UIPageViewController,
+        didFinishAnimating finished: Bool,
+        previousViewControllers: [UIViewController],
+        transitionCompleted completed: Bool
+    ) {
+        guard
+            let viewController = pageViewController.viewControllers?[0],
+            let index = self.dataViewControllers.firstIndex(of: viewController)
+        else { return }
+        self.currentPage = index
+        self.segmentedControl.selectedSegmentIndex = index
         
-        if section == 0{
-            return Firstdummy.count
-        }else {return Secondummy.count}
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.section == 0{
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: TransferAccountsTableViewCell.identifier, for: indexPath) as? TransferAccountsTableViewCell else
-            {return UITableViewCell()}
-            
-            cell.configureCell(Firstdummy[indexPath.row])
-            
-            return cell}
-        
-        else {guard let cell = tableView.dequeueReusableCell(withIdentifier: TransferAccountsTableViewCell.identifier, for: indexPath) as? TransferAccountsTableViewCell else
-            {return UITableViewCell()}
-            
-            cell.configureSecondCell(Secondummy[indexPath.row])
-            
-            return cell}
-        
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 55
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0{
-            return firstHeaderView
-        }
-        else if section == 1{
-            return secondHeaderView
-        }
-        else {return UIView()}
-        
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if section == 0{
-            return sectionDivider
-        }
-        return nil
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section == 0{
-            return 7
-            
-        }
-       return 0
+       
     }
 }

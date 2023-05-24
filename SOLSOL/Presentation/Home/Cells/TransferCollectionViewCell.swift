@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 import Then
 
+// MARK: - [이체] 버튼 클릭헀을 때 push 동작 Delegate 시켜 줄 Protocol 선언
+
 protocol TransferButtonAction: AnyObject {
     func transferButtonTapped()
 }
@@ -17,13 +19,13 @@ protocol TransferButtonAction: AnyObject {
 final class TransferCollectionViewCell: UICollectionViewCell {
     
     weak var pushDelegate: TransferButtonAction?
-        
-    var listDummy: [TransferList] = [] {
+    
+    var currentAccountList: [TransferList] = [] {
         didSet {
-            collectionView.reloadData()
+            self.collectionView.reloadData()
         }
     }
-
+    
     private let transferBackGround = UIView()
     private let bankImage = UIImageView()
     private let depositWithdraw = UILabel()
@@ -42,6 +44,8 @@ final class TransferCollectionViewCell: UICollectionViewCell {
                                                        collectionViewLayout: flowLayout)
     private let flowLayout = UICollectionViewFlowLayout()
     
+    // MARK: - Life Cycle
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -54,6 +58,8 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - UI Components
+    
     func setStyle() {
         transferBackGround.do {
             $0.backgroundColor = .white
@@ -61,7 +67,6 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         }
         
         depositWithdraw.do {
-            $0.text = "입출금"
             $0.textColor = .gray600
             $0.font = .font(.subhead1)
         }
@@ -178,7 +183,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         }
         
         copyButton.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(37)
+            $0.top.equalTo(accountNum)
             $0.leading.equalTo(accountNum.snp.trailing).offset(2)
             $0.size.equalTo(14)
         }
@@ -208,7 +213,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
             $0.leading.equalToSuperview().inset(18)
             $0.height.equalTo(34)
             $0.width.equalTo(82)
-
+            
         }
         
         moneyBoxButton.snp.makeConstraints {
@@ -217,7 +222,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
             $0.height.equalTo(34)
             $0.width.equalTo(115)
         }
-    
+        
         collectionView.snp.makeConstraints {
             $0.bottom.equalToSuperview().inset(18)
             $0.height.equalTo(43)
@@ -225,12 +230,40 @@ final class TransferCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configureCell(_ transfer: Transfer) {
-        bankImage.image = transfer.image
-        bankBook.text = transfer.bankBook
-        accountNum.text = transfer.account
-        myMoney.text = transfer.money
+    // MARK: - TransferCollectionViewCell에 Data 뿌리기
+    
+    func configureCell(accountList: Transfer) {
+        
+        if accountList.kind == "DEPOSIT" {
+            depositWithdraw.text = "예적금"
+        } else {
+            depositWithdraw.text = "입출금"
+        }
+        
+        bankBook.text = accountList.name
+        
+        if accountList.bank == "SHINHAN" {
+            bankImage.image = ImageLiterals.Home.icBigBankShinhan
+            accountNum.text = "신한" + " " + accountList.accountNumber
+        } else if accountList.bank == "KOOKMIN" {
+            bankImage.image = ImageLiterals.Home.icSmallBankKB
+            accountNum.text = "국민" + " " + accountList.accountNumber
+        } else if accountList.bank == "HANA" {
+            bankImage.image = ImageLiterals.Home.icSmallBankHanna
+            accountNum.text = "하나" + " " + accountList.accountNumber
+        } else if accountList.bank == "KAKAO" {
+            bankImage.image = ImageLiterals.Home.icSmallBankKakao
+            accountNum.text = "카카오" + " " + accountList.accountNumber
+        } else {
+            bankImage.image = ImageLiterals.Home.icSmallBankWoori
+            accountNum.text = "우리" + " " + accountList.accountNumber
+        }
+
+        myMoney.text = accountList.money.currencyAmountToString()
+        
     }
+    
+    // MARK: - Delegate Protocol
     
     @objc
     func backButtonTapped() {
@@ -239,17 +272,17 @@ final class TransferCollectionViewCell: UICollectionViewCell {
 }
 
 extension TransferCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listDummy.count
+        return currentAccountList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:TransferListCollectionViewCell.className, for: indexPath) as? TransferListCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.configureCell(listDummy[indexPath.item])
-        
+        let currentAccountList = currentAccountList[indexPath.row]
+        cell.configureCell(currentAccountList: currentAccountList)
         return cell
     }
 }

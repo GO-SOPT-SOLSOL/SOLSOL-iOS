@@ -48,6 +48,8 @@ final class ShinhanPlusTableViewCell: UITableViewCell {
                                                   font: .font(.subhead2),
                                                   cornerRadius: 14)
 
+    // MARK: - Life Cycle
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -59,6 +61,8 @@ final class ShinhanPlusTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
+    // MARK: - UI Components
     
     func setStyle() {
         backGround.do {

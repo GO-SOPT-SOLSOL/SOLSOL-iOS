@@ -18,6 +18,8 @@ final class TransferListCollectionViewCell: UICollectionViewCell {
     private let name = UILabel()
     private let amount = UILabel()
 
+    // MARK: - Life Cycle
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -29,6 +31,8 @@ final class TransferListCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - UI Components
     
     func setStyle() {
         transferListBackGround.do {
@@ -62,6 +66,7 @@ final class TransferListCollectionViewCell: UICollectionViewCell {
         bankImage.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().inset(8)
+            $0.size.equalTo(22)
         }
         
         name.snp.makeConstraints {
@@ -79,9 +84,24 @@ final class TransferListCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func configureCell(_ transferList: TransferList) {
-        bankImage.image = transferList.image
-        name.text = transferList.name
-        amount.text = transferList.money
+    // MARK: - TransferListCollectionViewCell에 Data 뿌리기
+    
+    func configureCell(currentAccountList: TransferList) {
+        name.text = currentAccountList.name
+        
+        if currentAccountList.bank == "SHINHAN" {
+            bankImage.image = ImageLiterals.Home.icBankShinhan
+        } else if currentAccountList.bank == "KOOKMIN" {
+            bankImage.image = ImageLiterals.Home.icSmallBankKB
+        } else if currentAccountList.bank == "HANA" {
+            bankImage.image = ImageLiterals.Home.icSmallBankHanna
+        } else if currentAccountList.bank == "KAKAO" {
+            bankImage.image = ImageLiterals.Home.icSmallBankKakao
+        } else {
+            bankImage.image = ImageLiterals.Home.icSmallBankWoori
+        }
+        
+        amount.text = currentAccountList.price.currencyAmountToString()
+        
     }
 }

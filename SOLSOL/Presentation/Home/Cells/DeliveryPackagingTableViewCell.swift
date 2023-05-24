@@ -17,6 +17,8 @@ final class DeliveryPackagingTableViewCell: UITableViewCell {
     private let orderLabel = UILabel()
     private let pullingImage = UIImageView()
     
+    // MARK: - Life Cycle
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -28,6 +30,8 @@ final class DeliveryPackagingTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
+    // MARK: - UI Components
     
     func setStyle() {
         backGround.do {

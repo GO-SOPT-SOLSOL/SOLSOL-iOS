@@ -83,6 +83,8 @@ final class CategoryTableViewCell: UITableViewCell {
                                                     font: .font(.body3),
                                                     cornerRadius: 13)
 
+    // MARK:  - Life Cycle
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
@@ -95,16 +97,17 @@ final class CategoryTableViewCell: UITableViewCell {
         super.init(coder: coder)
     }
     
+    // MARK: - UI Components
+    
     func setStyle() {
-        items = [
-        itemCup,
-        itemTips,
-        itemBank,
-        itemWallet,
-        itemBaseBall,
-        itemCard,
-        itemStock,
-        itemCertification]
+        items = [itemCup,
+                 itemTips,
+                 itemBank,
+                 itemWallet,
+                 itemBaseBall,
+                 itemCard,
+                 itemStock,
+                 itemCertification]
         
         itemStock.do {
             $0.titleLabel?.numberOfLines = 1

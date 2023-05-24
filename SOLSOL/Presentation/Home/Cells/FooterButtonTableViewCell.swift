@@ -36,7 +36,8 @@ final class FooterButtonTableViewCell: UITableViewCell {
                                                  imagePadding: 6,
                                                  font: .font(.body2),
                                                  cornerRadius: 20)
-
+    // MARK: - Life Cycle
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
@@ -48,6 +49,8 @@ final class FooterButtonTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
+    // MARK: - UI Components
     
     func setStyle() {
         changeHomeButton.do {
