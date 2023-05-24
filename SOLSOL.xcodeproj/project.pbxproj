@@ -90,7 +90,6 @@
 		B5D06E3F2A19918700048C72 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E3E2A19918700048C72 /* HomeService.swift */; };
 		B5D06E412A1992B300048C72 /* APIRequestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E402A1992B300048C72 /* APIRequestLoader.swift */; };
 		B5D06E432A19A1EE00048C72 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E422A19A1EE00048C72 /* NetworkService.swift */; };
-		B5FE03182A1C8783006C6180 /* ScreenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FE03172A1C8783006C6180 /* ScreenUtils.swift */; };
 		B5FE031D2A1C880F006C6180 /* TransferToDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FE031C2A1C880F006C6180 /* TransferToDTO.swift */; };
 		F45A98262A17764100C10142 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45A98252A17764100C10142 /* Data.swift */; };
 		F4CA67D12A1B41C200047753 /* UserCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA67D02A1B41C200047753 /* UserCustomViewController.swift */; };
@@ -253,6 +252,7 @@
 				2AC408552A0F6687009F0D56 /* SOLSOLTests */,
 				2AC4085F2A0F6687009F0D56 /* SOLSOLUITests */,
 				2AC4083D2A0F6686009F0D56 /* Products */,
+				B5AB47A42A1E734700904919 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -599,6 +599,14 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		B5AB47A42A1E734700904919 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				B5FE03172A1C8783006C6180 /* ScreenUtils.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		B5D06E122A16906F00048C72 /* TransferConfirm */ = {
 			isa = PBXGroup;
 			children = (
@@ -715,14 +723,6 @@
 				B5D06E3E2A19918700048C72 /* HomeService.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		B5FE03162A1C8783006C6180 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				B5FE03172A1C8783006C6180 /* ScreenUtils.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		B5FE03192A1C879E006C6180 /* TransferConfirm */ = {
@@ -899,7 +899,6 @@
 				B513830E2A15968000167728 /* String+.swift in Sources */,
 				2AF091EE2A1150F000F611C4 /* UIFont+.swift in Sources */,
 				B5AB47A22A1E188500904919 /* BankBookType.swift in Sources */,
-				B5FE03182A1C8783006C6180 /* ScreenUtils.swift in Sources */,
 				2A204AE32A115BEA00805E0A /* TransferView.swift in Sources */,
 				2A4760FA2A13EBF1005BAA9F /* TransferCollectionViewCell.swift in Sources */,
 				B5AB47892A1C8BFF00904919 /* TransferToResponseDTO.swift in Sources */,
