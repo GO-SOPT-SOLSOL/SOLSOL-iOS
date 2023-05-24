@@ -41,11 +41,6 @@ final class HomeView: UIView {
     
     func setLayout() {
         self.addSubview(homeTableView)
-        homeTableView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(94)
-            $0.bottom.equalTo(self.safeAreaLayoutGuide)
-            $0.leading.trailing.equalToSuperview()
-        }
     }
     
     func setDelegate() {

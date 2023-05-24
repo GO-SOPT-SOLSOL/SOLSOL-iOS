@@ -82,6 +82,12 @@ final class HomeViewController: UIViewController {
             $0.height.equalTo(44)
         }
         
+        originView.homeTableView.snp.makeConstraints {
+            $0.top.equalTo(navigationBar.snp.bottom)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
+        }
+        
     }
     
     func setDelegate() {
