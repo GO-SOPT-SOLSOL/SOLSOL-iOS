@@ -13,4 +13,6 @@ final class NetworkService {
     private init() {}
 
     let homeService: HomeServiceProtocol = HomeService(apiLogger: APIEventLogger())
+    let transferDefailServcie: TransferDetailProtocol = TransferDetailService(apiLogger: APIEventLogger())
+    let transferConfirmService: TransferConfirmProtocol = TransferConfirmService(apiLogger: APIEventLogger())
 }

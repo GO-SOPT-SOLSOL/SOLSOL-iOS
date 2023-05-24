@@ -16,7 +16,7 @@ enum ImageLiterals {
     enum NavigationBar {
         static var icChatBot: UIImage { .load(named: "icChatBot") }
         static var icVoice: UIImage { .load(named: "icVoice") }
-        static var icMypage: UIImage { .load(named: "icMypage") }
+        static var icMypage: UIImage { .load(named: "icMyPage") }
         static var icHomeOutline: UIImage { .load(named: "icHomeOutline") }
         static var icArrowLeft: UIImage { .load(named: "icArrowLeft") }
     }

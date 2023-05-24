@@ -14,13 +14,6 @@ struct MyAccount {
     let balance: Int
 }
 
-
-enum Bank: String {
-    case kakao = "카카오뱅크"
-    case shihan = "신한"
-}
-
-
 struct MyAccountViewModel {
     let bank: String
     let myAccount: String

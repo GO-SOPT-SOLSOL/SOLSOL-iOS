@@ -51,13 +51,14 @@ final class TransferConfirmViewController: UIViewController {
 
     private let additionalTransferButton = SOLFilledButton(backgroundColor: .gray100, text: "추가이체", textColor: .gray600, font: .font(.headline))
 
-    private let transferButton = SOLFilledButton(backgroundColor: .blue500, text: "이체", textColor: .white, font: .font(.headline))
+    private lazy var transferButton = SOLFilledButton(backgroundColor: .blue500, text: "이체", textColor: .white, font: .font(.headline)).then {
+        $0.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
         setLayout()
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -132,6 +133,38 @@ extension TransferConfirmViewController {
         self.transferInfoView.updateMoneyDisplay(text: transferMoney)
         self.transferInfoView.setReceiverLabel(name: receiverName, myAccount: receiverAccount)
         self.transferInfoView.setTransferConfirmView()
+    }
+
+    @objc
+    private func handleTap() {
+        transfer()
+    }
+}
+
+// MARK: - Network
+
+extension TransferConfirmViewController {
+    func transfer() {
+        let queryDTO = AccountsListRequestDTO(memberId: 2)
+        
+        let requestDTO = TransferToRequestDTO(
+            senderAccountsId: 2,
+            price: 1000,
+            bank: Bank.shihan.rawValue.lowercased(),
+            number: "111-102-1456701",
+            transferMemo: "dd",
+            receiverMemo: "dd",
+            charge: 0
+        )
+        NetworkService.shared.transferConfirmService.transfer(queryDTO: queryDTO, requestDTO: requestDTO) { response in
+            switch response {
+            case .success:
+                self.navigationController?.popToRootViewController(animated: true)
+            default:
+                print("network fail")
+                return
+            }
+        }
 
     }
 }
