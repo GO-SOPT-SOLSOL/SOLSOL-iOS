@@ -19,16 +19,11 @@ final class TransferInfoView: UIView {
     let receiverLabel = UILabel().then {
         $0.textColor = .gray600
         $0.font = .font(.subhead1)
-        // TODO: Transfer에서 데이터 전달 받기
-        $0.text = "조정연님께"
-
     }
 
     let receiverAccountLabel = UILabel().then {
         $0.textColor = .gray400
         $0.font = .font(.body4)
-        // TODO: Transfer에서 데이터 전달 받기
-        $0.text = "카카오뱅크 3333153453969"
     }
 
     private let howMuchLabel = UILabel().then {
@@ -148,26 +143,15 @@ extension TransferInfoView {
 }
 
 extension TransferInfoView {
-    func configureMyAccount(account: MyAccountViewModel) {
-        myAccountLabel.text = "\(account.bank) \(account.myAccount)"
-        accountBalance.text = "\(account.balance)원"
-    }
+    func configureTransferInfoView(model: TransferDetailModel) {
+        receiverLabel.text = "\(model.receiver.receiverName)님께"
+        receiverAccountLabel.text = "\(model.receiver.receiverBank.description) \(model.receiver.receiverAccount)"
+        myAccountLabel.text = "\(model.sender.bank.description) \(model.sender.account)"
+        accountBalance.text = "\(model.sender.balance.currencyAmountToString())원"
 
-    func updateMoneyDisplay(text: String) {
-        moneyLabel.text = "\(text) 원"
-    }
-
-    func updateConvenientLabel(text: String) {
-        convenientMoneyLabel.text = text
-    }
-
-    func setTransferConfirmView() {
+        guard let price = model.price else { return }
+        moneyLabel.text = "\(price)원"
         convenientMoneyLabel.text = "보낼까요?"
-    }
-
-    func setReceiverLabel(name: String, myAccount: String) {
-        receiverLabel.text = "\(name)님께"
-        receiverAccountLabel.text = "\(myAccount)"
         howMuchLabel.isHidden = true
 
         moneyLabel.snp.remakeConstraints { make in
@@ -175,5 +159,12 @@ extension TransferInfoView {
             make.centerX.equalToSuperview()
         }
     }
+    
+    func updateMoneyDisplay(text: String) {
+        moneyLabel.text = "\(text) 원"
+    }
 
+    func updateConvenientLabel(text: String) {
+        convenientMoneyLabel.text = text
+    }
 }

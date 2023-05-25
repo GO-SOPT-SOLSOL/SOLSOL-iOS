@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - 최근 이체 목록 조회 API -> TransferDetail
 
-struct Receiver {
+struct ReceiverModel {
     let receiverName: String
     let receiverBank: Bank
     let receiverAccount: String
@@ -28,18 +28,12 @@ struct MyBankAccount {
     let balance: Int
 }
 
-// MARK: - TransferDetail -> TransferConfirm
+// MARK: - Transfer1 -> TransferDetail
 
-struct TransferDetail {
-    let receiver: Receiver
+struct TransferDetailModel {
+    let receiver: ReceiverModel
     let sender: MyBankAccount
+    let price: String?
 }
 
 // Transfer-2
-struct TransferConfirm {
-    let receiver: Receiver
-    let sender: MyBankAccount
-    let receiverMemo: String
-    let myAccountMemo: String
-    let fee: Int
-}

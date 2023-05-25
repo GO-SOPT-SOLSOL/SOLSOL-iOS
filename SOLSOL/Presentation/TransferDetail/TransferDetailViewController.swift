@@ -30,9 +30,9 @@ final class TransferDetailViewController: UIViewController {
             $0.addTarget(self, action: #selector(handleTapNextButton), for: .touchUpInside)
         }
 
-    private var viewModel: TransferDetailViewModel
+    private var transferDetailData: TransferDetailModel?
 
-    private var myAccount: MyAccountViewModel?
+    private var viewModel: TransferDetailViewModel
 
     init(viewModel: TransferDetailViewModel) {
         self.viewModel = viewModel
@@ -52,8 +52,10 @@ final class TransferDetailViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        guard let transferDetailData else { return }
+        viewModel.viewWillAppear(model: transferDetailData)
         self.navigationController?.isNavigationBarHidden = true
-        viewModel.viewWillAppear()
+        
     }
     
 }
@@ -99,14 +101,18 @@ private extension TransferDetailViewController {
 }
 
 extension TransferDetailViewController {
+    //TODO: - 성준: 이 메서드로 데이터 전달해주면 됨
+    func setTransferDetailData(data: TransferDetailModel) {
+        self.transferDetailData = data
+    }
+
     private func bind() {
         numberPad.numberButtons.forEach {
             $0.addTarget(self, action: #selector(touchNumberPad), for: .touchUpInside)
         }
 
-        self.viewModel.fetchedMyAccount = { myAccount in
-            self.myAccount = myAccount
-            self.transferInfoView.configureMyAccount(account: myAccount)
+        self.viewModel.fetchedMyAccount = { data in
+            self.transferInfoView.configureTransferInfoView(model: data)
         }
 
         viewModel.updatedMoneyDisplay = { text in
@@ -128,24 +134,17 @@ extension TransferDetailViewController {
 
     @objc
     func handleTapNextButton(sender: UIButton) {
-        guard let myAccount = self.myAccount,
-              let receiverText = transferInfoView.receiverLabel.text,
-              let receiverAccountText = transferInfoView.receiverAccountLabel.text,
-              let moneyText = transferInfoView.moneyLabel.text
-        else {
-            return
-        }
+        guard let priceText = self.transferInfoView.moneyLabel.text?.currencyToNormalString(),
+              let receiver = self.transferDetailData?.receiver,
+              let sender = self.transferDetailData?.sender
+        else { return }
         let viewController = TransferConfirmViewController()
-
-        // memberId, senderAccountsId, bank, accountNumber
-        // accountsId랑 memberId -> api
-        // 이것들 받으면 price만 포함해서 넘기기
-        
-        viewController.setInitialData(
-            receiverName: receiverText,
-            receiverAccount: receiverAccountText,
-            transferMoney: moneyText.replacingOccurrences(of: "원", with: ""),
-            myAccount: myAccount)
+        let TransferDetailModel = TransferDetailModel(
+            receiver: receiver,
+            sender: sender,
+            price: priceText
+        )
+        viewController.setTransferDetailData(TransferDetailModel)
         self.navigationController?.pushViewController(viewController, animated: false)
     }
 

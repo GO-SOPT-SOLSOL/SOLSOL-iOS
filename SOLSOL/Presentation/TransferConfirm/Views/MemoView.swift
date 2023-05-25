@@ -105,4 +105,8 @@ extension MemoView {
         }
     }
 
+    func getMemoText() -> String {
+        return self.memoBodyTextField.text ?? ""
+    }
+
 }
