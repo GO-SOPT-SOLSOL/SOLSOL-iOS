@@ -86,7 +86,7 @@ final class TransferListCollectionViewCell: UICollectionViewCell {
     
     // MARK: - TransferListCollectionViewCell에 Data 뿌리기
     
-    func configureCell(currentAccountList: Receiver) {
+    func configureCell(currentAccountList: TransferDetailModel) {
         name.text = currentAccountList.receiverName
         bankImage.image = currentAccountList.receiverBank.bankLogo
         amount.text = currentAccountList.receiverAccount.currencyAmountToString()

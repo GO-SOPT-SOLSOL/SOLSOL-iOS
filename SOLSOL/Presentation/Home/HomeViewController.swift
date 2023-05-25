@@ -38,7 +38,7 @@ final class HomeViewController: UIViewController {
     
     // MARK: - TransferList 구조체로부터 받아올 정보를 담는 배열
     
-    private var currentAccountList: [Receiver?] = [] {
+    private var currentAccountList: [TransferDetailModel?] = [] {
         didSet {
             self.originView.homeTableView.reloadData()
         }
@@ -213,10 +213,10 @@ extension HomeViewController {
             case .success(let data):
                 guard let data = data.data else { return }
                 
-                let currentTransferList = data.transfers.map { data -> Receiver? in
+                let currentTransferList = data.transfers.map { data -> TransferDetailModel? in
                     guard let bank = Bank(rawValue: data.bank)
                     else { return nil }
-                    return Receiver(receiverName: data.name, receiverBank: bank, receiverAccount: data.price)
+                    return TransferDetailModel(receiverName: data.name, receiverBank: bank, receiverAccount: data.price)
                 }
                 
                 self.currentAccountList = currentTransferList

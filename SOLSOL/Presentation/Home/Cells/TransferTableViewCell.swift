@@ -20,7 +20,7 @@ final class TransferTableViewCell: UITableViewCell {
         }
     }
     
-    var currentAccountList: [Receiver?] = [] {
+    var currentAccountList: [TransferDetailModel?] = [] {
         didSet {
             self.collectionView.reloadData()
         }
