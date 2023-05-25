@@ -91,6 +91,8 @@
 		B5D06E432A19A1EE00048C72 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D06E422A19A1EE00048C72 /* NetworkService.swift */; };
 		B5FE031D2A1C880F006C6180 /* TransferToDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FE031C2A1C880F006C6180 /* TransferToDTO.swift */; };
 		F45A98262A17764100C10142 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45A98252A17764100C10142 /* Data.swift */; };
+		F4C5AE7A2A1FD57100CCE940 /* RecentSentAccountListRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5AE792A1FD57100CCE940 /* RecentSentAccountListRequestDTO.swift */; };
+		F4C5AE7C2A1FD5B900CCE940 /* RecentSentAccountListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5AE7B2A1FD5B900CCE940 /* RecentSentAccountListResponseDTO.swift */; };
 		F4CA67D12A1B41C200047753 /* UserCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA67D02A1B41C200047753 /* UserCustomViewController.swift */; };
 		F4D6890E2A12B0C90082A9F3 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */; };
 		F4D6D00A2A168F7C00B4A125 /* TransferAccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6D0092A168F7C00B4A125 /* TransferAccountsTableViewCell.swift */; };
@@ -201,6 +203,8 @@
 		B5FE03172A1C8783006C6180 /* ScreenUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenUtils.swift; sourceTree = "<group>"; };
 		B5FE031C2A1C880F006C6180 /* TransferToDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferToDTO.swift; sourceTree = "<group>"; };
 		F45A98252A17764100C10142 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		F4C5AE792A1FD57100CCE940 /* RecentSentAccountListRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSentAccountListRequestDTO.swift; sourceTree = "<group>"; };
+		F4C5AE7B2A1FD5B900CCE940 /* RecentSentAccountListResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSentAccountListResponseDTO.swift; sourceTree = "<group>"; };
 		F4CA67D02A1B41C200047753 /* UserCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomViewController.swift; sourceTree = "<group>"; };
 		F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		F4D6D0092A168F7C00B4A125 /* TransferAccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferAccountsTableViewCell.swift; sourceTree = "<group>"; };
@@ -753,6 +757,7 @@
 		F4C5AE702A1FD06100CCE940 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				F4C5AE792A1FD57100CCE940 /* RecentSentAccountListRequestDTO.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -760,6 +765,7 @@
 		F4C5AE712A1FD06900CCE940 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				F4C5AE7B2A1FD5B900CCE940 /* RecentSentAccountListResponseDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -923,6 +929,7 @@
 				2A204AE32A115BEA00805E0A /* TransferView.swift in Sources */,
 				2A4760FA2A13EBF1005BAA9F /* TransferCollectionViewCell.swift in Sources */,
 				B5AB47892A1C8BFF00904919 /* TransferToResponseDTO.swift in Sources */,
+				F4C5AE7A2A1FD57100CCE940 /* RecentSentAccountListRequestDTO.swift in Sources */,
 				B5AB479E2A1DA45800904919 /* TransferDetailService.swift in Sources */,
 				F4CA67D12A1B41C200047753 /* UserCustomViewController.swift in Sources */,
 				B5D06E142A16929A00048C72 /* TransferConfirmViewController.swift in Sources */,
@@ -973,6 +980,7 @@
 				B54F214B2A13BF20000D350C /* SOLTabBarItem.swift in Sources */,
 				B51383072A157E3800167728 /* Int+.swift in Sources */,
 				B5AB478C2A1C8C4A00904919 /* TransferConfirmTarget.swift in Sources */,
+				F4C5AE7C2A1FD5B900CCE940 /* RecentSentAccountListResponseDTO.swift in Sources */,
 				B54F214E2A13BF96000D350C /* MoneyVerseViewController.swift in Sources */,
 				B5AB47A02A1E097700904919 /* TransferModel.swift in Sources */,
 				B54F21492A1364F0000D350C /* SOLTabBarController.swift in Sources */,
