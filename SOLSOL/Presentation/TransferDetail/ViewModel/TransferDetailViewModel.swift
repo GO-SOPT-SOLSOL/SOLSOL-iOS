@@ -9,12 +9,12 @@ import Foundation
 
 
 protocol TransferDetailViewModelInput {
-    func viewWillAppear()
+    func viewWillAppear(model: TransferDetailModel)
     func didTapNumberPad(text: String?, buttonType: NumberButtonType)
 }
 
 protocol TransferDetailViewModelOuput {
-    var fetchedMyAccount: ((MyAccountViewModel) -> Void)? { get set }
+    var fetchedMyAccount: ((TransferDetailModel) -> Void)? { get set }
     var updatedMoneyDisplay: ((String) -> Void)? { get set }
     var updatedConvenientDisplay: ((String) -> Void)? { get set }
 
@@ -24,13 +24,13 @@ protocol TransferDetailViewModel: TransferDetailViewModelInput, TransferDetailVi
 
 final class DefaultTransferDetailViewModel: TransferDetailViewModel {
 
-    var fetchedMyAccount: ((MyAccountViewModel) -> Void)?
+    var fetchedMyAccount: ((TransferDetailModel) -> Void)?
 
     var updatedMoneyDisplay: ((String) -> Void)?
 
     var updatedConvenientDisplay: ((String) -> Void)?
 
-    var myAccount: MyAccountViewModel? {
+    var myAccount: TransferDetailModel? {
         didSet {
             guard let myAccount else { return }
             fetchedMyAccount?(myAccount)
@@ -53,10 +53,9 @@ final class DefaultTransferDetailViewModel: TransferDetailViewModel {
 }
 
 extension DefaultTransferDetailViewModel {
-    func viewWillAppear() {
+    func viewWillAppear(model: TransferDetailModel) {
         // TODO: Network
-        let myaccount = MyAccount.dummy().toViewModel()
-        self.myAccount = myaccount
+        self.myAccount = model
     }
 
     func didTapNumberPad(text: String?, buttonType type: NumberButtonType) {
@@ -83,8 +82,8 @@ extension DefaultTransferDetailViewModel {
             num += type.addNum
             return String(num)
         case .addTotal:
-            guard let balance = self.myAccount?.balance else { return "0" }
-            return balance.replacingOccurrences(of: ",", with: "")
+            guard let balance = self.myAccount?.sender.balance else { return "0" }
+            return String(balance)
         }
     }
 
