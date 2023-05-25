@@ -8,8 +8,7 @@
 import Foundation
 
 extension String {
-    func containsKoreanCharacters() -> Bool {
-        let koreanRange = self.range(of: "\\p{Script=Hangul}", options: .regularExpression)
-        return koreanRange != nil
+    func currencyToNormalString() -> Self {
+        self.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: ",", with: "").replacingOccurrences(of: "원", with: "")
     }
 }
