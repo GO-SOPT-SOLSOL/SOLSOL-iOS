@@ -33,15 +33,16 @@ final class TransferInfoView: UIView {
     }
 
     let moneyLabel = UILabel().then {
-        $0.text = StringLiterals.TransferDetail.emptyMoneyLabelText
-        $0.textColor = .gray600
-        $0.font = .font(.display5)
+        $0.text = "금액을 입력하세요"
+        $0.font = .font(.display6Light)
+        $0.textColor = .gray200
     }
 
     private let convenientMoneyLabel = UILabel().then {
         $0.text = StringLiterals.TransferDetail.emptyMoneyUnderLabelText
         $0.textColor = .gray400
         $0.font = .font(.body5)
+        $0.isHidden = true
     }
 
     private let myAccountBackgroundView = UIView().then {
@@ -118,7 +119,7 @@ extension TransferInfoView {
         }
 
         myAccountBackgroundView.snp.makeConstraints { make in
-            make.top.equalTo(convenientMoneyLabel.snp.bottom).offset(40).priority(.low)
+            make.top.equalTo(convenientMoneyLabel.snp.bottom).offset(30).priority(.low)
             make.leading.trailing.equalToSuperview().inset(18)
             make.height.equalTo(Size.myAccountBackgroundViewHeight)
             make.bottom.equalToSuperview()
@@ -161,7 +162,18 @@ extension TransferInfoView {
     }
     
     func updateMoneyDisplay(text: String) {
+        print(text)
+        guard text != "0" else {
+            moneyLabel.text = "금액을 입력하세요"
+            moneyLabel.font = .font(.display6Light)
+            moneyLabel.textColor = .gray200
+            convenientMoneyLabel.isHidden = true
+            return
+        }
+        moneyLabel.textColor = .gray600
+        moneyLabel.font = .font(.display5)
         moneyLabel.text = "\(text) 원"
+        convenientMoneyLabel.isHidden = false
     }
 
     func updateConvenientLabel(text: String) {
