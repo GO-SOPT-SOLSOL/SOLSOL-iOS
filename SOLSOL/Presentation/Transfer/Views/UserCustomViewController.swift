@@ -19,7 +19,8 @@ class UserCustomViewController: UIViewController {
     
     let TranferTableView = UITableView(frame: .zero, style: .grouped)
     
-    private let Firstdummy = AccountInfo.dummy()
+    var accountList: [MyBankAccount?] = []
+
     private let Secondummy = AccountInfoWithDate.dummy()
     
     
@@ -125,7 +126,7 @@ extension UserCustomViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0{
-            return Firstdummy.count
+            return accountList.count
         }else {return Secondummy.count}
     }
     
@@ -139,8 +140,8 @@ extension UserCustomViewController: UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TransferAccountsTableViewCell.identifier, for: indexPath) as? TransferAccountsTableViewCell else
             {return UITableViewCell()}
             
-            cell.configureCell(Firstdummy[indexPath.row])
-
+            cell.configureCell(accountList[indexPath.row]!)
+            
             return cell}
         
         else {guard let cell = tableView.dequeueReusableCell(withIdentifier: TransferAccountsTableViewCell.identifier, for: indexPath) as? TransferAccountsTableViewCell else
