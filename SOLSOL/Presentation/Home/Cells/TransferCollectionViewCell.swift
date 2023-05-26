@@ -20,7 +20,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
     
     weak var pushDelegate: TransferButtonAction?
     
-    var currentAccountList: [TransferDetailModel?] = [] {
+    var currentAccountList: [ReceiverModel?] = [] {
         didSet {
             self.collectionView.reloadData()
         }
