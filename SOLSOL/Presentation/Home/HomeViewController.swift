@@ -217,7 +217,7 @@ extension HomeViewController {
                 let currentTransferList = data.transfers.map { data -> ReceiverModel? in
                     guard let bank = Bank(rawValue: data.bank)
                     else { return nil }
-                    return ReceiverModel(receiverName: data.name, receiverBank: bank, receiverAccount: data.price)
+                    return ReceiverModel(receiverName: data.name, receiverBank: bank, receiverAccount: String(data.price.currencyAmountToString()))
                 }
                 
                 self.currentAccountList = currentTransferList

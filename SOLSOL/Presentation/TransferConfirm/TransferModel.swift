@@ -13,7 +13,7 @@ import Foundation
 struct ReceiverModel {
     let receiverName: String
     let receiverBank: Bank
-    let receiverAccount: Int
+    let receiverAccount: String
 }
 
 // MARK: - 계좌 목록 조회 -> Transfer1
