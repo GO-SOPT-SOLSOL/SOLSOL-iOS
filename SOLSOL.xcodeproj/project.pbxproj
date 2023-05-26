@@ -94,6 +94,8 @@
 		F4C5AE7A2A1FD57100CCE940 /* RecentSentAccountListRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5AE792A1FD57100CCE940 /* RecentSentAccountListRequestDTO.swift */; };
 		F4C5AE7C2A1FD5B900CCE940 /* RecentSentAccountListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5AE7B2A1FD5B900CCE940 /* RecentSentAccountListResponseDTO.swift */; };
 		F4C5AE7E2A1FD6A000CCE940 /* TransferTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5AE7D2A1FD6A000CCE940 /* TransferTarget.swift */; };
+		F4C5AE812A1FDE4E00CCE940 /* TransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5AE802A1FDE4E00CCE940 /* TransferService.swift */; };
+		F4C5AE832A1FE86600CCE940 /* RecentSentAccountListStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5AE822A1FE86600CCE940 /* RecentSentAccountListStruct.swift */; };
 		F4CA67D12A1B41C200047753 /* UserCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA67D02A1B41C200047753 /* UserCustomViewController.swift */; };
 		F4D6890E2A12B0C90082A9F3 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */; };
 		F4D6D00A2A168F7C00B4A125 /* TransferAccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6D0092A168F7C00B4A125 /* TransferAccountsTableViewCell.swift */; };
@@ -207,6 +209,8 @@
 		F4C5AE792A1FD57100CCE940 /* RecentSentAccountListRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSentAccountListRequestDTO.swift; sourceTree = "<group>"; };
 		F4C5AE7B2A1FD5B900CCE940 /* RecentSentAccountListResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSentAccountListResponseDTO.swift; sourceTree = "<group>"; };
 		F4C5AE7D2A1FD6A000CCE940 /* TransferTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferTarget.swift; sourceTree = "<group>"; };
+		F4C5AE802A1FDE4E00CCE940 /* TransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferService.swift; sourceTree = "<group>"; };
+		F4C5AE822A1FE86600CCE940 /* RecentSentAccountListStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSentAccountListStruct.swift; sourceTree = "<group>"; };
 		F4CA67D02A1B41C200047753 /* UserCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomViewController.swift; sourceTree = "<group>"; };
 		F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		F4D6D0092A168F7C00B4A125 /* TransferAccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferAccountsTableViewCell.swift; sourceTree = "<group>"; };
@@ -402,6 +406,8 @@
 		2AC4088C2A113158009F0D56 /* Transfer */ = {
 			isa = PBXGroup;
 			children = (
+				F4CA67D02A1B41C200047753 /* UserCustomViewController.swift */,
+				F4C5AE822A1FE86600CCE940 /* RecentSentAccountListStruct.swift */,
 				F45A98252A17764100C10142 /* Data.swift */,
 				2AC4088D2A113195009F0D56 /* TransferViewController.swift */,
 				2AC408962A11327E009F0D56 /* Views */,
@@ -457,7 +463,6 @@
 			isa = PBXGroup;
 			children = (
 				2A204AE22A115BEA00805E0A /* TransferView.swift */,
-				F4CA67D02A1B41C200047753 /* UserCustomViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -707,6 +712,7 @@
 		B5D06E3C2A19917000048C72 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				F4C5AE7F2A1FDCAC00CCE940 /* Transfer */,
 				B5AB479C2A1DA44400904919 /* TransferDetail */,
 				B5AB478D2A1C8D6600904919 /* TransferConfirm */,
 				B5D06E3D2A19917900048C72 /* Home */,
@@ -776,6 +782,14 @@
 			isa = PBXGroup;
 			children = (
 				F4C5AE7D2A1FD6A000CCE940 /* TransferTarget.swift */,
+			);
+			path = Transfer;
+			sourceTree = "<group>";
+		};
+		F4C5AE7F2A1FDCAC00CCE940 /* Transfer */ = {
+			isa = PBXGroup;
+			children = (
+				F4C5AE802A1FDE4E00CCE940 /* TransferService.swift */,
 			);
 			path = Transfer;
 			sourceTree = "<group>";
@@ -972,6 +986,7 @@
 				2AC4088E2A113195009F0D56 /* TransferViewController.swift in Sources */,
 				B5D06E3B2A198F7900048C72 /* AccountsListResponseDTO.swift in Sources */,
 				2AC4087D2A112E56009F0D56 /* ImageLiterals.swift in Sources */,
+				F4C5AE832A1FE86600CCE940 /* RecentSentAccountListStruct.swift in Sources */,
 				B5D06E432A19A1EE00048C72 /* NetworkService.swift in Sources */,
 				F4C5AE7E2A1FD6A000CCE940 /* TransferTarget.swift in Sources */,
 				2A4760FB2A13EBF1005BAA9F /* ShinhanPlusTableViewCell.swift in Sources */,
@@ -994,6 +1009,7 @@
 				2A47610C2A153D82005BAA9F /* TransferList.swift in Sources */,
 				2A287D262A1BCC1D0037B94B /* Advertisement.swift in Sources */,
 				B5D06E2B2A18F93400048C72 /* TargetType.swift in Sources */,
+				F4C5AE812A1FDE4E00CCE940 /* TransferService.swift in Sources */,
 				2AC408422A0F6686009F0D56 /* SceneDelegate.swift in Sources */,
 				B5AB479B2A1DA3AF00904919 /* TransferDetailTarget.swift in Sources */,
 				2A4761072A13F0EE005BAA9F /* Section.swift in Sources */,

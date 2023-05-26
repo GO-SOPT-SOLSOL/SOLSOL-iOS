@@ -24,7 +24,7 @@ extension TransferTarget: TargetType{
     var path: String {
         switch self{
         case .getRecentSentAccountList(_):
-            return "/transfers/"
+            return "/transfers"
         }
     }
     

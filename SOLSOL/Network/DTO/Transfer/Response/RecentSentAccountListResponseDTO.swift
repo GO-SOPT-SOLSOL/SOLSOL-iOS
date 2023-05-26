@@ -5,15 +5,13 @@
 //  Created by 곽성준 on 2023/05/26.
 //
 
-import Foundation
-
 struct RecentSentAccountListResponseDTO: Decodable{
     
-    let transfer: [RecentSentAccountList]
+    let transfers: [recentSentAccountList]
     
 }
 
-struct RecentSentAccountList: Decodable{
+struct recentSentAccountList: Decodable{
     
     let id: Int
     let accountsId: Int
