@@ -156,7 +156,14 @@ extension TransferInfoView {
             moneyLabel.text = "금액을 입력하세요"
             return
         }
+        setConfirmViewLabel(price: price)
+    }
+
+    private func setConfirmViewLabel(price: String) {
         moneyLabel.text = "\(price)원"
+        moneyLabel.font = .font(.display5)
+        moneyLabel.textColor = .gray600
+        convenientMoneyLabel.isHidden = false
         convenientMoneyLabel.text = "보낼까요?"
         howMuchLabel.isHidden = true
 
