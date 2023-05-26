@@ -25,7 +25,7 @@ class TransferView: UIView {
    
     private var selectedIndex: Int = 0
     
-    private let userCustomView = UserCustomViewController()
+    let userCustomView = UserCustomViewController()
     private let friendGroupView = UIViewController()
     private let contactsView = UIViewController()
     private lazy var pageViewController =  UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)

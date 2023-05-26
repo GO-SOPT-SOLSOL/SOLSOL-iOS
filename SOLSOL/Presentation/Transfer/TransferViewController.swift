@@ -10,7 +10,7 @@ import UIKit
 class TransferViewController: UIViewController {
     
     private lazy var navigationBar = SOLNavigationBar(self, leftItem: .back)
-    private let originView = TransferView()
+    let originView = TransferView()
 
     override func viewDidLoad() {
         super.viewDidLoad()

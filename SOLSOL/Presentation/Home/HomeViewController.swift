@@ -154,6 +154,7 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: TransferButtonAction {
     func transferButtonTapped() {
         let nextViewController = TransferViewController()
+        nextViewController.originView.userCustomView.accountList = accountList
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
 }
