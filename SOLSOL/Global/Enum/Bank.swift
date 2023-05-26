@@ -7,6 +7,7 @@
 
 import UIKit
 
+@frozen
 enum Bank: String {
     case kakao = "KAKAO"
     case shihan = "SHINHAN"
