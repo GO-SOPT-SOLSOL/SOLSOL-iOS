@@ -9,8 +9,6 @@ import UIKit
 
 protocol CellAction: AnyObject {
     func cellTapped(row: Int, section: Int)
-    
-    
 }
 
 class UserCustomViewController: UIViewController {
@@ -29,9 +27,6 @@ class UserCustomViewController: UIViewController {
     
     var accountList: [MyBankAccount?] = []
 
-
-    
-    
     private let firstHeaderView = UIView()
     private let secondHeaderView = UIView()
     private let firstHeaderLabel = UILabel()
