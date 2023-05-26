@@ -68,6 +68,10 @@ final class TransferConfirmViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+
 }
 
 extension TransferConfirmViewController {
@@ -163,7 +167,6 @@ extension TransferConfirmViewController {
         NetworkService.shared.transferConfirmService.transfer(queryDTO: queryDTO, requestDTO: requestDTO) { response in
             switch response {
             case .success:
-//                print(response)
                 self.navigationController?.popToRootViewController(animated: true)
             default:
                 print("network fail")
