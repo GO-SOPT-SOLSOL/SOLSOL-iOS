@@ -150,7 +150,12 @@ extension TransferInfoView {
         myAccountLabel.text = "\(model.sender.bank.description) \(model.sender.account)"
         accountBalance.text = "\(model.sender.balance.currencyAmountToString())원"
 
-        guard let price = model.price else { return }
+        guard let price = model.price,
+              !price.isEmpty
+        else {
+            moneyLabel.text = "금액을 입력하세요"
+            return
+        }
         moneyLabel.text = "\(price)원"
         convenientMoneyLabel.text = "보낼까요?"
         howMuchLabel.isHidden = true
@@ -162,7 +167,6 @@ extension TransferInfoView {
     }
     
     func updateMoneyDisplay(text: String) {
-        print(text)
         guard text != "0" else {
             moneyLabel.text = "금액을 입력하세요"
             moneyLabel.font = .font(.display6Light)
