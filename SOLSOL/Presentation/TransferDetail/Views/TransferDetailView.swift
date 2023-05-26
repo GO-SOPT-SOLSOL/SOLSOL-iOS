@@ -190,4 +190,9 @@ extension TransferInfoView {
     func updateConvenientLabel(text: String) {
         convenientMoneyLabel.text = text
     }
+
+    func getConvenientLabelText() -> String? {
+        return self.convenientMoneyLabel.text?.currencyToNormalString()
+
+    }
 }

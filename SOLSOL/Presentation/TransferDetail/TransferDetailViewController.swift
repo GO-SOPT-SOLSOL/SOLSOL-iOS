@@ -127,6 +127,11 @@ extension TransferDetailViewController {
         }
 
         self.viewModel.fetchedMyAccount = { data in
+            if let text = self.transferInfoView.getConvenientLabelText() {
+                let model = TransferDetailModel(receiver: data.receiver, sender: data.sender, price: text)
+                self.transferInfoView.configureTransferInfoView(model: model)
+                return
+            }
             self.transferInfoView.configureTransferInfoView(model: data)
         }
 
