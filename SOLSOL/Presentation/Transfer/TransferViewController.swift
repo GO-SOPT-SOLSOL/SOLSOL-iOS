@@ -22,6 +22,7 @@ class TransferViewController: UIViewController {
     
     override func loadView() {
         self.view = originView
+        originView.userCustomView.cellDelegate = self
     }
     
     private func setStyle(){
@@ -44,5 +45,11 @@ class TransferViewController: UIViewController {
         
         
     }
-
+}
+extension TransferViewController: CellAction{
+    
+    func cellTapped() {
+        let nextViewController = TransferDetailViewController(viewModel: DefaultTransferDetailViewModel())
+        navigationController?.pushViewController(nextViewController, animated: true)
+    }
 }

@@ -129,18 +129,18 @@ class TransferView: UIView {
         userCustomView.do{
             
             $0.view.backgroundColor = .black
-            hiddenKeyboard(viewcontroller: userCustomView)
+//            hiddenKeyboard(viewcontroller: userCustomView)
         }
         
         friendGroupView.do{
             $0.view.backgroundColor = .red
-            hiddenKeyboard(viewcontroller: friendGroupView)
+//            hiddenKeyboard(viewcontroller: friendGroupView)
 
         }
         
         contactsView.do{
             $0.view.backgroundColor = .blue
-            hiddenKeyboard(viewcontroller: contactsView)
+//            hiddenKeyboard(viewcontroller: contactsView)
 
         }
         
@@ -195,19 +195,19 @@ class TransferView: UIView {
         
     }
     
-    func hiddenKeyboard(viewcontroller: UIViewController){
-        
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapView(_:)))
-        
-        viewcontroller.view.addGestureRecognizer(tapGestureRecognizer)
-        
-    }
+//    func hiddenKeyboard(viewcontroller: UIViewController){
+//
+//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapView(_:)))
+//
+//        viewcontroller.view.addGestureRecognizer(tapGestureRecognizer)
+//
+//    }
     
     
-    @objc func didTapView(_ sender: UITapGestureRecognizer) {
-        searchTextField.endEditing(true)
-    }
-    
+//    @objc func didTapView(_ sender: UITapGestureRecognizer) {
+//        searchTextField.endEditing(true)
+//    }
+//
     @objc
     func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         searchTextField.endEditing(true)

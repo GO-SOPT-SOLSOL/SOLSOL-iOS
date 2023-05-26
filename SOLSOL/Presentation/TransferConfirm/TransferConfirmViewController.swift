@@ -55,6 +55,8 @@ final class TransferConfirmViewController: UIViewController {
         $0.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
     }
 
+    private var transferCofirmData: TransferDetailModel?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
@@ -128,11 +130,9 @@ extension TransferConfirmViewController {
 }
 
 extension TransferConfirmViewController {
-    func setInitialData(receiverName: String, receiverAccount: String, transferMoney: String, myAccount: MyAccountViewModel) {
-        self.transferInfoView.configureMyAccount(account: myAccount)
-        self.transferInfoView.updateMoneyDisplay(text: transferMoney)
-        self.transferInfoView.setReceiverLabel(name: receiverName, myAccount: receiverAccount)
-        self.transferInfoView.setTransferConfirmView()
+    func setTransferDetailData(_ model: TransferDetailModel) {
+        self.transferCofirmData = model
+        self.transferInfoView.configureTransferInfoView(model: model)
     }
 
     @objc
@@ -145,20 +145,25 @@ extension TransferConfirmViewController {
 
 extension TransferConfirmViewController {
     func transfer() {
-        let queryDTO = AccountsListRequestDTO(memberId: 2)
-        
+        guard let transferModel = self.transferCofirmData,
+              let priceText = transferModel.price,
+              let price = Int(priceText.currencyToNormalString())
+        else { return }
+
+        let queryDTO = AccountsListRequestDTO(memberId: transferModel.sender.memberId)
         let requestDTO = TransferToRequestDTO(
-            senderAccountsId: 2,
-            price: 1000,
-            bank: Bank.shihan.rawValue.lowercased(),
-            number: "111-102-1456701",
-            transferMemo: "dd",
-            receiverMemo: "dd",
+            senderAccountsId: transferModel.sender.accountId,
+            price: price,
+            bank: transferModel.receiver.receiverBank.rawValue,
+            number: transferModel.receiver.receiverAccount,
+            transferMemo: receiverMemoView.getMemoText(),
+            receiverMemo: myBankbookMemoView.getMemoText(),
             charge: 0
         )
         NetworkService.shared.transferConfirmService.transfer(queryDTO: queryDTO, requestDTO: requestDTO) { response in
             switch response {
             case .success:
+//                print(response)
                 self.navigationController?.popToRootViewController(animated: true)
             default:
                 print("network fail")

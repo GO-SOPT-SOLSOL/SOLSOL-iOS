@@ -28,10 +28,12 @@ struct MyBankAccount {
     let balance: Int
 }
 
-// MARK: - TransferDetail -> TransferConfirm
+// MARK: - Transfer1 -> TransferDetail
 
 struct TransferDetailModel {
     let receiver: ReceiverModel
     let sender: MyBankAccount
     let price: String?
 }
+
+// Transfer-2
