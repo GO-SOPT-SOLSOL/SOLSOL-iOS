@@ -88,7 +88,7 @@ extension DefaultTransferDetailViewModel {
 
     private func updateConvenientText() {
         let tenThousand = 10000
-        let current = self.moneyDisplay.replacingOccurrences(of: ",", with: "")
+        let current = self.moneyDisplay.currencyToNormalString()
         let currNum = Int(current) ?? 0
         let forward = currNum / tenThousand
         let thousand = currNum % tenThousand

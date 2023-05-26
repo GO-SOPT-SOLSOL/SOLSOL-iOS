@@ -33,7 +33,6 @@ final class TransferInfoView: UIView {
     }
 
     let moneyLabel = UILabel().then {
-        $0.text = "금액을 입력하세요"
         $0.font = .font(.display6Light)
         $0.textColor = .gray200
     }
@@ -160,7 +159,8 @@ extension TransferInfoView {
     }
 
     private func setConfirmViewLabel(price: String) {
-        moneyLabel.text = "\(price)원"
+        guard let text = Int(price)?.currencyAmountToString() else { return }
+        moneyLabel.text = "\(text)원"
         moneyLabel.font = .font(.display5)
         moneyLabel.textColor = .gray600
         convenientMoneyLabel.isHidden = false
