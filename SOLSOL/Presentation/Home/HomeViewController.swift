@@ -119,7 +119,7 @@ extension HomeViewController: UITableViewDataSource {
         }
         switch sectionType {
         case .advertisement:
-            let cell = tableView.dequeueReusableCell(withIdentifier: AdvertisementTableViewCell.className, for: indexPath) as! AdvertisementTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: AdvertisementTableViewCell.className, for: indexPath) as? AdvertisementTableViewCell else { return UITableViewCell() }
             let advertisement = adBannerHit[indexPath.row]
             cell.configureCell(advertisement: advertisement)
             return cell
@@ -127,7 +127,7 @@ extension HomeViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: MyAccountTableViewCell.className, for: indexPath)
             return cell
         case .transfer:
-            let cell = tableView.dequeueReusableCell(withIdentifier:             TransferTableViewCell.className, for: indexPath) as! TransferTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier:             TransferTableViewCell.className, for: indexPath) as? TransferTableViewCell else { return UITableViewCell() }
             cell.accountList = accountList
             cell.currentAccountList = currentAccountList
             cell.pushDelegate = self

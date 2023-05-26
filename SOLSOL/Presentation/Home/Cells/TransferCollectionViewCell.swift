@@ -260,8 +260,8 @@ extension TransferCollectionViewCell: UICollectionViewDelegate, UICollectionView
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:TransferListCollectionViewCell.className, for: indexPath) as? TransferListCollectionViewCell else { return UICollectionViewCell() }
         
-        let currentAccountList = currentAccountList[indexPath.row]
-        cell.configureCell(currentAccountList: currentAccountList!)
+        guard let currentAccountList = currentAccountList[indexPath.row] else {return UICollectionViewCell()}
+        cell.configureCell(currentAccountList: currentAccountList)
         return cell
     }
 }
