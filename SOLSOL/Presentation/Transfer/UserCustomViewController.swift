@@ -220,7 +220,7 @@ extension UserCustomViewController: UITableViewDelegate{
 
 extension UserCustomViewController {
     func getRecentSentAccountListWithAPI() {
-        let queryDTO = RecentSentAccountListRequestDTO(memberId: 1)
+        let queryDTO = RecentSentAccountListRequestDTO(memberId: 2)
         NetworkService.shared.transferservice.getRecentSentAccountList(queryDTO: queryDTO) { result in
             switch result {
             case .success(let data):
@@ -246,8 +246,9 @@ extension UserCustomViewController {
 extension UserCustomViewController: DeleteButtonTapped{
     
     func buttonTapped(index: Int) {
-        let queryDTO = DeleteRecentAccountRequestDTO(memberId: 1)
+        let queryDTO = DeleteRecentAccountRequestDTO(memberId: 2)
         NetworkService.shared.transferservice.deleteRecentAccount(queryDTO: queryDTO, transferId: index) { result in
+            print(index)
             switch result {
             case .success(let data):
                 guard let data = data.data else {

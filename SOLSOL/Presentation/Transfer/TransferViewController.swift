@@ -75,7 +75,7 @@ extension TransferViewController: CellAction{
             guard let bank = recentList else { return }
             
             nextViewController.setTransferDetailData(data: TransferDetailModel(receiver: ReceiverModel.init(receiverName: bank.name, receiverBank: bank.bank, receiverAccount: bank.accountNumber),
-                                                                               sender: MyBankAccount.init(memberId: 1, accountId: 1, bank: bank.bank, bankBookName: nil, bankBookType: nil, account: bank.accountNumber, balance: 0), price: ""))
+                                                                               sender: MyBankAccount.init(memberId: 2, accountId: 2, bank: bank.bank, bankBookName: nil, bankBookType: nil, account: bank.accountNumber, balance: 0), price: ""))
             
             navigationController?.pushViewController(nextViewController, animated: true)
             
