@@ -20,7 +20,7 @@ final class TransferCollectionViewCell: UICollectionViewCell {
     
     weak var pushDelegate: TransferButtonAction?
     
-    var currentAccountList: [TransferList] = [] {
+    var currentAccountList: [ReceiverModel?] = [] {
         didSet {
             self.collectionView.reloadData()
         }
@@ -232,34 +232,13 @@ final class TransferCollectionViewCell: UICollectionViewCell {
     
     // MARK: - TransferCollectionViewCell에 Data 뿌리기
     
-    func configureCell(accountList: Transfer) {
+    func configureCell(accountList: MyBankAccount) {
         
-        if accountList.kind == "DEPOSIT" {
-            depositWithdraw.text = "예적금"
-        } else {
-            depositWithdraw.text = "입출금"
-        }
-        
-        bankBook.text = accountList.name
-        
-        if accountList.bank == "SHINHAN" {
-            bankImage.image = ImageLiterals.Home.icBigBankShinhan
-            accountNum.text = "신한" + " " + accountList.accountNumber
-        } else if accountList.bank == "KOOKMIN" {
-            bankImage.image = ImageLiterals.Home.icSmallBankKB
-            accountNum.text = "국민" + " " + accountList.accountNumber
-        } else if accountList.bank == "HANA" {
-            bankImage.image = ImageLiterals.Home.icSmallBankHanna
-            accountNum.text = "하나" + " " + accountList.accountNumber
-        } else if accountList.bank == "KAKAO" {
-            bankImage.image = ImageLiterals.Home.icSmallBankKakao
-            accountNum.text = "카카오" + " " + accountList.accountNumber
-        } else {
-            bankImage.image = ImageLiterals.Home.icSmallBankWoori
-            accountNum.text = "우리" + " " + accountList.accountNumber
-        }
-
-        myMoney.text = accountList.money.currencyAmountToString()
+        depositWithdraw.text = accountList.bankBookType?.description
+        bankBook.text = accountList.bankBookName
+        bankImage.image = accountList.bank.bankLogo
+        accountNum.text = accountList.bank.description + accountList.account
+        myMoney.text = accountList.balance.currencyAmountToString()
         
     }
     
@@ -282,7 +261,7 @@ extension TransferCollectionViewCell: UICollectionViewDelegate, UICollectionView
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:TransferListCollectionViewCell.className, for: indexPath) as? TransferListCollectionViewCell else { return UICollectionViewCell() }
         
         let currentAccountList = currentAccountList[indexPath.row]
-        cell.configureCell(currentAccountList: currentAccountList)
+        cell.configureCell(currentAccountList: currentAccountList!)
         return cell
     }
 }

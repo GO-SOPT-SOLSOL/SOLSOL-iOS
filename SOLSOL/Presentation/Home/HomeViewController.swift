@@ -19,7 +19,7 @@ final class HomeViewController: UIViewController {
     override func loadView() {
         self.view = originView
     }
-
+    
     // MARK: - Advertisement 구조체로부터 받아올 정보를 담는 배열
     
     private var adBannerHit: [Advertisement] = [] {
@@ -29,16 +29,16 @@ final class HomeViewController: UIViewController {
     }
     
     // MARK: - Transfer 구조체로부터 받아올 정보를 담는 배열
-
-    private var accountList: [Transfer] = [] {
+    
+    private var accountList: [MyBankAccount?] = [] {
         didSet {
             self.originView.homeTableView.reloadData()
         }
     }
     
     // MARK: - TransferList 구조체로부터 받아올 정보를 담는 배열
-
-    private var currentAccountList: [TransferList] = [] {
+    
+    private var currentAccountList: [ReceiverModel?] = [] {
         didSet {
             self.originView.homeTableView.reloadData()
         }
@@ -49,7 +49,7 @@ final class HomeViewController: UIViewController {
     lazy var navigationBar = SOLNavigationBar(self, leftItem: .home)
     
     // MARK: - Life Cycle
-
+    
     override func viewDidLoad() {
         setStyle()
         setLayout()
@@ -80,6 +80,12 @@ final class HomeViewController: UIViewController {
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(44)
+        }
+        
+        originView.homeTableView.snp.makeConstraints {
+            $0.top.equalTo(navigationBar.snp.bottom)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
         }
         
     }
@@ -148,6 +154,7 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: TransferButtonAction {
     func transferButtonTapped() {
         let nextViewController = TransferViewController()
+        nextViewController.originView.userCustomView.accountList = accountList
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
 }
@@ -182,9 +189,13 @@ extension HomeViewController {
             case .success(let data):
                 guard let data = data.data else { return }
                 
-                dump(data)
-                let transferList = data.map
-                { Transfer(kind: $0.kind, bank: $0.bank, name: $0.name, money: $0.balance, accountNumber: $0.accountNumber) }
+                let transferList = data.map { data -> MyBankAccount? in
+                    guard let bank = Bank(rawValue: data.bank),
+                          let kind = BankBookType(rawValue: data.kind)
+                    else { return nil }
+                    return MyBankAccount(memberId: data.memberId, accountId: data.memberId, bank: bank, bankBookName: data.name, bankBookType: kind, account: data.accountNumber, balance: data.balance)
+                }
+                
                 self.accountList = transferList
                 
             default:
@@ -203,10 +214,12 @@ extension HomeViewController {
             case .success(let data):
                 guard let data = data.data else { return }
                 
-                dump(data)
-                let currentTransferList = data.transfers.map {
-                    TransferList(price: $0.price, name: $0.name, bank: $0.bank)
+                let currentTransferList = data.transfers.map { data -> ReceiverModel? in
+                    guard let bank = Bank(rawValue: data.bank)
+                    else { return nil }
+                    return ReceiverModel(receiverName: data.name, receiverBank: bank, receiverAccount: String(data.price.currencyAmountToString()))
                 }
+                
                 self.currentAccountList = currentTransferList
                 
             default:

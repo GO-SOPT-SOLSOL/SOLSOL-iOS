@@ -119,14 +119,16 @@ final class TransferAccountsTableViewCell: UITableViewCell {
         cellDelegate?.buttonTapped(index: transferId)
     }
     
-    func configureCell(_ accountInfo: AccountInfo){
+   
+    func configureCell(_ accountInfo: MyBankAccount){
         
-        bankImage.image = accountInfo.bankImage
-        bankNameLabel.text = accountInfo.bankName
-        bankAccountLable.text = accountInfo.bankAccount
-        name.text = ""
-        dateLable.text = ""
+        bankImage.image = accountInfo.bank.bankLogo
+        bankNameLabel.text = accountInfo.bankBookName?.description
+        bankAccountLable.text = accountInfo.account
         deleteButton.isHidden = true
+        dateLable.isHidden = true
+        name.isHidden = true
+        
     }
     
     func configureSecondCell(recentSentAccountList: RecentSentAccount){
@@ -136,7 +138,9 @@ final class TransferAccountsTableViewCell: UITableViewCell {
         bankNameLabel.text = ""
         name.text = recentSentAccountList.name
         dateLable.text = recentSentAccountList.createdAt
-
+        deleteButton.isHidden = false
+        dateLable.isHidden = false
+        name.isHidden = false
         deleteButton.setImage(ImageLiterals.Transfer.icDelete, for: .normal)
         transferId = recentSentAccountList.transferId
         

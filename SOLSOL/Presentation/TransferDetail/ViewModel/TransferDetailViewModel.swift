@@ -54,7 +54,6 @@ final class DefaultTransferDetailViewModel: TransferDetailViewModel {
 
 extension DefaultTransferDetailViewModel {
     func viewWillAppear(model: TransferDetailModel) {
-        // TODO: Network
         self.myAccount = model
     }
 

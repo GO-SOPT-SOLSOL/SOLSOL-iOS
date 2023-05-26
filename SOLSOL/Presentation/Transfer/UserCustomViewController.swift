@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CellAction: AnyObject {
-    func cellTapped(row: Int)
+    func cellTapped(row: Int, section: Int)
     
     
 }
@@ -27,8 +27,9 @@ class UserCustomViewController: UIViewController {
     
     let TranferTableView = UITableView(frame: .zero, style: .grouped)
     
-    private let Firstdummy = AccountInfo.dummy()
-    //    private let Secondummy = AccountInfoWithDate.dummy()
+    var accountList: [MyBankAccount?] = []
+
+
     
     
     private let firstHeaderView = UIView()
@@ -139,8 +140,9 @@ extension UserCustomViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0{
-            return Firstdummy.count
+            return accountList.count
         }else {return recentSentAccountList.count}
+
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -153,7 +155,8 @@ extension UserCustomViewController: UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TransferAccountsTableViewCell.identifier, for: indexPath) as? TransferAccountsTableViewCell else
             {return UITableViewCell()}
             
-            cell.configureCell(Firstdummy[indexPath.row])
+
+            cell.configureCell(accountList[indexPath.row]!)
             
             return cell}
         
@@ -210,7 +213,7 @@ extension UserCustomViewController: UITableViewDataSource{
 extension UserCustomViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        cellDelegate?.cellTapped(row: indexPath.row)
+        cellDelegate?.cellTapped(row: indexPath.row, section: indexPath.section)
         //
     }
 }

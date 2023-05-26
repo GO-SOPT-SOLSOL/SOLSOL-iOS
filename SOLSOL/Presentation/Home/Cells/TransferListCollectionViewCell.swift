@@ -86,22 +86,10 @@ final class TransferListCollectionViewCell: UICollectionViewCell {
     
     // MARK: - TransferListCollectionViewCell에 Data 뿌리기
     
-    func configureCell(currentAccountList: TransferList) {
-        name.text = currentAccountList.name
-        
-        if currentAccountList.bank == "SHINHAN" {
-            bankImage.image = ImageLiterals.Home.icBankShinhan
-        } else if currentAccountList.bank == "KOOKMIN" {
-            bankImage.image = ImageLiterals.Home.icSmallBankKB
-        } else if currentAccountList.bank == "HANA" {
-            bankImage.image = ImageLiterals.Home.icSmallBankHanna
-        } else if currentAccountList.bank == "KAKAO" {
-            bankImage.image = ImageLiterals.Home.icSmallBankKakao
-        } else {
-            bankImage.image = ImageLiterals.Home.icSmallBankWoori
-        }
-        
-        amount.text = currentAccountList.price.currencyAmountToString()
-        
+    func configureCell(currentAccountList: ReceiverModel) {
+        name.text = currentAccountList.receiverName
+        bankImage.image = currentAccountList.receiverBank.bankLogo
+        amount.text = currentAccountList.receiverAccount
     }
+
 }
