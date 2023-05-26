@@ -27,7 +27,9 @@ final class TransferDetailViewController: UIViewController {
         text: StringLiterals.TransferDetail.next,
         textColor: .white,
         font: .font(.headline), cornerRadius: 12).then {
+            $0.isEnabled = false
             $0.addTarget(self, action: #selector(handleTapNextButton), for: .touchUpInside)
+
         }
 
     private var transferDetailData: TransferDetailModel?
@@ -48,6 +50,7 @@ final class TransferDetailViewController: UIViewController {
         setStyle()
         setLayout()
         bind()
+        setButtonHandler()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -98,6 +101,18 @@ private extension TransferDetailViewController {
 
     }
 
+    func setButtonHandler() {
+        nextButton.configurationUpdateHandler = {
+            var config = $0.configuration
+            config?.baseBackgroundColor = $0.isEnabled
+            ? .blue500
+            : .blue100
+            config?.baseForegroundColor = $0.isEnabled
+            ? .white
+            : .gray200
+        }
+    }
+
 }
 
 extension TransferDetailViewController {
@@ -116,6 +131,7 @@ extension TransferDetailViewController {
         }
 
         viewModel.updatedMoneyDisplay = { text in
+            self.nextButton.isEnabled = text != "0"
             self.transferInfoView.updateMoneyDisplay(text: text)
         }
 
