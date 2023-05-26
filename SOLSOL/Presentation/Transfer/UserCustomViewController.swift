@@ -8,21 +8,22 @@
 import UIKit
 
 protocol CellAction: AnyObject {
-    func cellTapped()
+    func cellTapped(row: Int)
+    
+    
 }
 
 class UserCustomViewController: UIViewController {
     
     //MARK: - UIComponents
     
-    
     weak var cellDelegate: CellAction?
     
-    private var recentSentAccountList: [RecentSentAccount] = []{
-    didSet {
-        self.TranferTableView.reloadData()
+    var recentSentAccountList: [RecentSentAccount?] = []{
+        didSet {
+            self.TranferTableView.reloadData()
+        }
     }
-}
     
     let TranferTableView = UITableView(frame: .zero, style: .grouped)
     
@@ -43,6 +44,7 @@ class UserCustomViewController: UIViewController {
         super.viewWillAppear(animated)
         
         getRecentSentAccountListWithAPI()
+        
     }
     
     override func viewDidLoad() {
@@ -159,9 +161,11 @@ extension UserCustomViewController: UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TransferAccountsTableViewCell.identifier, for: indexPath) as? TransferAccountsTableViewCell else
             {return UITableViewCell()}
             
-            let accountList = recentSentAccountList[indexPath.row]
-
-            cell.configureSecondCell(recentSentAccountList: accountList)
+            guard let account = self.recentSentAccountList[indexPath.row]
+            else{ return UITableViewCell() }
+            
+            cell.configureSecondCell(recentSentAccountList: account)
+            cell.cellDelegate = self
             
             return cell
             
@@ -206,15 +210,41 @@ extension UserCustomViewController: UITableViewDataSource{
 extension UserCustomViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        cellDelegate?.cellTapped()
+        cellDelegate?.cellTapped(row: indexPath.row)
         //
     }
 }
 
 extension UserCustomViewController {
     func getRecentSentAccountListWithAPI() {
-        let queryDTO = RecentSentAccountListRequestDTO(memberId: 2)
+        let queryDTO = RecentSentAccountListRequestDTO(memberId: 1)
         NetworkService.shared.transferservice.getRecentSentAccountList(queryDTO: queryDTO) { result in
+            switch result {
+            case .success(let data):
+                            guard let data = data.data else { return }
+
+                let transferList = data.transfers.map { data -> RecentSentAccount? in
+                                guard let bank = Bank(rawValue: data.bank)
+                                else { return nil }
+                    return RecentSentAccount(transferId: data.id, name: data.name, createdAt: data.createdAt, bank: bank, accountNumber: data.accountNumber)
+                            }
+
+                            self.recentSentAccountList = transferList
+
+                        default:
+                            print("network failure")
+                            return
+                        }
+        }
+        
+    }
+}
+
+extension UserCustomViewController: DeleteButtonTapped{
+    
+    func buttonTapped(index: Int) {
+        let queryDTO = DeleteRecentAccountRequestDTO(memberId: 1)
+        NetworkService.shared.transferservice.deleteRecentAccount(queryDTO: queryDTO, transferId: index) { result in
             switch result {
             case .success(let data):
                 guard let data = data.data else {
@@ -222,12 +252,7 @@ extension UserCustomViewController {
                     return
                 }
                 dump(data)
-                let recentSentAccountList = data.transfers.map {
-                    RecentSentAccount(name: $0.name, createdAt: $0.createdAt, bank: $0.bank, accountNumber: $0.accountNumber)
-                }
-                self.recentSentAccountList = recentSentAccountList
-                
-                
+
             default:
                 print("network failure")
                 return
@@ -236,3 +261,7 @@ extension UserCustomViewController {
         
     }
 }
+
+
+
+

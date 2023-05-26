@@ -96,6 +96,8 @@
 		F4C5AE7E2A1FD6A000CCE940 /* TransferTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5AE7D2A1FD6A000CCE940 /* TransferTarget.swift */; };
 		F4C5AE812A1FDE4E00CCE940 /* TransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5AE802A1FDE4E00CCE940 /* TransferService.swift */; };
 		F4C5AE832A1FE86600CCE940 /* RecentSentAccountListStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5AE822A1FE86600CCE940 /* RecentSentAccountListStruct.swift */; };
+		F4C5AE872A20707D00CCE940 /* DeleteRecentAccountRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5AE862A20707D00CCE940 /* DeleteRecentAccountRequestDTO.swift */; };
+		F4C5AE892A20778D00CCE940 /* DeleteRecentAccountResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C5AE882A20778D00CCE940 /* DeleteRecentAccountResponseDTO.swift */; };
 		F4CA67D12A1B41C200047753 /* UserCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CA67D02A1B41C200047753 /* UserCustomViewController.swift */; };
 		F4D6890E2A12B0C90082A9F3 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */; };
 		F4D6D00A2A168F7C00B4A125 /* TransferAccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D6D0092A168F7C00B4A125 /* TransferAccountsTableViewCell.swift */; };
@@ -211,6 +213,8 @@
 		F4C5AE7D2A1FD6A000CCE940 /* TransferTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferTarget.swift; sourceTree = "<group>"; };
 		F4C5AE802A1FDE4E00CCE940 /* TransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferService.swift; sourceTree = "<group>"; };
 		F4C5AE822A1FE86600CCE940 /* RecentSentAccountListStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSentAccountListStruct.swift; sourceTree = "<group>"; };
+		F4C5AE862A20707D00CCE940 /* DeleteRecentAccountRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRecentAccountRequestDTO.swift; sourceTree = "<group>"; };
+		F4C5AE882A20778D00CCE940 /* DeleteRecentAccountResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRecentAccountResponseDTO.swift; sourceTree = "<group>"; };
 		F4CA67D02A1B41C200047753 /* UserCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCustomViewController.swift; sourceTree = "<group>"; };
 		F4D6890D2A12B0C90082A9F3 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		F4D6D0092A168F7C00B4A125 /* TransferAccountsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferAccountsTableViewCell.swift; sourceTree = "<group>"; };
@@ -766,6 +770,7 @@
 			isa = PBXGroup;
 			children = (
 				F4C5AE792A1FD57100CCE940 /* RecentSentAccountListRequestDTO.swift */,
+				F4C5AE862A20707D00CCE940 /* DeleteRecentAccountRequestDTO.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -774,6 +779,7 @@
 			isa = PBXGroup;
 			children = (
 				F4C5AE7B2A1FD5B900CCE940 /* RecentSentAccountListResponseDTO.swift */,
+				F4C5AE882A20778D00CCE940 /* DeleteRecentAccountResponseDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -955,6 +961,7 @@
 				2A4761082A13F0EE005BAA9F /* Item.swift in Sources */,
 				B5D06E172A1695C700048C72 /* MemoView.swift in Sources */,
 				F4D6D00A2A168F7C00B4A125 /* TransferAccountsTableViewCell.swift in Sources */,
+				F4C5AE892A20778D00CCE940 /* DeleteRecentAccountResponseDTO.swift in Sources */,
 				F4FCEBED2A18DE5500004E70 /* SOLSegementedControl.swift in Sources */,
 				B5D06E2D2A18F95000048C72 /* APIEventLogger.swift in Sources */,
 				2A4761042A13EC1B005BAA9F /* NSObject+.swift in Sources */,
@@ -999,6 +1006,7 @@
 				B54F214B2A13BF20000D350C /* SOLTabBarItem.swift in Sources */,
 				B51383072A157E3800167728 /* Int+.swift in Sources */,
 				B5AB478C2A1C8C4A00904919 /* TransferConfirmTarget.swift in Sources */,
+				F4C5AE872A20707D00CCE940 /* DeleteRecentAccountRequestDTO.swift in Sources */,
 				F4C5AE7C2A1FD5B900CCE940 /* RecentSentAccountListResponseDTO.swift in Sources */,
 				B54F214E2A13BF96000D350C /* MoneyVerseViewController.swift in Sources */,
 				B5AB47A02A1E097700904919 /* TransferModel.swift in Sources */,

@@ -7,16 +7,23 @@
 
 import UIKit
 
+protocol DeleteButtonTapped: AnyObject {
+    func buttonTapped(index: Int)
+}
+
 final class TransferAccountsTableViewCell: UITableViewCell {
     
     static let identifier = "TransferAccountsTableViewCell"
     
+    weak var cellDelegate: DeleteButtonTapped?
+
     private let bankImage = UIImageView()
     private let bankNameLabel = UILabel()
     private let name = UILabel()
     private let bankAccountLable = UILabel()
     private let dateLable = UILabel()
     private let deleteButton = UIButton()
+    private var transferId: Int = 0
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -57,6 +64,10 @@ final class TransferAccountsTableViewCell: UITableViewCell {
         name.do{
             $0.font = .font(.subhead3)
             $0.textColor = .gray600
+        }
+        
+        deleteButton.do{
+            $0.addTarget(self, action: #selector(deleteRecentAccount), for: .touchUpInside)
         }
         
     }
@@ -103,6 +114,11 @@ final class TransferAccountsTableViewCell: UITableViewCell {
         
     }
     
+    @objc
+    func deleteRecentAccount(index: Int){
+        cellDelegate?.buttonTapped(index: transferId)
+    }
+    
     func configureCell(_ accountInfo: AccountInfo){
         
         bankImage.image = accountInfo.bankImage
@@ -115,31 +131,14 @@ final class TransferAccountsTableViewCell: UITableViewCell {
     
     func configureSecondCell(recentSentAccountList: RecentSentAccount){
         
-        var koreanBankName: String
-        if recentSentAccountList.bank == "SHINHAN" {
-            bankImage.image = ImageLiterals.Home.icBankShinhan
-            koreanBankName = "신한"
-        } else if recentSentAccountList.bank == "KOOKMIN" {
-            bankImage.image = ImageLiterals.Home.icSmallBankKB
-            koreanBankName = "국민"
-
-        } else if recentSentAccountList.bank == "HANA" {
-            bankImage.image = ImageLiterals.Home.icSmallBankHanna
-            koreanBankName = "하나"
-
-        } else if recentSentAccountList.bank == "KAKAO" {
-            bankImage.image = ImageLiterals.Home.icSmallBankKakao
-            koreanBankName = "카카오"
-
-        } else {
-            bankImage.image = ImageLiterals.Home.icSmallBankWoori
-            koreanBankName = "우리"
-        }
+        bankImage.image = recentSentAccountList.bank.bankLogo
+        bankAccountLable.text = recentSentAccountList.bank.description + " " + recentSentAccountList.accountNumber
         bankNameLabel.text = ""
         name.text = recentSentAccountList.name
         dateLable.text = recentSentAccountList.createdAt
-        bankAccountLable.text = koreanBankName + " " + recentSentAccountList.accountNumber
+
         deleteButton.setImage(ImageLiterals.Transfer.icDelete, for: .normal)
+        transferId = recentSentAccountList.transferId
         
     }
 }

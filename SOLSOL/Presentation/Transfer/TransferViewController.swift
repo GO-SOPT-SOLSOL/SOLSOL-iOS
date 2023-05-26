@@ -11,7 +11,7 @@ class TransferViewController: UIViewController {
     
     private lazy var navigationBar = SOLNavigationBar(self, leftItem: .back)
     private let originView = TransferView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,6 +19,7 @@ class TransferViewController: UIViewController {
         setLayout()
         
     }
+    
     
     override func loadView() {
         self.view = originView
@@ -48,8 +49,19 @@ class TransferViewController: UIViewController {
 }
 extension TransferViewController: CellAction{
     
-    func cellTapped() {
+    func cellTapped(row: Int) {
+        
+        
+        
         let nextViewController = TransferDetailViewController(viewModel: DefaultTransferDetailViewModel())
+        
+        let recentList = originView.userCustomView.recentSentAccountList[row]
+        
+        guard let bank = recentList else { return }
+        
+        nextViewController.setTransferDetailData(data: TransferDetailModel(receiver: ReceiverModel.init(receiverName: bank.name, receiverBank: bank.bank, receiverAccount: bank.accountNumber),
+                                                                           sender: MyBankAccount.init(memberId: 1, accountId: 1, bank: bank.bank, bankBookName: nil, bankBookType: nil, account: "", balance: 0), price: ""))
+        
         navigationController?.pushViewController(nextViewController, animated: true)
     }
 }

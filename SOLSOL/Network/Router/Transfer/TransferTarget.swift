@@ -11,13 +11,20 @@ import Alamofire
 
 enum TransferTarget{
     case getRecentSentAccountList(_ dto: RecentSentAccountListRequestDTO)
+    case deleteRecentAccount(_ dto: DeleteRecentAccountRequestDTO, _ transferId: Int)
 }
 
 extension TransferTarget: TargetType{
+    
+    
+    
     var method: Alamofire.HTTPMethod {
         switch self{
         case .getRecentSentAccountList(_):
             return .get
+        case .deleteRecentAccount(_,_):
+            return .delete
+            
         }
     }
     
@@ -25,6 +32,9 @@ extension TransferTarget: TargetType{
         switch self{
         case .getRecentSentAccountList(_):
             return "/transfers"
+        case .deleteRecentAccount( _ , let transferId):
+            return "/transfers/\(transferId)"
+            
         }
     }
     
@@ -32,10 +42,11 @@ extension TransferTarget: TargetType{
         switch self{
         case .getRecentSentAccountList(let dto):
             return .requestQuery(dto)
+        case .deleteRecentAccount(let dto, _):
+            return .requestQuery(dto)
+            
+            
         }
     }
-    
-    
-    
-    
 }
+

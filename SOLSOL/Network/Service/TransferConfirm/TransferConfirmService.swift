@@ -9,6 +9,7 @@ import Foundation
 
 protocol TransferConfirmProtocol {
     func transfer(queryDTO: AccountsListRequestDTO, requestDTO: TransferToRequestDTO, completion: @escaping (NetworkResult<BaseResponse<TransferToResponseDTO>>) -> Void)
+    
 }
 
 

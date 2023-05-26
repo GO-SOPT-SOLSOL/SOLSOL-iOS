@@ -8,8 +8,9 @@
 import Foundation
 
 struct RecentSentAccount {
+    let transferId: Int
     let name: String
     let createdAt: String
-    let bank: String
+    let bank: Bank
     let accountNumber: String
 }
