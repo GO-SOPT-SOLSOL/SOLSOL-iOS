@@ -89,7 +89,7 @@ final class TransferListCollectionViewCell: UICollectionViewCell {
     func configureCell(currentAccountList: ReceiverModel) {
         name.text = currentAccountList.receiverName
         bankImage.image = currentAccountList.receiverBank.bankLogo
-        amount.text = Int(currentAccountList.receiverAccount)?.currencyAmountToString()
+        amount.text = currentAccountList.receiverAccount
     }
 
 }
