@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+@frozen
 enum BankBookType: String {
     case transfer = "TRANSFERS"
     case deposit = "DEPOSIT"
