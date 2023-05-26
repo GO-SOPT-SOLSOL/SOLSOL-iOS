@@ -155,7 +155,7 @@ class TransferView: UIView {
         
         sendToWhoLabel.snp.makeConstraints{
             $0.leading.equalToSuperview().inset(18)
-            $0.top.equalToSuperview().inset(99)
+            $0.top.equalToSuperview().inset(120)
         }
         
         searchTextField.snp.makeConstraints{

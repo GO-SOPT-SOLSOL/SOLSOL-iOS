@@ -7,15 +7,24 @@
 
 import UIKit
 
+protocol DeleteButtonTapped: AnyObject {
+    func buttonTapped(index: Int)
+}
+
 final class TransferAccountsTableViewCell: UITableViewCell {
     
     static let identifier = "TransferAccountsTableViewCell"
     
+    weak var cellDelegate: DeleteButtonTapped?
+
     private let bankImage = UIImageView()
     private let bankNameLabel = UILabel()
+    private let name = UILabel()
     private let bankAccountLable = UILabel()
     private let dateLable = UILabel()
     private let deleteButton = UIButton()
+    private var transferId: Int = 0
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super .init(style: style, reuseIdentifier: reuseIdentifier)
@@ -52,15 +61,20 @@ final class TransferAccountsTableViewCell: UITableViewCell {
             $0.textColor = .gray300
         }
         
-//        deleteButton.do{
-//            $0.setImage(ImageLiterals.Transfer.icDelete, for: .normal)
-//        }
+        name.do{
+            $0.font = .font(.subhead3)
+            $0.textColor = .gray600
+        }
+        
+        deleteButton.do{
+            $0.addTarget(self, action: #selector(deleteRecentAccount), for: .touchUpInside)
+        }
         
     }
     
     func hierarchy(){
         
-        contentView.addSubviews(bankImage, bankNameLabel, bankAccountLable, deleteButton, dateLable)
+        contentView.addSubviews(bankImage, bankNameLabel, bankAccountLable, deleteButton, dateLable,name)
         
     }
     
@@ -78,8 +92,13 @@ final class TransferAccountsTableViewCell: UITableViewCell {
             $0.leading.equalTo(bankImage.snp.trailing).offset(11)
         }
         
+        name.snp.makeConstraints{
+            $0.leading.equalTo(bankImage.snp.trailing).offset(11)
+            $0.top.equalToSuperview().inset(18)
+        }
+        
         bankAccountLable.snp.makeConstraints{
-            $0.top.equalTo(bankNameLabel.snp.bottom).offset(2)
+            $0.top.equalTo(bankImage.snp.top).offset(20)
             $0.leading.equalTo(bankImage.snp.trailing).offset(11)
         }
         
@@ -89,27 +108,41 @@ final class TransferAccountsTableViewCell: UITableViewCell {
         }
         
         dateLable.snp.makeConstraints{
-            $0.leading.equalTo(bankNameLabel.snp.trailing).offset(4)
-            $0.centerY.equalTo(bankNameLabel)
+            $0.leading.equalTo(name.snp.trailing).offset(4)
+            $0.centerY.equalTo(name)
         }
         
     }
     
+    @objc
+    func deleteRecentAccount(index: Int){
+        cellDelegate?.buttonTapped(index: transferId)
+    }
+    
+   
     func configureCell(_ accountInfo: MyBankAccount){
         
         bankImage.image = accountInfo.bank.bankLogo
         bankNameLabel.text = accountInfo.bankBookName?.description
         bankAccountLable.text = accountInfo.account
+        deleteButton.isHidden = true
+        dateLable.isHidden = true
+        name.isHidden = true
         
     }
     
-    func configureSecondCell(_ accountInfo: AccountInfoWithDate){
+    func configureSecondCell(recentSentAccountList: RecentSentAccount){
         
-        bankImage.image = accountInfo.bankImage
-        dateLable.text = accountInfo.date
-        bankNameLabel.text = accountInfo.name
-        bankAccountLable.text = accountInfo.bankAccount
-        deleteButton.setImage(accountInfo.trashBinImage, for: .normal)
+        bankImage.image = recentSentAccountList.bank.bankLogo
+        bankAccountLable.text = recentSentAccountList.bank.description + " " + recentSentAccountList.accountNumber
+        bankNameLabel.text = ""
+        name.text = recentSentAccountList.name
+        dateLable.text = recentSentAccountList.createdAt
+        deleteButton.isHidden = false
+        dateLable.isHidden = false
+        name.isHidden = false
+        deleteButton.setImage(ImageLiterals.Transfer.icDelete, for: .normal)
+        transferId = recentSentAccountList.transferId
         
     }
 }

@@ -8,7 +8,9 @@
 import UIKit
 
 protocol CellAction: AnyObject {
-    func cellTapped()
+    func cellTapped(row: Int, section: Int)
+    
+    
 }
 
 class UserCustomViewController: UIViewController {
@@ -17,11 +19,17 @@ class UserCustomViewController: UIViewController {
     
     weak var cellDelegate: CellAction?
     
+    var recentSentAccountList: [RecentSentAccount?] = []{
+        didSet {
+            self.TranferTableView.reloadData()
+        }
+    }
+    
     let TranferTableView = UITableView(frame: .zero, style: .grouped)
     
     var accountList: [MyBankAccount?] = []
 
-    private let Secondummy = AccountInfoWithDate.dummy()
+
     
     
     private let firstHeaderView = UIView()
@@ -33,6 +41,12 @@ class UserCustomViewController: UIViewController {
     
     //MARK: - View Life Cycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getRecentSentAccountListWithAPI()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,7 +128,7 @@ class UserCustomViewController: UIViewController {
         TranferTableView.dataSource = self
     }
     
-   
+    
     
 }
 extension UserCustomViewController: UITableViewDataSource{
@@ -127,7 +141,8 @@ extension UserCustomViewController: UITableViewDataSource{
         
         if section == 0{
             return accountList.count
-        }else {return Secondummy.count}
+        }else {return recentSentAccountList.count}
+
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -140,16 +155,24 @@ extension UserCustomViewController: UITableViewDataSource{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TransferAccountsTableViewCell.identifier, for: indexPath) as? TransferAccountsTableViewCell else
             {return UITableViewCell()}
             
+
             cell.configureCell(accountList[indexPath.row]!)
             
             return cell}
         
-        else {guard let cell = tableView.dequeueReusableCell(withIdentifier: TransferAccountsTableViewCell.identifier, for: indexPath) as? TransferAccountsTableViewCell else
+        else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TransferAccountsTableViewCell.identifier, for: indexPath) as? TransferAccountsTableViewCell else
             {return UITableViewCell()}
             
-            cell.configureSecondCell(Secondummy[indexPath.row])
-
-            return cell}
+            guard let account = self.recentSentAccountList[indexPath.row]
+            else{ return UITableViewCell() }
+            
+            cell.configureSecondCell(recentSentAccountList: account)
+            cell.cellDelegate = self
+            
+            return cell
+            
+        }
         
         
     }
@@ -190,9 +213,58 @@ extension UserCustomViewController: UITableViewDataSource{
 extension UserCustomViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        cellDelegate?.cellTapped()
-//        let nextViewController = TransferDetailViewController(viewModel: DefaultTransferDetailViewModel())
-//        navigationController?.pushViewController(nextViewController, animated: true)
+        cellDelegate?.cellTapped(row: indexPath.row, section: indexPath.section)
+        //
+    }
+}
+
+extension UserCustomViewController {
+    func getRecentSentAccountListWithAPI() {
+        let queryDTO = RecentSentAccountListRequestDTO(memberId: 1)
+        NetworkService.shared.transferservice.getRecentSentAccountList(queryDTO: queryDTO) { result in
+            switch result {
+            case .success(let data):
+                            guard let data = data.data else { return }
+
+                let transferList = data.transfers.map { data -> RecentSentAccount? in
+                                guard let bank = Bank(rawValue: data.bank)
+                                else { return nil }
+                    return RecentSentAccount(transferId: data.id, name: data.name, createdAt: data.createdAt, bank: bank, accountNumber: data.accountNumber)
+                            }
+
+                            self.recentSentAccountList = transferList
+
+                        default:
+                            print("network failure")
+                            return
+                        }
+        }
         
     }
 }
+
+extension UserCustomViewController: DeleteButtonTapped{
+    
+    func buttonTapped(index: Int) {
+        let queryDTO = DeleteRecentAccountRequestDTO(memberId: 1)
+        NetworkService.shared.transferservice.deleteRecentAccount(queryDTO: queryDTO, transferId: index) { result in
+            switch result {
+            case .success(let data):
+                guard let data = data.data else {
+                    print("no data")
+                    return
+                }
+                dump(data)
+
+            default:
+                print("network failure")
+                return
+            }
+        }
+        
+    }
+}
+
+
+
+
