@@ -119,7 +119,7 @@ extension SOLNavigationBar {
     private func handleLeftItemTap() {
         switch type {
         case .back:
-            viewController?.navigationController?.popViewController(animated: false)
+            viewController?.navigationController?.popViewController(animated: true)
         case .home:
             print("home button tapped !")
         }

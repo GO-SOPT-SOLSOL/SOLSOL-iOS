@@ -155,6 +155,7 @@ extension HomeViewController: TransferButtonAction {
     func transferButtonTapped() {
         let nextViewController = TransferViewController()
         nextViewController.originView.userCustomView.accountList = accountList
+        nextViewController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
 }
