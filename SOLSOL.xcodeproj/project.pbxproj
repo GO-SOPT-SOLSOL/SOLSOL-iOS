@@ -389,7 +389,7 @@
 		2AC4088A2A113054009F0D56 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				2A4761052A13F0EE005BAA9F /* Section.swift */,
+				2ADB94102A270E6300E6EC57 /* Enum */,
 				2A287D252A1BCC1D0037B94B /* Advertisement.swift */,
 				2AC408952A113250009F0D56 /* Views */,
 				2AC408922A113229009F0D56 /* Cells */,
@@ -469,6 +469,14 @@
 				B51382FD2A1519FB00167728 /* NumberPadView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2ADB94102A270E6300E6EC57 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				2A4761052A13F0EE005BAA9F /* Section.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		2AF091E62A11500900F611C4 /* Font */ = {
