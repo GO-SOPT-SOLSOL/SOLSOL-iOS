@@ -29,8 +29,6 @@
 		2A4761072A13F0EE005BAA9F /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4761052A13F0EE005BAA9F /* Section.swift */; };
 		2A4761082A13F0EE005BAA9F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4761062A13F0EE005BAA9F /* Item.swift */; };
 		2A47610A2A1538B5005BAA9F /* TransferListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4761092A1538B5005BAA9F /* TransferListCollectionViewCell.swift */; };
-		2A47610C2A153D82005BAA9F /* TransferList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A47610B2A153D81005BAA9F /* TransferList.swift */; };
-		2A47610E2A154B72005BAA9F /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A47610D2A154B72005BAA9F /* Transfer.swift */; };
 		2AC408402A0F6686009F0D56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4083F2A0F6686009F0D56 /* AppDelegate.swift */; };
 		2AC408422A0F6686009F0D56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408412A0F6686009F0D56 /* SceneDelegate.swift */; };
 		2AC408442A0F6686009F0D56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408432A0F6686009F0D56 /* HomeViewController.swift */; };
@@ -144,8 +142,6 @@
 		2A4761052A13F0EE005BAA9F /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		2A4761062A13F0EE005BAA9F /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		2A4761092A1538B5005BAA9F /* TransferListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferListCollectionViewCell.swift; sourceTree = "<group>"; };
-		2A47610B2A153D81005BAA9F /* TransferList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferList.swift; sourceTree = "<group>"; };
-		2A47610D2A154B72005BAA9F /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
 		2AC4083C2A0F6686009F0D56 /* SOLSOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOLSOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC4083F2A0F6686009F0D56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AC408412A0F6686009F0D56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -397,8 +393,6 @@
 			children = (
 				2A4761062A13F0EE005BAA9F /* Item.swift */,
 				2A4761052A13F0EE005BAA9F /* Section.swift */,
-				2A47610D2A154B72005BAA9F /* Transfer.swift */,
-				2A47610B2A153D81005BAA9F /* TransferList.swift */,
 				2A287D252A1BCC1D0037B94B /* Advertisement.swift */,
 				2AC408432A0F6686009F0D56 /* HomeViewController.swift */,
 				2AC408952A113250009F0D56 /* Views */,
@@ -987,7 +981,6 @@
 				B54F21522A13BFA4000D350C /* BenefitViewController.swift in Sources */,
 				B5D06E312A198BEF00048C72 /* HomeTarget.swift in Sources */,
 				2A287D312A1DEEE50037B94B /* ScreenUtils.swift in Sources */,
-				2A47610E2A154B72005BAA9F /* Transfer.swift in Sources */,
 				B5AB47982A1DA33E00904919 /* SingleAccountResponseDTO.swift in Sources */,
 				B51382FE2A1519FB00167728 /* NumberPadView.swift in Sources */,
 				2AC4088E2A113195009F0D56 /* TransferViewController.swift in Sources */,
@@ -1014,7 +1007,6 @@
 				B5D06E192A169DDD00048C72 /* SizeLiterals.swift in Sources */,
 				2AC408402A0F6686009F0D56 /* AppDelegate.swift in Sources */,
 				B5D06E292A18F91700048C72 /* NetworkResult.swift in Sources */,
-				2A47610C2A153D82005BAA9F /* TransferList.swift in Sources */,
 				2A287D262A1BCC1D0037B94B /* Advertisement.swift in Sources */,
 				B5D06E2B2A18F93400048C72 /* TargetType.swift in Sources */,
 				F4C5AE812A1FDE4E00CCE940 /* TransferService.swift in Sources */,
