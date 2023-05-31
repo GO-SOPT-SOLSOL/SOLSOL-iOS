@@ -705,8 +705,8 @@
 		B5D06E392A198E7400048C72 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				B5D06E3A2A198F7900048C72 /* AccountsListResponseDTO.swift */,
 				2A287D232A1BC7FE0037B94B /* AdvertisementListDTO.swift */,
+				B5D06E3A2A198F7900048C72 /* AccountsListResponseDTO.swift */,
 				2A287D292A1BE27F0037B94B /* CurrentAccountListResponseDTO.swift */,
 			);
 			path = Response;
