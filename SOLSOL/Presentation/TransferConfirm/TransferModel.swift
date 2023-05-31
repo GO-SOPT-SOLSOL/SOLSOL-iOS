@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 // MARK: - 최근 이체 목록 조회 API -> TransferDetail
 
 struct ReceiverModel {
@@ -35,5 +34,3 @@ struct TransferDetailModel {
     let sender: MyBankAccount
     let price: String?
 }
-
-// Transfer-2

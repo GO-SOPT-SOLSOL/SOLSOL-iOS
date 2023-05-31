@@ -12,7 +12,6 @@
 		2A204AE32A115BEA00805E0A /* TransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AE22A115BEA00805E0A /* TransferView.swift */; };
 		2A204AE72A115C0B00805E0A /* TransferDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A204AE62A115C0B00805E0A /* TransferDetailView.swift */; };
 		2A287D242A1BC7FE0037B94B /* AdvertisementListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A287D232A1BC7FE0037B94B /* AdvertisementListDTO.swift */; };
-		2A287D262A1BCC1D0037B94B /* Advertisement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A287D252A1BCC1D0037B94B /* Advertisement.swift */; };
 		2A287D282A1BE25B0037B94B /* CurrentAccountListRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A287D272A1BE25B0037B94B /* CurrentAccountListRequestDTO.swift */; };
 		2A287D2A2A1BE27F0037B94B /* CurrentAccountListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A287D292A1BE27F0037B94B /* CurrentAccountListResponseDTO.swift */; };
 		2A287D312A1DEEE50037B94B /* ScreenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A287D302A1DEEE50037B94B /* ScreenUtils.swift */; };
@@ -43,6 +42,7 @@
 		2AC4087F2A112E60009F0D56 /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4087E2A112E60009F0D56 /* StringLiterals.swift */; };
 		2AC4088E2A113195009F0D56 /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4088D2A113195009F0D56 /* TransferViewController.swift */; };
 		2AC408912A1131FA009F0D56 /* TransferDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408902A1131FA009F0D56 /* TransferDetailViewController.swift */; };
+		2ADB94122A270FDD00E6EC57 /* Advertisement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB94112A270FDD00E6EC57 /* Advertisement.swift */; };
 		2AF091EA2A11507800F611C4 /* OneShinhan-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF091E72A11507800F611C4 /* OneShinhan-Bold.otf */; };
 		2AF091EB2A11507800F611C4 /* OneShinhan-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF091E82A11507800F611C4 /* OneShinhan-Light.otf */; };
 		2AF091EC2A11507800F611C4 /* OneShinhan-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2AF091E92A11507800F611C4 /* OneShinhan-Medium.otf */; };
@@ -124,7 +124,6 @@
 		2A204AE22A115BEA00805E0A /* TransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferView.swift; sourceTree = "<group>"; };
 		2A204AE62A115C0B00805E0A /* TransferDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailView.swift; sourceTree = "<group>"; };
 		2A287D232A1BC7FE0037B94B /* AdvertisementListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementListDTO.swift; sourceTree = "<group>"; };
-		2A287D252A1BCC1D0037B94B /* Advertisement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertisement.swift; sourceTree = "<group>"; };
 		2A287D272A1BE25B0037B94B /* CurrentAccountListRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAccountListRequestDTO.swift; sourceTree = "<group>"; };
 		2A287D292A1BE27F0037B94B /* CurrentAccountListResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAccountListResponseDTO.swift; sourceTree = "<group>"; };
 		2A287D302A1DEEE50037B94B /* ScreenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUtils.swift; sourceTree = "<group>"; };
@@ -156,6 +155,7 @@
 		2AC4087E2A112E60009F0D56 /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		2AC4088D2A113195009F0D56 /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
 		2AC408902A1131FA009F0D56 /* TransferDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDetailViewController.swift; sourceTree = "<group>"; };
+		2ADB94112A270FDD00E6EC57 /* Advertisement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertisement.swift; sourceTree = "<group>"; };
 		2AF091E72A11507800F611C4 /* OneShinhan-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OneShinhan-Bold.otf"; sourceTree = "<group>"; };
 		2AF091E82A11507800F611C4 /* OneShinhan-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OneShinhan-Light.otf"; sourceTree = "<group>"; };
 		2AF091E92A11507800F611C4 /* OneShinhan-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OneShinhan-Medium.otf"; sourceTree = "<group>"; };
@@ -389,8 +389,8 @@
 		2AC4088A2A113054009F0D56 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2ADB94112A270FDD00E6EC57 /* Advertisement.swift */,
 				2ADB94102A270E6300E6EC57 /* Enum */,
-				2A287D252A1BCC1D0037B94B /* Advertisement.swift */,
 				2AC408952A113250009F0D56 /* Views */,
 				2AC408922A113229009F0D56 /* Cells */,
 			);
@@ -1000,6 +1000,7 @@
 				B51383112A15AE0400167728 /* NumberButtonType.swift in Sources */,
 				2AC4087F2A112E60009F0D56 /* StringLiterals.swift in Sources */,
 				B5FE031D2A1C880F006C6180 /* TransferToDTO.swift in Sources */,
+				2ADB94122A270FDD00E6EC57 /* Advertisement.swift in Sources */,
 				B54F214B2A13BF20000D350C /* SOLTabBarItem.swift in Sources */,
 				B51383072A157E3800167728 /* Int+.swift in Sources */,
 				B5AB478C2A1C8C4A00904919 /* TransferConfirmTarget.swift in Sources */,
@@ -1011,7 +1012,6 @@
 				B5D06E192A169DDD00048C72 /* SizeLiterals.swift in Sources */,
 				2AC408402A0F6686009F0D56 /* AppDelegate.swift in Sources */,
 				B5D06E292A18F91700048C72 /* NetworkResult.swift in Sources */,
-				2A287D262A1BCC1D0037B94B /* Advertisement.swift in Sources */,
 				B5D06E2B2A18F93400048C72 /* TargetType.swift in Sources */,
 				F4C5AE812A1FDE4E00CCE940 /* TransferService.swift in Sources */,
 				2AC408422A0F6686009F0D56 /* SceneDelegate.swift in Sources */,
