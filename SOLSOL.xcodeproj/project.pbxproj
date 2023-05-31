@@ -394,7 +394,6 @@
 				2A4761062A13F0EE005BAA9F /* Item.swift */,
 				2A4761052A13F0EE005BAA9F /* Section.swift */,
 				2A287D252A1BCC1D0037B94B /* Advertisement.swift */,
-				2AC408432A0F6686009F0D56 /* HomeViewController.swift */,
 				2AC408952A113250009F0D56 /* Views */,
 				2AC408922A113229009F0D56 /* Cells */,
 			);
@@ -453,6 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				2A204ADE2A115BC500805E0A /* HomeView.swift */,
+				2AC408432A0F6686009F0D56 /* HomeViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
