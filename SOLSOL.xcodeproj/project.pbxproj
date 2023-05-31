@@ -27,7 +27,6 @@
 		2A4761032A13EC1B005BAA9F /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4761012A13EC1B005BAA9F /* UIView+.swift */; };
 		2A4761042A13EC1B005BAA9F /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4761022A13EC1B005BAA9F /* NSObject+.swift */; };
 		2A4761072A13F0EE005BAA9F /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4761052A13F0EE005BAA9F /* Section.swift */; };
-		2A4761082A13F0EE005BAA9F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4761062A13F0EE005BAA9F /* Item.swift */; };
 		2A47610A2A1538B5005BAA9F /* TransferListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4761092A1538B5005BAA9F /* TransferListCollectionViewCell.swift */; };
 		2AC408402A0F6686009F0D56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4083F2A0F6686009F0D56 /* AppDelegate.swift */; };
 		2AC408422A0F6686009F0D56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC408412A0F6686009F0D56 /* SceneDelegate.swift */; };
@@ -140,7 +139,6 @@
 		2A4761012A13EC1B005BAA9F /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		2A4761022A13EC1B005BAA9F /* NSObject+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		2A4761052A13F0EE005BAA9F /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
-		2A4761062A13F0EE005BAA9F /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		2A4761092A1538B5005BAA9F /* TransferListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferListCollectionViewCell.swift; sourceTree = "<group>"; };
 		2AC4083C2A0F6686009F0D56 /* SOLSOL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOLSOL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AC4083F2A0F6686009F0D56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -391,7 +389,6 @@
 		2AC4088A2A113054009F0D56 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				2A4761062A13F0EE005BAA9F /* Item.swift */,
 				2A4761052A13F0EE005BAA9F /* Section.swift */,
 				2A287D252A1BCC1D0037B94B /* Advertisement.swift */,
 				2AC408952A113250009F0D56 /* Views */,
@@ -952,7 +949,6 @@
 				B5D06E142A16929A00048C72 /* TransferConfirmViewController.swift in Sources */,
 				B51383042A157B6700167728 /* TransferDetailViewModel.swift in Sources */,
 				B5AB47942A1D951700904919 /* Bank.swift in Sources */,
-				2A4761082A13F0EE005BAA9F /* Item.swift in Sources */,
 				B5D06E172A1695C700048C72 /* MemoView.swift in Sources */,
 				F4D6D00A2A168F7C00B4A125 /* TransferAccountsTableViewCell.swift in Sources */,
 				F4C5AE892A20778D00CCE940 /* DeleteRecentAccountResponseDTO.swift in Sources */,
