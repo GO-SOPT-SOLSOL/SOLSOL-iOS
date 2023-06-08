@@ -19,7 +19,7 @@ final class CategoryTableViewCell: UITableViewCell {
     private lazy var items: [UIButton] = []
     
     private let itemCup = SOLFilledButton(backgroundColor: .white,
-                                          text: Item.cup,
+                                          text: StringLiterals.StackViewItem.cup,
                                           textColor: .gray600,
                                           image: ImageLiterals.Home.returnCup,
                                           imagePlacement: .top,
@@ -27,7 +27,7 @@ final class CategoryTableViewCell: UITableViewCell {
                                           font: .font(.body3),
                                           cornerRadius: 13)
     private let itemTips = SOLFilledButton(backgroundColor: .white,
-                                           text: Item.tips,
+                                           text: StringLiterals.StackViewItem.tips,
                                            textColor: .gray600,
                                            image: ImageLiterals.Home.SOLTips,
                                            imagePlacement: .top,
@@ -35,7 +35,7 @@ final class CategoryTableViewCell: UITableViewCell {
                                            font: .font(.body3),
                                            cornerRadius: 13)
     private let itemBank = SOLFilledButton(backgroundColor: .white,
-                                           text: Item.storyBank,
+                                           text: StringLiterals.StackViewItem.storyBank,
                                            textColor: .gray600,
                                            image: ImageLiterals.Home.storyBank,
                                            imagePlacement: .top,
@@ -43,7 +43,7 @@ final class CategoryTableViewCell: UITableViewCell {
                                            font: .font(.body3),
                                            cornerRadius: 13)
     private let itemWallet = SOLFilledButton(backgroundColor: .white,
-                                             text: Item.wallet,
+                                             text: StringLiterals.StackViewItem.wallet,
                                              textColor: .gray600,
                                              image: ImageLiterals.Home.SOLWallet,
                                              imagePlacement: .top,
@@ -51,7 +51,7 @@ final class CategoryTableViewCell: UITableViewCell {
                                              font: .font(.body3),
                                              cornerRadius: 13)
     private let itemBaseBall = SOLFilledButton(backgroundColor: .white,
-                                               text: Item.baseBall,
+                                               text: StringLiterals.StackViewItem.baseBall,
                                                textColor: .gray600,
                                                image: ImageLiterals.Home.SOLBaseball,
                                                imagePlacement: .top,
@@ -59,7 +59,7 @@ final class CategoryTableViewCell: UITableViewCell {
                                                font: .font(.body3),
                                                cornerRadius: 13)
     private let itemCard = SOLFilledButton(backgroundColor: .white,
-                                           text: Item.card,
+                                           text: StringLiterals.StackViewItem.card,
                                            textColor: .gray600,
                                            image: ImageLiterals.Home.assignCard,
                                            imagePlacement: .top,
@@ -67,7 +67,7 @@ final class CategoryTableViewCell: UITableViewCell {
                                            font: .font(.body3),
                                            cornerRadius: 13)
     private let itemStock = SOLFilledButton(backgroundColor: .white,
-                                            text: Item.stock,
+                                            text: StringLiterals.StackViewItem.stock,
                                             textColor: .gray600,
                                             image: ImageLiterals.Home.currentStock,
                                             imagePlacement: .top,
@@ -75,19 +75,19 @@ final class CategoryTableViewCell: UITableViewCell {
                                             font: .font(.body3),
                                             cornerRadius: 13)
     private let itemCertification = SOLFilledButton(backgroundColor: .white,
-                                                    text: Item.certification,
+                                                    text: StringLiterals.StackViewItem.certification,
                                                     textColor: .gray600,
                                                     image: ImageLiterals.Home.certification,
                                                     imagePlacement: .top,
                                                     imagePadding: 6,
                                                     font: .font(.body3),
                                                     cornerRadius: 13)
-
+    
     // MARK:  - Life Cycle
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
+        
         setStyle()
         setLayout()
     }

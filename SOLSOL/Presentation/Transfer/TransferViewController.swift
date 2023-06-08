@@ -10,10 +10,10 @@ import UIKit
 class TransferViewController: UIViewController {
     
     private lazy var navigationBar = SOLNavigationBar(self, leftItem: .back)
-
+    
     let originView = TransferView()
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,19 +49,21 @@ class TransferViewController: UIViewController {
         
     }
 }
-extension TransferViewController: CellAction{
+extension TransferViewController: CellAction {
     
     func cellTapped(row: Int, section: Int) {
         
         if section == 0{
             let nextViewController = TransferDetailViewController(viewModel: DefaultTransferDetailViewModel())
-            
+
             let recentList = originView.userCustomView.accountList[row]
             
             guard let bank = recentList else { return }
             
-            nextViewController.setTransferDetailData(data: TransferDetailModel(receiver: ReceiverModel.init(receiverName: "곽성준", receiverBank: bank.bank, receiverAccount: bank.account),
-                                                                               sender: MyBankAccount.init(memberId: bank.memberId, accountId: bank.accountId, bank: bank.bank, bankBookName: nil, bankBookType: nil, account: bank.account, balance: bank.balance), price: ""))
+            nextViewController.setTransferDetailData(data: TransferDetailModel(
+                receiver: ReceiverModel.init(receiverName: "곽성준", receiverBank: bank.bank, receiverAccount: bank.account),
+                sender: MyBankAccount.init(memberId: bank.memberId, accountId: bank.accountId, bank: bank.bank, bankBookName: nil, bankBookType: nil, account: bank.account, balance: bank.balance),
+                price: nil))
             
             navigationController?.pushViewController(nextViewController, animated: true)
         }
@@ -70,15 +72,20 @@ extension TransferViewController: CellAction{
             
             let nextViewController = TransferDetailViewController(viewModel: DefaultTransferDetailViewModel())
             
+            let accoutList = originView.userCustomView.accountList[2]
             let recentList = originView.userCustomView.recentSentAccountList[row]
             
+            guard let myAccout = accoutList else {return}
             guard let bank = recentList else { return }
             
-            nextViewController.setTransferDetailData(data: TransferDetailModel(receiver: ReceiverModel.init(receiverName: bank.name, receiverBank: bank.bank, receiverAccount: bank.accountNumber),
-                                                                               sender: MyBankAccount.init(memberId: 2, accountId: 2, bank: bank.bank, bankBookName: nil, bankBookType: nil, account: bank.accountNumber, balance: 0), price: ""))
+            nextViewController.setTransferDetailData(data: TransferDetailModel(
+                receiver: ReceiverModel.init(receiverName: bank.name, receiverBank: bank.bank, receiverAccount: bank.accountNumber),
+                sender: MyBankAccount.init(memberId: myAccout.memberId, accountId: myAccout.accountId, bank: myAccout.bank, bankBookName: nil, bankBookType: nil, account: myAccout.account, balance: myAccout.balance),
+                price: nil))
             
             navigationController?.pushViewController(nextViewController, animated: true)
             
         }
     }
 }
+
