@@ -39,13 +39,13 @@
     </tr>
     <tr align="center">
         <td>
-           이체 목록 뷰 구현  <br/>
+           이체 화면 뷰 구현  <br/>
       </td>
        <td>
             홈 뷰 구현 <br/>
       </td>
        <td>
-            이체 화면 뷰 구현 <br/>
+            이체 목록 뷰 구현 <br/>
       </td>
     </tr>
 </table>
