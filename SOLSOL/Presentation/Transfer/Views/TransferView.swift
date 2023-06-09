@@ -12,8 +12,6 @@ import Then
 
 class TransferView: UIView {
     
-    
-    
     //MARK: - UIComponents
     
     private let sendToWhoLabel = UILabel()
@@ -129,18 +127,15 @@ class TransferView: UIView {
         userCustomView.do{
             
             $0.view.backgroundColor = .black
-//            hiddenKeyboard(viewcontroller: userCustomView)
         }
         
         friendGroupView.do{
             $0.view.backgroundColor = .red
-//            hiddenKeyboard(viewcontroller: friendGroupView)
 
         }
         
         contactsView.do{
             $0.view.backgroundColor = .blue
-//            hiddenKeyboard(viewcontroller: contactsView)
 
         }
         
@@ -195,19 +190,6 @@ class TransferView: UIView {
         
     }
     
-//    func hiddenKeyboard(viewcontroller: UIViewController){
-//
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapView(_:)))
-//
-//        viewcontroller.view.addGestureRecognizer(tapGestureRecognizer)
-//
-//    }
-    
-    
-//    @objc func didTapView(_ sender: UITapGestureRecognizer) {
-//        searchTextField.endEditing(true)
-//    }
-//
     @objc
     func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         searchTextField.endEditing(true)

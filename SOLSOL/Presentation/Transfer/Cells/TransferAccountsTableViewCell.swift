@@ -13,6 +13,8 @@ protocol DeleteButtonTapped: AnyObject {
 
 final class TransferAccountsTableViewCell: UITableViewCell {
     
+    //MARK: - UIComponents
+    
     static let identifier = "TransferAccountsTableViewCell"
     
     weak var cellDelegate: DeleteButtonTapped?
@@ -25,17 +27,16 @@ final class TransferAccountsTableViewCell: UITableViewCell {
     private let deleteButton = UIButton()
     private var transferId: Int = 0
     
-    
+    //MARK: - View Life Cycle
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super .init(style: style, reuseIdentifier: reuseIdentifier)
         
-      
         setStyle()
         hierarchy()
         setLayout()
       
     }
-    
     
     @available(*,unavailable)
     required init?(coder: NSCoder) {
