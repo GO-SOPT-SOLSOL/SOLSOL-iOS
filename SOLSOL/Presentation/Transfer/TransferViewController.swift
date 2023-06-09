@@ -9,11 +9,14 @@ import UIKit
 
 class TransferViewController: UIViewController {
     
+    //MARK: - UIComponents
+
     private lazy var navigationBar = SOLNavigationBar(self, leftItem: .back)
     
     let originView = TransferView()
     
-    
+    //MARK: - View Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,6 +52,9 @@ class TransferViewController: UIViewController {
         
     }
 }
+
+//MARK: - Extensions
+
 extension TransferViewController: CellAction {
     
     func cellTapped(row: Int, section: Int) {
